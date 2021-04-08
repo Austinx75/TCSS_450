@@ -1,8 +1,9 @@
 # TCSS_450
-This is a team Repository for a group project in TCSS_450
-Team Members Include:
-  -Austin Scott
-  -Jack Lin
-  -Lawrence J San Nicolas
-  -Gary Kono
-  -Hermie Pecaso Baylon
+This is a team Repository for a group project in TCSS_450<br/>
+
+Team Members Include:<br/>
+  -Austin Scott<br/>
+  -Jack Lin<br/>
+  -Lawrence J San Nicolas<br/>
+  -Gary Kono<br/>
+  -Hermie Pecaso Baylon<br/>
