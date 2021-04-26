@@ -1804,6 +1804,8 @@ drawable design_snackbar_background
 drawable generic_confirmation
 drawable generic_confirmation_animation
 drawable ic_clock_black_24dp
+drawable ic_contact_black_24dp
+drawable ic_home_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -2091,6 +2093,7 @@ id line3
 id linear
 id listMode
 id list_item
+id main_graph
 id masked
 id material_clock_display
 id material_clock_face
@@ -2148,8 +2151,12 @@ id mtrl_view_tag_bottom_padding
 id multiPage
 id multiply
 id nav_controller_view_tag
+id nav_host_fragment
 id nav_host_fragment_container
+id nav_view
+id navigation_contact
 id navigation_header_container
+id navigation_home
 id never
 id noScroll
 id none
@@ -2418,6 +2425,8 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_contact_card
+layout fragment_contacts
 layout fragment_home
 layout fragment_log_in
 layout fragment_register
@@ -2512,8 +2521,10 @@ layout ws_single_page_nav_drawer_7_item
 layout ws_single_page_nav_drawer_peek_view
 layout ws_single_page_nav_drawer_text
 layout ws_wearable_drawer_view
+menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
+navigation main_graph
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -2629,7 +2640,7 @@ string text_register_LName
 string text_register_RetypePassword
 string title_activity_auth
 string title_activity_main
-string title_blogs
+string title_contact
 string title_home
 string ws_action_drawer_content_description
 string ws_navigation_drawer_content_description
