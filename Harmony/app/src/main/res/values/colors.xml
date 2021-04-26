@@ -12,5 +12,9 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorOffWhite">#E9E9E9</color>
     <color name="colorPrimaryAlpha">#226200EE</color>
+<<<<<<< HEAD:app/src/main/res/values/colors.xml
+    <color name="dark_grey">#03DAC5</color>
+=======
     <color name="dark_grey">#888888</color>
+>>>>>>> 1a8ab8d1f8c87b5c46ec579edced3b5bdf185f9b:Harmony/app/src/main/res/values/colors.xml
 </resources>
