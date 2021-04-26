@@ -1803,6 +1803,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable generic_confirmation
 drawable generic_confirmation_animation
+drawable ic_baseline_wb_sunny_24
 drawable ic_clock_black_24dp
 drawable ic_contact_black_24dp
 drawable ic_home_black_24dp
@@ -1930,11 +1931,14 @@ id action_container
 id action_context_bar
 id action_divider
 id action_image
+id action_logInFragment_to_mainActivity
+id action_logInFragment_to_registerFragment
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_registerFragment_to_logInFragment
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1947,6 +1951,7 @@ id animateToEnd
 id animateToStart
 id asConfigured
 id async
+id auth_nav_graph
 id auto
 id autoComplete
 id autoCompleteToEnd
@@ -1958,12 +1963,11 @@ id beginning
 id blocking
 id bottom
 id bounce
-id boxInsetLayout
 id butt
-id button
-id button2
-id button3
 id buttonPanel
+id button_loginFragment_login
+id button_loginFragment_register
+id button_registerFragment_register
 id cache_measures
 id cancel_action
 id cancel_button
@@ -2054,6 +2058,7 @@ id forever
 id fragment_container_view_tag
 id frameLayout
 id frameLayout2
+id frame_main_fragment_container
 id ghost_view
 id ghost_view_holder
 id gone
@@ -2093,6 +2098,8 @@ id line3
 id linear
 id listMode
 id list_item
+id logInFragment
+id mainActivity
 id main_graph
 id masked
 id material_clock_display
@@ -2187,6 +2194,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id registerFragment
 id reverseSawtooth
 id right
 id rightToLeft
@@ -2430,6 +2438,7 @@ layout fragment_contacts
 layout fragment_home
 layout fragment_log_in
 layout fragment_register
+layout fragment_weather
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2524,6 +2533,7 @@ layout ws_wearable_drawer_view
 menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
+navigation auth_nav_graph
 navigation main_graph
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description

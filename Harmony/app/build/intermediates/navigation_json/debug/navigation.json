@@ -1,5 +1,10 @@
 [
   {
+    "name": "auth_nav_graph",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
     "name": "main_graph",
     "navigationXmlIds": [],
     "deepLinks": []
