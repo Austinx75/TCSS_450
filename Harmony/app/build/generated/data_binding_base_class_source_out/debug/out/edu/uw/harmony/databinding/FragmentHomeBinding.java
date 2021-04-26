@@ -4,9 +4,9 @@ package edu.uw.harmony.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import edu.uw.harmony.R;
 import java.lang.NullPointerException;
@@ -14,15 +14,20 @@ import java.lang.Override;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final ConstraintLayout rootView;
 
-  private FragmentHomeBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final ConstraintLayout frameLayout;
+
+  private FragmentHomeBinding(@NonNull ConstraintLayout rootView,
+      @NonNull ConstraintLayout frameLayout) {
     this.rootView = rootView;
+    this.frameLayout = frameLayout;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -47,6 +52,8 @@ public final class FragmentHomeBinding implements ViewBinding {
       throw new NullPointerException("rootView");
     }
 
-    return new FragmentHomeBinding((FrameLayout) rootView);
+    ConstraintLayout frameLayout = (ConstraintLayout) rootView;
+
+    return new FragmentHomeBinding((ConstraintLayout) rootView, frameLayout);
   }
 }

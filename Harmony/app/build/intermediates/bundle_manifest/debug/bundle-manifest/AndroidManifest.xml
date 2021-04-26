@@ -22,15 +22,6 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Harmony" >
-        <activity
-            android:name="edu.uw.harmony.AuthActivity"
-            android:label="@string/title_activity_auth" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name="edu.uw.harmony.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

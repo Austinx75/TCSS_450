@@ -1,0 +1,22 @@
+edu/uw/tcss450/als48/ui/ColorFragment.java
+ edu.uw.tcss450.als48.ui.ColorFragment
+edu/uw/tcss450/als48/ui/FirstFragment.java
+ edu.uw.tcss450.als48.ui.FirstFragment
+edu/uw/tcss450/als48/BuildConfig.java
+ edu.uw.tcss450.als48.BuildConfig
+edu/uw/tcss450/als48/ui/ColorFragmentArgs.java
+ edu.uw.tcss450.als48.ui.ColorFragmentArgs
+ edu.uw.tcss450.als48.ui.ColorFragmentArgs$1
+ edu.uw.tcss450.als48.ui.ColorFragmentArgs$Builder
+edu/uw/tcss450/als48/MainActivity.java
+ edu.uw.tcss450.als48.MainActivity
+edu/uw/tcss450/als48/ui/FirstFragmentDirections.java
+ edu.uw.tcss450.als48.ui.FirstFragmentDirections
+ edu.uw.tcss450.als48.ui.FirstFragmentDirections$1
+ edu.uw.tcss450.als48.ui.FirstFragmentDirections$ActionFirstFragmentToColorFragment
+edu/uw/tcss450/als48/databinding/FragmentFirstBinding.java
+ edu.uw.tcss450.als48.databinding.FragmentFirstBinding
+edu/uw/tcss450/als48/databinding/ActivityMainBinding.java
+ edu.uw.tcss450.als48.databinding.ActivityMainBinding
+edu/uw/tcss450/als48/databinding/FragmentColorBinding.java
+ edu.uw.tcss450.als48.databinding.FragmentColorBinding
