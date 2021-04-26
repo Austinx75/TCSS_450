@@ -1958,6 +1958,8 @@ id bottom
 id bounce
 id boxInsetLayout
 id butt
+id button
+id button2
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -2021,6 +2023,8 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
+id editTextEmail
+id editTextPassword
 id edit_query
 id elastic
 id end
@@ -2538,8 +2542,8 @@ string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
-string button_sign_register
-string button_sign_signin
+string button_login_login
+string button_login_register
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -2613,11 +2617,11 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string search_menu_title
 string status_bar_notification_info_overflow
+string text_login_email
+string text_login_password
 string text_register_FName
 string text_register_LName
 string text_register_RetypePassword
-string text_sign_email
-string text_sign_password
 string title_activity_auth
 string title_activity_main
 string title_blogs
