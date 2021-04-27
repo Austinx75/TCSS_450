@@ -14,5 +14,19 @@
         android:id="@+id/navigation_contact"
         android:name="edu.uw.harmony.UI.Contacts.ContactListFragment"
         android:label="@string/title_contact" />
+    <fragment
+        android:id="@+id/navigation_chats"
+        android:name="edu.uw.harmony.UI.Chat.ChatsFragment"
+        android:label="Messages"
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_navigation_chats_to_newChatFragment"
+            app:destination="@id/navigation_new_chat" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_new_chat"
+        android:name="edu.uw.harmony.UI.Chat.NewChatFragment"
+        android:label="New Chat"
+        tools:layout="@layout/fragment_new_chat" />
 
 </navigation>
