@@ -20,7 +20,7 @@ public final class FragmentRegisterBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button button3;
+  public final Button buttonRegisterFragmentRegister;
 
   @NonNull
   public final EditText editTextEmail;
@@ -40,12 +40,13 @@ public final class FragmentRegisterBinding implements ViewBinding {
   @NonNull
   public final ConstraintLayout frameLayout2;
 
-  private FragmentRegisterBinding(@NonNull ConstraintLayout rootView, @NonNull Button button3,
-      @NonNull EditText editTextEmail, @NonNull EditText editTextFirstName,
-      @NonNull EditText editTextLastName, @NonNull EditText editTextPassword,
-      @NonNull EditText editTextPassword1, @NonNull ConstraintLayout frameLayout2) {
+  private FragmentRegisterBinding(@NonNull ConstraintLayout rootView,
+      @NonNull Button buttonRegisterFragmentRegister, @NonNull EditText editTextEmail,
+      @NonNull EditText editTextFirstName, @NonNull EditText editTextLastName,
+      @NonNull EditText editTextPassword, @NonNull EditText editTextPassword1,
+      @NonNull ConstraintLayout frameLayout2) {
     this.rootView = rootView;
-    this.button3 = button3;
+    this.buttonRegisterFragmentRegister = buttonRegisterFragmentRegister;
     this.editTextEmail = editTextEmail;
     this.editTextFirstName = editTextFirstName;
     this.editTextLastName = editTextLastName;
@@ -81,9 +82,9 @@ public final class FragmentRegisterBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button3;
-      Button button3 = rootView.findViewById(id);
-      if (button3 == null) {
+      id = R.id.button_registerFragment_register;
+      Button buttonRegisterFragmentRegister = rootView.findViewById(id);
+      if (buttonRegisterFragmentRegister == null) {
         break missingId;
       }
 
@@ -119,8 +120,9 @@ public final class FragmentRegisterBinding implements ViewBinding {
 
       ConstraintLayout frameLayout2 = (ConstraintLayout) rootView;
 
-      return new FragmentRegisterBinding((ConstraintLayout) rootView, button3, editTextEmail,
-          editTextFirstName, editTextLastName, editTextPassword, editTextPassword1, frameLayout2);
+      return new FragmentRegisterBinding((ConstraintLayout) rootView,
+          buttonRegisterFragmentRegister, editTextEmail, editTextFirstName, editTextLastName,
+          editTextPassword, editTextPassword1, frameLayout2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
