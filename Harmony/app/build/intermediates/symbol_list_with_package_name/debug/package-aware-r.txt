@@ -1816,6 +1816,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_sun_black_24dp
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -2171,6 +2172,7 @@ id navigation_contact
 id navigation_header_container
 id navigation_home
 id navigation_new_chat
+id navigation_weather
 id never
 id newChat
 id noScroll
@@ -2665,6 +2667,7 @@ string title_activity_main
 string title_chats
 string title_contact
 string title_home
+string title_weather
 string ws_action_drawer_content_description
 string ws_navigation_drawer_content_description
 style AlertDialog_AppCompat
