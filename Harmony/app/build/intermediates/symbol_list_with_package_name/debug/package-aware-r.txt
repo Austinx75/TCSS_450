@@ -1803,7 +1803,9 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable generic_confirmation
 drawable generic_confirmation_animation
+drawable ic_baseline_group_add_24
 drawable ic_baseline_wb_sunny_24
+drawable ic_chats_black_24dp
 drawable ic_clock_black_24dp
 drawable ic_contact_black_24dp
 drawable ic_home_black_24dp
@@ -1938,6 +1940,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_navigation_chats_to_newChatFragment
 id action_registerFragment_to_logInFragment
 id action_text
 id actions
@@ -2058,6 +2061,8 @@ id forever
 id fragment_container_view_tag
 id frameLayout
 id frameLayout2
+id frameLayout3
+id frameLayout4
 id frame_main_fragment_container
 id ghost_view
 id ghost_view_holder
@@ -2161,10 +2166,13 @@ id nav_controller_view_tag
 id nav_host_fragment
 id nav_host_fragment_container
 id nav_view
+id navigation_chats
 id navigation_contact
 id navigation_header_container
 id navigation_home
+id navigation_new_chat
 id never
+id newChat
 id noScroll
 id none
 id normal
@@ -2280,6 +2288,8 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
+id textView2
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2433,10 +2443,12 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_chat
 layout fragment_contact_card
 layout fragment_contacts
 layout fragment_home
 layout fragment_log_in
+layout fragment_new_chat
 layout fragment_register
 layout fragment_weather
 layout material_chip_input_combo
@@ -2650,6 +2662,7 @@ string text_register_LName
 string text_register_RetypePassword
 string title_activity_auth
 string title_activity_main
+string title_chats
 string title_contact
 string title_home
 string ws_action_drawer_content_description

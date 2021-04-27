@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/wb_sunny/baseline_wb_sunny_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/group_add/baseline_group_add_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,7 +28,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_baseline_wb_sunny_24" />
+                            <entry key="outputName" value="ic_baseline_group_add_24" />
                             <entry key="sourceFile" value="C:\Users\garya\Documents\UW_Tacoma\UWT_Spring2021\CS450\Team-9-TCSS-450\Harmony" />
                           </map>
                         </option>
