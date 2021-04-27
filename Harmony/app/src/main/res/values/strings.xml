@@ -17,6 +17,7 @@
     <string name="hello_world">Hello Square World!</string>
     <string name="title_contact">Contact</string>
     <string name="title_home">Home</string>
+    <string name="title_weather">Weather</string>
     <string name="action_link">Full Post</string>
     <string name="title_activity_auth">AuthActivity</string>
 
