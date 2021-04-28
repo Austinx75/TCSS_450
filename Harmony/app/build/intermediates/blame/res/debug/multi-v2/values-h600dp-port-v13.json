@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h600dp-port-v13\\values-h600dp-port-v13.xml",
+            "outputFile": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h600dp-port-v13\\values-h600dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Austim Skott\\.gradle\\caches\\transforms-2\\files-2.1\\a39128587a8f82c3311edbffd1ad9c85\\material-1.3.0\\res\\values-h600dp-port-v13\\values-h600dp-port-v13.xml",
+                    "source": "C:\\Users\\Spectre\\.gradle\\caches\\transforms-2\\files-2.1\\a39128587a8f82c3311edbffd1ad9c85\\material-1.3.0\\res\\values-h600dp-port-v13\\values-h600dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
