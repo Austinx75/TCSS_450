@@ -57,36 +57,54 @@ public class RegisterFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.buttonRegisterFragmentRegister.setOnClickListener(button->onVerify(view));
-
-
-        mRegisterModel.addResponseObserver(getViewLifecycleOwner(),
-                this::observeResponse);
-
     }
 
 
     private void onVerify(View view) {
+        boolean check = true;
+
         if (binding.editTextFirstName.getText().toString().isEmpty()) {
             binding.editTextFirstName.setError("Empty First Name");
-        } else if (binding.editTextLastName.getText().toString().isEmpty()) {
+            check = false;
+        }
+        if (binding.editTextLastName.getText().toString().isEmpty()) {
             binding.editTextLastName.setError("Empty Last Name");
-        } else if (binding.editTextEmail.getText().toString().isEmpty() || !binding.editTextEmail.getText().toString().contains("@")) {
+            check = false;
+        }
+        if (binding.editTextEmail.getText().toString().isEmpty() || !binding.editTextEmail.getText().toString().contains("@")) {
             binding.editTextEmail.setError("Email is Empty or missing @ Symbol");
-        } else if (binding.editTextPassword.getText().toString().isEmpty()) {
+            check = false;
+        }
+        if (binding.editTextPassword.getText().toString().isEmpty()) {
             binding.editTextPassword.setError("Empty Password");
-        } else if (binding.editTextPassword1.getText().toString().isEmpty()) {
+            check = false;
+        }
+        if (binding.editTextPassword1.getText().toString().isEmpty()) {
             binding.editTextPassword1.setError("Re-Enter Password");
-        } else if(binding.editTextPassword.getText().toString().length() < 6){
+            check = false;
+        }
+        if(binding.editTextPassword.getText().toString().length() < 6){
             binding.editTextPassword.setError("Password is less than six characters");
-        }else if(!binding.editTextPassword.getText().toString().equals(binding.editTextPassword1.getText().toString())){
+            check = false;
+        }
+        if(!binding.editTextPassword.getText().toString().equals(binding.editTextPassword1.getText().toString())){
             binding.editTextPassword.setError("Password does not match");
-        } else if(!binding.editTextPassword1.getText().toString().equals(binding.editTextPassword.getText().toString())){
+            check = false;
+        }
+        if(!binding.editTextPassword1.getText().toString().equals(binding.editTextPassword.getText().toString())){
             binding.editTextPassword1.setError("Password does not match");
-        } else if(binding.editTextPassword.getText().toString().contains(" ")){
+            check = false;
+        }
+        if(binding.editTextPassword.getText().toString().contains(" ")){
             binding.editTextPassword.setError("Cannot have space in password");
+            check = false;
         }
 
         verifyAuthWithServer();
+        if(check){
+            mRegisterModel.addResponseObserver(getViewLifecycleOwner(),
+                    this::observeResponse);
+        }
 
     }
 
