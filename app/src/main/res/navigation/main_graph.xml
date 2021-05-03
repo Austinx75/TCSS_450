@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_graph"
+    android:id="@+id/navigation_chats2"
     app:startDestination="@id/navigation_home">
 
     <fragment
@@ -28,5 +28,22 @@
         android:name="edu.uw.harmony.UI.Chat.NewChatFragment"
         android:label="New Chat"
         tools:layout="@layout/fragment_new_chat" />
+    <fragment
+        android:id="@+id/chatPostFragment"
+        android:name="edu.uw.harmony.UI.Chat.ChatPostFragment"
+        android:label="@string/title_chats" >
+        <argument
+            android:name="chat"
+            app:argType="edu.uw.harmony.UI.Chat.ChatPost" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_chat_list"
+        android:name="edu.uw.harmony.UI.Chat.ChatListFragment"
+        android:label="@string/title_chats"
+        tools:layout="@layout/fragment_chat_list">
+        <action
+            android:id="@+id/action_chatListFragment_to_chatPostFragment"
+            app:destination="@id/chatPostFragment" />
+    </fragment>
 
 </navigation>
