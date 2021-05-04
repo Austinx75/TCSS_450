@@ -28,6 +28,10 @@
         "source": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\src\\main\\res\\drawable\\ic_contact_black_24dp.xml"
     },
     {
+        "merged": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_weekly_forecast_card.xml.flat",
+        "source": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\src\\main\\res\\layout\\fragment_weekly_forecast_card.xml"
+    },
+    {
         "merged": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
@@ -76,6 +80,10 @@
         "source": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_hourly_forecast_card.xml.flat",
+        "source": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\src\\main\\res\\layout\\fragment_hourly_forecast_card.xml"
+    },
+    {
         "merged": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_weather.xml.flat",
         "source": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\src\\main\\res\\layout\\fragment_weather.xml"
     },
@@ -118,6 +126,10 @@
     {
         "merged": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_weather_sunny.png.flat",
+        "source": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\src\\main\\res\\drawable\\ic_weather_sunny.png"
     },
     {
         "merged": "C:\\Users\\garya\\Documents\\UW_Tacoma\\UWT_Spring2021\\CS450\\Team-9-TCSS-450\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
