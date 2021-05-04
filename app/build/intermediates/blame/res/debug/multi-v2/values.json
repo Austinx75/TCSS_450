@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\hermi\\.gradle\\caches\\transforms-2\\files-2.1\\3fabf79b26214c3511f185702aa88ede\\media-1.0.0\\res\\values\\values.xml",
@@ -78,6 +78,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "19,1,6,7,3,16,4,5,8,9,10,20,11,23,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "918,17,246,301,65,761,136,188,361,421,480,969,554,1073,822,873",
+                        "endColumns": "49,44,53,58,69,59,50,56,58,57,72,60,60,48,49,43",
+                        "endOffsets": "963,57,295,355,130,816,182,240,415,474,548,1025,610,1117,867,912"
+                    },
+                    "to": {
+                        "startLines": "1130,1131,1135,1136,1146,1147,1210,1211,1212,1213,1214,1215,1216,1217,1218,1219",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "67248,67298,67862,67916,68868,68938,79115,79166,79223,79282,79340,79413,79474,79535,79584,79634",
+                        "endColumns": "49,44,53,58,69,59,50,56,58,57,72,60,60,48,49,43",
+                        "endOffsets": "67293,67338,67911,67970,68933,68993,79161,79218,79277,79335,79408,79469,79530,79579,79629,79673"
+                    }
+                },
+                {
                     "source": "C:\\Users\\hermi\\.gradle\\caches\\transforms-2\\files-2.1\\f3feafb5b854d69955dbe8253a5ba1d6\\navigation-runtime-2.3.4\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,10,13",
@@ -113,6 +130,23 @@
                         "endLines": "8360",
                         "endColumns": "24",
                         "endOffsets": "532779"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "7,11,12,9,13,10,14,2,3,4,5,6,8",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "293,479,526,379,575,427,630,57,105,153,201,247,336",
+                        "endColumns": "41,45,47,46,53,50,43,46,46,46,44,44,41",
+                        "endOffsets": "330,520,569,421,624,473,669,99,147,195,241,287,373"
+                    },
+                    "to": {
+                        "startLines": "411,429,430,431,432,433,434,511,512,513,524,525,528",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "19956,21232,21278,21326,21373,21427,21478,26672,26719,26766,27510,27555,27721",
+                        "endColumns": "41,45,47,46,53,50,43,46,46,46,44,44,41",
+                        "endOffsets": "19993,21273,21321,21368,21422,21473,21517,26714,26761,26808,27550,27595,27758"
                     }
                 },
                 {
@@ -228,20 +262,22 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 3\\app\\src\\main\\res\\values\\dimens.xml",
+                    "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\values\\themes.xml",
                     "from": {
-                        "startLines": "6,13",
-                        "startColumns": "4,4",
-                        "startOffsets": "196,532",
-                        "endColumns": "54,56",
-                        "endOffsets": "246,584"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "102",
+                        "endLines": "14",
+                        "endColumns": "12",
+                        "endOffsets": "830"
                     },
                     "to": {
-                        "startLines": "609,685",
-                        "startColumns": "4,4",
-                        "startOffsets": "33187,38227",
-                        "endColumns": "54,56",
-                        "endOffsets": "33237,38279"
+                        "startLines": "3772",
+                        "startColumns": "4",
+                        "startOffsets": "249047",
+                        "endLines": "3784",
+                        "endColumns": "12",
+                        "endOffsets": "249761"
                     }
                 },
                 {
@@ -261,23 +297,6 @@
                         "endLines": "321,675,676,677,686,687,688,1026,7506",
                         "endColumns": "55,58,47,55,74,75,71,65,24",
                         "endOffsets": "15312,37507,37555,37611,38354,38430,38502,61194,484802"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 3\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "19,1,6,7,3,16,4,5,8,9,10,20,11,23,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "918,17,246,301,65,761,136,188,361,421,480,969,554,1073,822,873",
-                        "endColumns": "49,44,53,58,69,59,50,56,58,57,72,60,60,48,49,43",
-                        "endOffsets": "963,57,295,355,130,816,182,240,415,474,548,1025,610,1117,867,912"
-                    },
-                    "to": {
-                        "startLines": "1130,1131,1135,1136,1146,1147,1210,1211,1212,1213,1214,1215,1216,1217,1218,1219",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "67248,67298,67862,67916,68868,68938,79115,79166,79223,79282,79340,79413,79474,79535,79584,79634",
-                        "endColumns": "49,44,53,58,69,59,50,56,58,57,72,60,60,48,49,43",
-                        "endOffsets": "67293,67338,67911,67970,68933,68993,79161,79218,79277,79335,79408,79469,79530,79579,79629,79673"
                     }
                 },
                 {
@@ -336,22 +355,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 3\\app\\src\\main\\res\\values\\themes.xml",
+                    "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\values\\dimens.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "102",
-                        "endLines": "14",
-                        "endColumns": "12",
-                        "endOffsets": "830"
+                        "startLines": "6,13",
+                        "startColumns": "4,4",
+                        "startOffsets": "196,532",
+                        "endColumns": "54,56",
+                        "endOffsets": "246,584"
                     },
                     "to": {
-                        "startLines": "3772",
-                        "startColumns": "4",
-                        "startOffsets": "249047",
-                        "endLines": "3784",
-                        "endColumns": "12",
-                        "endOffsets": "249761"
+                        "startLines": "609,685",
+                        "startColumns": "4,4",
+                        "startOffsets": "33187,38227",
+                        "endColumns": "54,56",
+                        "endOffsets": "33237,38279"
                     }
                 },
                 {
@@ -371,23 +388,6 @@
                         "endLines": "81,83,624,6595",
                         "endColumns": "55,47,51,24",
                         "endOffsets": "3883,3976,34195,430218"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 3\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "7,11,12,9,13,10,14,2,3,4,5,6,8",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "293,479,526,379,575,427,630,57,105,153,201,247,336",
-                        "endColumns": "41,45,47,46,53,50,43,46,46,46,44,44,41",
-                        "endOffsets": "330,520,569,421,624,473,669,99,147,195,241,287,373"
-                    },
-                    "to": {
-                        "startLines": "411,429,430,431,432,433,434,511,512,513,524,525,528",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "19956,21232,21278,21326,21373,21427,21478,26672,26719,26766,27510,27555,27721",
-                        "endColumns": "41,45,47,46,53,50,43,46,46,46,44,44,41",
-                        "endOffsets": "19993,21273,21321,21368,21422,21473,21517,26714,26761,26808,27550,27595,27758"
                     }
                 },
                 {
