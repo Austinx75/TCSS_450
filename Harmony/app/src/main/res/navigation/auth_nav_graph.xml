@@ -31,8 +31,8 @@
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
-            android:id="@+id/action_registerFragment_to_logInFragment"
-            app:destination="@id/logInFragment" />
+            android:id="@+id/action_registerFragment_to_validationFragment"
+            app:destination="@id/validationFragment" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"
@@ -45,4 +45,21 @@
             android:name="email"
             app:argType="string" />
     </activity>
+    <fragment
+        android:id="@+id/validationFragment"
+        android:name="edu.uw.harmony.UI.Auth.Validation.ValidationFragment"
+        android:label="fragment_validation"
+        tools:layout="@layout/fragment_validation" >
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue="default" />
+        <argument
+            android:name="password"
+            app:argType="string"
+            android:defaultValue="default" />
+        <action
+            android:id="@+id/action_validationFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+    </fragment>
 </navigation>

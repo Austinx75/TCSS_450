@@ -16,18 +16,19 @@ public class RegisterFragmentDirections {
   }
 
   @NonNull
-  public static ActionRegisterFragmentToLogInFragment actionRegisterFragmentToLogInFragment() {
-    return new ActionRegisterFragmentToLogInFragment();
+  public static ActionRegisterFragmentToValidationFragment actionRegisterFragmentToValidationFragment(
+      ) {
+    return new ActionRegisterFragmentToValidationFragment();
   }
 
-  public static class ActionRegisterFragmentToLogInFragment implements NavDirections {
+  public static class ActionRegisterFragmentToValidationFragment implements NavDirections {
     private final HashMap arguments = new HashMap();
 
-    private ActionRegisterFragmentToLogInFragment() {
+    private ActionRegisterFragmentToValidationFragment() {
     }
 
     @NonNull
-    public ActionRegisterFragmentToLogInFragment setEmail(@NonNull String email) {
+    public ActionRegisterFragmentToValidationFragment setEmail(@NonNull String email) {
       if (email == null) {
         throw new IllegalArgumentException("Argument \"email\" is marked as non-null but was passed a null value.");
       }
@@ -36,7 +37,7 @@ public class RegisterFragmentDirections {
     }
 
     @NonNull
-    public ActionRegisterFragmentToLogInFragment setPassword(@NonNull String password) {
+    public ActionRegisterFragmentToValidationFragment setPassword(@NonNull String password) {
       if (password == null) {
         throw new IllegalArgumentException("Argument \"password\" is marked as non-null but was passed a null value.");
       }
@@ -66,7 +67,7 @@ public class RegisterFragmentDirections {
 
     @Override
     public int getActionId() {
-      return R.id.action_registerFragment_to_logInFragment;
+      return R.id.action_registerFragment_to_validationFragment;
     }
 
     @SuppressWarnings("unchecked")
@@ -89,7 +90,7 @@ public class RegisterFragmentDirections {
       if (object == null || getClass() != object.getClass()) {
           return false;
       }
-      ActionRegisterFragmentToLogInFragment that = (ActionRegisterFragmentToLogInFragment) object;
+      ActionRegisterFragmentToValidationFragment that = (ActionRegisterFragmentToValidationFragment) object;
       if (arguments.containsKey("email") != that.arguments.containsKey("email")) {
         return false;
       }
@@ -119,7 +120,7 @@ public class RegisterFragmentDirections {
 
     @Override
     public String toString() {
-      return "ActionRegisterFragmentToLogInFragment(actionId=" + getActionId() + "){"
+      return "ActionRegisterFragmentToValidationFragment(actionId=" + getActionId() + "){"
           + "email=" + getEmail()
           + ", password=" + getPassword()
           + "}";
