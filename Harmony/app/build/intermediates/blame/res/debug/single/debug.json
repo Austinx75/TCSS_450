@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_weekly_forecast_card.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_weekly_forecast_card.xml"
+    },
+    {
         "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
@@ -44,8 +48,16 @@
         "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_hourly_forecast_card.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_hourly_forecast_card.xml"
+    },
+    {
         "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_weather_sunny.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\ic_weather_sunny.png"
     },
     {
         "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
