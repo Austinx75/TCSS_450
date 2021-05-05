@@ -3,6 +3,7 @@ package edu.uw.harmony.UI.Chat;
 import android.os.Bundle;
 import android.os.Parcelable;
 import androidx.annotation.NonNull;
+import androidx.navigation.ActionOnlyNavDirections;
 import androidx.navigation.NavDirections;
 import edu.uw.harmony.R;
 import java.io.Serializable;
@@ -21,6 +22,11 @@ public class ChatListFragmentDirections {
   public static ActionChatListFragmentToChatPostFragment actionChatListFragmentToChatPostFragment(
       @NonNull ChatPost chat) {
     return new ActionChatListFragmentToChatPostFragment(chat);
+  }
+
+  @NonNull
+  public static NavDirections actionNavigationChatListToNavigationNewChat() {
+    return new ActionOnlyNavDirections(R.id.action_navigation_chat_list_to_navigation_new_chat);
   }
 
   public static class ActionChatListFragmentToChatPostFragment implements NavDirections {

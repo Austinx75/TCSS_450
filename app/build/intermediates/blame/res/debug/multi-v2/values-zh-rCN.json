@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
+            "outputFile": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\hermi\\.gradle\\caches\\transforms-2\\files-2.1\\30624f31c8d8e233517d74fb3edec08e\\wear-1.0.0\\res\\values-zh-rCN\\values-zh-rCN.xml",

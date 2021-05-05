@@ -10,47 +10,49 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/hello_blank_fragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/chatBox"
-        android:layout_width="334dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:hint="Type here..."
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageButton
-        android:id="@+id/sendChat"
-        android:layout_width="49dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/ic_sendchat_black_24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/yourMessage"
-        android:layout_width="102dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="76dp"
-        android:text="Your Message"
+        android:id="@+id/toWho"
+        android:layout_width="46dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:text="To:"
+        android:textSize="26sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/enterName"
+        android:layout_width="284dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="type name..."
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.779"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/enterMessage"
+        android:layout_width="310dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="40dp"
+        android:ems="10"
+        android:hint="type message here..."
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/sendMessage"
+        android:layout_width="50dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/ic_send_new_chat_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

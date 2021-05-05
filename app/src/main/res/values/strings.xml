@@ -17,9 +17,24 @@
     <string name="hello_world">Hello Square World!</string>
     <string name="title_contact">Contact</string>
     <string name="title_home">Home</string>
+    <string name="title_weather">Weather</string>
     <string name="action_link">Full Post</string>
     <string name="title_activity_auth">AuthActivity</string>
 
     <!-- This is for Chat Fragments-->
     <string name="title_chats">Messages</string>
+
+    <!-- This chat recyvlerviews -->
+    <string name="keys_json_blogs_response">response</string>
+    <string name="keys_json_blogs_data">data</string>
+    <string name="keys_json_blogs_pubdate">pubdate</string>
+    <string name="keys_json_blogs_title">title</string>
+    <string name="keys_json_blogs_teaser">teaser</string>
+    <string name="keys_json_blogs_url">url</string>
+
+    <!--    Auth Validation-->
+    <string name="text_validation">We sent a verification email to your
+        registered email, please verify it.</string>
+    <string name="button_validation_validate">Continue</string>
+
 </resources>

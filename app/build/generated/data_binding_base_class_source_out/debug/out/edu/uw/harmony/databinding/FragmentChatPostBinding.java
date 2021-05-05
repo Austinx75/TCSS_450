@@ -4,7 +4,8 @@ package edu.uw.harmony.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,13 +22,16 @@ public final class FragmentChatPostBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
-  public final Button buttonUrl;
-
-  @NonNull
   public final CardView cardRoot;
 
   @NonNull
+  public final EditText enterText;
+
+  @NonNull
   public final ConstraintLayout layoutInner;
+
+  @NonNull
+  public final ImageView sendNewChat;
 
   @NonNull
   public final TextView textPreview;
@@ -38,13 +42,15 @@ public final class FragmentChatPostBinding implements ViewBinding {
   @NonNull
   public final TextView textTitle;
 
-  private FragmentChatPostBinding(@NonNull CardView rootView, @NonNull Button buttonUrl,
-      @NonNull CardView cardRoot, @NonNull ConstraintLayout layoutInner,
-      @NonNull TextView textPreview, @NonNull TextView textPubdate, @NonNull TextView textTitle) {
+  private FragmentChatPostBinding(@NonNull CardView rootView, @NonNull CardView cardRoot,
+      @NonNull EditText enterText, @NonNull ConstraintLayout layoutInner,
+      @NonNull ImageView sendNewChat, @NonNull TextView textPreview, @NonNull TextView textPubdate,
+      @NonNull TextView textTitle) {
     this.rootView = rootView;
-    this.buttonUrl = buttonUrl;
     this.cardRoot = cardRoot;
+    this.enterText = enterText;
     this.layoutInner = layoutInner;
+    this.sendNewChat = sendNewChat;
     this.textPreview = textPreview;
     this.textPubdate = textPubdate;
     this.textTitle = textTitle;
@@ -77,17 +83,23 @@ public final class FragmentChatPostBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button_url;
-      Button buttonUrl = rootView.findViewById(id);
-      if (buttonUrl == null) {
+      CardView cardRoot = (CardView) rootView;
+
+      id = R.id.enter_text;
+      EditText enterText = rootView.findViewById(id);
+      if (enterText == null) {
         break missingId;
       }
-
-      CardView cardRoot = (CardView) rootView;
 
       id = R.id.layout_inner;
       ConstraintLayout layoutInner = rootView.findViewById(id);
       if (layoutInner == null) {
+        break missingId;
+      }
+
+      id = R.id.send_new_chat;
+      ImageView sendNewChat = rootView.findViewById(id);
+      if (sendNewChat == null) {
         break missingId;
       }
 
@@ -109,8 +121,8 @@ public final class FragmentChatPostBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentChatPostBinding((CardView) rootView, buttonUrl, cardRoot, layoutInner,
-          textPreview, textPubdate, textTitle);
+      return new FragmentChatPostBinding((CardView) rootView, cardRoot, enterText, layoutInner,
+          sendNewChat, textPreview, textPubdate, textTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

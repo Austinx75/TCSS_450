@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\hermi\\.gradle\\caches\\transforms-2\\files-2.1\\b878fc8c32286e4575004a16b9fe1e3c\\appcompat-1.2.0\\res\\values-night-v8\\values-night-v8.xml",
@@ -38,14 +38,14 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "102",
+                        "startOffsets": "100",
                         "endLines": "14",
                         "endColumns": "12",
-                        "endOffsets": "830"
+                        "endOffsets": "816"
                     },
                     "to": {
                         "startLines": "9",

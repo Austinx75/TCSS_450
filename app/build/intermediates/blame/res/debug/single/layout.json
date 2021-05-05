@@ -1,54 +1,66 @@
 [
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_auth.xml",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\layout\\activity_auth.xml"
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_new_chat.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\fragment_new_chat.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_contact_card.xml",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\layout\\fragment_contact_card.xml"
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_auth.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\activity_auth.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_weather.xml",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\layout\\fragment_weather.xml"
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_chat_post.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat_post.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_chat.xml",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\layout\\fragment_chat.xml"
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_contacts.xml",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\layout\\fragment_contacts.xml"
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_log_in.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\fragment_log_in.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_chat_post.xml",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\layout\\fragment_chat_post.xml"
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_contacts.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\fragment_contacts.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_chat_list.xml",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\layout\\fragment_chat_list.xml"
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_hourly_forecast_card.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\fragment_hourly_forecast_card.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\layout\\fragment_home.xml"
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_register.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\fragment_register.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_new_chat.xml",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\layout\\fragment_new_chat.xml"
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_contact_card.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\fragment_contact_card.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_chat_card.xml",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\layout\\fragment_chat_card.xml"
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_chat_card.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat_card.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_register.xml",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\layout\\fragment_register.xml"
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_log_in.xml",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\layout\\fragment_log_in.xml"
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_weather.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\fragment_weather.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 4\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_chat.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat.xml"
+    },
+    {
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_weekly_forecast_card.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\fragment_weekly_forecast_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_validation.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\fragment_validation.xml"
+    },
+    {
+        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_chat_list.xml",
+        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat_list.xml"
     }
 ]

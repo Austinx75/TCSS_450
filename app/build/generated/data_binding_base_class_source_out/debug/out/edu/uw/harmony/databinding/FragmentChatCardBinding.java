@@ -24,7 +24,7 @@ public final class FragmentChatCardBinding implements ViewBinding {
   public final CardView cardRoot;
 
   @NonNull
-  public final ImageView imageView;
+  public final ImageView imageFace;
 
   @NonNull
   public final ConstraintLayout layoutInner;
@@ -36,11 +36,11 @@ public final class FragmentChatCardBinding implements ViewBinding {
   public final TextView textTitle;
 
   private FragmentChatCardBinding(@NonNull CardView rootView, @NonNull CardView cardRoot,
-      @NonNull ImageView imageView, @NonNull ConstraintLayout layoutInner,
+      @NonNull ImageView imageFace, @NonNull ConstraintLayout layoutInner,
       @NonNull TextView textPubdate, @NonNull TextView textTitle) {
     this.rootView = rootView;
     this.cardRoot = cardRoot;
-    this.imageView = imageView;
+    this.imageFace = imageFace;
     this.layoutInner = layoutInner;
     this.textPubdate = textPubdate;
     this.textTitle = textTitle;
@@ -75,9 +75,9 @@ public final class FragmentChatCardBinding implements ViewBinding {
     missingId: {
       CardView cardRoot = (CardView) rootView;
 
-      id = R.id.imageView;
-      ImageView imageView = rootView.findViewById(id);
-      if (imageView == null) {
+      id = R.id.image_face;
+      ImageView imageFace = rootView.findViewById(id);
+      if (imageFace == null) {
         break missingId;
       }
 
@@ -99,7 +99,7 @@ public final class FragmentChatCardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentChatCardBinding((CardView) rootView, cardRoot, imageView, layoutInner,
+      return new FragmentChatCardBinding((CardView) rootView, cardRoot, imageFace, layoutInner,
           textPubdate, textTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
