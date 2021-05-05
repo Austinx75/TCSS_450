@@ -4,6 +4,7 @@ package edu.uw.harmony.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -24,13 +25,13 @@ public final class FragmentContactCardBinding implements ViewBinding {
   public final CardView cardRoot;
 
   @NonNull
-  public final CardView cardView;
-
-  @NonNull
   public final ImageView contactAvatar;
 
   @NonNull
   public final ConstraintLayout contactCard;
+
+  @NonNull
+  public final ImageButton contactMessage;
 
   @NonNull
   public final TextView contactStatus;
@@ -39,14 +40,14 @@ public final class FragmentContactCardBinding implements ViewBinding {
   public final TextView contactUsername;
 
   private FragmentContactCardBinding(@NonNull CardView rootView, @NonNull CardView cardRoot,
-      @NonNull CardView cardView, @NonNull ImageView contactAvatar,
-      @NonNull ConstraintLayout contactCard, @NonNull TextView contactStatus,
+      @NonNull ImageView contactAvatar, @NonNull ConstraintLayout contactCard,
+      @NonNull ImageButton contactMessage, @NonNull TextView contactStatus,
       @NonNull TextView contactUsername) {
     this.rootView = rootView;
     this.cardRoot = cardRoot;
-    this.cardView = cardView;
     this.contactAvatar = contactAvatar;
     this.contactCard = contactCard;
+    this.contactMessage = contactMessage;
     this.contactStatus = contactStatus;
     this.contactUsername = contactUsername;
   }
@@ -80,12 +81,6 @@ public final class FragmentContactCardBinding implements ViewBinding {
     missingId: {
       CardView cardRoot = (CardView) rootView;
 
-      id = R.id.cardView;
-      CardView cardView = rootView.findViewById(id);
-      if (cardView == null) {
-        break missingId;
-      }
-
       id = R.id.contact_Avatar;
       ImageView contactAvatar = rootView.findViewById(id);
       if (contactAvatar == null) {
@@ -95,6 +90,12 @@ public final class FragmentContactCardBinding implements ViewBinding {
       id = R.id.contact_card;
       ConstraintLayout contactCard = rootView.findViewById(id);
       if (contactCard == null) {
+        break missingId;
+      }
+
+      id = R.id.contact_message;
+      ImageButton contactMessage = rootView.findViewById(id);
+      if (contactMessage == null) {
         break missingId;
       }
 
@@ -110,8 +111,8 @@ public final class FragmentContactCardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentContactCardBinding((CardView) rootView, cardRoot, cardView, contactAvatar,
-          contactCard, contactStatus, contactUsername);
+      return new FragmentContactCardBinding((CardView) rootView, cardRoot, contactAvatar,
+          contactCard, contactMessage, contactStatus, contactUsername);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

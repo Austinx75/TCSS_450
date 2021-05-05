@@ -1787,6 +1787,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable boy
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1795,6 +1796,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable contact_barista_512
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1803,6 +1805,8 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable generic_confirmation
 drawable generic_confirmation_animation
+drawable hacker
+drawable ic_baseline_chat_bubble_24
 drawable ic_baseline_group_add_24
 drawable ic_baseline_wb_sunny_24
 drawable ic_chats_black_24dp
@@ -1818,6 +1822,10 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_sun_black_24dp
 drawable ic_weather_sunny
+drawable kitty
+drawable man
+drawable man_1
+drawable man_2
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1855,6 +1863,9 @@ drawable portrait_circle
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable user
+drawable woman
+drawable woman_1
 drawable ws_action_item_background
 drawable ws_action_item_icon_background
 drawable ws_full_sad
@@ -1980,10 +1991,7 @@ id button_validationFragment_validate
 id cache_measures
 id cancel_action
 id cancel_button
-<<<<<<< HEAD
 id cardView
-=======
->>>>>>> 1c6c9e65e02e34baeb9261f8533b5d166f730511
 id card_root
 id center
 id center_horizontal
@@ -2008,6 +2016,7 @@ id confirm_button
 id contactCardFragment
 id contact_Avatar
 id contact_card
+id contact_message
 id contact_status
 id contact_username
 id container
@@ -2117,13 +2126,9 @@ id labelGroup
 id labeled
 id largeLabel
 id layout
-<<<<<<< HEAD
-id layout_root
-id layout_wait
-=======
 id layout_inner
 id layout_root
->>>>>>> 1c6c9e65e02e34baeb9261f8533b5d166f730511
+id layout_wait
 id left
 id leftToRight
 id line1
@@ -2636,6 +2641,7 @@ string clear_text_end_icon_content_description
 string contact_avatar
 string contact_card
 string contact_id
+string contact_massage
 string contact_name
 string contact_status
 string contact_username

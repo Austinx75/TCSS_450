@@ -37,7 +37,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
 
     @Override
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
-        holder.setBlog(mContact.get(position));
+        holder.setContact(mContact.get(position));
     }
 
     @Override
@@ -85,12 +85,11 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             }*/
         }
 
-        void setBlog(final ContactCard contact) {
+        void setContact(final ContactCard contact) {
             mContact = contact;
 
             binding.contactUsername.setText(contact.getUsername());
             binding.contactStatus.setText(contact.getStatus());
-            displayPreview();
         }
     }
 }

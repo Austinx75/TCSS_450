@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_root"
-        android:name="edu.uw.harmony.UI.Contacts.ContactCard"
+        android:name="edu.uw.harmony.UI.Contacts.ContactCardFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="8dp"
@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context="edu.uw.harmony.UI.Contacts.ContactListFragment"
+        tools:context="edu.uw.harmony.UI.Contacts.ContactCardFragment"
         tools:listitem="@layout/fragment_contact_card" />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_wait"
