@@ -9,6 +9,7 @@ public class ContactCard implements Serializable{
     private String username;
     private final String id;
     private String status;
+    private int avatar;
 
     public static class Builder{
         private String name;
@@ -16,6 +17,7 @@ public class ContactCard implements Serializable{
         private String username = "";
         private final String id;
         private String status = "";
+        private int avatar;
 
         public Builder(String name, String id){
             this.name = name;
@@ -37,6 +39,11 @@ public class ContactCard implements Serializable{
             return this;
         }
 
+        public Builder addAvatar(int val){
+            avatar = val;
+            return this;
+        }
+
         public ContactCard build() { return new ContactCard(this);}
     }
 
@@ -46,6 +53,7 @@ public class ContactCard implements Serializable{
         this.username = builder.username;
         this.id = builder.id;
         this.status = builder.status;
+        this.avatar = builder.avatar;
     }
 
     public String getName(){ return name; }
@@ -53,4 +61,5 @@ public class ContactCard implements Serializable{
     public String getUsername() {return username;}
     public String getId(){ return id; }
     public String getStatus(){ return status;}
+    public int getAvatar(){return avatar;}
 }

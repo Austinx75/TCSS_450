@@ -32,9 +32,9 @@ public class ContactListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_contact_list, container, false);
-        if (view instanceof RecyclerView){
-            ((RecyclerView) view).setLayoutManager(new GridLayoutManager(getContext(), 2));
-            ((RecyclerView) view).setAdapter(new ContactRecyclerViewAdapter(ContactGenerator.getContactList()));
+        View contactView = view.findViewById(R.id.list_root);
+        if (contactView instanceof RecyclerView){
+            ((RecyclerView) contactView).setAdapter(new ContactRecyclerViewAdapter(ContactGenerator.getContactList()));
         }
         return view;
     }
@@ -43,11 +43,6 @@ public class ContactListFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         FragmentContactListBinding binding = FragmentContactListBinding.bind(getView());
-        mModel.addContactListObserver(getViewLifecycleOwner(), contactList -> {
-            if (!contactList.isEmpty()) {
-                binding.listRoot.setAdapter(new ContactRecyclerViewAdapter(contactList));
-                binding.layoutWait.setVisibility(View.GONE);
-            }
-        });
+        binding.layoutWait.setVisibility(View.GONE);
     }
 }
