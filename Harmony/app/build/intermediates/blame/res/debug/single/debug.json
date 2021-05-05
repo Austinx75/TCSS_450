@@ -4,20 +4,20 @@
         "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_weekly_forecast_card.xml"
     },
     {
-        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_auth.xml.flat",
-        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\activity_auth.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_sun_black_24dp.xml.flat",
         "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\ic_sun_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_auth.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\activity_auth.xml"
     },
     {
         "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
