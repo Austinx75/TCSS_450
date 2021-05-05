@@ -119,7 +119,13 @@ public class RegisterFragment extends Fragment {
         mPassWordValidator.processResult(
                 mPassWordValidator.apply(binding.editTextPassword.getText().toString()),
                 this::verifyAuthWithServer,
-                result -> binding.editTextPassword.setError("Please enter a valid Password."));
+                result -> binding.editTextPassword.setError("Password must contain: " +
+                        "\nGreater than six characters," +
+                        "\nAt least one digit, " +
+                        "\nOne uppercase letter," +
+                        "\nOne lowercase letter, " +
+                        "\nOne special character, " +
+                        "\nNo spaces."));
     }
 
     private void verifyAuthWithServer() {
