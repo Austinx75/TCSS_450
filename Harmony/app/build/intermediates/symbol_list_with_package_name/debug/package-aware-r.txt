@@ -1943,8 +1943,9 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_navigation_chats_to_newChatFragment
-id action_registerFragment_to_logInFragment
+id action_registerFragment_to_validationFragment
 id action_text
+id action_validationFragment_to_logInFragment
 id actions
 id activity_chooser_view_content
 id add
@@ -1973,6 +1974,7 @@ id buttonPanel
 id button_loginFragment_login
 id button_loginFragment_register
 id button_registerFragment_register
+id button_validationFragment_validate
 id cache_measures
 id cancel_action
 id cancel_button
@@ -2066,6 +2068,7 @@ id frameLayout
 id frameLayout2
 id frameLayout3
 id frameLayout4
+id frameLayout5
 id frame_main_fragment_container
 id ghost_view
 id ghost_view_holder
@@ -2300,6 +2303,7 @@ id textStart
 id textTop
 id textView
 id textView2
+id textView4
 id textView_cityPlaceholder
 id textView_mainTemperaturePlaceholder
 id text_hourlyTemp
@@ -2337,6 +2341,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id validationFragment
 id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag
@@ -2469,6 +2474,7 @@ layout fragment_hourly_forecast_card
 layout fragment_log_in
 layout fragment_new_chat
 layout fragment_register
+layout fragment_validation
 layout fragment_weather
 layout fragment_weekly_forecast_card
 layout material_chip_input_combo
@@ -2602,6 +2608,7 @@ string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
 string button_login_login
 string button_login_register
+string button_validation_validate
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -2680,6 +2687,7 @@ string text_login_password
 string text_register_FName
 string text_register_LName
 string text_register_RetypePassword
+string text_validation
 string title_activity_auth
 string title_activity_main
 string title_chats
