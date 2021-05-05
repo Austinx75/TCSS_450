@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Spectre\\.gradle\\caches\\transforms-2\\files-2.1\\a39128587a8f82c3311edbffd1ad9c85\\material-1.3.0\\res\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
+=======
+            "outputFile": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/larrysannicolas/.gradle/caches/transforms-2/files-2.1/a39128587a8f82c3311edbffd1ad9c85/material-1.3.0/res/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+>>>>>>> 1c6c9e65e02e34baeb9261f8533b5d166f730511
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

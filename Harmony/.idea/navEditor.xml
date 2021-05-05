@@ -13,8 +13,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-632" />
-                            <option name="y" value="-90" />
+                            <option name="x" value="-845" />
+                            <option name="y" value="-77" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -63,6 +63,18 @@
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="validationFragment2">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-657" />
+                            <option name="y" value="-491" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -160,8 +172,13 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
+<<<<<<< HEAD
                             <option name="x" value="15" />
                             <option name="y" value="-86" />
+=======
+                            <option name="x" value="17" />
+                            <option name="y" value="-98" />
+>>>>>>> 1c6c9e65e02e34baeb9261f8533b5d166f730511
                           </Point>
                         </option>
                       </LayoutPositions>

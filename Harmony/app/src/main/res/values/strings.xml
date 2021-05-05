@@ -31,4 +31,10 @@
 
     <!-- This is for Chat Fragments-->
     <string name="title_chats">Messages</string>
+
+
+<!--    Auth Validation-->
+    <string name="text_validation">We sent a verification email to your
+        registered email, please verify it.</string>
+    <string name="button_validation_validate">Continue</string>
 </resources>

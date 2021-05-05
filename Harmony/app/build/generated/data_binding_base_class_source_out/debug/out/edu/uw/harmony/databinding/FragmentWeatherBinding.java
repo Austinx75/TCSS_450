@@ -4,25 +4,56 @@ package edu.uw.harmony.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import edu.uw.harmony.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentWeatherBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final ConstraintLayout rootView;
 
-  private FragmentWeatherBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final RecyclerView hourlyListRoot;
+
+  @NonNull
+  public final ImageView imageViewMainConditionsPlaceholder;
+
+  @NonNull
+  public final ConstraintLayout layoutRoot;
+
+  @NonNull
+  public final TextView textViewCityPlaceholder;
+
+  @NonNull
+  public final TextView textViewMainTemperaturePlaceholder;
+
+  @NonNull
+  public final RecyclerView weeklyListRoot;
+
+  private FragmentWeatherBinding(@NonNull ConstraintLayout rootView,
+      @NonNull RecyclerView hourlyListRoot, @NonNull ImageView imageViewMainConditionsPlaceholder,
+      @NonNull ConstraintLayout layoutRoot, @NonNull TextView textViewCityPlaceholder,
+      @NonNull TextView textViewMainTemperaturePlaceholder, @NonNull RecyclerView weeklyListRoot) {
     this.rootView = rootView;
+    this.hourlyListRoot = hourlyListRoot;
+    this.imageViewMainConditionsPlaceholder = imageViewMainConditionsPlaceholder;
+    this.layoutRoot = layoutRoot;
+    this.textViewCityPlaceholder = textViewCityPlaceholder;
+    this.textViewMainTemperaturePlaceholder = textViewMainTemperaturePlaceholder;
+    this.weeklyListRoot = weeklyListRoot;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -43,10 +74,47 @@ public final class FragmentWeatherBinding implements ViewBinding {
 
   @NonNull
   public static FragmentWeatherBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.hourly_list_root;
+      RecyclerView hourlyListRoot = rootView.findViewById(id);
+      if (hourlyListRoot == null) {
+        break missingId;
+      }
 
-    return new FragmentWeatherBinding((FrameLayout) rootView);
+      id = R.id.imageView_mainConditionsPlaceholder;
+      ImageView imageViewMainConditionsPlaceholder = rootView.findViewById(id);
+      if (imageViewMainConditionsPlaceholder == null) {
+        break missingId;
+      }
+
+      ConstraintLayout layoutRoot = (ConstraintLayout) rootView;
+
+      id = R.id.textView_cityPlaceholder;
+      TextView textViewCityPlaceholder = rootView.findViewById(id);
+      if (textViewCityPlaceholder == null) {
+        break missingId;
+      }
+
+      id = R.id.textView_mainTemperaturePlaceholder;
+      TextView textViewMainTemperaturePlaceholder = rootView.findViewById(id);
+      if (textViewMainTemperaturePlaceholder == null) {
+        break missingId;
+      }
+
+      id = R.id.weekly_list_root;
+      RecyclerView weeklyListRoot = rootView.findViewById(id);
+      if (weeklyListRoot == null) {
+        break missingId;
+      }
+
+      return new FragmentWeatherBinding((ConstraintLayout) rootView, hourlyListRoot,
+          imageViewMainConditionsPlaceholder, layoutRoot, textViewCityPlaceholder,
+          textViewMainTemperaturePlaceholder, weeklyListRoot);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }
