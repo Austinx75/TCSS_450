@@ -29,4 +29,12 @@
     <string name="text_validation">We sent a verification email to your
         registered email, please verify it.</string>
     <string name="button_validation_validate">Continue</string>
+
+    <!-- This chat recyvlerviews -->
+    <string name="keys_json_blogs_response">response</string>
+    <string name="keys_json_blogs_data">data</string>
+    <string name="keys_json_blogs_pubdate">pubdate</string>
+    <string name="keys_json_blogs_title">title</string>
+    <string name="keys_json_blogs_teaser">teaser</string>
+    <string name="keys_json_blogs_url">url</string>
 </resources>

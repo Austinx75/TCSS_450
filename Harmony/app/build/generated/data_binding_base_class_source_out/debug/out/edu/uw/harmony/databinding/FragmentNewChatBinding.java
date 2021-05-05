@@ -4,6 +4,8 @@ package edu.uw.harmony.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,16 +21,29 @@ public final class FragmentNewChatBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final EditText enterMessage;
+
+  @NonNull
+  public final EditText enterName;
+
+  @NonNull
   public final ConstraintLayout frameLayout3;
 
   @NonNull
-  public final TextView textView;
+  public final ImageButton sendMessage;
 
-  private FragmentNewChatBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout frameLayout3, @NonNull TextView textView) {
+  @NonNull
+  public final TextView toWho;
+
+  private FragmentNewChatBinding(@NonNull ConstraintLayout rootView, @NonNull EditText enterMessage,
+      @NonNull EditText enterName, @NonNull ConstraintLayout frameLayout3,
+      @NonNull ImageButton sendMessage, @NonNull TextView toWho) {
     this.rootView = rootView;
+    this.enterMessage = enterMessage;
+    this.enterName = enterName;
     this.frameLayout3 = frameLayout3;
-    this.textView = textView;
+    this.sendMessage = sendMessage;
+    this.toWho = toWho;
   }
 
   @Override
@@ -58,15 +73,34 @@ public final class FragmentNewChatBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      ConstraintLayout frameLayout3 = (ConstraintLayout) rootView;
-
-      id = R.id.textView;
-      TextView textView = rootView.findViewById(id);
-      if (textView == null) {
+      id = R.id.enterMessage;
+      EditText enterMessage = rootView.findViewById(id);
+      if (enterMessage == null) {
         break missingId;
       }
 
-      return new FragmentNewChatBinding((ConstraintLayout) rootView, frameLayout3, textView);
+      id = R.id.enterName;
+      EditText enterName = rootView.findViewById(id);
+      if (enterName == null) {
+        break missingId;
+      }
+
+      ConstraintLayout frameLayout3 = (ConstraintLayout) rootView;
+
+      id = R.id.sendMessage;
+      ImageButton sendMessage = rootView.findViewById(id);
+      if (sendMessage == null) {
+        break missingId;
+      }
+
+      id = R.id.toWho;
+      TextView toWho = rootView.findViewById(id);
+      if (toWho == null) {
+        break missingId;
+      }
+
+      return new FragmentNewChatBinding((ConstraintLayout) rootView, enterMessage, enterName,
+          frameLayout3, sendMessage, toWho);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

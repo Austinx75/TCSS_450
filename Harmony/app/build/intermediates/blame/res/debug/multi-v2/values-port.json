@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml",
+            "outputFile": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
             "map": [
                 {
-                    "source": "/Users/larrysannicolas/.gradle/caches/transforms-2/files-2.1/b878fc8c32286e4575004a16b9fe1e3c/appcompat-1.2.0/res/values-port/values-port.xml",
+                    "source": "C:\\Users\\hermi\\.gradle\\caches\\transforms-2\\files-2.1\\b878fc8c32286e4575004a16b9fe1e3c\\appcompat-1.2.0\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1803,11 +1803,14 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable generic_confirmation
 drawable generic_confirmation_animation
+drawable ic_add_new_chat2_24dp
+drawable ic_add_new_chat_24dp
 drawable ic_baseline_group_add_24
 drawable ic_baseline_wb_sunny_24
 drawable ic_chats_black_24dp
 drawable ic_clock_black_24dp
 drawable ic_contact_black_24dp
+drawable ic_current_face_chat_24dp
 drawable ic_home_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -1816,6 +1819,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_send_new_chat_24dp
 drawable ic_sun_black_24dp
 drawable ic_weather_sunny
 drawable material_cursor_drawable
@@ -1931,6 +1935,7 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
+id action_chatListFragment_to_chatPostFragment
 id action_container
 id action_context_bar
 id action_divider
@@ -1942,6 +1947,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_navigation_chat_list_to_navigation_new_chat
 id action_navigation_chats_to_newChatFragment
 id action_registerFragment_to_validationFragment
 id action_text
@@ -1970,6 +1976,7 @@ id blocking
 id bottom
 id bounce
 id butt
+id buttonNewChat
 id buttonPanel
 id button_loginFragment_login
 id button_loginFragment_register
@@ -2050,6 +2057,9 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id enterMessage
+id enterName
+id enter_text
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -2095,6 +2105,7 @@ id image
 id imageView_hourlyForecastCondition
 id imageView_mainConditionsPlaceholder
 id imageView_weeklyForecastCondition
+id image_face
 id info
 id invisible
 id inward
@@ -2115,6 +2126,7 @@ id line3
 id linear
 id listMode
 id list_item
+id list_root
 id logInFragment
 id mainActivity
 id main_graph
@@ -2178,6 +2190,8 @@ id nav_controller_view_tag
 id nav_host_fragment
 id nav_host_fragment_container
 id nav_view
+id navigation_chat_list
+id navigation_chat_post
 id navigation_chats
 id navigation_contact
 id navigation_header_container
@@ -2247,6 +2261,8 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id sendMessage
+id send_new_chat
 id shortcut
 id showCustom
 id showHome
@@ -2301,7 +2317,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
 id textView2
 id textView4
 id textView_cityPlaceholder
@@ -2311,6 +2326,8 @@ id text_hourlyTime
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_preview
+id text_pubdate
 id text_title
 id text_weeklyDay
 id text_weeklyTemp
@@ -2324,6 +2341,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toWho
 id toggle
 id top
 id topPanel
@@ -2467,6 +2485,9 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_chat
+layout fragment_chat_card
+layout fragment_chat_list
+layout fragment_chat_post
 layout fragment_contact_card
 layout fragment_contacts
 layout fragment_home
@@ -2623,6 +2644,12 @@ string hello_world
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
+string keys_json_blogs_data
+string keys_json_blogs_pubdate
+string keys_json_blogs_response
+string keys_json_blogs_teaser
+string keys_json_blogs_title
+string keys_json_blogs_url
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_selection

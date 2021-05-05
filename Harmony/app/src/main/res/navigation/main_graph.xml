@@ -33,5 +33,64 @@
         android:name="edu.uw.harmony.UI.Weather.WeatherFragment"
         android:label="@string/title_weather"
         tools:layout="@layout/fragment_weather" />
+    <fragment
+        android:id="@+id/navigation_chat_post"
+        android:name="edu.uw.harmony.UI.Chat.ChatPostFragment"
+        android:label="Message">
+        <argument
+            android:name="chat"
+            app:argType="edu.uw.harmony.UI.Chat.ChatPost" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_chat_list"
+        android:name="edu.uw.harmony.UI.Chat.ChatListFragment"
+        android:label="Messages"
+        tools:layout="@layout/fragment_chat_list">
+        <action
+            android:id="@+id/action_chatListFragment_to_chatPostFragment"
+            app:destination="@id/navigation_chat_post" />
+        <action
+            android:id="@+id/action_navigation_chat_list_to_navigation_new_chat"
+            app:destination="@id/navigation_new_chat" />
+    </fragment>
 
 </navigation>
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<navigation xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/main_graph"-->
+<!--    app:startDestination="@id/navigation_home">-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_home"-->
+<!--        android:name="edu.uw.harmony.UI.Home.HomeFragment"-->
+<!--        android:label="@string/title_home"-->
+<!--        tools:layout="@layout/fragment_home" />-->
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_contact"-->
+<!--        android:name="edu.uw.harmony.UI.Contacts.ContactListFragment"-->
+<!--        android:label="@string/title_contact" />-->
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_chats"-->
+<!--        android:name="edu.uw.harmony.UI.Chat.ChatsFragment"-->
+<!--        android:label="Messages"-->
+<!--        tools:layout="@layout/fragment_chat" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_navigation_chats_to_newChatFragment"-->
+<!--            app:destination="@id/navigation_new_chat" />-->
+<!--    </fragment>-->
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_new_chat"-->
+<!--        android:name="edu.uw.harmony.UI.Chat.NewChatFragment"-->
+<!--        android:label="New Chat"-->
+<!--        tools:layout="@layout/fragment_new_chat" />-->
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_weather"-->
+<!--        android:name="edu.uw.harmony.UI.Weather.WeatherFragment"-->
+<!--        android:label="@string/title_weather"-->
+<!--        tools:layout="@layout/fragment_weather" />-->
+
+<!--</navigation>-->
