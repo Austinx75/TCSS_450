@@ -1850,6 +1850,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable open_on_phone
+drawable portrait_circle
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1930,6 +1931,7 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
+id action_contactListFragment2_to_contactCardFragment
 id action_container
 id action_context_bar
 id action_divider
@@ -1975,6 +1977,8 @@ id button_registerFragment_register
 id cache_measures
 id cancel_action
 id cancel_button
+id cardView
+id card_root
 id center
 id center_horizontal
 id center_vertical
@@ -1995,6 +1999,11 @@ id clip_vertical
 id clockwise
 id collapseActionView
 id confirm_button
+id contactCardFragment
+id contact_Avatar
+id contact_card
+id contact_status
+id contact_username
 id container
 id content
 id contentPanel
@@ -2097,6 +2106,8 @@ id labelGroup
 id labeled
 id largeLabel
 id layout
+id layout_root
+id layout_wait
 id left
 id leftToRight
 id line1
@@ -2104,6 +2115,7 @@ id line3
 id linear
 id listMode
 id list_item
+id list_root
 id logInFragment
 id mainActivity
 id main_graph
@@ -2199,6 +2211,7 @@ id percent
 id pin
 id position
 id postLayout
+id progressBar
 id progress_circular
 id progress_horizontal
 id radio
@@ -2447,6 +2460,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_chat
 layout fragment_contact_card
+layout fragment_contact_list
 layout fragment_contacts
 layout fragment_home
 layout fragment_log_in
@@ -2589,6 +2603,12 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string contact_avatar
+string contact_card
+string contact_id
+string contact_name
+string contact_status
+string contact_username
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior

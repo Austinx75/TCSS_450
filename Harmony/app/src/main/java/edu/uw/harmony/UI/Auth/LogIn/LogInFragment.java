@@ -8,28 +8,20 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
-import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.toolbox.JsonObjectRequest;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import edu.uw.harmony.databinding.FragmentLogInBinding;
-import edu.uw.harmony.uitil.PasswordValidator;
+import edu.uw.harmony.util.PasswordValidator;
 
-import static edu.uw.harmony.uitil.PasswordValidator.checkExcludeWhiteSpace;
-import static edu.uw.harmony.uitil.PasswordValidator.checkPwdLength;
-import static edu.uw.harmony.uitil.PasswordValidator.checkPwdSpecialChar;
+import static edu.uw.harmony.util.PasswordValidator.checkExcludeWhiteSpace;
+import static edu.uw.harmony.util.PasswordValidator.checkPwdLength;
+import static edu.uw.harmony.util.PasswordValidator.checkPwdSpecialChar;
 
 
 /**

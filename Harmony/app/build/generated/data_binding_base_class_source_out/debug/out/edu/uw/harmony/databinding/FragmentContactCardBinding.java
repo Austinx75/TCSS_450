@@ -4,25 +4,56 @@ package edu.uw.harmony.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import edu.uw.harmony.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentContactCardBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final CardView rootView;
 
-  private FragmentContactCardBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final CardView cardRoot;
+
+  @NonNull
+  public final CardView cardView;
+
+  @NonNull
+  public final ImageView contactAvatar;
+
+  @NonNull
+  public final ConstraintLayout contactCard;
+
+  @NonNull
+  public final TextView contactStatus;
+
+  @NonNull
+  public final TextView contactUsername;
+
+  private FragmentContactCardBinding(@NonNull CardView rootView, @NonNull CardView cardRoot,
+      @NonNull CardView cardView, @NonNull ImageView contactAvatar,
+      @NonNull ConstraintLayout contactCard, @NonNull TextView contactStatus,
+      @NonNull TextView contactUsername) {
     this.rootView = rootView;
+    this.cardRoot = cardRoot;
+    this.cardView = cardView;
+    this.contactAvatar = contactAvatar;
+    this.contactCard = contactCard;
+    this.contactStatus = contactStatus;
+    this.contactUsername = contactUsername;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public CardView getRoot() {
     return rootView;
   }
 
@@ -43,10 +74,46 @@ public final class FragmentContactCardBinding implements ViewBinding {
 
   @NonNull
   public static FragmentContactCardBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      CardView cardRoot = (CardView) rootView;
 
-    return new FragmentContactCardBinding((FrameLayout) rootView);
+      id = R.id.cardView;
+      CardView cardView = rootView.findViewById(id);
+      if (cardView == null) {
+        break missingId;
+      }
+
+      id = R.id.contact_Avatar;
+      ImageView contactAvatar = rootView.findViewById(id);
+      if (contactAvatar == null) {
+        break missingId;
+      }
+
+      id = R.id.contact_card;
+      ConstraintLayout contactCard = rootView.findViewById(id);
+      if (contactCard == null) {
+        break missingId;
+      }
+
+      id = R.id.contact_status;
+      TextView contactStatus = rootView.findViewById(id);
+      if (contactStatus == null) {
+        break missingId;
+      }
+
+      id = R.id.contact_username;
+      TextView contactUsername = rootView.findViewById(id);
+      if (contactUsername == null) {
+        break missingId;
+      }
+
+      return new FragmentContactCardBinding((CardView) rootView, cardRoot, cardView, contactAvatar,
+          contactCard, contactStatus, contactUsername);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

@@ -21,6 +21,14 @@
     <string name="action_link">Full Post</string>
     <string name="title_activity_auth">AuthActivity</string>
 
+    <!-- This is for Contact Fragments-->
+    <string name="contact_avatar">Avatar</string>
+    <string name="contact_name">Name</string>
+    <string name="contact_username">Username</string>
+    <string name="contact_id">ID</string>
+    <string name="contact_status">Status</string>
+    <string name="contact_card">Card</string>
+
     <!-- This is for Chat Fragments-->
     <string name="title_chats">Messages</string>
 </resources>

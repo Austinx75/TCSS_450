@@ -11,10 +11,6 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/navigation_contact"
-        android:name="edu.uw.harmony.UI.Contacts.ContactListFragment"
-        android:label="@string/title_contact" />
-    <fragment
         android:id="@+id/navigation_chats"
         android:name="edu.uw.harmony.UI.Chat.ChatsFragment"
         android:label="Messages"
@@ -33,5 +29,21 @@
         android:name="edu.uw.harmony.UI.Weather.WeatherFragment"
         android:label="@string/title_weather"
         tools:layout="@layout/fragment_weather" />
+    <fragment
+        android:id="@+id/navigation_contact"
+        android:name="edu.uw.harmony.UI.Contacts.ContactListFragment"
+        android:label="ContactListFragment" >
+        <action
+            android:id="@+id/action_contactListFragment2_to_contactCardFragment"
+            app:destination="@id/contactCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactCardFragment"
+        android:name="edu.uw.harmony.UI.Contacts.ContactCardFragment"
+        android:label="ContactCardFragment" >
+        <argument
+            android:name="contact"
+            app:argType="edu.uw.harmony.UI.Contacts.ContactCard" />
+    </fragment>
 
 </navigation>

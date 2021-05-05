@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_contact_list.xml",
+        "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\src\\main\\res\\layout\\fragment_contact_list.xml"
+    },
+    {
         "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
         "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\src\\main\\res\\layout\\activity_main.xml"
     },

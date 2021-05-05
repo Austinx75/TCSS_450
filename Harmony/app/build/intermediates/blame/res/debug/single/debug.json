@@ -56,6 +56,10 @@
         "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\src\\main\\res\\layout\\fragment_weather.xml"
     },
     {
+        "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_contact_list.xml.flat",
+        "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\src\\main\\res\\layout\\fragment_contact_list.xml"
+    },
+    {
         "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_new_chat.xml.flat",
         "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\src\\main\\res\\layout\\fragment_new_chat.xml"
     },
@@ -130,5 +134,9 @@
     {
         "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_portrait_circle.xml.flat",
+        "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\Team9\\Harmony\\app\\src\\main\\res\\drawable\\portrait_circle.xml"
     }
 ]
