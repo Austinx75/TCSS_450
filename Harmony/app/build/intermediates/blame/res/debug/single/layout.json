@@ -1,54 +1,54 @@
 [
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_log_in.xml",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_log_in.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_contacts.xml",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_contacts.xml"
     },
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_new_chat.xml",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_new_chat.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_log_in.xml",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_log_in.xml"
     },
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_home.xml",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_home.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_contact_card.xml",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_contact_card.xml"
     },
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/activity_main.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_validation.xml",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_validation.xml"
     },
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_hourly_forecast_card.xml",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_hourly_forecast_card.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_new_chat.xml",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_new_chat.xml"
     },
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_contacts.xml",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_contacts.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_hourly_forecast_card.xml",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_hourly_forecast_card.xml"
     },
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_weather.xml",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_weather.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_register.xml",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_register.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_weekly_forecast_card.xml",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_weekly_forecast_card.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_weather.xml",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_weather.xml"
     },
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_contact_card.xml",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_contact_card.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_chat.xml",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat.xml"
     },
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_chat.xml",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_chat.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_auth.xml",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\activity_auth.xml"
     },
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_validation.xml",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_validation.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_register.xml",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_register.xml"
     },
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_auth.xml",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/activity_auth.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_weekly_forecast_card.xml",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_weekly_forecast_card.xml"
     }
 ]
