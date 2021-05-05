@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".UI.Contacts.ContactCardFragment">
+    android:layout_height="80dp"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contact_card"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@string/contact_card"
+        app:layout_constraintBottom_toTopOf="@+id/contact_username"
+        app:layout_constraintTop_toTopOf="@+id/contact_username">
 
-</FrameLayout>
+
+        <ImageView
+            android:id="@+id/contact_Avatar"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="36dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.529"
+            app:srcCompat="@drawable/man" />
+
+
+        <TextView
+            android:id="@+id/contact_username"
+            android:layout_width="183dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="84dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/contact_username"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/contact_Avatar"
+            app:layout_constraintTop_toTopOf="@+id/contact_Avatar" />
+
+        <TextView
+            android:id="@+id/contact_status"
+            android:layout_width="87dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="180dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/contact_status"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/contact_Avatar"
+            app:layout_constraintTop_toBottomOf="@+id/contact_username"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageButton
+            android:id="@+id/contact_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/contact_username"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.432"
+            app:srcCompat="@drawable/ic_baseline_chat_bubble_24" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout></androidx.cardview.widget.CardView>

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Project 5\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw210dp-v13\\values-sw210dp-v13.xml",
+            "outputFile": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw210dp-v13\\values-sw210dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hermi\\.gradle\\caches\\transforms-2\\files-2.1\\30624f31c8d8e233517d74fb3edec08e\\wear-1.0.0\\res\\values-sw210dp-v13\\values-sw210dp-v13.xml",
+                    "source": "C:\\Users\\Spectre\\.gradle\\caches\\transforms-2\\files-2.1\\30624f31c8d8e233517d74fb3edec08e\\wear-1.0.0\\res\\values-sw210dp-v13\\values-sw210dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

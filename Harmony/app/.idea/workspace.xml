@@ -1,7 +1,1149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1ad3d587-8a0d-4b87-bbef-3fe084113401" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/assetWizardSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentHourlyForecastCardBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentHourlyForecastCardBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentValidationBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentValidationBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentWeatherBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentWeatherBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentWeeklyForecastCardBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentWeeklyForecastCardBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/source/navigation-args/debug/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/navigation-args/debug/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/source/navigation-args/debug/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentArgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/navigation-args/debug/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentArgs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/source/navigation-args/debug/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentDirections.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/navigation-args/debug/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentDirections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-af.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-af.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-am.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-am.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-as.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-as.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-az.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-az.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-b+es+419.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-b+es+419.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-b+sr+Latn.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-b+sr+Latn.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-be.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-be.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-bg.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-bg.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-bn.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-bn.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-bs.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-bs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ca.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ca.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-cs.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-cs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-da.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-da.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-de.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-de.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-el.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-el.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-en-rAU.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-en-rAU.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-en-rCA.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-en-rCA.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-en-rGB.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-en-rGB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-en-rIN.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-en-rIN.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-en-rXC.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-en-rXC.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-es-rUS.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-es-rUS.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-es.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-es.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-et.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-et.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-eu.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-eu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-fa.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-fa.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-fi.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-fi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-fr-rCA.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-fr-rCA.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-fr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-gl.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-gl.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-gu.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-gu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-h320dp-port-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-h320dp-port-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-h360dp-land-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-h360dp-land-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-h480dp-land-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-h480dp-land-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-h550dp-port-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-h550dp-port-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-h600dp-port-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-h600dp-port-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-h720dp-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-h720dp-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-hdpi-v4.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-hdpi-v4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-hi.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-hi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-hr.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-hr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-hu.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-hu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-hy.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-hy.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-in.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-in.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-is.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-is.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-it.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-it.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-iw.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-iw.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ja.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ja.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ka.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ka.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-kk.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-kk.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-km.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-km.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-kn.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-kn.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ko.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ko.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ky.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ky.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-land.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-land.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-large-v4.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-large-v4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ldltr-v21.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ldltr-v21.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ldrtl-v17.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ldrtl-v17.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-lo.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-lo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-lt.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-lt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-lv.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-lv.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-mk.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-mk.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ml.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ml.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-mn.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-mn.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-mr.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-mr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ms.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ms.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-my.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-my.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-nb.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-nb.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ne.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ne.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-night-v8.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-night-v8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-nl.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-nl.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-or.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-or.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-pa.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-pa.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-pl.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-pl.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-port.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-port.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-pt-rBR.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-pt-rBR.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-pt-rPT.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-pt-rPT.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-pt.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-pt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ro.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ro.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-round-v23.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-round-v23.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ru.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-si.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-si.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sk.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sk.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sl.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sl.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-small-v4.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-small-v4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sq.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sq.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sr.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sv.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sv.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sw.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sw.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sw180dp-notround-v23.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sw180dp-notround-v23.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sw210dp-round-v23.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sw210dp-round-v23.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sw210dp-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sw210dp-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sw600dp-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-sw600dp-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ta.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ta.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-te.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-te.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-th.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-th.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-tl.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-tl.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-tr.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-tr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-uk.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-uk.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ur.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-ur.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-uz.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-uz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v16.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v16.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v17.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v17.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v18.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v18.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v21.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v21.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v22.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v22.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v23.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v23.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v24.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v24.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v25.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v25.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v26.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v26.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v28.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-v28.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-vi.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-vi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-w320dp-land-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-w320dp-land-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-w360dp-port-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-w360dp-port-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-w480dp-port-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-w480dp-port-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-w550dp-land-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-w550dp-land-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-w600dp-land-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-w600dp-land-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-watch-v20.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-watch-v20.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-watch-v21.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-watch-v21.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-xlarge-v4.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-xlarge-v4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-zh-rCN.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-zh-rCN.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-zh-rHK.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-zh-rHK.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-zh-rTW.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-zh-rTW.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-zu.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values-zu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/multi-v2/values.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/blame/res/debug/single/layout.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/blame/res/debug/single/layout.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/data_binding_base_class_log_artifact/debug/out/edu.uw.harmony-binding_classes.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/data_binding_base_class_log_artifact/debug/out/edu.uw.harmony-binding_classes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/activity_auth-layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/activity_auth-layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/activity_main-layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/activity_main-layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_chat-layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_chat-layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_contact_card-layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_contact_card-layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_contacts-layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_contacts-layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_home-layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_home-layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_hourly_forecast_card-layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_hourly_forecast_card-layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_log_in-layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_log_in-layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_new_chat-layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_new_chat-layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_register-layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_register-layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_validation-layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_validation-layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_weather-layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_weather-layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_weekly_forecast_card-layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_weekly_forecast_card-layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/dataBindingGenBaseClassesDebug/base_builder_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/dataBindingGenBaseClassesDebug/base_builder_log.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/generateSafeArgsDebug/file_mappings.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/generateSafeArgsDebug/file_mappings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_contact_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_validation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/MainActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/MainActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/Register/RegisterFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/Register/RegisterFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections$ActionRegisterFragmentToValidationFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections$ActionRegisterFragmentToValidationFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentDirections$ActionValidationFragmentToLogInFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentDirections$ActionValidationFragmentToLogInFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/NewChatFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/NewChatFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Weather/HourlyForecastRecyclerViewAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Weather/HourlyForecastRecyclerViewAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Weather/WeatherFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Weather/WeatherFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Weather/WeeklyForecastRecyclerViewAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Weather/WeeklyForecastRecyclerViewAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/ActivityMainBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/ActivityMainBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentChatBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentChatBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentContactCardBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentContactCardBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentContactListBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentContactListBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentContactsBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentContactsBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentHourlyForecastCardBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentHourlyForecastCardBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentLogInBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentLogInBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentNewChatBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentNewChatBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentRegisterBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentRegisterBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentValidationBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentValidationBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentWeatherBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentWeatherBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentWeeklyForecastCardBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentWeeklyForecastCardBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/navigation_json/debug/navigation.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/navigation_json/debug/navigation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/processed_res/debug/out/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/82c3ce468b29f81434925a208ce89fa63a02f8d508e5bb5129579dda40956f13_0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/82c3ce468b29f81434925a208ce89fa63a02f8d508e5bb5129579dda40956f13_1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/82c3ce468b29f81434925a208ce89fa63a02f8d508e5bb5129579dda40956f13_2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/82c3ce468b29f81434925a208ce89fa63a02f8d508e5bb5129579dda40956f13_3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/82c3ce468b29f81434925a208ce89fa63a02f8d508e5bb5129579dda40956f13_4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/82c3ce468b29f81434925a208ce89fa63a02f8d508e5bb5129579dda40956f13_5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/97fa525c3f12cce9cc4a1ffa8c97c77fa23247258f61fef6002c59dcbc69d8d2_0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/97fa525c3f12cce9cc4a1ffa8c97c77fa23247258f61fef6002c59dcbc69d8d2_1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/97fa525c3f12cce9cc4a1ffa8c97c77fa23247258f61fef6002c59dcbc69d8d2_10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/97fa525c3f12cce9cc4a1ffa8c97c77fa23247258f61fef6002c59dcbc69d8d2_11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/97fa525c3f12cce9cc4a1ffa8c97c77fa23247258f61fef6002c59dcbc69d8d2_2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/97fa525c3f12cce9cc4a1ffa8c97c77fa23247258f61fef6002c59dcbc69d8d2_3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/97fa525c3f12cce9cc4a1ffa8c97c77fa23247258f61fef6002c59dcbc69d8d2_4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/97fa525c3f12cce9cc4a1ffa8c97c77fa23247258f61fef6002c59dcbc69d8d2_5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/97fa525c3f12cce9cc4a1ffa8c97c77fa23247258f61fef6002c59dcbc69d8d2_6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/97fa525c3f12cce9cc4a1ffa8c97c77fa23247258f61fef6002c59dcbc69d8d2_7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/97fa525c3f12cce9cc4a1ffa8c97c77fa23247258f61fef6002c59dcbc69d8d2_8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/97fa525c3f12cce9cc4a1ffa8c97c77fa23247258f61fef6002c59dcbc69d8d2_9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/MainActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/MainActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Register/RegisterFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Register/RegisterFragment.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections$ActionRegisterFragmentToValidationFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections$ActionRegisterFragmentToValidationFragment.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Validation/ValidationFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Validation/ValidationFragment.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentArgs$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentArgs$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentArgs$Builder.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentArgs$Builder.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentArgs.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentArgs.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentDirections$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentDirections$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentDirections$ActionValidationFragmentToLogInFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentDirections$ActionValidationFragmentToLogInFragment.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentDirections.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Validation/ValidationFragmentDirections.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/NewChatFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/NewChatFragment.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/HourlyForecastItem$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/HourlyForecastItem$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/HourlyForecastItem$Builder.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/HourlyForecastItem$Builder.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/HourlyForecastItem.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/HourlyForecastItem.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/HourlyForecastItemGenerator.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/HourlyForecastItemGenerator.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/HourlyForecastRecyclerViewAdapter$HourlyForecastViewHolder.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/HourlyForecastRecyclerViewAdapter$HourlyForecastViewHolder.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/HourlyForecastRecyclerViewAdapter.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/HourlyForecastRecyclerViewAdapter.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeatherFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeatherFragment.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeeklyForecastItem$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeeklyForecastItem$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeeklyForecastItem$Builder.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeeklyForecastItem$Builder.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeeklyForecastItem.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeeklyForecastItem.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeeklyForecastItemGenerator.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeeklyForecastItemGenerator.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeeklyForecastRecyclerViewAdapter$WeeklyForecastViewHolder.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeeklyForecastRecyclerViewAdapter$WeeklyForecastViewHolder.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeeklyForecastRecyclerViewAdapter.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeeklyForecastRecyclerViewAdapter.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/ActivityMainBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/ActivityMainBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentChatBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentChatBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentContactCardBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentContactCardBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentContactListBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentContactListBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentContactsBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentContactsBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentHourlyForecastCardBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentHourlyForecastCardBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentLogInBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentLogInBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentNewChatBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentNewChatBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentRegisterBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentRegisterBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentValidationBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentValidationBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentWeatherBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentWeatherBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentWeeklyForecastCardBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentWeeklyForecastCardBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/drawable_ic_weather_sunny.png.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/drawable_ic_weather_sunny.png.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout_fragment_contact_card.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout_fragment_contact_card.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout_fragment_hourly_forecast_card.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout_fragment_hourly_forecast_card.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout_fragment_register.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout_fragment_register.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout_fragment_validation.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout_fragment_validation.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout_fragment_weather.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout_fragment_weather.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout_fragment_weekly_forecast_card.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout_fragment_weekly_forecast_card.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/navigation_auth_nav_graph.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/navigation_auth_nav_graph.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/values_values.arsc.flat" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/values_values.arsc.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_contact_card.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_contact_card.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/ActivityAuthBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/ActivityMainBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentChatBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentChatCardBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentChatListBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentChatPostBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentContactCardBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentContactsBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentHomeBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentLogInBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentNewChatBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentRegisterBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/data_binding_base_class_source_out/debug/out/edu/uw/harmony/databinding/FragmentWeatherBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/source/buildConfig/debug/edu/uw/harmony/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/source/navigation-args/debug/edu/uw/harmony/MainActivityArgs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/source/navigation-args/debug/edu/uw/harmony/UI/Auth/LogIn/LogInFragmentArgs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/source/navigation-args/debug/edu/uw/harmony/UI/Auth/LogIn/LogInFragmentDirections.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/source/navigation-args/debug/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/source/navigation-args/debug/edu/uw/harmony/UI/Chat/ChatListFragmentDirections.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/source/navigation-args/debug/edu/uw/harmony/UI/Chat/ChatPostFragmentArgs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/generated/source/navigation-args/debug/edu/uw/harmony/UI/Chat/ChatsFragmentDirections.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/annotation_processor_list/debug/annotationProcessors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/debug.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-af.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-am.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-as.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-az.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-b+es+419.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-b+sr+Latn.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-be.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-bg.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-bn.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-bs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ca.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-cs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-da.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-de.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-el.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-en-rAU.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-en-rCA.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-en-rGB.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-en-rIN.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-en-rXC.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-es-rUS.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-es.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-et.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-eu.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-fa.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-fi.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-fr-rCA.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-fr.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-gl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-gu.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-h320dp-port-v13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-h360dp-land-v13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-h480dp-land-v13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-h550dp-port-v13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-h600dp-port-v13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-h720dp-v13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-hdpi-v4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-hi.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-hr.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-hu.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-hy.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-in.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-is.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-it.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-iw.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ja.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ka.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-kk.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-km.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-kn.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ko.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ky.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-land.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-large-v4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ldltr-v21.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ldrtl-v17.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-lo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-lt.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-lv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-mk.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ml.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-mn.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-mr.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ms.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-my.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-nb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ne.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-night-v8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-nl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-or.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-pa.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-pl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-port.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-pt-rBR.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-pt-rPT.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-pt.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ro.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-round-v23.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ru.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-si.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-sk.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-sl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-small-v4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-sq.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-sr.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-sv.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-sw.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-sw180dp-notround-v23.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-sw210dp-round-v23.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-sw210dp-v13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-sw600dp-v13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ta.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-te.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-th.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-tl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-tr.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-uk.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-ur.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-uz.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-v16.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-v17.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-v18.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-v21.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-v22.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-v23.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-v24.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-v25.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-v26.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-v28.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-vi.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-w320dp-land-v13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-w360dp-port-v13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-w480dp-port-v13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-w550dp-land-v13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-w600dp-land-v13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-watch-v20.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-watch-v21.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-xlarge-v4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-zh-rCN.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-zh-rHK.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-zh-rTW.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values-zu.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/multi-v2/values.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/blame/res/debug/single/layout.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/bundle_manifest/debug/bundle-manifest/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/bundle_manifest/debug/bundle-manifest/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/compatible_screen_manifest/debug/out/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/data_binding_base_class_log_artifact/debug/out/edu.uw.harmony-binding_classes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/data_binding_layout_info_type_merge/debug/out/activity_auth-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/data_binding_layout_info_type_merge/debug/out/activity_main-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_chat-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_chat_card-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_chat_list-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_chat_post-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_contact_card-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_contacts-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_home-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_log_in-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_new_chat-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_register-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_weather-layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/dataBindingGenBaseClassesDebug/base_builder_log.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/05gIAknjdAWHEiZWjlPZPcFYWEk=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/0Nsfx_FLGyqiMTKhZW9fvdHDzAE=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/0wKySJWSmp3DSmMGe0flW7hYITk=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/4COS+itqRd2+wI25Lpz6EFipmE4=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/4NqX+FHfm+C4s9yLsQzcvtTfonI=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/52v0A9KL0KEyHJ4JFS3DqXIe0Do=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/5fWrbL4FzpT8p2cbXkvf0rcwc8w=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/6EWLt39cIiMzZw+C9o6V3Tzd6j8=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/7VQL6Gxy45z+7NHlmL0KMMsMz50=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/8drO5o7ktpZXqxYm5Qwq2YKBbso=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/AhupNYF2+Q3npJhY7r1jyzWJZlQ=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/BCCLbrCHJ9QVWcID5Et+cgZPEaE=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/DmUvry0m0iTWmHY5vGdThF8h3TU=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/FMTRpJCDInxEirXbmotNW4Lf5ws=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/FiYZoW4LFn5qUt_UT_oeN22DCHY=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/FujGK9Zxh96VcEW+8KhEf81yg7Y=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/Gtycnq04+edMxnr0B78cqKAtUQg=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/IbV7ochle1GtIVPjbkupxJhiCy8=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/IlVviDirq6ja_ICTJ2Wm68WzpEc=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/Jc1l+Qr+Ywz8sUgiVLU6jqPj_D0=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/KYHtJe5CyZXcu8RaB5rfhfgOoB8=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/KtL67EotbvudYCJDXqaa_YWvs5U=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/N6ainMsNhwyJQhOwlDm8l82XIYY=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/NuEAyIVHhUicYeEAEVeN3PGqipA=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/PExTdPr1JORRKrn44P1mDG0VGhw=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/PNLT46RMXgVmv5snE5V04d3t070=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/SAtFPsPABBB3TjYpOu8hTQll_do=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/TWIL78t4WD4Z9avhjO8sx6FK6zQ=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/UTWhGV+djqvD+T_gYRtgFjGMs_U=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/X6PI78ff4PLYOaNLcagw9jSXlzw=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/XZEGmR6ae7FbetKDaOu2sVDKCOU=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/YlhfLM8t0pGmpCaEIa+OZVTWbHg=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/_unEH6HefjJPYmg_VZOxdniP3UQ=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/aBGohoUc3vUs_GPcFsfoKAnDx8A=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/ajFPAdINgR80At+N5Lxrj2RRvXc=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/d7B2yPcGc0rD_+HguJbIYjd2FDE=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/dIYX5HGY1X+nesq+UwNs1EvvXTY=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/dpJZ83nSEdIenIMARRb1sEI+cgk=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/e_ZV3bNLTulLZ8G4VkUEENLWI7A=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/gHLafc_07O8K7mHa6SR2b2_xrOQ=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/gLlenSY8mN2mYKuGfKs0tgBjkhM=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/iFl4rdlrCTawIHySyy1Klx0FLRg=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/jCrGuVdTMjvcxmTjgQgrhW1LEhg=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/jeIg2_ypXW6tmOli2ut86ALAsaU=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/lPzbdOYlRcDc3yunqS1LIlfvHjw=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/lWztmza+vP+jhjBXB8wu+HwKiSo=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/lze1+43I85BbL3rv6rMD79iB3vA=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/mbP6c+kijjGfFrpCdFPuTL+uqik=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/nQBL0R6ibdFZi9kOmT9G42UJHEM=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/oIHtyRYMiR0c6miHR1kdBmILUMo=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/oq75FGZ7VNC1DWWjPaHolZWdB+s=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/pByuHfFBbyrpqr_1zCI1tgH7p0M=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/pDuNsUyc1aWh8HRUOyJKk9SJIG8=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/pTg3H_VWKVx8I07dVTlSt622Sz8=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/s3JogBaXd7bTV+xWaXERQiVa6ik=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/twlWT+FkY_03kp+mWZL_UlaYOv0=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/tzPT88D5JhmmGgz67kWSHF3U+vo=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/xp7hPtNT4OJJ+eFMUvEc_NOwZ5o=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/zigWfp4s3nsKK5d+2cCxIPWit_I=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/merge-state" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/05gIAknjdAWHEiZWjlPZPcFYWEk=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/0Nsfx_FLGyqiMTKhZW9fvdHDzAE=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/0wKySJWSmp3DSmMGe0flW7hYITk=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/4COS+itqRd2+wI25Lpz6EFipmE4=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/4NqX+FHfm+C4s9yLsQzcvtTfonI=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/52v0A9KL0KEyHJ4JFS3DqXIe0Do=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/5fWrbL4FzpT8p2cbXkvf0rcwc8w=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/6EWLt39cIiMzZw+C9o6V3Tzd6j8=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/7VQL6Gxy45z+7NHlmL0KMMsMz50=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/8drO5o7ktpZXqxYm5Qwq2YKBbso=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/AhupNYF2+Q3npJhY7r1jyzWJZlQ=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/BCCLbrCHJ9QVWcID5Et+cgZPEaE=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/DmUvry0m0iTWmHY5vGdThF8h3TU=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/FMTRpJCDInxEirXbmotNW4Lf5ws=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/FiYZoW4LFn5qUt_UT_oeN22DCHY=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/FujGK9Zxh96VcEW+8KhEf81yg7Y=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/Gtycnq04+edMxnr0B78cqKAtUQg=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/IbV7ochle1GtIVPjbkupxJhiCy8=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/IlVviDirq6ja_ICTJ2Wm68WzpEc=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/Jc1l+Qr+Ywz8sUgiVLU6jqPj_D0=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/KYHtJe5CyZXcu8RaB5rfhfgOoB8=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/KtL67EotbvudYCJDXqaa_YWvs5U=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/N6ainMsNhwyJQhOwlDm8l82XIYY=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/NuEAyIVHhUicYeEAEVeN3PGqipA=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/PExTdPr1JORRKrn44P1mDG0VGhw=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/PNLT46RMXgVmv5snE5V04d3t070=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/SAtFPsPABBB3TjYpOu8hTQll_do=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/TWIL78t4WD4Z9avhjO8sx6FK6zQ=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/UTWhGV+djqvD+T_gYRtgFjGMs_U=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/X6PI78ff4PLYOaNLcagw9jSXlzw=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/XZEGmR6ae7FbetKDaOu2sVDKCOU=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/YlhfLM8t0pGmpCaEIa+OZVTWbHg=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/_unEH6HefjJPYmg_VZOxdniP3UQ=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/aBGohoUc3vUs_GPcFsfoKAnDx8A=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/ajFPAdINgR80At+N5Lxrj2RRvXc=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/d7B2yPcGc0rD_+HguJbIYjd2FDE=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/dIYX5HGY1X+nesq+UwNs1EvvXTY=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/dpJZ83nSEdIenIMARRb1sEI+cgk=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/e_ZV3bNLTulLZ8G4VkUEENLWI7A=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/gHLafc_07O8K7mHa6SR2b2_xrOQ=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/gLlenSY8mN2mYKuGfKs0tgBjkhM=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/iFl4rdlrCTawIHySyy1Klx0FLRg=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/jCrGuVdTMjvcxmTjgQgrhW1LEhg=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/jeIg2_ypXW6tmOli2ut86ALAsaU=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/lPzbdOYlRcDc3yunqS1LIlfvHjw=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/lWztmza+vP+jhjBXB8wu+HwKiSo=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/lze1+43I85BbL3rv6rMD79iB3vA=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/mbP6c+kijjGfFrpCdFPuTL+uqik=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/nQBL0R6ibdFZi9kOmT9G42UJHEM=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/oIHtyRYMiR0c6miHR1kdBmILUMo=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/oq75FGZ7VNC1DWWjPaHolZWdB+s=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/pByuHfFBbyrpqr_1zCI1tgH7p0M=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/pDuNsUyc1aWh8HRUOyJKk9SJIG8=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/pTg3H_VWKVx8I07dVTlSt622Sz8=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/s3JogBaXd7bTV+xWaXERQiVa6ik=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/twlWT+FkY_03kp+mWZL_UlaYOv0=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/tzPT88D5JhmmGgz67kWSHF3U+vo=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/xp7hPtNT4OJJ+eFMUvEc_NOwZ5o=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/zigWfp4s3nsKK5d+2cCxIPWit_I=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/generateSafeArgsDebug/file_mappings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-af/values-af.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-am/values-am.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ar/values-ar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-as/values-as.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-az/values-az.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-b+es+419/values-b+es+419.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-b+sr+Latn/values-b+sr+Latn.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-be/values-be.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bg/values-bg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bn/values-bn.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bs/values-bs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ca/values-ca.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-cs/values-cs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-da/values-da.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-de/values-de.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-el/values-el.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rCA/values-en-rCA.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rXC/values-en-rXC.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es/values-es.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-et/values-et.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-eu/values-eu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fa/values-fa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fi/values-fi.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr-rCA/values-fr-rCA.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr/values-fr.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-gl/values-gl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-gu/values-gu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h320dp-port-v13/values-h320dp-port-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h360dp-land-v13/values-h360dp-land-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h480dp-land-v13/values-h480dp-land-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h550dp-port-v13/values-h550dp-port-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h600dp-port-v13/values-h600dp-port-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hi/values-hi.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hr/values-hr.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hu/values-hu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hy/values-hy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-in/values-in.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-is/values-is.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-it/values-it.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-iw/values-iw.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ja/values-ja.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ka/values-ka.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kk/values-kk.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kn/values-kn.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ko/values-ko.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ky/values-ky.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldrtl-v17/values-ldrtl-v17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-lo/values-lo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-lt/values-lt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-lv/values-lv.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mk/values-mk.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ml/values-ml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mn/values-mn.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mr/values-mr.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ms/values-ms.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-my/values-my.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-nb/values-nb.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ne/values-ne.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-nl/values-nl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-or/values-or.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pa/values-pa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pl/values-pl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rPT/values-pt-rPT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt/values-pt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ro/values-ro.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-round-v23/values-round-v23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ru/values-ru.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-si/values-si.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sk/values-sk.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sl/values-sl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-small-v4/values-small-v4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sq/values-sq.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sr/values-sr.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sv/values-sv.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw/values-sw.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw180dp-notround-v23/values-sw180dp-notround-v23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw210dp-round-v23/values-sw210dp-round-v23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw210dp-v13/values-sw210dp-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ta/values-ta.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-te/values-te.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-th/values-th.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-tl/values-tl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-tr/values-tr.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uk/values-uk.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ur/values-ur.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uz/values-uz.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v17/values-v17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v22/values-v22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v25/values-v25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v28/values-v28.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w320dp-land-v13/values-w320dp-land-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w360dp-port-v13/values-w360dp-port-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w480dp-port-v13/values-w480dp-port-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w550dp-land-v13/values-w550dp-land-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w600dp-land-v13/values-w600dp-land-v13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v21/values-watch-v21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xlarge-v4/values-xlarge-v4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zu/values-zu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_auth.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_chat.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_chat_card.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_chat_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_chat_post.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_contact_card.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_contacts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_home.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_log_in.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_new_chat.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_register.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_weather.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/instant_app_manifest/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/instant_app_manifest/debug/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/AuthActivity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/BuildConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/MainActivity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/MainActivityArgs$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/MainActivityArgs$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/MainActivityArgs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/LogIn/LogInFragment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/LogIn/LogInFragmentArgs$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/LogIn/LogInFragmentArgs$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/LogIn/LogInFragmentArgs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/LogIn/LogInFragmentDirections$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/LogIn/LogInFragmentDirections$ActionLogInFragmentToMainActivity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/LogIn/LogInFragmentDirections.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/LogIn/LogInViewModel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/LogIn/LogInViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/Register/RegisterFragment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections$ActionRegisterFragmentToLogInFragment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Auth/Register/RegisterViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatListFragment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatListFragmentDirections$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatListFragmentDirections$ActionChatListFragmentToChatPostFragment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatListFragmentDirections.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatPost$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatPost$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatPost.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatPostFragment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatPostFragmentArgs$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatPostFragmentArgs$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatPostFragmentArgs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatRecyclerViewAdapter$ChatViewHolder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatRecyclerViewAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatsFragment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/ChatsFragmentDirections.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Chat/NewChatFragment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Contacts/ContactCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Contacts/ContactCardFragment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Contacts/ContactGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Contacts/ContactListFragment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Contacts/ContactListViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Contacts/ContactRecyclerViewAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Home/HomeFragment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/Weather/WeatherFragment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/io/RequestQueueSingleton$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/io/RequestQueueSingleton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/model/UserInfoViewModel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/model/UserInfoViewModel$UserInfoViewModelFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/UI/model/UserInfoViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/ActivityAuthBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/ActivityMainBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentChatBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentChatCardBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentChatListBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentChatPostBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentContactCardBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentContactsBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentHomeBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentLogInBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentNewChatBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentRegisterBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/javac/debug/classes/edu/uw/harmony/databinding/FragmentWeatherBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/merged_java_res/debug/out.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/merged_manifests/debug/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/metadata_application_id/debug/application-id.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/metadata_feature_manifest/debug/metadata-feature/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/navigation_json/debug/navigation.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/processed_res/debug/out/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/0d488b53d735471c8d1db65021b369c117ac53955a3e2e16adcc8f7b60cabdf7_0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/0d488b53d735471c8d1db65021b369c117ac53955a3e2e16adcc8f7b60cabdf7_1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/0d488b53d735471c8d1db65021b369c117ac53955a3e2e16adcc8f7b60cabdf7_2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/0d488b53d735471c8d1db65021b369c117ac53955a3e2e16adcc8f7b60cabdf7_3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/AuthActivity.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/BuildConfig.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/MainActivity.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/MainActivityArgs$1.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/MainActivityArgs$Builder.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/MainActivityArgs.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/LogIn/LogInFragment.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/LogIn/LogInFragmentArgs$1.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/LogIn/LogInFragmentArgs$Builder.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/LogIn/LogInFragmentArgs.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/LogIn/LogInFragmentDirections$1.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/LogIn/LogInFragmentDirections$ActionLogInFragmentToMainActivity.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/LogIn/LogInFragmentDirections.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/LogIn/LogInViewModel$1.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/LogIn/LogInViewModel.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Register/RegisterFragment.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections$1.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections$ActionRegisterFragmentToLogInFragment.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Register/RegisterFragmentDirections.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Auth/Register/RegisterViewModel.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatGenerator.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatListFragment.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatListFragmentDirections$1.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatListFragmentDirections$ActionChatListFragmentToChatPostFragment.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatListFragmentDirections.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatPost$1.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatPost$Builder.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatPost.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatPostFragment.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatPostFragmentArgs$1.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatPostFragmentArgs$Builder.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatPostFragmentArgs.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatRecyclerViewAdapter$ChatViewHolder.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatRecyclerViewAdapter.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatsFragment.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/ChatsFragmentDirections.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Chat/NewChatFragment.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Contacts/ContactCard.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Contacts/ContactCardFragment.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Contacts/ContactGenerator.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Contacts/ContactListFragment.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Contacts/ContactListViewModel.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Contacts/ContactRecyclerViewAdapter.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Home/HomeFragment.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/Weather/WeatherFragment.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/io/RequestQueueSingleton$1.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/io/RequestQueueSingleton.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/model/UserInfoViewModel$1.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/model/UserInfoViewModel$UserInfoViewModelFactory.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/UI/model/UserInfoViewModel.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/ActivityAuthBinding.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/ActivityMainBinding.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentChatBinding.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentChatCardBinding.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentChatListBinding.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentChatPostBinding.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentContactCardBinding.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentContactsBinding.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentHomeBinding.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentLogInBinding.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentNewChatBinding.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentRegisterBinding.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/project_dex_archive/debug/out/edu/uw/harmony/databinding/FragmentWeatherBinding.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/drawable-v24_ic_launcher_foreground.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/drawable_ic_baseline_group_add_24.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/drawable_ic_baseline_wb_sunny_24.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/drawable_ic_chats_black_24dp.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/drawable_ic_contact_black_24dp.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/drawable_ic_current_face_chat_24dp.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/drawable_ic_current_person_chat_24dp.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/drawable_ic_home_black_24dp.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/drawable_ic_less_grey_24dp.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/drawable_ic_more_grey_24dp.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/drawable_ic_sendchat_black_24dp.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/layout_activity_auth.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/layout_fragment_chat.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/layout_fragment_chat_card.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/layout_fragment_chat_list.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/layout_fragment_chat_post.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/layout_fragment_contact_card.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/layout_fragment_contacts.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/layout_fragment_home.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/layout_fragment_log_in.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/layout_fragment_new_chat.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/layout_fragment_register.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/layout_fragment_weather.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/menu_bottom_nav_menu.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/navigation_auth_nav_graph.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/navigation_main_graph.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-af_values-af.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-am_values-am.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ar_values-ar.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-as_values-as.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-az_values-az.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-b+es+419_values-b+es+419.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-b+sr+Latn_values-b+sr+Latn.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-be_values-be.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-bg_values-bg.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-bn_values-bn.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-bs_values-bs.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ca_values-ca.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-cs_values-cs.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-da_values-da.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-de_values-de.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-el_values-el.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-en-rAU_values-en-rAU.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-en-rCA_values-en-rCA.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-en-rGB_values-en-rGB.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-en-rIN_values-en-rIN.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-en-rXC_values-en-rXC.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-es-rUS_values-es-rUS.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-es_values-es.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-et_values-et.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-eu_values-eu.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-fa_values-fa.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-fi_values-fi.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-fr-rCA_values-fr-rCA.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-fr_values-fr.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-gl_values-gl.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-gu_values-gu.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-h320dp-port-v13_values-h320dp-port-v13.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-h360dp-land-v13_values-h360dp-land-v13.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-h480dp-land-v13_values-h480dp-land-v13.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-h550dp-port-v13_values-h550dp-port-v13.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-h600dp-port-v13_values-h600dp-port-v13.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-h720dp-v13_values-h720dp-v13.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-hdpi-v4_values-hdpi-v4.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-hi_values-hi.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-hr_values-hr.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-hu_values-hu.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-hy_values-hy.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-in_values-in.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-is_values-is.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-it_values-it.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-iw_values-iw.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ja_values-ja.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ka_values-ka.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-kk_values-kk.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-km_values-km.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-kn_values-kn.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ko_values-ko.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ky_values-ky.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-land_values-land.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-large-v4_values-large-v4.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ldltr-v21_values-ldltr-v21.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ldrtl-v17_values-ldrtl-v17.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-lo_values-lo.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-lt_values-lt.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-lv_values-lv.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-mk_values-mk.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ml_values-ml.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-mn_values-mn.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-mr_values-mr.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ms_values-ms.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-my_values-my.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-nb_values-nb.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ne_values-ne.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-night-v8_values-night-v8.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-nl_values-nl.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-or_values-or.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-pa_values-pa.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-pl_values-pl.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-port_values-port.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-pt-rBR_values-pt-rBR.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-pt-rPT_values-pt-rPT.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-pt_values-pt.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ro_values-ro.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-round-v23_values-round-v23.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ru_values-ru.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-si_values-si.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-sk_values-sk.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-sl_values-sl.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-small-v4_values-small-v4.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-sq_values-sq.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-sr_values-sr.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-sv_values-sv.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-sw180dp-notround-v23_values-sw180dp-notround-v23.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-sw210dp-round-v23_values-sw210dp-round-v23.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-sw210dp-v13_values-sw210dp-v13.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-sw600dp-v13_values-sw600dp-v13.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-sw_values-sw.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ta_values-ta.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-te_values-te.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-th_values-th.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-tl_values-tl.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-tr_values-tr.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-uk_values-uk.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-ur_values-ur.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-uz_values-uz.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-v16_values-v16.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-v17_values-v17.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-v18_values-v18.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-v21_values-v21.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-v22_values-v22.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-v23_values-v23.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-v24_values-v24.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-v25_values-v25.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-v26_values-v26.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-v28_values-v28.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-vi_values-vi.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-w320dp-land-v13_values-w320dp-land-v13.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-w360dp-port-v13_values-w360dp-port-v13.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-w480dp-port-v13_values-w480dp-port-v13.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-w550dp-land-v13_values-w550dp-land-v13.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-w600dp-land-v13_values-w600dp-land-v13.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-watch-v20_values-watch-v20.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-watch-v21_values-watch-v21.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-xlarge-v4_values-xlarge-v4.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-zh-rCN_values-zh-rCN.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-zh-rHK_values-zh-rHK.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-zh-rTW_values-zh-rTW.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values-zu_values-zu.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/res/merged/debug/values_values.arsc.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/outputs/apk/debug/output-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/local.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/androidTest/java/edu/uw/harmony/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/AuthActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Auth/LogIn/LogInFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Auth/LogIn/LogInViewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Auth/Register/RegisterFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Auth/Register/RegisterViewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Chat/ChatGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Chat/ChatListFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Chat/ChatPost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Chat/ChatPostFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Chat/ChatRecyclerViewAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Chat/ChatsFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Chat/NewChatFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Contacts/ContactCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Contacts/ContactCardFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Contacts/ContactGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Contacts/ContactListFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Contacts/ContactListViewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Contacts/ContactRecyclerViewAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Home/HomeFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/Weather/WeatherFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/io/RequestQueueSingleton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/java/edu/uw/harmony/UI/model/UserInfoViewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/drawable/ic_baseline_group_add_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/drawable/ic_baseline_wb_sunny_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/drawable/ic_chats_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/drawable/ic_contact_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/drawable/ic_current_face_chat_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/drawable/ic_current_person_chat_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/drawable/ic_home_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/drawable/ic_less_grey_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/drawable/ic_more_grey_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/drawable/ic_sendchat_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/layout/activity_auth.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/layout/fragment_chat.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/layout/fragment_chat_card.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/layout/fragment_chat_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/layout/fragment_chat_post.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/layout/fragment_contact_card.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/layout/fragment_contacts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/layout/fragment_home.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/layout/fragment_log_in.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/layout/fragment_new_chat.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/layout/fragment_register.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/layout/fragment_weather.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/menu/bottom_nav_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/navigation/auth_nav_graph.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/navigation/main_graph.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/values-round/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/values/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/src/test/java/edu/uw/harmony/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1s6whxfIcmRvR6JuxBpgmENESzG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="android.sdk.path" value="E:/Program Files/Android/SDK" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../../../../../../../Program Files/Android/SDK" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ad3d587-8a0d-4b87-bbef-3fe084113401" name="Default Changelist" comment="" />
+      <created>1620206469674</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620206469674</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2631" y="303" key="FileChooserDialogImpl" timestamp="1620206519086">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2631" y="303" key="FileChooserDialogImpl/1920.0.1920.1080/3840.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1620206519086" />
   </component>
 </project>

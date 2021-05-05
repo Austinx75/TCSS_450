@@ -1787,6 +1787,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable boy
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1795,6 +1796,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable contact_barista_512
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1803,8 +1805,10 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable generic_confirmation
 drawable generic_confirmation_animation
+drawable hacker
 drawable ic_add_new_chat2_24dp
 drawable ic_add_new_chat_24dp
+drawable ic_baseline_chat_bubble_24
 drawable ic_baseline_group_add_24
 drawable ic_baseline_wb_sunny_24
 drawable ic_chats_black_24dp
@@ -1822,6 +1826,10 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_send_new_chat_24dp
 drawable ic_sun_black_24dp
 drawable ic_weather_sunny
+drawable kitty
+drawable man
+drawable man_1
+drawable man_2
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1855,9 +1863,13 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable open_on_phone
+drawable portrait_circle
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable user
+drawable woman
+drawable woman_1
 drawable ws_action_item_background
 drawable ws_action_item_icon_background
 drawable ws_full_sad
@@ -1949,6 +1961,7 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_navigation_chat_list_to_navigation_new_chat
 id action_navigation_chats_to_newChatFragment
+id action_navigation_contact_to_contactCardFragment
 id action_registerFragment_to_validationFragment
 id action_text
 id action_validationFragment_to_logInFragment
@@ -1985,6 +1998,7 @@ id button_validationFragment_validate
 id cache_measures
 id cancel_action
 id cancel_button
+id cardView
 id card_root
 id center
 id center_horizontal
@@ -2006,6 +2020,12 @@ id clip_vertical
 id clockwise
 id collapseActionView
 id confirm_button
+id contactCardFragment
+id contact_Avatar
+id contact_card
+id contact_message
+id contact_status
+id contact_username
 id container
 id content
 id contentPanel
@@ -2119,6 +2139,7 @@ id largeLabel
 id layout
 id layout_inner
 id layout_root
+id layout_wait
 id left
 id leftToRight
 id line1
@@ -2224,6 +2245,7 @@ id percent
 id pin
 id position
 id postLayout
+id progressBar
 id progress_circular
 id progress_horizontal
 id radio
@@ -2489,6 +2511,7 @@ layout fragment_chat_card
 layout fragment_chat_list
 layout fragment_chat_post
 layout fragment_contact_card
+layout fragment_contact_list
 layout fragment_contacts
 layout fragment_home
 layout fragment_hourly_forecast_card
@@ -2635,6 +2658,13 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string contact_avatar
+string contact_card
+string contact_id
+string contact_massage
+string contact_name
+string contact_status
+string contact_username
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior

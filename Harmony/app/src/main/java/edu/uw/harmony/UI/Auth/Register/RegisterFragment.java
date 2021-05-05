@@ -18,15 +18,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.uw.harmony.databinding.FragmentRegisterBinding;
-import edu.uw.harmony.uitil.PasswordValidator;
+import edu.uw.harmony.util.PasswordValidator;
 
-import static edu.uw.harmony.uitil.PasswordValidator.checkClientPredicate;
-import static edu.uw.harmony.uitil.PasswordValidator.checkExcludeWhiteSpace;
-import static edu.uw.harmony.uitil.PasswordValidator.checkPwdDigit;
-import static edu.uw.harmony.uitil.PasswordValidator.checkPwdLength;
-import static edu.uw.harmony.uitil.PasswordValidator.checkPwdLowerCase;
-import static edu.uw.harmony.uitil.PasswordValidator.checkPwdSpecialChar;
-import static edu.uw.harmony.uitil.PasswordValidator.checkPwdUpperCase;
+import static edu.uw.harmony.util.PasswordValidator.checkClientPredicate;
+import static edu.uw.harmony.util.PasswordValidator.checkExcludeWhiteSpace;
+import static edu.uw.harmony.util.PasswordValidator.checkPwdDigit;
+import static edu.uw.harmony.util.PasswordValidator.checkPwdLength;
+import static edu.uw.harmony.util.PasswordValidator.checkPwdLowerCase;
+import static edu.uw.harmony.util.PasswordValidator.checkPwdSpecialChar;
+import static edu.uw.harmony.util.PasswordValidator.checkPwdUpperCase;
 
 
 /**
