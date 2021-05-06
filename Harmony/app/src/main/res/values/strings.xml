@@ -38,15 +38,6 @@
 
     <!-- This is for Chat Fragments-->
 
-
-<<<<<<< HEAD
-    <!--    Auth Validation-->
-    <string name="text_validation">We sent a verification email to your
-        registered email, please verify it.</string>
-    <string name="button_validation_validate">Continue</string>
-
-=======
->>>>>>> 1750edb181eab364367e5923f3d2ce979b6a4c9e
     <!-- This chat recyvlerviews -->
     <string name="keys_json_blogs_response">response</string>
     <string name="keys_json_blogs_data">data</string>
