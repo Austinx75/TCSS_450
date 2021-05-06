@@ -25,7 +25,9 @@ import java.util.Objects;
 
 import edu.uw.harmony.UI.io.RequestQueueSingleton;
 
-
+/**
+ * This class is used to connect to our backend to retrieve login information.
+ */
 public class LogInViewModel extends AndroidViewModel {
 
     private MutableLiveData<JSONObject> mResponse;
