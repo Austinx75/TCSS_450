@@ -6,6 +6,14 @@ import java.util.Random;
 
 import edu.uw.harmony.R;
 
+/**
+ * This class is used to create Sample Contacts and is currently under development.
+ * This will be changed to grabbing data from database later on.
+ *
+ * @author Jack Lin
+ * @version 1.0
+ */
+
 public class ContactGenerator {
     private static final ContactCard[] CONTACTS;
     public static final int COUNT = 20;

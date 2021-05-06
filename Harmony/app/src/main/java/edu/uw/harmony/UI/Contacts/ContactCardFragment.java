@@ -23,6 +23,13 @@ import edu.uw.harmony.UI.Chat.ChatsFragmentDirections;
 import edu.uw.harmony.databinding.FragmentContactCardBinding;
 import edu.uw.harmony.databinding.FragmentLogInBinding;
 
+/**
+ * This is a Fragment of a single contact card instance.
+ *
+ * @author Jack Lin
+ * @version 1.0
+ */
+
 public class ContactCardFragment extends Fragment {
     private FragmentContactCardBinding binding;
 
@@ -38,7 +45,7 @@ public class ContactCardFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ContactCardFragmentArgs args = ContactCardFragmentArgs.fromBundle(getArguments());
-        FragmentContactCardBinding binding = FragmentContactCardBinding.bind(getView());
+        binding = FragmentContactCardBinding.bind(getView());
         binding.contactCard.setOnClickListener(button ->
                 Navigation.findNavController(getView()).navigate(
                         ContactListFragmentDirections.actionNavigationContactToContactFragment(binding.contactUsername.getText().toString(),  binding.contactStatus.getText().toString())));

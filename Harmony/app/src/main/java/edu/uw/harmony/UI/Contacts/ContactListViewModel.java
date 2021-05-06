@@ -5,8 +5,8 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -15,8 +15,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -25,7 +23,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.IntFunction;
 
-import edu.uw.harmony.R;
+/**
+ * This is a view model for the ContactListFragment. Most of web implementation will
+ * be used in later versions.
+ *
+ * @author Jack Lin
+ * @version 1.0
+ */
 
 public class ContactListViewModel extends AndroidViewModel {
     private MutableLiveData<List<ContactCard>> mContactList;
