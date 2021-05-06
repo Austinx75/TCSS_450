@@ -20,6 +20,12 @@ import edu.uw.harmony.databinding.FragmentChatBinding;
 import edu.uw.harmony.databinding.FragmentContactBinding;
 import edu.uw.harmony.databinding.FragmentContactCardBinding;
 
+/**
+ * This is a Fragment of a expanded contact card instance.
+ *
+ * @author Jack Lin
+ * @version 1.0
+ */
 
 public class ContactFragment extends Fragment {
 

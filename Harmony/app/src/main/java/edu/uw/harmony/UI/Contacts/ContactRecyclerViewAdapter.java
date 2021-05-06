@@ -1,13 +1,10 @@
 package edu.uw.harmony.UI.Contacts;
 
-import android.graphics.drawable.Icon;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,9 +15,14 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import edu.uw.harmony.R;
-import edu.uw.harmony.UI.Chat.ChatRecyclerViewAdapter;
 import edu.uw.harmony.databinding.FragmentContactCardBinding;
 
+/**
+ * This is a Recycler Adapter that creates the ContactListFragment.
+ *
+ * @author Jack Lin
+ * @version 1.0
+ */
 
 public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecyclerViewAdapter.ContactViewHolder>{
     private final List<ContactCard> mContact;
