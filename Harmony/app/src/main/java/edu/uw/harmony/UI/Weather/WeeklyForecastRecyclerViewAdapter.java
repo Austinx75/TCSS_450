@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import edu.uw.harmony.R;
-import edu.uw.harmony.databinding.FragmentWeeklyForecastCardBinding;
+import edu.uw.harmony.databinding.FragmentWeatherWeeklyForecastCardBinding;
 
 /**
  * The RecyclerView adapter that makes an HourlyForecastItem list compatible with the 24 hour forecast
@@ -37,7 +37,7 @@ public class WeeklyForecastRecyclerViewAdapter extends
     @Override
     public WeeklyForecastRecyclerViewAdapter.WeeklyForecastViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new WeeklyForecastRecyclerViewAdapter.WeeklyForecastViewHolder(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_weekly_forecast_card, parent, false));
+                .inflate(R.layout.fragment_weather_weekly_forecast_card, parent, false));
     }
 
     @Override
@@ -51,13 +51,13 @@ public class WeeklyForecastRecyclerViewAdapter extends
      */
     public class WeeklyForecastViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public FragmentWeeklyForecastCardBinding binding;
+        public FragmentWeatherWeeklyForecastCardBinding binding;
         private WeeklyForecastItem mWeeklyForecast;
 
         public WeeklyForecastViewHolder(View view) {
             super(view);
             mView = view;
-            binding = FragmentWeeklyForecastCardBinding.bind(view);
+            binding = FragmentWeatherWeeklyForecastCardBinding.bind(view);
         }
 
         void setWeeklyForecastItem(final WeeklyForecastItem weeklyForecast) {
