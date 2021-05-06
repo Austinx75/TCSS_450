@@ -86,7 +86,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintStart_toEndOf="@+id/contact_username"
+<<<<<<< HEAD
             app:layout_constraintTop_toTopOf="parent">
+=======
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.432"
+            app:srcCompat="@drawable/chat_baseline_chat_bubble_24" />
+>>>>>>> 1750edb181eab364367e5923f3d2ce979b6a4c9e
 
             <ImageButton
                 android:id="@+id/contact_message"
