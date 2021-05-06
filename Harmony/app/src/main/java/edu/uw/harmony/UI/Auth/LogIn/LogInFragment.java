@@ -26,6 +26,9 @@ import static edu.uw.harmony.util.PasswordValidator.checkPwdSpecialChar;
 
 /**
  * A simple {@link Fragment} subclass.
+ * This Fragment subclass enables the user to
+ * type in a username and password. It then validates the credentials,
+ * and an observer will pass on a token to the main activity.
  */
 public class LogInFragment extends Fragment {
 
@@ -96,6 +99,11 @@ public class LogInFragment extends Fragment {
                 result -> binding.editTextPassword.setError("Please enter a valid Password."));
     }
 
+
+    /**
+     * This connects and verifies with our web service by using a connect method
+     * that is instantiated in the view model.
+     */
 
     private void verifyAuthWithServer() {
         mSignInModel.connect(
