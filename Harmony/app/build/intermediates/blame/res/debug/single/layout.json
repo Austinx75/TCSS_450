@@ -1,15 +1,19 @@
 [
     {
-        "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_new_chat.xml",
-        "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\src\\main\\res\\layout\\fragment_new_chat.xml"
+        "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_contact_card.xml",
+        "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\src\\main\\res\\layout\\fragment_contact_card.xml"
     },
     {
         "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_log_in.xml",
         "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\src\\main\\res\\layout\\fragment_log_in.xml"
     },
     {
-        "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_contact_card.xml",
-        "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\src\\main\\res\\layout\\fragment_contact_card.xml"
+        "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_new_chat.xml",
+        "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\src\\main\\res\\layout\\fragment_new_chat.xml"
+    },
+    {
+        "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_contact.xml",
+        "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\src\\main\\res\\layout\\fragment_contact.xml"
     },
     {
         "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_hourly_forecast_card.xml",
@@ -42,10 +46,6 @@
     {
         "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_chat_card.xml",
         "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat_card.xml"
-    },
-    {
-        "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_contacts.xml",
-        "source": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\src\\main\\res\\layout\\fragment_contacts.xml"
     },
     {
         "merged": "E:\\Sample Code\\Class Notes\\Spring 2021\\TCSS 450\\temp\\Harmony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",

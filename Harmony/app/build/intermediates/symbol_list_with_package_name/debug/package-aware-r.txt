@@ -1866,7 +1866,6 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable open_on_phone
-drawable portrait_circle
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1962,6 +1961,8 @@ id action_mode_close_button
 id action_navigation_chat_list_to_navigation_new_chat
 id action_navigation_chats_to_newChatFragment
 id action_navigation_contact_to_contactCardFragment
+id action_navigation_contact_to_contactFragment
+id action_navigation_contact_to_navigation_new_chat
 id action_registerFragment_to_validationFragment
 id action_text
 id action_validationFragment_to_logInFragment
@@ -1998,6 +1999,8 @@ id button_validationFragment_validate
 id cache_measures
 id cancel_action
 id cancel_button
+id cardAvatar
+id cardMessage
 id cardView
 id card_root
 id center
@@ -2021,6 +2024,7 @@ id clockwise
 id collapseActionView
 id confirm_button
 id contactCardFragment
+id contactFragment
 id contact_Avatar
 id contact_card
 id contact_message
@@ -2510,9 +2514,9 @@ layout fragment_chat
 layout fragment_chat_card
 layout fragment_chat_list
 layout fragment_chat_post
+layout fragment_contact
 layout fragment_contact_card
 layout fragment_contact_list
-layout fragment_contacts
 layout fragment_home
 layout fragment_hourly_forecast_card
 layout fragment_log_in
@@ -2661,7 +2665,7 @@ string clear_text_end_icon_content_description
 string contact_avatar
 string contact_card
 string contact_id
-string contact_massage
+string contact_message
 string contact_name
 string contact_status
 string contact_username

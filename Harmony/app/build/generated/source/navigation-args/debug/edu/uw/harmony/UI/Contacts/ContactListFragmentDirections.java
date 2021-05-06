@@ -3,6 +3,7 @@ package edu.uw.harmony.UI.Contacts;
 import android.os.Bundle;
 import android.os.Parcelable;
 import androidx.annotation.NonNull;
+import androidx.navigation.ActionOnlyNavDirections;
 import androidx.navigation.NavDirections;
 import edu.uw.harmony.R;
 import java.io.Serializable;
@@ -21,6 +22,17 @@ public class ContactListFragmentDirections {
   public static ActionNavigationContactToContactCardFragment actionNavigationContactToContactCardFragment(
       @NonNull ContactCard contact) {
     return new ActionNavigationContactToContactCardFragment(contact);
+  }
+
+  @NonNull
+  public static NavDirections actionNavigationContactToNavigationNewChat() {
+    return new ActionOnlyNavDirections(R.id.action_navigation_contact_to_navigation_new_chat);
+  }
+
+  @NonNull
+  public static ActionNavigationContactToContactFragment actionNavigationContactToContactFragment(
+      @NonNull String username, @NonNull String status) {
+    return new ActionNavigationContactToContactFragment(username, status);
   }
 
   public static class ActionNavigationContactToContactCardFragment implements NavDirections {
@@ -104,6 +116,117 @@ public class ContactListFragmentDirections {
     public String toString() {
       return "ActionNavigationContactToContactCardFragment(actionId=" + getActionId() + "){"
           + "contact=" + getContact()
+          + "}";
+    }
+  }
+
+  public static class ActionNavigationContactToContactFragment implements NavDirections {
+    private final HashMap arguments = new HashMap();
+
+    private ActionNavigationContactToContactFragment(@NonNull String username,
+        @NonNull String status) {
+      if (username == null) {
+        throw new IllegalArgumentException("Argument \"username\" is marked as non-null but was passed a null value.");
+      }
+      this.arguments.put("username", username);
+      if (status == null) {
+        throw new IllegalArgumentException("Argument \"status\" is marked as non-null but was passed a null value.");
+      }
+      this.arguments.put("status", status);
+    }
+
+    @NonNull
+    public ActionNavigationContactToContactFragment setUsername(@NonNull String username) {
+      if (username == null) {
+        throw new IllegalArgumentException("Argument \"username\" is marked as non-null but was passed a null value.");
+      }
+      this.arguments.put("username", username);
+      return this;
+    }
+
+    @NonNull
+    public ActionNavigationContactToContactFragment setStatus(@NonNull String status) {
+      if (status == null) {
+        throw new IllegalArgumentException("Argument \"status\" is marked as non-null but was passed a null value.");
+      }
+      this.arguments.put("status", status);
+      return this;
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    @NonNull
+    public Bundle getArguments() {
+      Bundle __result = new Bundle();
+      if (arguments.containsKey("username")) {
+        String username = (String) arguments.get("username");
+        __result.putString("username", username);
+      }
+      if (arguments.containsKey("status")) {
+        String status = (String) arguments.get("status");
+        __result.putString("status", status);
+      }
+      return __result;
+    }
+
+    @Override
+    public int getActionId() {
+      return R.id.action_navigation_contact_to_contactFragment;
+    }
+
+    @SuppressWarnings("unchecked")
+    @NonNull
+    public String getUsername() {
+      return (String) arguments.get("username");
+    }
+
+    @SuppressWarnings("unchecked")
+    @NonNull
+    public String getStatus() {
+      return (String) arguments.get("status");
+    }
+
+    @Override
+    public boolean equals(Object object) {
+      if (this == object) {
+          return true;
+      }
+      if (object == null || getClass() != object.getClass()) {
+          return false;
+      }
+      ActionNavigationContactToContactFragment that = (ActionNavigationContactToContactFragment) object;
+      if (arguments.containsKey("username") != that.arguments.containsKey("username")) {
+        return false;
+      }
+      if (getUsername() != null ? !getUsername().equals(that.getUsername()) : that.getUsername() != null) {
+        return false;
+      }
+      if (arguments.containsKey("status") != that.arguments.containsKey("status")) {
+        return false;
+      }
+      if (getStatus() != null ? !getStatus().equals(that.getStatus()) : that.getStatus() != null) {
+        return false;
+      }
+      if (getActionId() != that.getActionId()) {
+        return false;
+      }
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int result = 1;
+      result = 31 * result + (getUsername() != null ? getUsername().hashCode() : 0);
+      result = 31 * result + (getStatus() != null ? getStatus().hashCode() : 0);
+      result = 31 * result + getActionId();
+      return result;
+    }
+
+    @Override
+    public String toString() {
+      return "ActionNavigationContactToContactFragment(actionId=" + getActionId() + "){"
+          + "username=" + getUsername()
+          + ", status=" + getStatus()
           + "}";
     }
   }

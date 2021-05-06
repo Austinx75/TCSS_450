@@ -22,6 +22,12 @@ public final class FragmentContactCardBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
+  public final CardView cardAvatar;
+
+  @NonNull
+  public final CardView cardMessage;
+
+  @NonNull
   public final CardView cardRoot;
 
   @NonNull
@@ -39,11 +45,13 @@ public final class FragmentContactCardBinding implements ViewBinding {
   @NonNull
   public final TextView contactUsername;
 
-  private FragmentContactCardBinding(@NonNull CardView rootView, @NonNull CardView cardRoot,
-      @NonNull ImageView contactAvatar, @NonNull ConstraintLayout contactCard,
-      @NonNull ImageButton contactMessage, @NonNull TextView contactStatus,
-      @NonNull TextView contactUsername) {
+  private FragmentContactCardBinding(@NonNull CardView rootView, @NonNull CardView cardAvatar,
+      @NonNull CardView cardMessage, @NonNull CardView cardRoot, @NonNull ImageView contactAvatar,
+      @NonNull ConstraintLayout contactCard, @NonNull ImageButton contactMessage,
+      @NonNull TextView contactStatus, @NonNull TextView contactUsername) {
     this.rootView = rootView;
+    this.cardAvatar = cardAvatar;
+    this.cardMessage = cardMessage;
     this.cardRoot = cardRoot;
     this.contactAvatar = contactAvatar;
     this.contactCard = contactCard;
@@ -79,6 +87,18 @@ public final class FragmentContactCardBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.cardAvatar;
+      CardView cardAvatar = rootView.findViewById(id);
+      if (cardAvatar == null) {
+        break missingId;
+      }
+
+      id = R.id.cardMessage;
+      CardView cardMessage = rootView.findViewById(id);
+      if (cardMessage == null) {
+        break missingId;
+      }
+
       CardView cardRoot = (CardView) rootView;
 
       id = R.id.contact_Avatar;
@@ -111,8 +131,8 @@ public final class FragmentContactCardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentContactCardBinding((CardView) rootView, cardRoot, contactAvatar,
-          contactCard, contactMessage, contactStatus, contactUsername);
+      return new FragmentContactCardBinding((CardView) rootView, cardAvatar, cardMessage, cardRoot,
+          contactAvatar, contactCard, contactMessage, contactStatus, contactUsername);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

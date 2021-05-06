@@ -97,9 +97,6 @@ public class LogInFragment extends Fragment {
     }
 
 
-
-
-
     private void verifyAuthWithServer() {
         mSignInModel.connect(
                 binding.editTextEmail.getText().toString(),

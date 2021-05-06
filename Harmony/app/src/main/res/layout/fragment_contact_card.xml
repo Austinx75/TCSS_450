@@ -18,17 +18,28 @@
         app:layout_constraintBottom_toTopOf="@+id/contact_username"
         app:layout_constraintTop_toTopOf="@+id/contact_username">
 
-
-        <ImageView
-            android:id="@+id/contact_Avatar"
-            android:layout_width="63dp"
-            android:layout_height="63dp"
-            android:layout_marginStart="36dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardAvatar"
+            android:layout_width="72dp"
+            android:layout_height="69dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:visibility="visible"
+            app:cardCornerRadius="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.529"
-            app:srcCompat="@drawable/contact_man_512" />
+            app:cardBackgroundColor="@android:color/transparent">
+
+            <ImageView
+                android:id="@+id/contact_Avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/contact_avatar"
+                android:scaleType="centerCrop"
+
+                app:srcCompat="@drawable/contact_man_512" />
+        </androidx.cardview.widget.CardView>
 
 
         <TextView
@@ -43,8 +54,9 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/contact_Avatar"
-            app:layout_constraintTop_toTopOf="@+id/contact_Avatar" />
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toEndOf="@+id/cardAvatar"
+            app:layout_constraintTop_toTopOf="@+id/cardAvatar" />
 
         <TextView
             android:id="@+id/contact_status"
@@ -56,23 +68,33 @@
             android:paddingBottom="8dp"
             android:text="@string/contact_status"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/cardAvatar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/contact_Avatar"
+            app:layout_constraintStart_toEndOf="@+id/cardAvatar"
             app:layout_constraintTop_toBottomOf="@+id/contact_username"
             app:layout_constraintVertical_bias="0.0" />
 
-        <ImageButton
-            android:id="@+id/contact_message"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMessage"
+            android:layout_width="44dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintStart_toEndOf="@+id/contact_username"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.432"
-            app:srcCompat="@drawable/ic_baseline_chat_bubble_24" />
+            app:layout_constraintTop_toTopOf="parent">
 
+            <ImageButton
+                android:id="@+id/contact_message"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/contact_message"
+                app:srcCompat="@drawable/ic_baseline_chat_bubble_24" />
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout></androidx.cardview.widget.CardView>

@@ -28,13 +28,13 @@
     <string name="contact_id">ID</string>
     <string name="contact_status">Status</string>
     <string name="contact_card">Card</string>
-    <string name="contact_massage">Message</string>
+    <string name="contact_message">Message</string>
 
     <!-- This is for Chat Fragments-->
     <string name="title_chats">Messages</string>
 
 
-<!--    Auth Validation-->
+    <!--    Auth Validation-->
     <string name="text_validation">We sent a verification email to your
         registered email, please verify it.</string>
     <string name="button_validation_validate">Continue</string>

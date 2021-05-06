@@ -16,7 +16,7 @@ import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
-public final class FragmentContactsBinding implements ViewBinding {
+public final class FragmentContactBinding implements ViewBinding {
   @NonNull
   private final CardView rootView;
 
@@ -38,7 +38,7 @@ public final class FragmentContactsBinding implements ViewBinding {
   @NonNull
   public final TextView contactUsername;
 
-  private FragmentContactsBinding(@NonNull CardView rootView, @NonNull CardView cardRoot,
+  private FragmentContactBinding(@NonNull CardView rootView, @NonNull CardView cardRoot,
       @NonNull CardView cardView, @NonNull ImageView contactAvatar,
       @NonNull ConstraintLayout contactCard, @NonNull TextView contactStatus,
       @NonNull TextView contactUsername) {
@@ -58,14 +58,14 @@ public final class FragmentContactsBinding implements ViewBinding {
   }
 
   @NonNull
-  public static FragmentContactsBinding inflate(@NonNull LayoutInflater inflater) {
+  public static FragmentContactBinding inflate(@NonNull LayoutInflater inflater) {
     return inflate(inflater, null, false);
   }
 
   @NonNull
-  public static FragmentContactsBinding inflate(@NonNull LayoutInflater inflater,
+  public static FragmentContactBinding inflate(@NonNull LayoutInflater inflater,
       @Nullable ViewGroup parent, boolean attachToParent) {
-    View root = inflater.inflate(R.layout.fragment_contacts, parent, false);
+    View root = inflater.inflate(R.layout.fragment_contact, parent, false);
     if (attachToParent) {
       parent.addView(root);
     }
@@ -73,7 +73,7 @@ public final class FragmentContactsBinding implements ViewBinding {
   }
 
   @NonNull
-  public static FragmentContactsBinding bind(@NonNull View rootView) {
+  public static FragmentContactBinding bind(@NonNull View rootView) {
     // The body of this method is generated in a way you would not otherwise write.
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
@@ -110,7 +110,7 @@ public final class FragmentContactsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentContactsBinding((CardView) rootView, cardRoot, cardView, contactAvatar,
+      return new FragmentContactBinding((CardView) rootView, cardRoot, cardView, contactAvatar,
           contactCard, contactStatus, contactUsername);
     }
     String missingId = rootView.getResources().getResourceName(id);
