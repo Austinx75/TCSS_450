@@ -104,6 +104,7 @@ public class LogInFragment extends Fragment {
      * This connects and verifies with our web service by using a connect method
      * that is instantiated in the view model.
      */
+
     private void verifyAuthWithServer() {
         mSignInModel.connect(
                 binding.editTextEmail.getText().toString(),

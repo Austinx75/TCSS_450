@@ -17,6 +17,12 @@
         <action
             android:id="@+id/action_navigation_contact_to_contactCardFragment"
             app:destination="@id/contactCardFragment" />
+        <action
+            android:id="@+id/action_navigation_contact_to_navigation_new_chat"
+            app:destination="@id/navigation_new_chat" />
+        <action
+            android:id="@+id/action_navigation_contact_to_contactFragment"
+            app:destination="@id/contactFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_chats"
@@ -64,6 +70,17 @@
         <argument
             android:name="contact"
             app:argType="edu.uw.harmony.UI.Contacts.ContactCard" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="edu.uw.harmony.UI.Contacts.ContactFragment"
+        android:label="ContactFragment" >
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument
+            android:name="status"
+            app:argType="string" />
     </fragment>
 
 </navigation>
