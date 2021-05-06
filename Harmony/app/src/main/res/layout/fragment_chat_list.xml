@@ -27,7 +27,7 @@
         android:layout_height="82dp"
         android:layout_marginTop="504dp"
         android:layout_marginEnd="52dp"
-        android:src="@drawable/ic_add_new_chat2_24dp"
+        android:src="@drawable/chat_add_new_chat2_24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

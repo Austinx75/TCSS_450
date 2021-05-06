@@ -12,7 +12,7 @@
         android:layout_width="47dp"
         android:layout_height="42dp"
         android:layout_marginTop="28dp"
-        android:src="@drawable/ic_weather_sunny"
+        android:src="@drawable/weather_sunny"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -55,7 +55,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_mainTemperaturePlaceholder"
         tools:context=".UI.Weather.WeatherFragment"
-        tools:listitem="@layout/fragment_hourly_forecast_card" />
+        tools:listitem="@layout/fragment_weather_hourly_forecast_card" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/weekly_list_root"
@@ -74,5 +74,5 @@
         app:layout_constraintTop_toBottomOf="@+id/hourly_list_root"
         app:layout_constraintVertical_bias="0.821"
         tools:context=".UI.Weather.WeatherFragment"
-        tools:listitem="@layout/fragment_hourly_forecast_card" />
+        tools:listitem="@layout/fragment_weather_hourly_forecast_card" />
 </androidx.constraintlayout.widget.ConstraintLayout>

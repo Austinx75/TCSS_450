@@ -10,16 +10,22 @@
     <string name="text_register_LName">Last Name</string>
     <string name="text_register_RetypePassword">Retype Password</string>
     <string name="title_activity_main">MainActivity</string>
-    <!--
-    This string is used for square devices and overridden by hello_world in
-    values-round/strings.xml for round devices.
-    -->
-    <string name="hello_world">Hello Square World!</string>
-    <string name="title_contact">Contacts</string>
-    <string name="title_home">Home</string>
-    <string name="title_weather">Weather</string>
-    <string name="action_link">Full Post</string>
     <string name="title_activity_auth">AuthActivity</string>
+
+    <!--    Auth Validation-->
+    <string name="text_validation">We sent a verification email to your
+        registered email, please verify it.</string>
+    <string name="button_validation_validate">Continue</string>
+
+
+    <!-- Bottom Navigation -->
+    <string name="title_home">Home</string>
+    <string name="title_contact">Contacts</string>
+    <string name="title_chats">Messages</string>
+    <string name="title_weather">Weather</string>
+
+    <!-- Home Fragment -->
+    <string name="text_home_appName">Harmony</string>
 
     <!-- This is for Contact Fragments-->
     <string name="contact_avatar">Avatar</string>
@@ -31,13 +37,7 @@
     <string name="contact_massage">Message</string>
 
     <!-- This is for Chat Fragments-->
-    <string name="title_chats">Messages</string>
 
-
-<!--    Auth Validation-->
-    <string name="text_validation">We sent a verification email to your
-        registered email, please verify it.</string>
-    <string name="button_validation_validate">Continue</string>
 
     <!-- This chat recyvlerviews -->
     <string name="keys_json_blogs_response">response</string>

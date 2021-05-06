@@ -10,8 +10,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import edu.uw.harmony.R;
-import edu.uw.harmony.databinding.FragmentHourlyForecastCardBinding;
+import edu.uw.harmony.databinding.FragmentWeatherHourlyForecastCardBinding;
 
+/**
+ * The RecyclerView adapter that makes an HourlyForecastItem list compatible with the 24 hour forecast
+ * Recycler View used in WeatherFragment.
+ *
+ * @author  Gary Kono
+ * @version 1.0
+ */
 public class HourlyForecastRecyclerViewAdapter extends
         RecyclerView.Adapter<HourlyForecastRecyclerViewAdapter.HourlyForecastViewHolder> {
     //Store all of the blogs to present
@@ -30,7 +37,7 @@ public class HourlyForecastRecyclerViewAdapter extends
     @Override
     public HourlyForecastViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new HourlyForecastViewHolder(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_hourly_forecast_card, parent, false));
+                .inflate(R.layout.fragment_weather_hourly_forecast_card, parent, false));
     }
 
     @Override
@@ -44,13 +51,13 @@ public class HourlyForecastRecyclerViewAdapter extends
      */
     public class HourlyForecastViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public FragmentHourlyForecastCardBinding binding;
+        public FragmentWeatherHourlyForecastCardBinding binding;
         private HourlyForecastItem mHourlyForecast;
 
         public HourlyForecastViewHolder(View view) {
             super(view);
             mView = view;
-            binding = FragmentHourlyForecastCardBinding.bind(view);
+            binding = FragmentWeatherHourlyForecastCardBinding.bind(view);
         }
 
         void setHourlyForecastItem(final HourlyForecastItem hourlyForecast) {
