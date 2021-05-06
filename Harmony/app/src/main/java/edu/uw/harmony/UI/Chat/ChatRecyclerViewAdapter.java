@@ -98,7 +98,8 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
                 );
             });
 
-            binding.textTitle.setText(chat.getTitle());
+            //binding.textTitle.setText(chat.getTitle());
+            binding.textTitle.setText("Name");
             binding.textPubdate.setText(chat.getPubDate());
             //Use methods in the HTML class to format the HTML found in the text
             final String preview = Html.fromHtml(
