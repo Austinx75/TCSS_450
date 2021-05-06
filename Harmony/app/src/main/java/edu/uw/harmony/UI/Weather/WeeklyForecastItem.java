@@ -2,6 +2,12 @@ package edu.uw.harmony.UI.Weather;
 
 import java.io.Serializable;
 
+/**
+ * This class represents a single day on the 5 day forecast list used in WeatherFragment.
+ *
+ * @author  Gary Kono
+ * @version 1.0
+ */
 public class WeeklyForecastItem implements Serializable {
     private final String mDay;
     //TODO: Add an image that represents the condition (sunny, rainy, etc.)
@@ -37,10 +43,18 @@ public class WeeklyForecastItem implements Serializable {
         this.mTemp = builder.mTemp;
     }
 
+    /**
+     *
+     * @return The day this class represents.
+     */
     public String getDay() {
         return this.mDay;
     }
 
+    /**
+     *
+     * @return The expected/observed average temperature for this day.
+     */
     public int getTemp() {
         return this.mTemp;
     }

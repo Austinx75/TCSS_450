@@ -18,7 +18,11 @@ import edu.uw.harmony.R;
 import edu.uw.harmony.databinding.FragmentWeatherBinding;
 
 /**
- * A simple {@link Fragment} subclass.
+ * This fragment displays the current temperature, conditions, and user's city, as well as a 24 hour and 5 day forecast
+ * for that city.
+ *
+ * @author  Gary Kono
+ * @version 1.0
  */
 public class WeatherFragment extends Fragment {
     private FragmentWeatherBinding binding;
@@ -28,7 +32,9 @@ public class WeatherFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_weather, container, false);
+        //This view is for Recycler view displaying the 24 hour forecast
         View hourlyRecyclerView = view.findViewById(R.id.hourly_list_root);
+        //This view is for Recycler view displaying the 5 day forecast
         View weeklyRecyclerView = view.findViewById(R.id.weekly_list_root);
 
         if (hourlyRecyclerView instanceof RecyclerView) {
@@ -52,10 +58,7 @@ public class WeatherFragment extends Fragment {
         // holds this fragment.
         //NOTE: ENABLE THIS IN FUTURE IF ARGUMENTS ARE NEEDED
 //        UserInfoViewModel model = new ViewModelProvider(getActivity())
-//                .get(UserInfoViewModel.class);UserInfoViewModel model = new ViewModelProvider(getActivity())
 //                .get(UserInfoViewModel.class);
-
-
     }
 
     @Override

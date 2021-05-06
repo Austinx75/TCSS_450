@@ -12,6 +12,13 @@ import java.util.List;
 import edu.uw.harmony.R;
 import edu.uw.harmony.databinding.FragmentWeeklyForecastCardBinding;
 
+/**
+ * The RecyclerView adapter that makes an HourlyForecastItem list compatible with the 24 hour forecast
+ * Recycler View used in WeatherFragment.
+ *
+ * @author  Gary Kono
+ * @version 1.0
+ */
 public class WeeklyForecastRecyclerViewAdapter extends
         RecyclerView.Adapter<WeeklyForecastRecyclerViewAdapter.WeeklyForecastViewHolder> {
     //Store all of the blogs to present

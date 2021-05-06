@@ -2,6 +2,12 @@ package edu.uw.harmony.UI.Weather;
 
 import java.io.Serializable;
 
+/**
+ * This class represents a single hour on the 24 hour forecast list used in WeatherFragment.
+ *
+ * @author  Gary Kono
+ * @version 1.0
+ */
 public class HourlyForecastItem implements Serializable {
     private final int mHour;
     //TODO: Add an image that represents the condition (sunny, rainy, etc.)
@@ -37,10 +43,18 @@ public class HourlyForecastItem implements Serializable {
         this.mTemp = builder.mTemp;
     }
 
+    /**
+     *
+     * @return The hour this class represents.
+     */
     public int getHour() {
         return this.mHour;
     }
 
+    /**
+     *
+     * @return The expected/observed average temperature for this hour.
+     */
     public int getTemp() {
         return this.mTemp;
     }
