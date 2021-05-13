@@ -35,7 +35,7 @@
         android:background="@color/dark_grey"
         app:backgroundTint="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        android:theme="@style/AppTheme"
+        android:theme="@style/theme1"
         app:layout_constraintTop_toTopOf="parent" />
 
 
