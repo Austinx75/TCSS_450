@@ -1053,6 +1053,7 @@ color abc_tint_spinner
 color abc_tint_switch_track
 color accent_material_dark
 color accent_material_light
+color accent_tan
 color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
 color background_floating_material_dark
@@ -1083,6 +1084,7 @@ color colorOffWhite
 color colorPrimary
 color colorPrimaryAlpha
 color colorPrimaryDark
+color dark_blue
 color dark_grey
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
@@ -1132,6 +1134,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color lighter_blue
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1220,6 +1223,8 @@ color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color offwhite
+color orange
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1244,6 +1249,7 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color tan
 color teal_200
 color teal_700
 color test_mtrl_calendar_day
@@ -1833,6 +1839,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_settings_24
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1997,6 +2004,8 @@ id buttonPanel
 id button_loginFragment_login
 id button_loginFragment_register
 id button_registerFragment_register
+id button_theme1
+id button_theme2
 id button_validationFragment_validate
 id cache_measures
 id cancel_action
@@ -2129,6 +2138,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id imageView2
 id imageView_hourlyForecastCondition
 id imageView_mainConditionsPlaceholder
 id imageView_weeklyForecastCondition
@@ -2292,6 +2302,8 @@ id selected
 id selection_type
 id sendMessage
 id send_new_chat
+id settingsActivity
+id settingsFragment
 id shortcut
 id showCustom
 id showHome
@@ -2346,6 +2358,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id textView2
 id textView4
 id textViewAppName
@@ -2527,6 +2540,7 @@ layout fragment_home
 layout fragment_log_in
 layout fragment_new_chat
 layout fragment_register
+layout fragment_settings
 layout fragment_validation
 layout fragment_weather
 layout fragment_weather_hourly_forecast_card
@@ -2623,6 +2637,7 @@ layout ws_single_page_nav_drawer_peek_view
 layout ws_single_page_nav_drawer_text
 layout ws_wearable_drawer_view
 menu bottom_nav_menu
+menu toolbar
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation auth_nav_graph
@@ -2655,6 +2670,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string action_settings
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -2757,6 +2773,7 @@ string text_register_RetypePassword
 string text_validation
 string title_activity_auth
 string title_activity_main
+string title_activity_settings
 string title_chats
 string title_contact
 string title_home
@@ -3493,6 +3510,8 @@ style WsSinglePageNavDrawerIconStyle
 style WsVerticalGuideStyle
 style WsWearableActionDrawerItemText
 style WsWearableActionDrawerTitleText
+style theme1
+style theme2
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
