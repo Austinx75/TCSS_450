@@ -45,4 +45,5 @@
     <string name="keys_json_blogs_title">title</string>
     <string name="keys_json_blogs_teaser">teaser</string>
     <string name="keys_json_blogs_url">url</string>
+    <string name="action_settings">Settings</string>
 </resources>
