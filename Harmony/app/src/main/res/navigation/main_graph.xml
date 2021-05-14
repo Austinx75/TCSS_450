@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
+    android:label="@string/action_settings"
     app:startDestination="@id/navigation_home">
 
     <fragment
@@ -13,7 +14,7 @@
     <fragment
         android:id="@+id/navigation_contact"
         android:name="edu.uw.harmony.UI.Contacts.ContactListFragment"
-        android:label="@string/title_contact" >
+        android:label="@string/title_contact">
         <action
             android:id="@+id/action_navigation_contact_to_contactCardFragment"
             app:destination="@id/contactCardFragment" />
@@ -28,7 +29,7 @@
         android:id="@+id/navigation_chats"
         android:name="edu.uw.harmony.UI.Chat.page.ChatsFragment"
         android:label="Messages"
-        tools:layout="@layout/fragment_chat" >
+        tools:layout="@layout/fragment_chat">
         <action
             android:id="@+id/action_navigation_chats_to_newChatFragment"
             app:destination="@id/navigation_new_chat" />
@@ -66,7 +67,7 @@
     <fragment
         android:id="@+id/contactCardFragment"
         android:name="edu.uw.harmony.UI.Contacts.ContactCardFragment"
-        android:label="ContactCardFragment" >
+        android:label="ContactCardFragment">
         <argument
             android:name="contact"
             app:argType="edu.uw.harmony.UI.Contacts.ContactCard" />
@@ -74,7 +75,7 @@
     <fragment
         android:id="@+id/contactFragment"
         android:name="edu.uw.harmony.UI.Contacts.ContactFragment"
-        android:label="ContactFragment" >
+        android:label="ContactFragment">
         <argument
             android:name="username"
             app:argType="string" />
@@ -82,5 +83,10 @@
             android:name="status"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="edu.uw.harmony.UI.settings.SettingsFragment"
+        android:label="@string/action_settings"
+        tools:layout="@layout/fragment_settings" />
 
 </navigation>
