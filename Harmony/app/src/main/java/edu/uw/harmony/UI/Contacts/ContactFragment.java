@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import java.util.Random;
 
 import edu.uw.harmony.R;
-import edu.uw.harmony.UI.Chat.ChatsFragmentDirections;
+import edu.uw.harmony.UI.Chat.page.ChatsFragmentDirections;
 import edu.uw.harmony.databinding.FragmentChatBinding;
 import edu.uw.harmony.databinding.FragmentContactBinding;
 import edu.uw.harmony.databinding.FragmentContactCardBinding;
