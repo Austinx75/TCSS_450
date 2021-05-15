@@ -49,8 +49,8 @@
         android:name="edu.uw.harmony.UI.Chat.message.ChatRoomFragment"
         android:label="Message">
         <argument
-            android:name="chat"
-            app:argType="edu.uw.harmony.UI.Chat.page.ChatPost" />
+            android:name="chatId"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/navigation_chat_list"

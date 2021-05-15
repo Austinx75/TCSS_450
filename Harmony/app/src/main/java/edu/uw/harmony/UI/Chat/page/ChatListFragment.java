@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Chat.page.ChatListFragmentDirections;
+import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.databinding.FragmentChatListBinding;
 
 /**
@@ -22,22 +23,22 @@ import edu.uw.harmony.databinding.FragmentChatListBinding;
  */
 public class ChatListFragment extends Fragment {
     private ChatListViewModel mModel;
+    private UserInfoViewModel mUserModel;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ViewModelProvider provider = new ViewModelProvider(getActivity());
         mModel = new ViewModelProvider(getActivity()).get(ChatListViewModel.class);
-        mModel.connectGet();
+        mUserModel = provider.get(UserInfoViewModel.class);
+
+        mModel.connectGet(mUserModel.getJwt(), mUserModel.getEmail());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chat_list, container, false);
-//        if (view instanceof RecyclerView) {
-//            ((RecyclerView) view).setAdapter(
-//                    new ChatRecyclerViewAdapter(ChatGenerator.getBlogList()));
-//        }
         return view;
     }
 
