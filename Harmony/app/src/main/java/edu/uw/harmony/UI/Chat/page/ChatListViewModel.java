@@ -26,7 +26,6 @@ import java.util.Map;
 import java.util.function.IntFunction;
 
 import edu.uw.harmony.R;
-import edu.uw.harmony.UI.Chat.page.ChatPost;
 
 public class ChatListViewModel extends AndroidViewModel {
 
@@ -44,7 +43,7 @@ public class ChatListViewModel extends AndroidViewModel {
     private void handleError(final VolleyError error) {
         //you should add much better error handling in a production release.
         //i.e. YOUR PROJECT
-        Log.e("CONNECTION ERROR", error.getLocalizedMessage()); throw new IllegalStateException(error.getMessage());
+        Log.e("CONNECTION ERROR", error.getLocalizedMessage());
     }
 
     private void handleResult(final JSONObject result) {
@@ -52,64 +51,89 @@ public class ChatListViewModel extends AndroidViewModel {
                 getApplication().getResources()::getString;
         try {
             JSONObject root = result;
-            if (root.has(getString.apply(R.string.keys_json_blogs_response))) {
-                JSONObject response =
-                        root.getJSONObject(getString.apply(
-                                R.string.keys_json_blogs_response));
-                if (response.has(getString.apply(R.string.keys_json_blogs_data))) {
-                    JSONArray data = response.getJSONArray(
-                            getString.apply(R.string.keys_json_blogs_data));
-                    for(int i = 0; i < data.length(); i++) {
-                        JSONObject jsonBlog = data.getJSONObject(i);
-                        ChatPost post = new ChatPost.Builder(
-                                jsonBlog.getString(
-                                        getString.apply(
-                                                R.string.keys_json_blogs_pubdate)),
-                                jsonBlog.getString(
-                                        getString.apply(
-                                                R.string.keys_json_blogs_title)))
-                                .addTeaser(jsonBlog.getString(
-                                        getString.apply(
-                                                R.string.keys_json_blogs_teaser)))
-                                .addUrl(jsonBlog.getString(
-                                        getString.apply(
-                                                R.string.keys_json_blogs_url)))
-                                .build();
-                        if (!mChatList.getValue().contains(post)) {
-                            mChatList.getValue().add(post); }
+            JSONArray chats = root.getJSONArray("chats");
+            Log.e("-----------------------", chats.get(0).toString());
+            for (int i = 0; i < chats.length(); i++) {
+                JSONObject room = chats.getJSONObject(i);
+
+                List<Integer> members = new ArrayList<>();
+
+                ChatPost post = new ChatPost.Builder((int)room.get("id"), members, "" +room.get("name")).build();
+                Log.e("-----------", mChatList.getValue() + " ");
+                boolean contains = false;
+                List <ChatPost> list = mChatList.getValue();
+                for (ChatPost chat: list) {
+                    if ((int)room.get("id") == chat.getChatId()) {
+                        contains = true;
                     }
-                } else {
-                    Log.e("ERROR!", "No data array");
                 }
-            } else {
-                Log.e("ERROR!", "No response");
+                if (!contains) {
+                    mChatList.getValue().add(post); }
             }
-        } catch (JSONException e) {
+        } catch (JSONException e){
             e.printStackTrace();
             Log.e("ERROR!", e.getMessage());
         }
+
+
+//        try {
+//            JSONObject root = result;
+//            if (root.has(getString.apply(R.string.keys_json_blogs_response))) {
+//                JSONObject response =
+//                        root.getJSONObject(getString.apply(
+//                                R.string.keys_json_blogs_response));
+//                if (response.has(getString.apply(R.string.keys_json_blogs_data))) {
+//                    JSONArray data = response.getJSONArray(
+//                            getString.apply(R.string.keys_json_blogs_data));
+//                    for(int i = 0; i < data.length(); i++) {
+//                        JSONObject jsonBlog = data.getJSONObject(i);
+//                        ChatPost post = new ChatPost.Builder(
+//                                jsonBlog.getString(
+//                                        getString.apply(
+//                                                R.string.keys_json_blogs_pubdate)),
+//                                jsonBlog.getString(
+//                                        getString.apply(
+//                                                R.string.keys_json_blogs_title)))
+//                                .addTeaser(jsonBlog.getString(
+//                                        getString.apply(
+//                                                R.string.keys_json_blogs_teaser)))
+//                                .addUrl(jsonBlog.getString(
+//                                        getString.apply(
+//                                                R.string.keys_json_blogs_url)))
+//                                .build();
+//                        if (!mChatList.getValue().contains(post)) {
+//                            mChatList.getValue().add(post); }
+//                    }
+//                } else {
+//                    Log.e("ERROR!", "No data array");
+//                }
+//            } else {
+//                Log.e("ERROR!", "No response");
+//            }
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//            Log.e("ERROR!", e.getMessage());
+//        }
         mChatList.setValue(mChatList.getValue());
     }
 
-    public void connectGet() {
+    public void connectGet(final String jwt, final String email) {
         String url =
-                "https://cfb3-tcss450-labs-2021sp.herokuapp.com/phish/blog/get";
+                getApplication().getResources().getString(R.string.base_url) + "chatroom/" + email;
         Request request = new JsonObjectRequest(
                 Request.Method.GET,
                 url,
-                null, //no body for this get request
+                null,
                 this::handleResult,
                 this::handleError) {
             @Override
             public Map<String, String> getHeaders() {
                 Map<String, String> headers = new HashMap<>();
                 // add headers <key,value>
-                headers.put("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJl" +
-                        "bWFpbCI6ImNmYjMxQGZha2UuZW1haWwuY29tIiwibWVtYmVyaWQiOjMsImlhdCI6MTY" +
-                        "xODI2ODY2OSwiZXhwIjoxNjIzNDUyNjY5fQ.Y5t-1ibUMChZPe9eiavwCA3XbHhGdiM" +
-                        "NEdpSmCxI1Ow");
+                headers.put("Authorization",jwt);
                 return headers;
-            } };
+            }
+        };
         request.setRetryPolicy(new DefaultRetryPolicy(
                 10_000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
