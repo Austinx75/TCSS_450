@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Harmony</string>
 
+    <string name="base_url">https://team-9-tcss450-backend.herokuapp.com/</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_login_email">Email</string>
     <string name="text_login_password">Password</string>
