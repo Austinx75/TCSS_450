@@ -1,5 +1,6 @@
 package edu.uw.harmony.UI.Chat;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ import java.util.List;
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Weather.HourlyForecastItemGenerator;
 import edu.uw.harmony.UI.Weather.HourlyForecastRecyclerViewAdapter;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentChatBinding;
 import edu.uw.harmony.databinding.FragmentChatListBinding;
 
@@ -28,10 +30,14 @@ import edu.uw.harmony.databinding.FragmentChatListBinding;
 public class ChatListFragment extends Fragment {
     private ChatListViewModel mModel;
 
+    /** ViewModel for settings */
+    private SettingsViewModel settingsViewModel;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mModel = new ViewModelProvider(getActivity()).get(ChatListViewModel.class);
+        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
         mModel.connectGet();
     }
 
@@ -50,6 +56,14 @@ public class ChatListFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         FragmentChatListBinding binding = FragmentChatListBinding.bind(getView());
+
+        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+            binding.buttonNewChat.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
+            binding.buttonNewChat.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.tan)));
+        } else {
+            binding.buttonNewChat.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_200)));
+            binding.buttonNewChat.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+        }
 
         mModel.addBlogListObserver(getViewLifecycleOwner(), blogList -> {
             Log.d("string", ""+blogList.size());

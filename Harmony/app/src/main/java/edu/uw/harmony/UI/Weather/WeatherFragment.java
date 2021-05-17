@@ -1,5 +1,6 @@
 package edu.uw.harmony.UI.Weather;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.Auth.LogIn.LogInViewModel;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
+import edu.uw.harmony.databinding.FragmentLogInBinding;
 import edu.uw.harmony.databinding.FragmentWeatherBinding;
 
 /**
@@ -27,27 +31,47 @@ import edu.uw.harmony.databinding.FragmentWeatherBinding;
 public class WeatherFragment extends Fragment {
     private FragmentWeatherBinding binding;
 
+    /** ViewModel for settings */
+    private SettingsViewModel settingsViewModel;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        binding = FragmentWeatherBinding.inflate(inflater);
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_weather, container, false);
-        //This view is for Recycler view displaying the 24 hour forecast
-        View hourlyRecyclerView = view.findViewById(R.id.hourly_list_root);
-        //This view is for Recycler view displaying the 5 day forecast
-        View weeklyRecyclerView = view.findViewById(R.id.weekly_list_root);
+//        View view = inflater.inflate(R.layout.fragment_weather, container, false);
+//        //This view is for Recycler view displaying the 24 hour forecast
+//        View hourlyRecyclerView = view.findViewById(R.id.hourly_list_root);
+//        //This view is for Recycler view displaying the 5 day forecast
+//        View weeklyRecyclerView = view.findViewById(R.id.weekly_list_root);
+        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+            binding.textViewCityPlaceholder.setTextColor(Color.BLACK);
+            binding.textViewMainTemperaturePlaceholder.setTextColor(Color.BLACK);
+        } else {
+            binding.textViewCityPlaceholder.setTextColor(Color.WHITE);
+            binding.textViewMainTemperaturePlaceholder.setTextColor(Color.WHITE);
+        }
 
-        if (hourlyRecyclerView instanceof RecyclerView) {
-            ((RecyclerView) hourlyRecyclerView).setAdapter(
+
+
+        if (binding.hourlyListRoot instanceof RecyclerView) {
+            ((RecyclerView) binding.hourlyListRoot).setAdapter(
                     new HourlyForecastRecyclerViewAdapter(HourlyForecastItemGenerator.getHourlyForecastList()));
         }
 
-        if (weeklyRecyclerView instanceof RecyclerView) {
-            ((RecyclerView) weeklyRecyclerView).setAdapter(
+        if (binding.weeklyListRoot instanceof RecyclerView) {
+            ((RecyclerView) binding.weeklyListRoot).setAdapter(
                     new WeeklyForecastRecyclerViewAdapter(WeeklyForecastItemGenerator.getWeeklyForecastList()));
         }
 
-        return view;
+        return binding.getRoot();
     }
 
     @Override
