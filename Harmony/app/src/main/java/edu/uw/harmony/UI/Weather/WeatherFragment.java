@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.databinding.FragmentWeatherBinding;
 
 /**
@@ -25,46 +26,47 @@ import edu.uw.harmony.databinding.FragmentWeatherBinding;
  * @version 1.0
  */
 public class WeatherFragment extends Fragment {
-    private FragmentWeatherBinding binding;
+    private WeatherViewModel mModel;
+
+    @Override public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_weather, container, false);
-        //This view is for Recycler view displaying the 24 hour forecast
-        View hourlyRecyclerView = view.findViewById(R.id.hourly_list_root);
-        //This view is for Recycler view displaying the 5 day forecast
-        View weeklyRecyclerView = view.findViewById(R.id.weekly_list_root);
-
-        if (hourlyRecyclerView instanceof RecyclerView) {
-            ((RecyclerView) hourlyRecyclerView).setAdapter(
-                    new HourlyForecastRecyclerViewAdapter(HourlyForecastItemGenerator.getHourlyForecastList()));
-        }
-
-        if (weeklyRecyclerView instanceof RecyclerView) {
-            ((RecyclerView) weeklyRecyclerView).setAdapter(
-                    new WeeklyForecastRecyclerViewAdapter(WeeklyForecastItemGenerator.getWeeklyForecastList()));
-        }
-
-        return view;
+        return inflater.inflate(R.layout.fragment_weather, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        mModel.connectGet();
+
         //Note argument sent to the ViewModelProvider constructor. It is the Activity that
-        // holds this fragment.
-        //NOTE: ENABLE THIS IN FUTURE IF ARGUMENTS ARE NEEDED
-//        UserInfoViewModel model = new ViewModelProvider(getActivity())
-//                .get(UserInfoViewModel.class);
-    }
+        //holds this fragment.
+        UserInfoViewModel model = new ViewModelProvider(getActivity())
+                .get(UserInfoViewModel.class);
+        mModel.setJWT(model.getJwt());
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
+        FragmentWeatherBinding binding = FragmentWeatherBinding.bind(getView());
+        mModel.setWeatherBinding(binding);
 
+        mModel.addHourlyForecastItemListObserver(getViewLifecycleOwner(), hourlyList -> {
+            if (binding.hourlyListRoot instanceof RecyclerView) {
+                (binding.hourlyListRoot).setAdapter(
+                        new HourlyForecastRecyclerViewAdapter(hourlyList));
+            }
+        });
+        mModel.addWeeklyForecastItemListObserver(getViewLifecycleOwner(), weeklyList -> {
+            if (binding.weeklyListRoot instanceof RecyclerView) {
+                (binding.weeklyListRoot).setAdapter(
+                        new WeeklyForecastRecyclerViewAdapter(weeklyList));
+            }
+        });
+
+        binding.layoutWait.setVisibility(View.GONE);
+    }
 }
