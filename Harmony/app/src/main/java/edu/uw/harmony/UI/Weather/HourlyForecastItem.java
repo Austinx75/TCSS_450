@@ -11,15 +11,16 @@ import java.io.Serializable;
 public class HourlyForecastItem implements Serializable {
     private final int mHour;
     //TODO: Add an image that represents the condition (sunny, rainy, etc.)
-    private final int mTemp;
+    private final String mDescription;
+    private final double mTemp;
 
     /**
      * Helper class for building Credentials.
      */
     public static class Builder {
         private final int mHour;
-        //private final String mConditionImage;
-        private final int mTemp;
+        private final String mDescription;
+        private final double mTemp;
 
 
         /**
@@ -28,8 +29,9 @@ public class HourlyForecastItem implements Serializable {
          * @param hour the hour of the current day
          * @param temp the temperature for this hour provided by api
          */
-        public Builder(int hour, int temp) {
+        public Builder(int hour, String description, double temp) {
             this.mHour = hour;
+            this.mDescription = description;
             this.mTemp = temp;
         }
 
@@ -40,6 +42,7 @@ public class HourlyForecastItem implements Serializable {
 
     private HourlyForecastItem(final Builder builder) {
         this.mHour = builder.mHour;
+        this.mDescription = builder.mDescription;
         this.mTemp = builder.mTemp;
     }
 
@@ -53,9 +56,17 @@ public class HourlyForecastItem implements Serializable {
 
     /**
      *
+     * @return A short description of this hour's weather condition. (i.e. sunny, partly cloudy)
+     */
+    public String getDescription() {
+        return this.mDescription;
+    }
+
+    /**
+     *
      * @return The expected/observed average temperature for this hour.
      */
-    public int getTemp() {
+    public double getTemp() {
         return this.mTemp;
     }
 }

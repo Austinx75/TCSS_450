@@ -39,10 +39,10 @@
         android:name="edu.uw.harmony.MainActivity"
         android:label="MainActivity" >
         <argument
-            android:name="jwt"
+            android:name="email"
             app:argType="string" />
         <argument
-            android:name="email"
+            android:name="jwt"
             app:argType="string" />
     </activity>
     <fragment

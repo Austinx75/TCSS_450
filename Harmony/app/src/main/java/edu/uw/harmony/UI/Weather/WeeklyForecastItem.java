@@ -1,5 +1,7 @@
 package edu.uw.harmony.UI.Weather;
 
+import android.util.Log;
+
 import java.io.Serializable;
 
 /**
@@ -11,15 +13,16 @@ import java.io.Serializable;
 public class WeeklyForecastItem implements Serializable {
     private final String mDay;
     //TODO: Add an image that represents the condition (sunny, rainy, etc.)
-    private final int mTemp;
+    private final String mDescription;
+    private final double mTemp;
 
     /**
      * Helper class for building Credentials.
      */
     public static class Builder {
         private final String mDay;
-        //private final String mConditionImage;
-        private final int mTemp;
+        private final String mDescription;
+        private final double mTemp;
 
 
         /**
@@ -28,8 +31,9 @@ public class WeeklyForecastItem implements Serializable {
          * @param day The day of the week this card is associated with
          * @param temp the temperature for this day provided by the api
          */
-        public Builder(String day, int temp) {
-            this.mDay = day;
+        public Builder(int day, String description, double temp) {
+            this.mDay = convertToDayString(day);
+            this.mDescription = description;
             this.mTemp = temp;
         }
 
@@ -40,7 +44,30 @@ public class WeeklyForecastItem implements Serializable {
 
     private WeeklyForecastItem(final WeeklyForecastItem.Builder builder) {
         this.mDay = builder.mDay;
+        this.mDescription = builder.mDescription;
         this.mTemp = builder.mTemp;
+    }
+
+    private static String convertToDayString(int numberRepresentationOfDay) {
+        switch(numberRepresentationOfDay) {
+            case 0:
+                return "Sunday";
+            case 1:
+                return "Monday";
+            case 2:
+                return "Tuesday";
+            case 3:
+                return "Wednesday";
+            case 4:
+                return "Thursday";
+            case 5:
+                return "Friday";
+            case 6:
+                return "Saturday";
+            default:
+                Log.e("ERROR!", "The weather endpoint gave an invalid day for the 5 day forecast");
+                return "";
+        }
     }
 
     /**
@@ -53,9 +80,17 @@ public class WeeklyForecastItem implements Serializable {
 
     /**
      *
+     * @return A short description of this hour's weather condition. (i.e. sunny, partly cloudy).
+     */
+    public String getDescription() {
+        return this.mDescription;
+    }
+
+    /**
+     *
      * @return The expected/observed average temperature for this day.
      */
-    public int getTemp() {
+    public double getTemp() {
         return this.mTemp;
     }
 }

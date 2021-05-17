@@ -19,8 +19,8 @@ public class HourlyForecastItemGenerator {
         HOURLY_FORECAST_ITEMS = new HourlyForecastItem[ENDING_HOUR - STARTING_HOUR + 1];
         for (int i = 0; i < HOURLY_FORECAST_ITEMS.length; i++) {
             HOURLY_FORECAST_ITEMS[i] = new HourlyForecastItem
-                    .Builder(i + STARTING_HOUR,
-                    80)
+                    .Builder(
+                            i + STARTING_HOUR, "clear sky", 80)
                     .build();
         }
     }

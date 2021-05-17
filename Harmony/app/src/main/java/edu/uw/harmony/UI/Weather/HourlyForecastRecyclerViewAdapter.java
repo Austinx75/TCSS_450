@@ -12,6 +12,8 @@ import java.util.List;
 import edu.uw.harmony.R;
 import edu.uw.harmony.databinding.FragmentWeatherHourlyForecastCardBinding;
 
+import static edu.uw.harmony.util.WeatherUtils.determineImageFromDescription;
+
 /**
  * The RecyclerView adapter that makes an HourlyForecastItem list compatible with the 24 hour forecast
  * Recycler View used in WeatherFragment.
@@ -69,11 +71,12 @@ public class HourlyForecastRecyclerViewAdapter extends
                     currentHour <= 12 ? (currentHour + " AM") : (currentHour % 12 + " PM")
             );
 
-            //TODO: Set the image
-            //Currently just uses a default image
+            //Set the image
+            this.binding.imageViewHourlyForecastCondition.setImageResource(
+                    determineImageFromDescription(mHourlyForecast.getDescription()));
 
             //Set the text for the temperature
-            binding.textHourlyTemp.setText(mHourlyForecast.getTemp() + "°");
+            binding.textHourlyTemp.setText((int)mHourlyForecast.getTemp() + "°");
         }
     }
 }
