@@ -1,22 +1,28 @@
 package edu.uw.harmony.UI.Contacts;
 
-import android.graphics.drawable.Icon;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import edu.uw.harmony.R;
 import edu.uw.harmony.databinding.FragmentContactCardBinding;
 
+/**
+ * This is a Recycler Adapter that creates the ContactListFragment.
+ *
+ * @author Jack Lin
+ * @version 1.0
+ */
 
 public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecyclerViewAdapter.ContactViewHolder>{
     private final List<ContactCard> mContact;
@@ -53,12 +59,18 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
         public final View mView;
         public FragmentContactCardBinding binding;
         private ContactCard mContact;
+        public int[] images = {R.drawable.contact_boy_512, R.drawable.contact_hacker_512,R.drawable.contact_barista_512,
+                R.drawable.contact_kitty_512,R.drawable.contact_man_512,R.drawable.contact_man_1_512,
+                R.drawable.contact_man_2_512,R.drawable.contact_user_512,R.drawable.contact_woman_512,
+                R.drawable.contact_woman_1_512};
+        Random rand = new Random();
 
         public ContactViewHolder(View view) {
             super(view);
             mView = view;
             binding = FragmentContactCardBinding.bind(view);
-            binding.contactCard.setOnClickListener(this::displayCard);
+            //binding.contactMessage.setOnClickListener(button ->  Navigation.findNavController(getView())
+            //       .navigate(ContactCardFragmentDirections.actionContactCardFragmentToNavigationNewChat()));
             //binding.buttonMore.setOnClickListener(this::handleMoreOrLess);
         }
 
@@ -85,11 +97,24 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             }*/
         }
 
+
         void setContact(final ContactCard contact) {
             mContact = contact;
 
             binding.contactUsername.setText(contact.getUsername());
             binding.contactStatus.setText(contact.getStatus());
+            binding.contactAvatar.setImageResource(images[rand.nextInt(images.length)]);
+
+            binding.contactCard.setOnClickListener(button ->
+                    Navigation.findNavController(mView).navigate(
+                            ContactListFragmentDirections.actionNavigationContactToContactFragment(binding.contactUsername.getText().toString(),  binding.contactStatus.getText().toString())));
+
+            binding.contactMessage.setOnClickListener(button ->
+                    Navigation.findNavController(mView).navigate(
+                            ContactListFragmentDirections.actionNavigationContactToNavigationNewChat()));
+
         }
+
     }
+
 }

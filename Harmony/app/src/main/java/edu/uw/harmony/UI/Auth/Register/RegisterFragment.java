@@ -31,6 +31,12 @@ import static edu.uw.harmony.util.PasswordValidator.checkPwdUpperCase;
 
 /**
  * A simple {@link Fragment} subclass.
+ * The register fragment allows the user to enter a
+ * First name, Last name, email, password, and retyped password.
+ * The main chunk of this fragment is verifying all the credentials.
+ * Once all criteria is met, it calls the auth method which uses a connect method to
+ * verify with our backend.
+ * It then passes the email and password to login fragment.
  */
 public class RegisterFragment extends Fragment {
 
@@ -115,6 +121,9 @@ public class RegisterFragment extends Fragment {
                 result -> binding.editTextPassword.setError("Passwords must match."));
     }
 
+    /**
+     * If the password does not meet certain criteria, It will set an error listing all criteria.
+     */
     private void validatePassword() {
         mPassWordValidator.processResult(
                 mPassWordValidator.apply(binding.editTextPassword.getText().toString()),

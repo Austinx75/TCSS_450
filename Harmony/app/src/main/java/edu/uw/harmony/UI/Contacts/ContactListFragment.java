@@ -1,21 +1,25 @@
 package edu.uw.harmony.UI.Contacts;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import edu.uw.harmony.R;
 import edu.uw.harmony.databinding.FragmentContactListBinding;
 
+/**
+ * This is a Fragment of a list of contact card instances.
+ *
+ * @author Jack Lin
+ * @version 1.0
+ */
 
 public class ContactListFragment extends Fragment {
 

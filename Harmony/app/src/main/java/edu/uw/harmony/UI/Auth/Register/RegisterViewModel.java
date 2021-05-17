@@ -26,7 +26,10 @@ import java.util.Map;
 import java.util.Objects;
 
 
-
+/**
+ * This class is used to connect to the backend to verify information regarding
+ * registration.
+ */
 public class RegisterViewModel extends AndroidViewModel {
 
     private MutableLiveData<JSONObject> mResponse;
