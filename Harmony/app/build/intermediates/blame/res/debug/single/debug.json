@@ -12,16 +12,20 @@
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_chat_card.xml"
     },
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_contact_woman_1_512.png.flat",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/contact_woman_1_512.png"
-    },
-    {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
+        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_contact_woman_1_512.png.flat",
+        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/contact_woman_1_512.png"
+    },
+    {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_ic_baseline_chat_bubble_24.xml.flat",
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/ic_baseline_chat_bubble_24.xml"
+    },
+    {
+        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_weather_rain.png.flat",
+        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/weather_rain.png"
     },
     {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_contact_boy_512.png.flat",
@@ -48,12 +52,12 @@
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/chat_add_new_chat_24dp.xml"
     },
     {
-        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/layout_fragment_contact.xml.flat",
-        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_contact.xml"
-    },
-    {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/navigation_auth_nav_graph.xml.flat",
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/navigation/auth_nav_graph.xml"
+    },
+    {
+        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/layout_fragment_contact.xml.flat",
+        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_contact.xml"
     },
     {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_ic_launcher_foreground.xml.flat",
@@ -70,6 +74,10 @@
     {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_weather_snow.png.flat",
+        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/weather_snow.png"
     },
     {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/navigation_main_graph.xml.flat",
@@ -204,6 +212,10 @@
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/menu/bottom_nav_menu.xml"
     },
     {
+        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_weather_clouds.png.flat",
+        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/weather_clouds.png"
+    },
+    {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_chat_notification_24dp.xml.flat",
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/chat_notification_24dp.xml"
     },
@@ -226,6 +238,10 @@
     {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_weather_thunderstorm.png.flat",
+        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/weather_thunderstorm.png"
     },
     {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/layout_fragment_weather_weekly_forecast_card.xml.flat",
