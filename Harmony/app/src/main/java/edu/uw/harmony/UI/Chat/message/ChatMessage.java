@@ -16,12 +16,22 @@ public final class ChatMessage implements Serializable {
     private final String mMessage;
     private final String mSender;
     private final String mTimeStamp;
+    private final int mChatId;
 
-    public ChatMessage(int messageId, String message, String sender, String timeStamp) {
+    /**
+     * Chat Message Constructor
+     * @param messageId message id
+     * @param message the message
+     * @param sender the sender's email
+     * @param timeStamp the time that it was sent
+     * @param chatId the chat it belongs to base on id
+     */
+    public ChatMessage(int messageId, String message, String sender, String timeStamp, int chatId) {
         mMessageId = messageId;
         mMessage = message;
         mSender = sender;
         mTimeStamp = timeStamp;
+        mChatId = chatId;
     }
 
     /**
@@ -36,24 +46,47 @@ public final class ChatMessage implements Serializable {
         return new ChatMessage(msg.getInt("messageid"),
                 msg.getString("message"),
                 msg.getString("email"),
-                msg.getString("timestamp"));
+                msg.getString("timestamp"),
+                msg.getInt("chatid"));
     }
 
+    /**
+     * Gets the message
+     * @return the message
+     */
     public String getMessage() {
         return mMessage;
     }
 
+    /**
+     * Gets the senders email
+     * @return the email of the sender
+     */
     public String getSender() {
         return mSender;
     }
 
+    /**
+     * Gets the timestamp it was sent
+     * @return the timestamp
+     */
     public String getTimeStamp() {
         return mTimeStamp;
     }
 
+    /**
+     * Gets the message id
+     * @return the message id
+     */
     public int getMessageId() {
         return mMessageId;
     }
+
+    /**
+     * Gets the chat the message belongs to
+     * @return the id of the chat the message is in
+     */
+    public int getChatId() {return mChatId;}
 
     /**
      * Provides equality solely based on MessageId.

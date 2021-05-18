@@ -25,21 +25,42 @@ import java.util.Objects;
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.io.RequestQueueSingleton;
 
+/**
+ * A view model for the chat sending
+ */
 public class ChatSendViewModel extends AndroidViewModel {
 
+    /**
+     * The response
+     */
     private final MutableLiveData<JSONObject> mResponse;
 
+    /**
+     * Contructor for the view model
+     * @param application the application
+     */
     public ChatSendViewModel(@NonNull Application application) {
         super(application);
         mResponse = new MutableLiveData<>();
         mResponse.setValue(new JSONObject());
     }
 
+    /**
+     * Adds observers to the response
+     * @param owner the owner
+     * @param observer the observer
+     */
     public void addResponseObserver(@NonNull LifecycleOwner owner,
                                     @NonNull Observer<? super JSONObject> observer) {
         mResponse.observe(owner, observer);
     }
 
+    /**
+     * Request to send message
+     * @param chatId the chat id the user is in
+     * @param jwt the jwt of the user
+     * @param message the message they are sending
+     */
     public void sendMessage(final int chatId, final String jwt, final String message) {
         String url = getApplication().getResources().getString(R.string.base_url) +
                 "messages";
@@ -78,7 +99,10 @@ public class ChatSendViewModel extends AndroidViewModel {
     }
 
 
-
+    /**
+     * Handles the errors from the request to the server
+     * @param error the error from Volley
+     */
     private void handleError(final VolleyError error) {
         if (Objects.isNull(error.networkResponse)) {
             Log.e("NETWORK ERROR", error.getMessage());

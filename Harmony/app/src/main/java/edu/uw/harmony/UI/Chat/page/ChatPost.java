@@ -60,6 +60,10 @@ public class ChatPost implements Serializable {
 
     }
 
+    /**
+     * Constructor for the ChatPost
+     * @param builder the builder
+     */
     private ChatPost(final Builder builder) {
         this.mChatId = builder.mChatId;
         this.mMemberIds = builder.mMemberIds;
@@ -67,18 +71,18 @@ public class ChatPost implements Serializable {
         this.mTitle=builder.mTitle;
     }
 
+    /**
+     * Gets the chat id of the post
+     * @return the chat id
+     */
     public int getChatId() {
         return mChatId;
     }
 
-    public List<Integer> getMembers() {
-        return mMemberIds;
-    }
-
-    public String getRecentMessage() {
-        return mRecentMessage;
-    }
-
+    /**
+     * Gets the title of the chat
+     * @return the title of the chat
+     */
     public String getTitle() {return mTitle;}
 
 

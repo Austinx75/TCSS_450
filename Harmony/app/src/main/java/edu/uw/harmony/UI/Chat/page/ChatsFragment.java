@@ -29,6 +29,7 @@ public class ChatsFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_chat, container, false);
     }
 
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //Local access to the ViewBinding object. No need to create as Instance Var as it is only

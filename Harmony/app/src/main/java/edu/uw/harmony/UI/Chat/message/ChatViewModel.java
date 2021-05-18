@@ -184,6 +184,7 @@ public class ChatViewModel extends AndroidViewModel {
             throw new IllegalStateException("Unexpected response in ChatViewModel: " + response);
         }
         try {
+            Log.e("json", response.getInt("chatId")+ "");
             list = getMessageListByChatId(response.getInt("chatId"));
             JSONArray messages = response.getJSONArray("rows");
             for(int i = 0; i < messages.length(); i++) {
@@ -192,7 +193,8 @@ public class ChatViewModel extends AndroidViewModel {
                         message.getInt("messageid"),
                         message.getString("message"),
                         message.getString("email"),
-                        message.getString("timestamp")
+                        message.getString("timestamp"),
+                        response.getInt("chatId")
                 );
                 if (!list.contains(cMessage)) {
                     // don't add a duplicate

@@ -71,20 +71,6 @@ public class MainActivity extends AppCompatActivity {
         MainActivityArgs args = MainActivityArgs.fromBundle(getIntent().getExtras());
         JWT jwt = new JWT(args.getJwt());
         String email = args.getEmail();
-
-        // Check to see if the web token is still valid or not. To make a JWT expire after a
-        // longer or shorter time period, change the expiration time when the JWT is
-        // created on the web service.
-        //TEMPORARILY DISABLED UNTIL WE GET JWT FROM OUR OWN SERVER
-//        if(!jwt.isExpired(0)) {
-//            new ViewModelProvider(
-//                    this,
-//                    new UserInfoViewModel.UserInfoViewModelFactory(email, jwt.toString()))
-//                    .get(UserInfoViewModel.class);
-//        } else {
-//            //In production code, add in your own error handling/flow for when the JWT is expired
-//            throw new IllegalStateException("JWT is expired!");
-//        }
         new ViewModelProvider(
                 this,
                 new UserInfoViewModel.UserInfoViewModelFactory(email, jwt.toString()))
@@ -92,10 +78,6 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
-
-        new ViewModelProvider(this,
-                new UserInfoViewModel.UserInfoViewModelFactory(args.getEmail(), args.getJwt())
-        ).get(UserInfoViewModel.class);
 
         /** Changing the color for the bottom nav bar icons. */
         if(getCurrentTheme() == R.style.Theme_1_Harmony){
@@ -120,21 +102,15 @@ public class MainActivity extends AppCompatActivity {
 
         mNewMessageModel = new ViewModelProvider(this).get(NewMessageCountViewModel.class);
 
-        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
-            if (destination.getId() == R.id.navigation_chat_list) {
-                //When the user navigates to the chats page, reset the new message count.
-                // This will need some extra logic for your project as it should have
-                // multiple chat rooms.
-                mNewMessageModel.reset(1);
-            }
-        });
+;
         mNewMessageModel.addMessageCountObserver(this, mapping -> {
-            int count = this.sum(mapping);
+            int total = sum(mapping);
+            Log.e("total ", "" +total);
             BadgeDrawable badge = binding.navView.getOrCreateBadge(R.id.navigation_chat_list);
             badge.setMaxCharacterCount(2);
-            if (count > 0) {
+            if ( total > 0) {
                 //new messages! update and show the notification badge.
-                badge.setNumber(count);
+                badge.setNumber(total);
                 badge.setVisible(true);
             } else {
                 //user did some action to clear the new messages, remove the badge
@@ -144,6 +120,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Helper function that sums the chat room new messages
+     * @param map the map representing the notification for each chat room
+     * @return the total number of unseen messages
+     */
     private int sum(Map<Integer, Integer> map) {
         int total = 0;
         for (Map.Entry<Integer, Integer> entry: map.entrySet()) {
@@ -151,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return total;
     }
+
 
 
     @Override
@@ -193,11 +175,13 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.this, R.id.nav_host_fragment);
 
             NavDestination nd = nc.getCurrentDestination();
-
             if (intent.hasExtra("chatMessage")) {
                 ChatMessage cm = (ChatMessage) intent.getSerializableExtra("chatMessage");
-                if (nd.getId() != R.id.navigation_chat_post) {
-                    mNewMessageModel.increment(1);
+                if (cm.getChatId() == mNewMessageModel.getCurrentChatRoom()){
+                    mNewMessageModel.reset();
+                }
+                else {
+                    mNewMessageModel.increment(cm.getChatId());
                 }
 
                 mModel.addMessage(intent.getIntExtra("chatid", -1), cm);
