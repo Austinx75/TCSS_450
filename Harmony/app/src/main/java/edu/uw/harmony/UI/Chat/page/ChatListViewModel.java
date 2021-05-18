@@ -50,6 +50,7 @@ public class ChatListViewModel extends AndroidViewModel {
         IntFunction<String> getString =
                 getApplication().getResources()::getString;
         try {
+            mChatList.setValue(new ArrayList<>());
             JSONObject root = result;
             JSONArray chats = root.getJSONArray("chats");
             Log.e("-----------------------", chats.get(0).toString());
@@ -58,12 +59,12 @@ public class ChatListViewModel extends AndroidViewModel {
 
                 List<Integer> members = new ArrayList<>();
 
-                ChatPost post = new ChatPost.Builder((int)room.get("id"), members, "" +room.get("name")).build();
+                ChatPost post = new ChatPost.Builder((int)room.get("chatid"), members, "" + room.get("name")).build();
                 Log.e("-----------", mChatList.getValue() + " ");
                 boolean contains = false;
                 List <ChatPost> list = mChatList.getValue();
                 for (ChatPost chat: list) {
-                    if ((int)room.get("id") == chat.getChatId()) {
+                    if ((int)room.get("chatid") == chat.getChatId()) {
                         contains = true;
                     }
                 }

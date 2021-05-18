@@ -60,4 +60,9 @@ public class ChatListFragment extends Fragment {
                 Navigation.findNavController(getView()).navigate(
                         ChatListFragmentDirections.actionNavigationChatListToNavigationNewChat()));
     }
+    @Override
+    public void onResume() {
+        super.onResume();
+        mModel.connectGet(mUserModel.getJwt(), mUserModel.getEmail());
+    }
 }
