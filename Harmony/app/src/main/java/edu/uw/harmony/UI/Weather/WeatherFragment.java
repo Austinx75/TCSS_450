@@ -50,14 +50,14 @@ public class WeatherFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentWeatherBinding.inflate(inflater);
-        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
-            binding.textViewCityPlaceholder.setTextColor(Color.BLACK);
-            binding.textViewMainTemperaturePlaceholder.setTextColor(Color.BLACK);
-        } else {
-            binding.textViewCityPlaceholder.setTextColor(Color.WHITE);
-            binding.textViewMainTemperaturePlaceholder.setTextColor(Color.WHITE);
-
-        }
+//        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+//            binding.textViewCityPlaceholder.setTextColor(Color.BLACK);
+//            binding.textViewMainTemperaturePlaceholder.setTextColor(Color.BLACK);
+//        } else {
+//            binding.textViewCityPlaceholder.setTextColor(Color.WHITE);
+//            binding.textViewMainTemperaturePlaceholder.setTextColor(Color.WHITE);
+//
+//        }
 
 
 
@@ -88,7 +88,7 @@ public class WeatherFragment extends Fragment {
                 .get(UserInfoViewModel.class);
         mModel.setJWT(model.getJwt());
 
-        FragmentWeatherBinding binding = FragmentWeatherBinding.bind(getView());
+        binding = FragmentWeatherBinding.bind(getView());
         mModel.setWeatherBinding(binding);
 
         mModel.addHourlyForecastItemListObserver(getViewLifecycleOwner(), hourlyList -> {
@@ -103,6 +103,14 @@ public class WeatherFragment extends Fragment {
                         new WeeklyForecastRecyclerViewAdapter(weeklyList));
             }
         });
+        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+            binding.textViewCityPlaceholder.setTextColor(Color.BLACK);
+            binding.textViewMainTemperaturePlaceholder.setTextColor(Color.BLACK);
+        } else {
+            binding.textViewCityPlaceholder.setTextColor(Color.WHITE);
+            binding.textViewMainTemperaturePlaceholder.setTextColor(Color.WHITE);
+
+        }
 
         binding.layoutWait.setVisibility(View.GONE);
     }
