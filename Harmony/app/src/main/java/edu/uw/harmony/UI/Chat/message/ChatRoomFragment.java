@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.model.NewMessageCountViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentChatRoomBinding;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
@@ -28,6 +29,7 @@ public class ChatRoomFragment extends Fragment {
     private ChatSendViewModel mSendModel;
     private int mChatId= 0;
     private SettingsViewModel settingsViewModel;
+    private NewMessageCountViewModel mChatCountViewModel;
 
     public ChatRoomFragment() {
         // Required empty public constructor
@@ -44,6 +46,9 @@ public class ChatRoomFragment extends Fragment {
         mChatModel = provider.get(ChatViewModel.class);
         mChatModel.getFirstMessages(mChatId, mUserModel.getJwt(), settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony);
         mSendModel = provider.get(ChatSendViewModel.class);
+        mChatCountViewModel = provider.get(NewMessageCountViewModel.class);
+        mChatCountViewModel.setCurrentChatRoom(args.getChatId());
+        mChatCountViewModel.reset();
     }
 
     @Override
@@ -103,5 +108,11 @@ public class ChatRoomFragment extends Fragment {
         });
         mSendModel.addResponseObserver(getViewLifecycleOwner(), response ->
                 binding.editMessage.setText(""));
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mChatCountViewModel.setCurrentChatRoom(-1);
     }
 }

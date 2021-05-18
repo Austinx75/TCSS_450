@@ -1,6 +1,7 @@
 package edu.uw.harmony.UI.Chat.page;
 
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,18 +18,22 @@ import java.util.stream.Collectors;
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Chat.page.ChatListFragmentDirections;
 import edu.uw.harmony.UI.Chat.page.ChatPost;
+import edu.uw.harmony.UI.model.NewMessageCountViewModel;
 import edu.uw.harmony.databinding.FragmentChatCardBinding;
 
+/**
+ * Creates a Recycler View Adapter for the Chat rooms
+ */
 public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerViewAdapter.ChatViewHolder>{
-    //Store all of the blogs to present
+    /** Stores all of the rooms*/
     private final List<ChatPost> mChats;
-    //Store the expanded state for each List item, true -> expanded, false -> not
-    private final Map<ChatPost, Boolean> mExpandedFlags;
 
+    /**
+     * Constructor for the Recycler View Adapter
+     * @param items the items that will be created
+     */
     public ChatRecyclerViewAdapter(List<ChatPost> items) {
         this.mChats = items;
-        mExpandedFlags = mChats.stream()
-                .collect(Collectors.toMap(Function.identity(), chat -> false));
     }
 
     /**
@@ -45,24 +50,28 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
             binding = FragmentChatCardBinding.bind(view);
         }
 
+        /**
+         * Sets the chat on the page
+         * @param chat the chat post
+         */
         void setChat(final ChatPost chat) {
             mChat = chat;
 
             binding.textTitle.setOnClickListener(view -> {
                 Navigation.findNavController(mView).navigate(
-                        ChatListFragmentDirections.actionChatListFragmentToChatPostFragment(chat.getChatId())
+                        ChatListFragmentDirections.actionChatListFragmentToChatPostFragment(mChat.getChatId())
                 );
             });
 
             binding.textPubdate.setOnClickListener(view -> {
                 Navigation.findNavController(mView).navigate(
-                        ChatListFragmentDirections.actionChatListFragmentToChatPostFragment(chat.getChatId())
+                        ChatListFragmentDirections.actionChatListFragmentToChatPostFragment(mChat.getChatId())
                 );
             });
 
             binding.imageFace.setOnClickListener(view -> {
                 Navigation.findNavController(mView).navigate(
-                        ChatListFragmentDirections.actionChatListFragmentToChatPostFragment(chat.getChatId())
+                        ChatListFragmentDirections.actionChatListFragmentToChatPostFragment(mChat.getChatId())
                 );
             });
             binding.textTitle.setText(chat.getTitle());

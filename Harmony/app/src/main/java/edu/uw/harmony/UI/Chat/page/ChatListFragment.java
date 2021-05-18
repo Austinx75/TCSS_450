@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Chat.page.ChatListFragmentDirections;
+import edu.uw.harmony.UI.model.NewMessageCountViewModel;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentChatListBinding;
@@ -25,8 +26,11 @@ import edu.uw.harmony.databinding.FragmentLogInBinding;
  * A simple {@link Fragment} subclass.
  */
 public class ChatListFragment extends Fragment {
+    /** Chatlist view model*/
     private ChatListViewModel mModel;
+    /** View model for the user*/
     private UserInfoViewModel mUserModel;
+    /** View binding*/
     private FragmentChatListBinding binding;
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;

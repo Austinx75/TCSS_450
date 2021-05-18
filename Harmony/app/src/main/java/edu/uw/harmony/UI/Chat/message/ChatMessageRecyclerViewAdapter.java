@@ -21,10 +21,25 @@ import edu.uw.harmony.databinding.FragmentChatMessageBinding;
 
 public class ChatMessageRecyclerViewAdapter extends RecyclerView.Adapter<ChatMessageRecyclerViewAdapter.MessageViewHolder> {
 
+    /**
+     * List of messages
+     */
     private final List<ChatMessage> mMessages;
+    /**
+     * The email of the account
+     */
     private final String mEmail;
+    /**
+     * The current app theme
+     */
     private boolean isLight;
 
+    /**
+     * Creates a recycler view adapter for the chat messages
+     * @param messages a list of messages in the chat
+     * @param email the email of the current user
+     * @param isLight the current app theme
+     */
     public ChatMessageRecyclerViewAdapter(List<ChatMessage> messages, String email, boolean isLight) {
         this.mMessages = messages;
         mEmail = email;

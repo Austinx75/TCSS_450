@@ -27,25 +27,48 @@ import java.util.function.IntFunction;
 
 import edu.uw.harmony.R;
 
+/**
+ * View model to store the information of the list of chats the user has
+ */
 public class ChatListViewModel extends AndroidViewModel {
 
+    /** The list of chats that the user is currently in*/
     private MutableLiveData<List<ChatPost>> mChatList;
+
+    /**
+     * Constructor for the chat list view model
+     * @param application the application
+     */
     public ChatListViewModel(@NonNull Application application) {
         super(application);
         mChatList = new MutableLiveData<>();
         mChatList.setValue(new ArrayList<>());
     }
+
+    /**
+     * Adds a blog list observer
+     * @param owner the owner
+     * @param observer the observer
+     */
     public void addBlogListObserver(@NonNull LifecycleOwner owner,
                                     @NonNull Observer<? super List<ChatPost>> observer) {
         mChatList.observe(owner, observer);
     }
 
+    /**
+     * Handles the error from Volley
+     * @param error The error from Volley
+     */
     private void handleError(final VolleyError error) {
         //you should add much better error handling in a production release.
         //i.e. YOUR PROJECT
-        Log.e("CONNECTION ERROR", error.getLocalizedMessage());
+        Log.e("ERROR","USER HAS NOT STARTED ANY CHATS");
     }
 
+    /**
+     * If the user recieves a good response, then we begin filling the page with chatposts
+     * @param result the result from the web service
+     */
     private void handleResult(final JSONObject result) {
         IntFunction<String> getString =
                 getApplication().getResources()::getString;
@@ -75,49 +98,14 @@ public class ChatListViewModel extends AndroidViewModel {
             e.printStackTrace();
             Log.e("ERROR!", e.getMessage());
         }
-
-
-//        try {
-//            JSONObject root = result;
-//            if (root.has(getString.apply(R.string.keys_json_blogs_response))) {
-//                JSONObject response =
-//                        root.getJSONObject(getString.apply(
-//                                R.string.keys_json_blogs_response));
-//                if (response.has(getString.apply(R.string.keys_json_blogs_data))) {
-//                    JSONArray data = response.getJSONArray(
-//                            getString.apply(R.string.keys_json_blogs_data));
-//                    for(int i = 0; i < data.length(); i++) {
-//                        JSONObject jsonBlog = data.getJSONObject(i);
-//                        ChatPost post = new ChatPost.Builder(
-//                                jsonBlog.getString(
-//                                        getString.apply(
-//                                                R.string.keys_json_blogs_pubdate)),
-//                                jsonBlog.getString(
-//                                        getString.apply(
-//                                                R.string.keys_json_blogs_title)))
-//                                .addTeaser(jsonBlog.getString(
-//                                        getString.apply(
-//                                                R.string.keys_json_blogs_teaser)))
-//                                .addUrl(jsonBlog.getString(
-//                                        getString.apply(
-//                                                R.string.keys_json_blogs_url)))
-//                                .build();
-//                        if (!mChatList.getValue().contains(post)) {
-//                            mChatList.getValue().add(post); }
-//                    }
-//                } else {
-//                    Log.e("ERROR!", "No data array");
-//                }
-//            } else {
-//                Log.e("ERROR!", "No response");
-//            }
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//            Log.e("ERROR!", e.getMessage());
-//        }
         mChatList.setValue(mChatList.getValue());
     }
 
+    /**
+     * Connects to the web service to get all the chatrooms associated with the users email.
+     * @param jwt the users jwt
+     * @param email the users email
+     */
     public void connectGet(final String jwt, final String email) {
         String url =
                 getApplication().getResources().getString(R.string.base_url) + "chatroom/" + email;
