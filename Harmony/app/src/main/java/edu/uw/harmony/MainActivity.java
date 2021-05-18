@@ -40,6 +40,8 @@ import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 
+import java.util.Map;
+
 import edu.uw.harmony.UI.Chat.message.ChatMessage;
 import edu.uw.harmony.UI.Chat.message.ChatViewModel;
 import edu.uw.harmony.UI.model.NewMessageCountViewModel;
@@ -119,15 +121,16 @@ public class MainActivity extends AppCompatActivity {
         mNewMessageModel = new ViewModelProvider(this).get(NewMessageCountViewModel.class);
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
-            if (destination.getId() == R.id.navigation_chat_post) {
+            if (destination.getId() == R.id.navigation_chat_list) {
                 //When the user navigates to the chats page, reset the new message count.
                 // This will need some extra logic for your project as it should have
                 // multiple chat rooms.
-                mNewMessageModel.reset();
+                mNewMessageModel.reset(1);
             }
         });
-        mNewMessageModel.addMessageCountObserver(this, count -> {
-            BadgeDrawable badge = binding.navView.getOrCreateBadge(R.id.navigation_chat_post);
+        mNewMessageModel.addMessageCountObserver(this, mapping -> {
+            int count = this.sum(mapping);
+            BadgeDrawable badge = binding.navView.getOrCreateBadge(R.id.navigation_chat_list);
             badge.setMaxCharacterCount(2);
             if (count > 0) {
                 //new messages! update and show the notification badge.
@@ -139,7 +142,14 @@ public class MainActivity extends AppCompatActivity {
                 badge.setVisible(false);
             }
         });
+    }
 
+    private int sum(Map<Integer, Integer> map) {
+        int total = 0;
+        for (Map.Entry<Integer, Integer> entry: map.entrySet()) {
+            total += entry.getValue();
+        }
+        return total;
     }
 
 
@@ -187,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
             if (intent.hasExtra("chatMessage")) {
                 ChatMessage cm = (ChatMessage) intent.getSerializableExtra("chatMessage");
                 if (nd.getId() != R.id.navigation_chat_post) {
-                    mNewMessageModel.increment();
+                    mNewMessageModel.increment(1);
                 }
 
                 mModel.addMessage(intent.getIntExtra("chatid", -1), cm);

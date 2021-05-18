@@ -121,6 +121,7 @@ public class ChatListViewModel extends AndroidViewModel {
     public void connectGet(final String jwt, final String email) {
         String url =
                 getApplication().getResources().getString(R.string.base_url) + "chatroom/" + email;
+        Log.e("fasjd fkajls dfklja sdjkf alksdfklasjdf", email);
         Request request = new JsonObjectRequest(
                 Request.Method.GET,
                 url,
