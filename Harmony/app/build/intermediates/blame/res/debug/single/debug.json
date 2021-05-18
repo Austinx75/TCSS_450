@@ -12,6 +12,10 @@
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_chat_card.xml"
     },
     {
+        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_ic_dark_mode_24.xml.flat",
+        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/ic_dark_mode_24.xml"
+    },
+    {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
@@ -52,6 +56,10 @@
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/chat_add_new_chat_24dp.xml"
     },
     {
+        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/mipmap-xhdpi_log_in_harmony_logo.png.flat",
+        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/mipmap-xhdpi/log_in_harmony_logo.png"
+    },
+    {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/navigation_auth_nav_graph.xml.flat",
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/navigation/auth_nav_graph.xml"
     },
@@ -64,8 +72,16 @@
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/ic_launcher_foreground.xml"
     },
     {
+        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_track.xml.flat",
+        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/track.xml"
+    },
+    {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/layout_fragment_chat_list.xml.flat",
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/layout/fragment_chat_list.xml"
+    },
+    {
+        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_android_harmony_logo.png.flat",
+        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/android_harmony_logo.png"
     },
     {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/layout_fragment_contact_list.xml.flat",
@@ -200,6 +216,10 @@
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/contact_man_1_512.png"
     },
     {
+        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_thumb1.xml.flat",
+        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/thumb1.xml"
+    },
+    {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_chat_current_face_chat_24dp.xml.flat",
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/chat_current_face_chat_24dp.xml"
     },
@@ -242,6 +262,10 @@
     {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_weather_thunderstorm.png.flat",
         "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/weather_thunderstorm.png"
+    },
+    {
+        "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/drawable_ic_light_theme_24.xml.flat",
+        "source": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/src/main/res/drawable/ic_light_theme_24.xml"
     },
     {
         "merged": "/Users/larrysannicolas/AndroidStudioProjects/Team-9-TCSS-450/Harmony/app/build/intermediates/res/merged/debug/layout_fragment_weather_weekly_forecast_card.xml.flat",

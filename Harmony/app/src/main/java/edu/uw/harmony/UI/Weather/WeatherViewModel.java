@@ -1,6 +1,8 @@
 package edu.uw.harmony.UI.Weather;
 
+import android.app.Activity;
 import android.app.Application;
+import android.graphics.Color;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -8,6 +10,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -16,6 +19,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentWeatherBinding;
 
 import org.json.JSONArray;
@@ -34,6 +38,10 @@ public class WeatherViewModel extends AndroidViewModel {
     private String mJwt;
     private MutableLiveData<List<HourlyForecastItem>> mHourlyList;
     private MutableLiveData<List<WeeklyForecastItem>> mWeeklyList;
+    /** ViewModel for settings */
+    private SettingsViewModel settingsViewModel;
+
+
 
     private FragmentWeatherBinding weatherBinding;
 
@@ -41,6 +49,7 @@ public class WeatherViewModel extends AndroidViewModel {
         super(application);
         mHourlyList = new MutableLiveData<>();
         mHourlyList.setValue(new ArrayList<>());
+        //settingsViewModel = new ViewModelProvider().get(SettingsViewModel.class);
 
         mWeeklyList = new MutableLiveData<>();
         mWeeklyList.setValue(new ArrayList<>());
@@ -185,5 +194,10 @@ public class WeatherViewModel extends AndroidViewModel {
                         currentWeather.getString(
                                 getString.apply(
                                         R.string.keys_temp))) + "°");
+//        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+//            weatherBinding.textViewMainTemperaturePlaceholder.setTextColor(Color.BLACK);
+//        } else {
+//            weatherBinding.textViewMainTemperaturePlaceholder.setTextColor(Color.WHITE);
+//        }
     }
 }

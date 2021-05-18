@@ -1061,6 +1061,7 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color blue_500
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1132,6 +1133,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color lighter_blue
@@ -1793,6 +1795,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable android_harmony_logo
 drawable avd_hide_password
 drawable avd_show_password
 drawable btn_checkbox_checked_mtrl
@@ -1835,9 +1838,11 @@ drawable ic_baseline_chat_bubble_24
 drawable ic_baseline_group_add_24
 drawable ic_baseline_wb_sunny_24
 drawable ic_clock_black_24dp
+drawable ic_dark_mode_24
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_light_theme_24
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -1877,8 +1882,10 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable open_on_phone
 drawable test_custom_background
+drawable thumb1
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable track
 drawable weather_clouds
 drawable weather_rain
 drawable weather_snow
@@ -2012,8 +2019,6 @@ id button_loginFragment_login
 id button_loginFragment_register
 id button_registerFragment_register
 id button_send
-id button_theme1
-id button_theme2
 id button_validationFragment_validate
 id cache_measures
 id cancel_action
@@ -2059,6 +2064,8 @@ id counterclockwise
 id custom
 id customPanel
 id cut
+id dark_mode_switch
+id dark_mode_textView
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -2145,12 +2152,11 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageView
-id imageView2
 id imageView_hourlyForecastCondition
 id imageView_mainConditionsPlaceholder
 id imageView_weeklyForecastCondition
 id image_face
+id image_logo_home
 id info
 id invisible
 id inward
@@ -2174,6 +2180,7 @@ id listMode
 id list_item
 id list_root
 id logInFragment
+id login_harmony_logo
 id mainActivity
 id main_graph
 id masked
@@ -2311,6 +2318,8 @@ id selected
 id selection_type
 id sendMessage
 id settingsFragment
+id settings_darkMode_image
+id settings_gear_image
 id shortcut
 id showCustom
 id showHome
@@ -2366,20 +2375,20 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
 id textView2
 id textView4
-id textViewAppName
-id textViewGreeting
-id textViewMostRecentChat
 id textView_cityPlaceholder
 id textView_mainTemperaturePlaceholder
+id text_current_weather_home
+id text_deg_home
+id text_email_home
 id text_hourlyTemp
 id text_hourlyTime
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
 id text_message
+id text_notifications_home
 id text_pubdate
 id text_title
 id text_weeklyDay
@@ -2649,6 +2658,7 @@ menu bottom_nav_menu
 menu toolbar
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap log_in_harmony_logo
 navigation auth_nav_graph
 navigation main_graph
 plurals mtrl_badge_content_description
@@ -2700,6 +2710,7 @@ string contact_message
 string contact_name
 string contact_status
 string contact_username
+string dark_mode_settings
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -2722,6 +2733,7 @@ string keys_json_blogs_teaser
 string keys_json_blogs_title
 string keys_json_blogs_url
 string keys_temp
+string light_mode_settings
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_selection
@@ -2781,9 +2793,11 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string search_menu_title
 string status_bar_notification_info_overflow
+string text_current_weather_home
 string text_home_appName
 string text_login_email
 string text_login_password
+string text_notification_home
 string text_register_FName
 string text_register_LName
 string text_register_RetypePassword
@@ -3318,6 +3332,8 @@ style ThemeOverlay_MaterialComponents_TimePicker_Display
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
 style ThemeOverlayColorAccentRed
+style Theme_1_Harmony
+style Theme_2_Harmony
 style Widget_App_Button_OutlinedButton_IconOnly
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
@@ -3528,8 +3544,6 @@ style WsSinglePageNavDrawerIconStyle
 style WsVerticalGuideStyle
 style WsWearableActionDrawerItemText
 style WsWearableActionDrawerTitleText
-style theme1
-style theme2
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

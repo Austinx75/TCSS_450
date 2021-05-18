@@ -1,6 +1,7 @@
 package edu.uw.harmony.UI.Auth.Register;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,8 @@ import android.view.ViewGroup;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import edu.uw.harmony.R;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentRegisterBinding;
 import edu.uw.harmony.util.PasswordValidator;
 
@@ -44,6 +47,9 @@ public class RegisterFragment extends Fragment {
 
     private RegisterViewModel mRegisterModel;
 
+    /** ViewModel for settings */
+    private SettingsViewModel settingsViewModel;
+
     private PasswordValidator mNameValidator = checkPwdLength(1);
 
     private PasswordValidator mEmailValidator = checkPwdLength(2)
@@ -65,6 +71,7 @@ public class RegisterFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
         mRegisterModel = new ViewModelProvider(getActivity())
                 .get(RegisterViewModel.class);
     }
@@ -73,6 +80,29 @@ public class RegisterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentRegisterBinding.inflate(inflater);
+        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+            binding.editTextPassword.setTextColor(Color.BLACK);
+            binding.editTextEmail.setTextColor(Color.BLACK);
+            binding.editTextPassword.setHintTextColor(Color.BLACK);
+            binding.editTextEmail.setHintTextColor(Color.BLACK);
+            binding.editTextFirstName.setHintTextColor(Color.BLACK);
+            binding.editTextFirstName.setTextColor(Color.BLACK);
+            binding.editTextLastName.setTextColor(Color.BLACK);
+            binding.editTextLastName.setHintTextColor(Color.BLACK);
+            binding.editTextPassword1.setHintTextColor(Color.BLACK);
+            binding.editTextPassword1.setTextColor(Color.BLACK);
+        } else {
+            binding.editTextPassword.setTextColor(Color.WHITE);
+            binding.editTextPassword.setHintTextColor(Color.WHITE);
+            binding.editTextEmail.setHintTextColor(Color.WHITE);
+            binding.editTextEmail.setTextColor(Color.WHITE);
+            binding.editTextFirstName.setHintTextColor(Color.WHITE);
+            binding.editTextFirstName.setTextColor(Color.WHITE);
+            binding.editTextLastName.setTextColor(Color.WHITE);
+            binding.editTextLastName.setHintTextColor(Color.WHITE);
+            binding.editTextPassword1.setHintTextColor(Color.WHITE);
+            binding.editTextPassword1.setTextColor(Color.WHITE);
+        }
         return binding.getRoot();
     }
 

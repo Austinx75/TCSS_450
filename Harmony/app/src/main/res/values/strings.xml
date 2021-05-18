@@ -48,4 +48,8 @@
     <string name="keys_json_blogs_teaser">teaser</string>
     <string name="keys_json_blogs_url">url</string>
     <string name="action_settings">Settings</string>
+    <string name="light_mode_settings">Light Mode</string>
+    <string name="dark_mode_settings">Dark Mode</string>
+    <string name="text_notification_home">Notifications</string>
+    <string name="text_current_weather_home">Current Weather</string>
 </resources>
