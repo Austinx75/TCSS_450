@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.graphics.Color;
 import android.util.Log;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -73,6 +74,9 @@ public class WeatherViewModel extends AndroidViewModel {
     }
 
     private void handleResult(final JSONObject result) {
+        weatherBinding.layoutComponents.setVisibility(View.GONE);
+        weatherBinding.layoutWait.setVisibility(View.VISIBLE);
+
         IntFunction<String> getString = getApplication().getResources()::getString;
         try {
             //Current conditions
@@ -141,6 +145,8 @@ public class WeatherViewModel extends AndroidViewModel {
             e.printStackTrace();
             Log.e("ERROR!", e.getMessage());
         }
+        weatherBinding.layoutComponents.setVisibility(View.VISIBLE);
+        weatherBinding.layoutWait.setVisibility(View.GONE);
     }
 
     public void connectGet() {
