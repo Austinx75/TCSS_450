@@ -40,6 +40,7 @@ public class NewChatFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentNewChatBinding.inflate(inflater);
+        /** Dependent on the theme, this will set all text / image fields to a certain color. */
         if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
             binding.toWho.setTextColor(Color.BLACK);
             binding.enterName.setTextColor(Color.BLACK);

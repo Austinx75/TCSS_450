@@ -61,6 +61,7 @@ public class SettingsFragment extends Fragment{
         binding = FragmentSettingsBinding.inflate(inflater, container, false);
         SwitchCompat switchButton = (SwitchCompat) binding.darkModeSwitch;
         switchButton.setChecked(settingsViewModel.getSwitchState());
+        /** Dependent on the theme, this will set all text / image fields to a certain color. */
         if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
             binding.settingsDarkModeImage.setColorFilter(getResources().getColor(R.color.black));
             binding.darkModeTextView.setTextColor(Color.BLACK);

@@ -14,9 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.Weather.WeatherViewModel;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentHomeBinding;
+import edu.uw.harmony.databinding.FragmentWeatherBinding;
 
 /**
  * This fragment shows a few components that summarize info throughout the app. This is the first
@@ -26,12 +28,18 @@ import edu.uw.harmony.databinding.FragmentHomeBinding;
  * @version 1.0
  */
 public class HomeFragment extends Fragment {
+    /** This is the binder for home fragment. allows us to accessa all its attributes*/
     private FragmentHomeBinding binding;
+
+    /** This is view model for weather, it will let us access the weather*/
+    private WeatherViewModel mModel;
 
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
 
-    UserInfoViewModel model;
+    /** This is the view model for the user. It allows us to access the email of user.*/
+    private UserInfoViewModel model;
+
 
 
     @Override
@@ -41,16 +49,16 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
         model = new ViewModelProvider(getActivity()).get(UserInfoViewModel.class);
+        mModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
 
+        /** Dependent on the theme, this will set all text / image fields to a certain color. */
         if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
             binding.textEmailHome.setTextColor(Color.BLACK);
-            binding.textCurrentWeatherHome.setTextColor(Color.BLACK);
             binding.textDegHome.setTextColor(Color.BLACK);
             binding.textNotificationsHome.setTextColor(Color.BLACK);
             binding.imageLogoHome.setColorFilter(Color.BLACK);
         } else {
             binding.textEmailHome.setTextColor(Color.WHITE);
-            binding.textCurrentWeatherHome.setTextColor(Color.WHITE);
             binding.textDegHome.setTextColor(Color.WHITE);
             binding.textNotificationsHome.setTextColor(Color.WHITE);
             binding.imageLogoHome.setColorFilter(Color.WHITE);
@@ -62,20 +70,19 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+//        mModel.connectGet();
+//        UserInfoViewModel model = new ViewModelProvider(getActivity())
+//                .get(UserInfoViewModel.class);
+//        mModel.setJWT(model.getJwt());
+//
+//        mBinding = FragmentWeatherBinding.bind(getView());
+//        mModel.setWeatherBinding(mBinding);
 
 
         Log.d("STATUS", "Got to success");
-
-        //Currently throws a weird error. Will have to debug in the future.
-        //Note argument sent to the ViewModelProvider constructor. It is the Activity that
-        // holds this fragment.
-//        UserInfoViewModel model = new ViewModelProvider(getActivity())
-//                .get(UserInfoViewModel.class);
-//
-//        //Set the text color of the label. NOTE no need to cast
-//        binding.textViewGreeting.setText("Hello, " + model.getEmail());\
+        binding.textDegHome.setText(mModel.getCurrentWeather());
         binding.textEmailHome.setText(model.getEmail());
-       // binding.textViewGreeting.setText("Hello, welcome to the home page.");
+
     }
 
     @Override
