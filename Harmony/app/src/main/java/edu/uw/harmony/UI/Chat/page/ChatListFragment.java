@@ -19,6 +19,7 @@ import edu.uw.harmony.UI.Chat.page.ChatListFragmentDirections;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentChatListBinding;
+import edu.uw.harmony.databinding.FragmentLogInBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,12 +27,14 @@ import edu.uw.harmony.databinding.FragmentChatListBinding;
 public class ChatListFragment extends Fragment {
     private ChatListViewModel mModel;
     private UserInfoViewModel mUserModel;
+    private FragmentChatListBinding binding;
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
         ViewModelProvider provider = new ViewModelProvider(getActivity());
         mModel = new ViewModelProvider(getActivity()).get(ChatListViewModel.class);
         mUserModel = provider.get(UserInfoViewModel.class);
@@ -42,7 +45,7 @@ public class ChatListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        FragmentChatListBinding binding = FragmentChatListBinding.bind(getView());
+        binding = FragmentChatListBinding.inflate(inflater);
 
         if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
             binding.buttonNewChat.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
@@ -51,8 +54,7 @@ public class ChatListFragment extends Fragment {
             binding.buttonNewChat.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_200)));
             binding.buttonNewChat.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
         }
-        View view = inflater.inflate(R.layout.fragment_chat_list, container, false);
-        return view;
+        return binding.getRoot();
     }
 
     @Override
@@ -72,5 +74,10 @@ public class ChatListFragment extends Fragment {
         binding.buttonNewChat.setOnClickListener(button ->
                 Navigation.findNavController(getView()).navigate(
                         ChatListFragmentDirections.actionNavigationChatListToNavigationNewChat()));
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        mModel.connectGet(mUserModel.getJwt(), mUserModel.getEmail());
     }
 }

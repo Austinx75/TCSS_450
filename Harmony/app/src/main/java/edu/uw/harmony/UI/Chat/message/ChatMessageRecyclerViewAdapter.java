@@ -23,9 +23,12 @@ public class ChatMessageRecyclerViewAdapter extends RecyclerView.Adapter<ChatMes
 
     private final List<ChatMessage> mMessages;
     private final String mEmail;
-    public ChatMessageRecyclerViewAdapter(List<ChatMessage> messages, String email) {
+    private boolean isLight;
+
+    public ChatMessageRecyclerViewAdapter(List<ChatMessage> messages, String email, boolean isLight) {
         this.mMessages = messages;
         mEmail = email;
+        this.isLight = isLight;
     }
 
 
@@ -63,77 +66,150 @@ public class ChatMessageRecyclerViewAdapter extends RecyclerView.Adapter<ChatMes
 
             int standard = (int) res.getDimension(R.dimen.chat_margin);
             int extended = (int) res.getDimension(R.dimen.chat_margin_sided);
+            if (isLight) {
+                if (mEmail.equals(message.getSender())) {
+                    //This message is from the user. Format it as such
+                    binding.textMessage.setText(message.getMessage());
+                    ViewGroup.MarginLayoutParams layoutParams =
+                            (ViewGroup.MarginLayoutParams) card.getLayoutParams();
+                    //Set the left margin
+                    layoutParams.setMargins(extended, standard, standard, standard);
+                    // Set this View to the right (end) side
+                    ((FrameLayout.LayoutParams) card.getLayoutParams()).gravity =
+                            Gravity.END;
 
-            if (mEmail.equals(message.getSender())) {
-                //This message is from the user. Format it as such
-                binding.textMessage.setText(message.getMessage());
-                ViewGroup.MarginLayoutParams layoutParams =
-                        (ViewGroup.MarginLayoutParams) card.getLayoutParams();
-                //Set the left margin
-                layoutParams.setMargins(extended, standard, standard, standard);
-                // Set this View to the right (end) side
-                ((FrameLayout.LayoutParams) card.getLayoutParams()).gravity =
-                        Gravity.END;
+                    card.setCardBackgroundColor(
+                            ColorUtils.setAlphaComponent(
+                                    res.getColor(R.color.dark_grey, null),
+                                    16));
+                    binding.textMessage.setTextColor(
+                            res.getColor(R.color.black, null));
 
-                card.setCardBackgroundColor(
-                        ColorUtils.setAlphaComponent(
-                                res.getColor(R.color.colorPrimary, null),
-                                16));
-                binding.textMessage.setTextColor(
-                        res.getColor(R.color.design_default_color_secondary, null));
+                    card.setStrokeWidth(standard / 5);
+                    card.setStrokeColor(ColorUtils.setAlphaComponent(
+                            res.getColor(R.color.black, null),
+                            200));
 
-                card.setStrokeWidth(standard / 5);
-                card.setStrokeColor(ColorUtils.setAlphaComponent(
-                        res.getColor(R.color.colorPrimaryDark, null),
-                        200));
+                    //Round the corners on the left side
+                    card.setShapeAppearanceModel(
+                            card.getShapeAppearanceModel()
+                                    .toBuilder()
+                                    .setTopLeftCorner(CornerFamily.ROUNDED, standard * 2)
+                                    .setBottomLeftCorner(CornerFamily.ROUNDED, standard * 2)
+                                    .setBottomRightCornerSize(0)
+                                    .setTopRightCornerSize(0)
+                                    .build());
 
-                //Round the corners on the left side
-                card.setShapeAppearanceModel(
-                        card.getShapeAppearanceModel()
-                                .toBuilder()
-                                .setTopLeftCorner(CornerFamily.ROUNDED,standard * 2)
-                                .setBottomLeftCorner(CornerFamily.ROUNDED,standard * 2)
-                                .setBottomRightCornerSize(0)
-                                .setTopRightCornerSize(0)
-                                .build());
+                    card.requestLayout();
+                } else {
+                    //This message is from another user. Format it as such
+                    binding.textMessage.setText(message.getSender() +
+                            ": " + message.getMessage());
+                    ViewGroup.MarginLayoutParams layoutParams =
+                            (ViewGroup.MarginLayoutParams) card.getLayoutParams();
 
-                card.requestLayout();
+                    //Set the right margin
+                    layoutParams.setMargins(standard, standard, extended, standard);
+                    // Set this View to the left (start) side
+                    ((FrameLayout.LayoutParams) card.getLayoutParams()).gravity =
+                            Gravity.START;
+
+                    card.setCardBackgroundColor(
+                            ColorUtils.setAlphaComponent(
+                                    res.getColor(R.color.accent_tan, null),
+                                    16));
+
+                    card.setStrokeWidth(standard / 5);
+                    card.setStrokeColor(ColorUtils.setAlphaComponent(
+                            res.getColor(R.color.accent_tan, null),
+                            200));
+
+                    binding.textMessage.setTextColor(
+                            res.getColor(R.color.black, null));
+
+                    //Round the corners on the right side
+                    card.setShapeAppearanceModel(
+                            card.getShapeAppearanceModel()
+                                    .toBuilder()
+                                    .setTopRightCorner(CornerFamily.ROUNDED, standard * 2)
+                                    .setBottomRightCorner(CornerFamily.ROUNDED, standard * 2)
+                                    .setBottomLeftCornerSize(0)
+                                    .setTopLeftCornerSize(0)
+                                    .build());
+                    card.requestLayout();
+                }
             } else {
-                //This message is from another user. Format it as such
-                binding.textMessage.setText(message.getSender() +
-                        ": " + message.getMessage());
-                ViewGroup.MarginLayoutParams layoutParams =
-                        (ViewGroup.MarginLayoutParams) card.getLayoutParams();
+                if (mEmail.equals(message.getSender())) {
+                    //This message is from the user. Format it as such
+                    binding.textMessage.setText(message.getMessage());
+                    ViewGroup.MarginLayoutParams layoutParams =
+                            (ViewGroup.MarginLayoutParams) card.getLayoutParams();
+                    //Set the left margin
+                    layoutParams.setMargins(extended, standard, standard, standard);
+                    // Set this View to the right (end) side
+                    ((FrameLayout.LayoutParams) card.getLayoutParams()).gravity =
+                            Gravity.END;
 
-                //Set the right margin
-                layoutParams.setMargins(standard, standard, extended, standard);
-                // Set this View to the left (start) side
-                ((FrameLayout.LayoutParams) card.getLayoutParams()).gravity =
-                        Gravity.START;
+                    card.setCardBackgroundColor(
+                            ColorUtils.setAlphaComponent(
+                                    res.getColor(R.color.dark_grey, null),
+                                    16));
+                    binding.textMessage.setTextColor(
+                            res.getColor(R.color.offwhite, null));
 
-                card.setCardBackgroundColor(
-                        ColorUtils.setAlphaComponent(
-                                res.getColor(R.color.design_default_color_secondary, null),
-                                16));
+                    card.setStrokeWidth(standard / 5);
+                    card.setStrokeColor(ColorUtils.setAlphaComponent(
+                            res.getColor(R.color.white, null),
+                            200));
 
-                card.setStrokeWidth(standard / 5);
-                card.setStrokeColor(ColorUtils.setAlphaComponent(
-                        res.getColor(R.color.design_default_color_secondary, null),
-                        200));
+                    //Round the corners on the left side
+                    card.setShapeAppearanceModel(
+                            card.getShapeAppearanceModel()
+                                    .toBuilder()
+                                    .setTopLeftCorner(CornerFamily.ROUNDED, standard * 2)
+                                    .setBottomLeftCorner(CornerFamily.ROUNDED, standard * 2)
+                                    .setBottomRightCornerSize(0)
+                                    .setTopRightCornerSize(0)
+                                    .build());
 
-                binding.textMessage.setTextColor(
-                        res.getColor(R.color.design_default_color_secondary, null));
+                    card.requestLayout();
+                } else {
+                    //This message is from another user. Format it as such
+                    binding.textMessage.setText(message.getSender() +
+                            ": " + message.getMessage());
+                    ViewGroup.MarginLayoutParams layoutParams =
+                            (ViewGroup.MarginLayoutParams) card.getLayoutParams();
 
-                //Round the corners on the right side
-                card.setShapeAppearanceModel(
-                        card.getShapeAppearanceModel()
-                                .toBuilder()
-                                .setTopRightCorner(CornerFamily.ROUNDED,standard * 2)
-                                .setBottomRightCorner(CornerFamily.ROUNDED,standard * 2)
-                                .setBottomLeftCornerSize(0)
-                                .setTopLeftCornerSize(0)
-                                .build());
-                card.requestLayout();
+                    //Set the right margin
+                    layoutParams.setMargins(standard, standard, extended, standard);
+                    // Set this View to the left (start) side
+                    ((FrameLayout.LayoutParams) card.getLayoutParams()).gravity =
+                            Gravity.START;
+
+                    card.setCardBackgroundColor(
+                            ColorUtils.setAlphaComponent(
+                                    res.getColor(R.color.accent_tan, null),
+                                    16));
+
+                    card.setStrokeWidth(standard / 5);
+                    card.setStrokeColor(ColorUtils.setAlphaComponent(
+                            res.getColor(R.color.accent_tan, null),
+                            200));
+
+                    binding.textMessage.setTextColor(
+                            res.getColor(R.color.offwhite, null));
+
+                    //Round the corners on the right side
+                    card.setShapeAppearanceModel(
+                            card.getShapeAppearanceModel()
+                                    .toBuilder()
+                                    .setTopRightCorner(CornerFamily.ROUNDED, standard * 2)
+                                    .setBottomRightCorner(CornerFamily.ROUNDED, standard * 2)
+                                    .setBottomLeftCornerSize(0)
+                                    .setTopLeftCornerSize(0)
+                                    .build());
+                    card.requestLayout();
+                }
             }
         }
     }

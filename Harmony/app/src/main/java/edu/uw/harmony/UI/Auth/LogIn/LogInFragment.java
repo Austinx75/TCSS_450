@@ -188,6 +188,7 @@ public class LogInFragment extends Fragment {
         Navigation.findNavController(getView())
                 .navigate(LogInFragmentDirections
                         .actionLogInFragmentToMainActivity(email, jwt));
+
         getActivity().finish();
 
     }

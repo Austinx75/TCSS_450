@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentChatRoomBinding;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 
@@ -26,6 +27,7 @@ public class ChatRoomFragment extends Fragment {
 
     private ChatSendViewModel mSendModel;
     private int mChatId= 0;
+    private SettingsViewModel settingsViewModel;
 
     public ChatRoomFragment() {
         // Required empty public constructor
@@ -34,18 +36,22 @@ public class ChatRoomFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
         ViewModelProvider provider = new ViewModelProvider(getActivity());
         ChatRoomFragmentArgs args = ChatRoomFragmentArgs.fromBundle(getArguments());
         mChatId = args.getChatId();
         mUserModel = provider.get(UserInfoViewModel.class);
         mChatModel = provider.get(ChatViewModel.class);
-        mChatModel.getFirstMessages(mChatId, mUserModel.getJwt());
+        mChatModel.getFirstMessages(mChatId, mUserModel.getJwt(), settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony);
         mSendModel = provider.get(ChatSendViewModel.class);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        if (settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+
+        }
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_chat_room, container, false);
     }
@@ -55,6 +61,9 @@ public class ChatRoomFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         FragmentChatRoomBinding binding = FragmentChatRoomBinding.bind(getView());
+        if ( settingsViewModel.getCurrentThemeID() != R.style.Theme_1_Harmony){
+            binding.editMessage.setTextColor(this.getContext().getResources().getColor(R.color.white, null));
+        }
 
         //SetRefreshing shows the internal Swiper view progress bar. Show this until messages load
         binding.swipeContainer.setRefreshing(true);
@@ -64,7 +73,8 @@ public class ChatRoomFragment extends Fragment {
         //holds.
         rv.setAdapter(new ChatMessageRecyclerViewAdapter(
                 mChatModel.getMessageListByChatId(mChatId),
-                mUserModel.getEmail()));
+                mUserModel.getEmail(),
+                settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony));
 
 
         //When the user scrolls to the top of the RV, the swiper list will "refresh"

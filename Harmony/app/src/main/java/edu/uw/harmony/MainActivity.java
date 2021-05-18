@@ -38,6 +38,7 @@ import edu.uw.harmony.UI.settings.SettingsFragment;
 
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 
 import edu.uw.harmony.UI.Chat.message.ChatMessage;
 import edu.uw.harmony.UI.Chat.message.ChatViewModel;
@@ -66,9 +67,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         MainActivityArgs args = MainActivityArgs.fromBundle(getIntent().getExtras());
-        //Import com.auth0.android.jwt.JWT
         JWT jwt = new JWT(args.getJwt());
-        String email = args.getEmail().toString();
+        String email = args.getEmail();
 
         // Check to see if the web token is still valid or not. To make a JWT expire after a
         // longer or shorter time period, change the expiration time when the JWT is
@@ -89,14 +89,21 @@ public class MainActivity extends AppCompatActivity {
                 .get(UserInfoViewModel.class);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
+
+        new ViewModelProvider(this,
+                new UserInfoViewModel.UserInfoViewModelFactory(args.getEmail(), args.getJwt())
+        ).get(UserInfoViewModel.class);
 
         /** Changing the color for the bottom nav bar icons. */
         if(getCurrentTheme() == R.style.Theme_1_Harmony){
-            navView.setItemIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
+            navView.setItemIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange, null)));
             navView.setItemBackgroundResource(R.color.accent_tan);
+            navView.setItemTextColor(ColorStateList.valueOf(getResources().getColor(R.color.black, null)));
         } else {
-            navView.setItemIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_200)));
+            navView.setItemIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_200, null)));
             navView.setItemBackgroundResource(R.color.black);
+            navView.setItemTextColor(ColorStateList.valueOf(getResources().getColor(R.color.white, null)));
         }
 
 
