@@ -18,29 +18,10 @@ public class WeeklyForecastItemGenerator {
     static {
         WEEKLY_FORECAST_ITEMS = new WeeklyForecastItem[5];
         for (int i = 0; i < WEEKLY_FORECAST_ITEMS.length; i++) {
-            String day;
-            switch(i) {
-                case 0:
-                    day = "Monday";
-                    break;
-                case 1:
-                    day = "Tuesday";
-                    break;
-                case 2:
-                    day = "Wednesday";
-                    break;
-                case 3:
-                    day = "Thursday";
-                    break;
-                case 4:
-                    day = "Friday";
-                    break;
-                default:
-                    day = "";
-                    break;
-            }
+            int day = i;
             WEEKLY_FORECAST_ITEMS[i] = new WeeklyForecastItem
                     .Builder(day,
+                    "clear sky",
                     70)
                     .build();
         }

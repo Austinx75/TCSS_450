@@ -17,8 +17,13 @@ import android.view.ViewGroup;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
+
+import edu.uw.harmony.UI.model.PushyTokenViewModel;
+import edu.uw.harmony.UI.model.UserInfoViewModel;
+
 import edu.uw.harmony.databinding.FragmentLogInBinding;
 import edu.uw.harmony.util.PasswordValidator;
 
@@ -34,6 +39,9 @@ import static edu.uw.harmony.util.PasswordValidator.checkPwdSpecialChar;
  * and an observer will pass on a token to the main activity.
  */
 public class LogInFragment extends Fragment {
+
+    private PushyTokenViewModel mPushyTokenViewModel;
+    private UserInfoViewModel mUserViewModel;
 
     private FragmentLogInBinding binding;
     private LogInViewModel mSignInModel;
@@ -58,6 +66,8 @@ public class LogInFragment extends Fragment {
         settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
         mSignInModel = new ViewModelProvider(getActivity())
                 .get(LogInViewModel.class);
+
+        mPushyTokenViewModel = new ViewModelProvider(getActivity()).get(PushyTokenViewModel.class);
     }
 
     @Override
@@ -101,6 +111,39 @@ public class LogInFragment extends Fragment {
         LogInFragmentArgs args = LogInFragmentArgs.fromBundle(getArguments());
         binding.editTextEmail.setText(args.getEmail().equals("default") ? "" : args.getEmail());
         binding.editTextPassword.setText(args.getPassword().equals("default") ? "" : args.getPassword());
+
+        mPushyTokenViewModel.addTokenObserver(getViewLifecycleOwner(), token ->
+                binding.buttonLoginFragmentRegister.setEnabled(!token.isEmpty()));
+
+        mPushyTokenViewModel.addResponseObserver(
+                getViewLifecycleOwner(),
+                this::observePushyPutResponse
+        );
+
+    }
+
+    /**
+     * An observer on the HTTP Response from the web server. This observer should be
+     * attached to PushyTokenViewModel
+     *
+     * @param response the Response from the server
+     */
+    private void observePushyPutResponse(final JSONObject response) {
+        if (response.length() > 0) {
+            if (response.has("code")) {
+//                this error cannot be fixed by the user changing credentials
+                binding.editTextEmail
+                        .setError("Error Authenticating on Push Token. Please Contact Support");
+            } else{
+                navigateToSuccess(binding.editTextEmail.getText().toString(),
+                        mUserViewModel.getJwt());
+            }
+        }
+    }
+
+    /** * Helper to abstract the request to send the pushy token to the web service */
+    private void sendPushyToken() {
+        mPushyTokenViewModel.sendTokenToWebservice(mUserViewModel.getJwt());
     }
 
     private void attemptSignIn(final View button) {
@@ -144,8 +187,9 @@ public class LogInFragment extends Fragment {
     private void navigateToSuccess(final String email, final String jwt) {
         Navigation.findNavController(getView())
                 .navigate(LogInFragmentDirections
-                        .actionLogInFragmentToMainActivity(jwt, email));
+                        .actionLogInFragmentToMainActivity(email, jwt));
         getActivity().finish();
+
     }
 
     /**
@@ -166,8 +210,12 @@ public class LogInFragment extends Fragment {
                 }
             } else {
                 try {
-                    navigateToSuccess(
-                            binding.editTextEmail.getText().toString(), response.getString("token") );
+                    mUserViewModel = new ViewModelProvider(getActivity(),
+                            new UserInfoViewModel.UserInfoViewModelFactory(
+                                    binding.editTextEmail.getText().toString(),
+                                    response.getString("token")
+                            )).get(UserInfoViewModel.class);
+                    sendPushyToken();
                 } catch (JSONException e) {
                     Log.e("JSON Parse Error", e.getMessage());
                 }

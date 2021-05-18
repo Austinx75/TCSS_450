@@ -12,6 +12,8 @@ import java.util.List;
 import edu.uw.harmony.R;
 import edu.uw.harmony.databinding.FragmentWeatherWeeklyForecastCardBinding;
 
+import static edu.uw.harmony.util.WeatherUtils.determineImageFromDescription;
+
 /**
  * The RecyclerView adapter that makes an HourlyForecastItem list compatible with the 24 hour forecast
  * Recycler View used in WeatherFragment.
@@ -67,11 +69,12 @@ public class WeeklyForecastRecyclerViewAdapter extends
             String currentDay = mWeeklyForecast.getDay();
             binding.textWeeklyDay.setText(mWeeklyForecast.getDay());
 
-            //TODO: Set the image
-            //Currently just uses a default image
+            //Set the image
+            this.binding.imageViewWeeklyForecastCondition.setImageResource(
+                    determineImageFromDescription(mWeeklyForecast.getDescription()));
 
             //Set the text for the temperature
-            binding.textWeeklyTemp.setText(mWeeklyForecast.getTemp() + "°");
+            binding.textWeeklyTemp.setText((int)mWeeklyForecast.getTemp() + "°");
         }
     }
 
