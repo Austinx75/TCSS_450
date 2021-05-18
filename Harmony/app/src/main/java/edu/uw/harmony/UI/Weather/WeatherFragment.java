@@ -111,7 +111,5 @@ public class WeatherFragment extends Fragment {
             binding.textViewMainTemperaturePlaceholder.setTextColor(Color.WHITE);
 
         }
-
-        binding.layoutWait.setVisibility(View.GONE);
     }
 }
