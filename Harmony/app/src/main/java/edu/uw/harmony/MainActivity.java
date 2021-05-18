@@ -8,10 +8,16 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+
 import android.os.Bundle;
 import android.util.Log;
 
@@ -23,6 +29,13 @@ import edu.uw.harmony.UI.model.UserInfoViewModel;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
+import com.auth0.android.jwt.JWT;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import edu.uw.harmony.UI.model.UserInfoViewModel;
+import edu.uw.harmony.UI.settings.SettingsFragment;
+
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -32,6 +45,7 @@ import edu.uw.harmony.UI.model.NewMessageCountViewModel;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.databinding.ActivityMainBinding;
 import edu.uw.harmony.services.PushReceiver;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initTheme();
+        //setContentView(R.layout.activity_main);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -52,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         MainActivityArgs args = MainActivityArgs.fromBundle(getIntent().getExtras());
         //Import com.auth0.android.jwt.JWT
         JWT jwt = new JWT(args.getJwt());
-        String email = args.getEmail();
+        String email = args.getEmail().toString();
 
         // Check to see if the web token is still valid or not. To make a JWT expire after a
         // longer or shorter time period, change the expiration time when the JWT is
@@ -74,17 +90,20 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
-        MainActivityArgs args = MainActivityArgs.fromBundle(getIntent().getExtras());
-
-        new ViewModelProvider(this,
-                new UserInfoViewModel.UserInfoViewModelFactory(args.getEmail(), args.getJwt())
-        ).get(UserInfoViewModel.class);
-
+        /** Changing the color for the bottom nav bar icons. */
+        if(getCurrentTheme() == R.style.Theme_1_Harmony){
+            navView.setItemIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
+            navView.setItemBackgroundResource(R.color.accent_tan);
+        } else {
+            navView.setItemIconTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_200)));
+            navView.setItemBackgroundResource(R.color.black);
+        }
 
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_contact, R.id.navigation_chat_list, R.id.navigation_weather
         ).build();
+
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController,mAppBarConfiguration);
@@ -181,5 +200,24 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.onNavDestinationSelected(item, navController)
                 || super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Fetches the last used theme the user used with the app.
+     */
+    private void initTheme() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SettingsFragment.sharedPreferenceKey, Context.MODE_PRIVATE);
+        int lastTheme = sharedPreferences.getInt(SettingsFragment.savedThemeKey, R.style.Theme_1_Harmony);
+        this.setTheme(lastTheme);
+    }
+
+    /**
+     *
+     * @return the current theme of the activity.
+     */
+    private int getCurrentTheme(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SettingsFragment.sharedPreferenceKey, Context.MODE_PRIVATE);
+        int lastTheme = sharedPreferences.getInt(SettingsFragment.savedThemeKey, R.style.Theme_1_Harmony);
+        return lastTheme;
     }
 }

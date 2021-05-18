@@ -1,5 +1,6 @@
 package edu.uw.harmony.UI.Chat.page;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Chat.page.ChatListFragmentDirections;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentChatListBinding;
 
 /**
@@ -24,6 +26,8 @@ import edu.uw.harmony.databinding.FragmentChatListBinding;
 public class ChatListFragment extends Fragment {
     private ChatListViewModel mModel;
     private UserInfoViewModel mUserModel;
+    /** ViewModel for settings */
+    private SettingsViewModel settingsViewModel;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,6 +42,15 @@ public class ChatListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        FragmentChatListBinding binding = FragmentChatListBinding.bind(getView());
+
+        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+            binding.buttonNewChat.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
+            binding.buttonNewChat.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.tan)));
+        } else {
+            binding.buttonNewChat.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_200)));
+            binding.buttonNewChat.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+        }
         View view = inflater.inflate(R.layout.fragment_chat_list, container, false);
         return view;
     }

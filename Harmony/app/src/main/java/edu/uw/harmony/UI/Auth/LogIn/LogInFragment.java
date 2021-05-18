@@ -1,5 +1,6 @@
 package edu.uw.harmony.UI.Auth.LogIn;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,8 +17,13 @@ import android.view.ViewGroup;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
+import edu.uw.harmony.R;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
+
 import edu.uw.harmony.UI.model.PushyTokenViewModel;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
+
 import edu.uw.harmony.databinding.FragmentLogInBinding;
 import edu.uw.harmony.util.PasswordValidator;
 
@@ -40,6 +46,9 @@ public class LogInFragment extends Fragment {
     private FragmentLogInBinding binding;
     private LogInViewModel mSignInModel;
 
+    /** ViewModel for settings */
+    private SettingsViewModel settingsViewModel;
+
     private PasswordValidator mEmailValidator = checkPwdLength(2)
             .and(checkExcludeWhiteSpace())
             .and(checkPwdSpecialChar("@"));
@@ -54,6 +63,7 @@ public class LogInFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
         mSignInModel = new ViewModelProvider(getActivity())
                 .get(LogInViewModel.class);
 
@@ -64,6 +74,21 @@ public class LogInFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentLogInBinding.inflate(inflater);
+        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+            binding.editTextPassword.setTextColor(Color.BLACK);
+            binding.editTextEmail.setTextColor(Color.BLACK);
+            binding.editTextPassword.setHintTextColor(Color.BLACK);
+            binding.editTextEmail.setHintTextColor(Color.BLACK);
+            binding.buttonLoginFragmentRegister.setTextColor(getResources().getColor(R.color.orange));
+            binding.loginHarmonyLogo.setColorFilter(Color.BLACK);
+        } else {
+            binding.editTextPassword.setTextColor(Color.WHITE);
+            binding.editTextPassword.setHintTextColor(Color.WHITE);
+            binding.editTextEmail.setHintTextColor(Color.WHITE);
+            binding.editTextEmail.setTextColor(Color.WHITE);
+            binding.buttonLoginFragmentRegister.setTextColor(getResources().getColor(R.color.teal_200));
+            binding.loginHarmonyLogo.setColorFilter(Color.WHITE);
+        }
         // Inflate the layout for this fragment
         return binding.getRoot();
     }
@@ -162,7 +187,9 @@ public class LogInFragment extends Fragment {
     private void navigateToSuccess(final String email, final String jwt) {
         Navigation.findNavController(getView())
                 .navigate(LogInFragmentDirections
-                        .actionLogInFragmentToMainActivity(jwt, email));
+                        .actionLogInFragmentToMainActivity(email, jwt));
+        getActivity().finish();
+
     }
 
     /**

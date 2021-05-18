@@ -21,5 +21,7 @@
 
     <color name="lighter_blue">#164D56</color>
     <color name="dark_blue">#15202B</color>
+    <color name="blue_500">#1BA5DF</color>
+    <color name="grey">#6a6866</color>
 
 </resources>
