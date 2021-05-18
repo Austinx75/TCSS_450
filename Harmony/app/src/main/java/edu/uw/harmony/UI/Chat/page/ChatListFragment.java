@@ -47,6 +47,7 @@ public class ChatListFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentChatListBinding.inflate(inflater);
 
+        /** Dependent on the theme, this will set all text / image fields to a certain color. */
         if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
             binding.buttonNewChat.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
             binding.buttonNewChat.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.tan)));

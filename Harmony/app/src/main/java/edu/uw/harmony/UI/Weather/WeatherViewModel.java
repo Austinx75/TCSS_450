@@ -46,11 +46,12 @@ public class WeatherViewModel extends AndroidViewModel {
 
     private FragmentWeatherBinding weatherBinding;
 
+    private String currentSetWeather;
+
     public WeatherViewModel(@NonNull Application application) {
         super(application);
         mHourlyList = new MutableLiveData<>();
         mHourlyList.setValue(new ArrayList<>());
-        //settingsViewModel = new ViewModelProvider().get(SettingsViewModel.class);
 
         mWeeklyList = new MutableLiveData<>();
         mWeeklyList.setValue(new ArrayList<>());
@@ -176,6 +177,10 @@ public class WeatherViewModel extends AndroidViewModel {
         this.mJwt = jwt;
     }
 
+    public String getCurrentWeather(){
+        return currentSetWeather;
+    }
+
     public void setWeatherBinding(FragmentWeatherBinding binding) {
         this.weatherBinding = binding;
     }
@@ -194,7 +199,10 @@ public class WeatherViewModel extends AndroidViewModel {
         );
 
         //TODO: Update city name
-
+        currentSetWeather = (int) Double.parseDouble(
+                currentWeather.getString(
+                        getString.apply(
+                                R.string.keys_temp))) + "°";
         this.weatherBinding.textViewMainTemperaturePlaceholder.setText(
                 (int) Double.parseDouble(
                         currentWeather.getString(

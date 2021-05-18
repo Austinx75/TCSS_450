@@ -103,6 +103,7 @@ public class WeatherFragment extends Fragment {
                         new WeeklyForecastRecyclerViewAdapter(weeklyList));
             }
         });
+        /** Dependent on the theme, this will set all text / image fields to a certain color. */
         if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
             binding.textViewCityPlaceholder.setTextColor(Color.BLACK);
             binding.textViewMainTemperaturePlaceholder.setTextColor(Color.BLACK);
