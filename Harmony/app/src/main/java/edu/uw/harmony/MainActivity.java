@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         MainActivityArgs args = MainActivityArgs.fromBundle(getIntent().getExtras());
         //Import com.auth0.android.jwt.JWT
+
         JWT jwt = new JWT(args.getJwt());
         String email = args.getEmail();
 
@@ -73,13 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 .get(UserInfoViewModel.class);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-
-        MainActivityArgs args = MainActivityArgs.fromBundle(getIntent().getExtras());
-
-        new ViewModelProvider(this,
-                new UserInfoViewModel.UserInfoViewModelFactory(args.getEmail(), args.getJwt())
-        ).get(UserInfoViewModel.class);
-
 
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
