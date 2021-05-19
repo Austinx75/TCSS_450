@@ -11,8 +11,11 @@ public class NotificationItem implements Serializable{
 
 
     public static class Builder {
+        /** String for the sender information*/
         private final String mSender;
+        /** String for the message information*/
         private final String mMessage;
+
         /**
          * Constructs a new Builder.
          *
@@ -24,6 +27,10 @@ public class NotificationItem implements Serializable{
             this.mMessage = theMessage;
         }
 
+        /**
+         *
+         * @return method call of Notificaion Item and sending in this instance
+         */
         public NotificationItem build() {
             return new NotificationItem(this);
         }

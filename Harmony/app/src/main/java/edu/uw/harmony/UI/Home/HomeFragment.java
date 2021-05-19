@@ -56,7 +56,7 @@ public class HomeFragment extends Fragment {
         model = new ViewModelProvider(getActivity()).get(UserInfoViewModel.class);
         hModel = new ViewModelProvider(getActivity()).get(HomeViewModel.class);
 
-        //View view = inflater.inflate(R.layout.fragment_home,container,false);
+        /** I instantiate the recycler view here.*/
         View notificationView = binding.listRoot;
         if (notificationView instanceof RecyclerView){
             Log.d("Test", "Notification Size: " + NotificationGenerator.getNotificationList().toString());
@@ -68,7 +68,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-       // binding.layoutWait.setVisibility(view.GONE);
+
 
         hModel.connectGet();
         hModel.setJWT(model.getJwt());
@@ -87,6 +87,7 @@ public class HomeFragment extends Fragment {
             binding.imageLogoHome.setColorFilter(Color.WHITE);
 
         }
+        /** Sets the email and gets rid of the progress bar.*/
         Log.d("STATUS", "Got to success");
         binding.textEmailHome.setText(model.getEmail());
         binding.layoutWait.setVisibility(view.GONE);

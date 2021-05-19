@@ -48,6 +48,10 @@ public class SettingsFragment extends Fragment{
     /** Checks the state of the Switch button */
     public boolean switchState;
 
+    /**
+     * It instantiates the view model so we can get the current switch state and theme
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +59,14 @@ public class SettingsFragment extends Fragment{
     }
 
 
+    /**
+     * It switches the colors dynamically based on what the current theme is.
+     * It also sets the switch button to what its current position was.
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -73,6 +85,11 @@ public class SettingsFragment extends Fragment{
         return binding.getRoot();
     }
 
+    /**
+     * It checks to see if the switch button has been switched, and if so it updates the theme.
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
