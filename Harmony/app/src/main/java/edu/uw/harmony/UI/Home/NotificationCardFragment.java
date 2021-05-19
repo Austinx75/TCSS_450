@@ -28,6 +28,7 @@ public class NotificationCardFragment extends Fragment {
     /** This is the view model for settings*/
     SettingsViewModel settingsViewModel;
 
+    /** Binding for Notification Card Binding*/
     private FragmentNotificationCardBinding binding;
 
     @Override
@@ -40,9 +41,15 @@ public class NotificationCardFragment extends Fragment {
         return binding.getRoot();
     }
 
+    /**
+     * It calls upon the current Theme, and determining what it is it will set the proper colors.
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
 
         } else {
