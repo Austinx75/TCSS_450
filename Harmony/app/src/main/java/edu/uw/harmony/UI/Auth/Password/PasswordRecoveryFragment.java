@@ -50,9 +50,25 @@ public class PasswordRecoveryFragment extends Fragment {
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+            binding.editTextEmail.setTextColor(Color.BLACK);
+            binding.editTextEmail.setHintTextColor(Color.BLACK);
+            binding.textView.setTextColor(Color.BLACK);
+        } else {
+            binding.editTextEmail.setTextColor(Color.WHITE);
+            binding.editTextEmail.setHintTextColor(Color.WHITE);
+            binding.textView.setTextColor(Color.WHITE);
+        }
         binding.buttonPasswordRecoverFragmentContinue.setOnClickListener(button -> {
             View current = getActivity().getCurrentFocus();
+
             if (current != null) {
                 InputMethodManager imm = (InputMethodManager) getContext().
                         getSystemService(Context.INPUT_METHOD_SERVICE);

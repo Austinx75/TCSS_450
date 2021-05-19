@@ -1,5 +1,6 @@
 package edu.uw.harmony.UI.Auth.Password;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -35,6 +36,11 @@ public class RecoveryCompleteFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+            binding.textView6.setTextColor(Color.BLACK);
+        } else {
+            binding.textView6.setTextColor(Color.WHITE);
+        }
         binding.buttonPasswordRecoveryFragmentContinue.setOnClickListener(button -> {
             RecoveryCompleteFragmentArgs args = RecoveryCompleteFragmentArgs.fromBundle(getArguments());
             RecoveryCompleteFragmentDirections.ActionRecoveryCompleteFragmentToLogInFragment directions =

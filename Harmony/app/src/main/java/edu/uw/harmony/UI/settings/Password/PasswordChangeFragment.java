@@ -1,6 +1,7 @@
 package edu.uw.harmony.UI.settings.Password;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,10 +19,12 @@ import android.view.inputmethod.InputMethodManager;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Auth.LogIn.LogInFragmentArgs;
 import edu.uw.harmony.UI.Auth.LogIn.LogInFragmentDirections;
 import edu.uw.harmony.UI.Auth.Password.PasswordRecoveryViewModel;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentPasswordChangeBinding;
 import edu.uw.harmony.util.PasswordValidator;
 
@@ -42,6 +45,7 @@ public class PasswordChangeFragment extends Fragment {
     private PasswordChangeViewModel mModel;
     private UserInfoViewModel mUserModel;
     private boolean mIsValidating;
+    private SettingsViewModel settingsViewModel;
     private PasswordValidator mPassWordValidator =
             checkClientPredicate(pwd -> pwd.equals(binding.passwordChangeNew.getText().toString()))
                     .and(checkPwdLength(7))
@@ -54,6 +58,7 @@ public class PasswordChangeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.mIsValidating = true;
+        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -64,6 +69,21 @@ public class PasswordChangeFragment extends Fragment {
                 getViewLifecycleOwner(),
                 this::observeResponse
                 );
+        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+            binding.passwordChangeCurrent.setTextColor(Color.BLACK);
+            binding.passwordChangeCurrent.setHintTextColor(Color.BLACK);
+            binding.passwordChangeNew.setTextColor(Color.BLACK);
+            binding.passwordChangeNew.setHintTextColor(Color.BLACK);
+            binding.passwordChangeConfirmNew.setTextColor(Color.BLACK);
+            binding.passwordChangeConfirmNew.setHintTextColor(Color.BLACK);
+        } else {
+            binding.passwordChangeCurrent.setTextColor(Color.WHITE);
+            binding.passwordChangeCurrent.setHintTextColor(Color.WHITE);
+            binding.passwordChangeNew.setTextColor(Color.WHITE);
+            binding.passwordChangeNew.setHintTextColor(Color.WHITE);
+            binding.passwordChangeConfirmNew.setTextColor(Color.WHITE);
+            binding.passwordChangeConfirmNew.setHintTextColor(Color.WHITE);
+        }
         mUserModel = new ViewModelProvider(getActivity()).get(UserInfoViewModel.class);
         return binding.getRoot();
     }
