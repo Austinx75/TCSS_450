@@ -26,15 +26,15 @@ public final class FragmentValidationBinding implements ViewBinding {
   public final ConstraintLayout frameLayout5;
 
   @NonNull
-  public final TextView textView4;
+  public final TextView textVerificationValidation;
 
   private FragmentValidationBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button buttonValidationFragmentValidate, @NonNull ConstraintLayout frameLayout5,
-      @NonNull TextView textView4) {
+      @NonNull TextView textVerificationValidation) {
     this.rootView = rootView;
     this.buttonValidationFragmentValidate = buttonValidationFragmentValidate;
     this.frameLayout5 = frameLayout5;
-    this.textView4 = textView4;
+    this.textVerificationValidation = textVerificationValidation;
   }
 
   @Override
@@ -72,14 +72,14 @@ public final class FragmentValidationBinding implements ViewBinding {
 
       ConstraintLayout frameLayout5 = (ConstraintLayout) rootView;
 
-      id = R.id.textView4;
-      TextView textView4 = rootView.findViewById(id);
-      if (textView4 == null) {
+      id = R.id.text_Verification_Validation;
+      TextView textVerificationValidation = rootView.findViewById(id);
+      if (textVerificationValidation == null) {
         break missingId;
       }
 
       return new FragmentValidationBinding((ConstraintLayout) rootView,
-          buttonValidationFragmentValidate, frameLayout5, textView4);
+          buttonValidationFragmentValidate, frameLayout5, textVerificationValidation);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

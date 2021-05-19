@@ -28,6 +28,9 @@ public final class FragmentWeatherBinding implements ViewBinding {
   public final ImageView imageViewMainConditionsPlaceholder;
 
   @NonNull
+  public final ConstraintLayout layoutComponents;
+
+  @NonNull
   public final ConstraintLayout layoutRoot;
 
   @NonNull
@@ -47,12 +50,14 @@ public final class FragmentWeatherBinding implements ViewBinding {
 
   private FragmentWeatherBinding(@NonNull ConstraintLayout rootView,
       @NonNull RecyclerView hourlyListRoot, @NonNull ImageView imageViewMainConditionsPlaceholder,
-      @NonNull ConstraintLayout layoutRoot, @NonNull ConstraintLayout layoutWait,
-      @NonNull ProgressBar progressBar, @NonNull TextView textViewCityPlaceholder,
+      @NonNull ConstraintLayout layoutComponents, @NonNull ConstraintLayout layoutRoot,
+      @NonNull ConstraintLayout layoutWait, @NonNull ProgressBar progressBar,
+      @NonNull TextView textViewCityPlaceholder,
       @NonNull TextView textViewMainTemperaturePlaceholder, @NonNull RecyclerView weeklyListRoot) {
     this.rootView = rootView;
     this.hourlyListRoot = hourlyListRoot;
     this.imageViewMainConditionsPlaceholder = imageViewMainConditionsPlaceholder;
+    this.layoutComponents = layoutComponents;
     this.layoutRoot = layoutRoot;
     this.layoutWait = layoutWait;
     this.progressBar = progressBar;
@@ -100,6 +105,12 @@ public final class FragmentWeatherBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.layout_components;
+      ConstraintLayout layoutComponents = rootView.findViewById(id);
+      if (layoutComponents == null) {
+        break missingId;
+      }
+
       ConstraintLayout layoutRoot = (ConstraintLayout) rootView;
 
       id = R.id.layout_wait;
@@ -133,7 +144,7 @@ public final class FragmentWeatherBinding implements ViewBinding {
       }
 
       return new FragmentWeatherBinding((ConstraintLayout) rootView, hourlyListRoot,
-          imageViewMainConditionsPlaceholder, layoutRoot, layoutWait, progressBar,
+          imageViewMainConditionsPlaceholder, layoutComponents, layoutRoot, layoutWait, progressBar,
           textViewCityPlaceholder, textViewMainTemperaturePlaceholder, weeklyListRoot);
     }
     String missingId = rootView.getResources().getResourceName(id);

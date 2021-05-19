@@ -50,16 +50,6 @@ public class WeatherFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentWeatherBinding.inflate(inflater);
-//        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
-//            binding.textViewCityPlaceholder.setTextColor(Color.BLACK);
-//            binding.textViewMainTemperaturePlaceholder.setTextColor(Color.BLACK);
-//        } else {
-//            binding.textViewCityPlaceholder.setTextColor(Color.WHITE);
-//            binding.textViewMainTemperaturePlaceholder.setTextColor(Color.WHITE);
-//
-//        }
-
-
 
         if (binding.hourlyListRoot instanceof RecyclerView) {
             ((RecyclerView) binding.hourlyListRoot).setAdapter(
@@ -71,7 +61,6 @@ public class WeatherFragment extends Fragment {
                     new WeeklyForecastRecyclerViewAdapter(WeeklyForecastItemGenerator.getWeeklyForecastList()));
         }
 
-        //return binding.getRoot();
         return inflater.inflate(R.layout.fragment_weather, container, false);
 
     }

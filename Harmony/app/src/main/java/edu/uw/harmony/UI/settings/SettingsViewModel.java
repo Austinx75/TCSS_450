@@ -51,10 +51,18 @@ public class SettingsViewModel extends AndroidViewModel {
         return currentThemeID;
     }
 
+    /**
+     * Returns switch state
+     * @return true or false
+     */
     public boolean getSwitchState(){
         return switchState;
     }
 
+    /**
+     * This sets what position the switch was in
+     * @param check
+     */
     public void setSavedSwitchState(boolean check){
         SharedPreferences.Editor preferences =
                 getApplication().getSharedPreferences(sharedPreferenceKey, Context.MODE_PRIVATE).edit();
@@ -67,6 +75,10 @@ public class SettingsViewModel extends AndroidViewModel {
         switchState = check;
     }
 
+    /**
+     * This sets the selected theme in shared preference
+     * @param themeID
+     */
     public void setSelectedTheme(int themeID){
         SharedPreferences.Editor preferences =
                 getApplication().getSharedPreferences(sharedPreferenceKey, Context.MODE_PRIVATE).edit();
