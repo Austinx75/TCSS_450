@@ -85,6 +85,7 @@ public class HomeFragment extends Fragment {
             binding.textDegHome.setTextColor(Color.WHITE);
             binding.textNotificationsHome.setTextColor(Color.WHITE);
             binding.imageLogoHome.setColorFilter(Color.WHITE);
+
         }
         Log.d("STATUS", "Got to success");
         binding.textEmailHome.setText(model.getEmail());
