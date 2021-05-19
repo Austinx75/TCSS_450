@@ -208,10 +208,6 @@ public class WeatherViewModel extends AndroidViewModel {
                         currentWeather.getString(
                                 getString.apply(
                                         R.string.keys_temp))) + "°");
-//        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
-//            weatherBinding.textViewMainTemperaturePlaceholder.setTextColor(Color.BLACK);
-//        } else {
-//            weatherBinding.textViewMainTemperaturePlaceholder.setTextColor(Color.WHITE);
-//        }
+
     }
 }

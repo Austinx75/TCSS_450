@@ -195,7 +195,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    //To handle clicks
+    /**
+     * It controls what happens if the user selects settings or sign out
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
@@ -210,6 +214,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This signs the user out, and deletes the preference key for the jwt.
+     */
     private void signOut() {
         SharedPreferences prefs =
                 getSharedPreferences(
@@ -218,6 +225,8 @@ public class MainActivity extends AppCompatActivity {
         prefs.edit().remove(getString(R.string.keys_prefs_jwt)).apply();
         //End the app completely
         finishAndRemoveTask();
+        Intent intent = new Intent(this, AuthActivity.class);
+        startActivity(intent);
     }
 
 

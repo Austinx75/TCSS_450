@@ -5,11 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Guideline;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import edu.uw.harmony.R;
 import java.lang.NullPointerException;
@@ -27,10 +29,19 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final ImageView imageLogoHome;
 
   @NonNull
+  public final ImageView imageViewMainConditionsPlaceholder;
+
+  @NonNull
   public final ConstraintLayout layoutRoot;
 
   @NonNull
-  public final TextView textCurrentWeatherHome;
+  public final ConstraintLayout layoutWait;
+
+  @NonNull
+  public final RecyclerView listRoot;
+
+  @NonNull
+  public final ProgressBar progressBar;
 
   @NonNull
   public final TextView textDegHome;
@@ -42,14 +53,19 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final TextView textNotificationsHome;
 
   private FragmentHomeBinding(@NonNull ConstraintLayout rootView, @NonNull Guideline guideline,
-      @NonNull ImageView imageLogoHome, @NonNull ConstraintLayout layoutRoot,
-      @NonNull TextView textCurrentWeatherHome, @NonNull TextView textDegHome,
-      @NonNull TextView textEmailHome, @NonNull TextView textNotificationsHome) {
+      @NonNull ImageView imageLogoHome, @NonNull ImageView imageViewMainConditionsPlaceholder,
+      @NonNull ConstraintLayout layoutRoot, @NonNull ConstraintLayout layoutWait,
+      @NonNull RecyclerView listRoot, @NonNull ProgressBar progressBar,
+      @NonNull TextView textDegHome, @NonNull TextView textEmailHome,
+      @NonNull TextView textNotificationsHome) {
     this.rootView = rootView;
     this.guideline = guideline;
     this.imageLogoHome = imageLogoHome;
+    this.imageViewMainConditionsPlaceholder = imageViewMainConditionsPlaceholder;
     this.layoutRoot = layoutRoot;
-    this.textCurrentWeatherHome = textCurrentWeatherHome;
+    this.layoutWait = layoutWait;
+    this.listRoot = listRoot;
+    this.progressBar = progressBar;
     this.textDegHome = textDegHome;
     this.textEmailHome = textEmailHome;
     this.textNotificationsHome = textNotificationsHome;
@@ -94,11 +110,29 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageView_mainConditionsPlaceholder;
+      ImageView imageViewMainConditionsPlaceholder = rootView.findViewById(id);
+      if (imageViewMainConditionsPlaceholder == null) {
+        break missingId;
+      }
+
       ConstraintLayout layoutRoot = (ConstraintLayout) rootView;
 
-      id = R.id.text_current_weather_home;
-      TextView textCurrentWeatherHome = rootView.findViewById(id);
-      if (textCurrentWeatherHome == null) {
+      id = R.id.layout_wait;
+      ConstraintLayout layoutWait = rootView.findViewById(id);
+      if (layoutWait == null) {
+        break missingId;
+      }
+
+      id = R.id.list_root;
+      RecyclerView listRoot = rootView.findViewById(id);
+      if (listRoot == null) {
+        break missingId;
+      }
+
+      id = R.id.progressBar;
+      ProgressBar progressBar = rootView.findViewById(id);
+      if (progressBar == null) {
         break missingId;
       }
 
@@ -121,7 +155,8 @@ public final class FragmentHomeBinding implements ViewBinding {
       }
 
       return new FragmentHomeBinding((ConstraintLayout) rootView, guideline, imageLogoHome,
-          layoutRoot, textCurrentWeatherHome, textDegHome, textEmailHome, textNotificationsHome);
+          imageViewMainConditionsPlaceholder, layoutRoot, layoutWait, listRoot, progressBar,
+          textDegHome, textEmailHome, textNotificationsHome);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
