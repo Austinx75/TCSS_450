@@ -7,6 +7,22 @@
     android:layout_height="match_parent"
     tools:context=".UI.Auth.LogIn.LogInFragment">
 
+    <Button
+        android:id="@+id/button_loginFragment_forgot_password"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="@string/button_login_forgot_password"
+        android:textColor="@color/teal_200"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+        app:layout_constraintVertical_bias="0.0" />
+
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="0dp"
@@ -32,10 +48,10 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <Button
-        android:id="@+id/button_loginFragment_login"
+        android:id="@+id/button_login_fragment_login"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
         android:text="@string/button_login_login"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:text="@string/button_login_register"
         android:textColor="@color/teal_200"
         android:visibility="visible"

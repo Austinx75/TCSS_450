@@ -27,6 +27,11 @@ public class LogInFragmentDirections {
     return new ActionLogInFragmentToMainActivity(email, jwt);
   }
 
+  @NonNull
+  public static NavDirections actionLogInFragmentToPasswordRecoveryFragment() {
+    return new ActionOnlyNavDirections(R.id.action_logInFragment_to_passwordRecoveryFragment);
+  }
+
   public static class ActionLogInFragmentToMainActivity implements NavDirections {
     private final HashMap arguments = new HashMap();
 

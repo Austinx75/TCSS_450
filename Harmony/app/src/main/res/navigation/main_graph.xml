@@ -87,6 +87,28 @@
         android:id="@+id/settingsFragment"
         android:name="edu.uw.harmony.UI.settings.SettingsFragment"
         android:label="@string/action_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_passwordChangeFragment"
+            app:destination="@id/passwordChangeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordChangeFragment"
+        android:name="edu.uw.harmony.UI.settings.Password.PasswordChangeFragment"
+        android:label="@string/title_fragment_change_password"
+        tools:layout="@layout/fragment_password_change">
+        <action
+            android:id="@+id/action_passwordChangeFragment_to_passwordChangeSuccessFragment"
+            app:destination="@id/passwordChangeSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordChangeSuccessFragment"
+        android:name="edu.uw.harmony.UI.settings.Password.PasswordChangeSuccessFragment"
+        android:label="@string/title_fragment_change_password"
+        tools:layout="@layout/fragment_password_change_success">
+        <action
+            android:id="@+id/action_passwordChangeSuccessFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 
 </navigation>

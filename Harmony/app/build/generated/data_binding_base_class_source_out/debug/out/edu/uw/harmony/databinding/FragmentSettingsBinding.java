@@ -4,6 +4,7 @@ package edu.uw.harmony.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -20,6 +21,9 @@ import java.lang.String;
 public final class FragmentSettingsBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
+
+  @NonNull
+  public final Button buttonChangePassword;
 
   @NonNull
   public final SwitchCompat darkModeSwitch;
@@ -40,10 +44,12 @@ public final class FragmentSettingsBinding implements ViewBinding {
   public final ImageView settingsGearImage;
 
   private FragmentSettingsBinding(@NonNull ConstraintLayout rootView,
-      @NonNull SwitchCompat darkModeSwitch, @NonNull TextView darkModeTextView,
-      @NonNull Guideline guideline, @NonNull ImageView settingsDarkModeImage,
-      @NonNull ConstraintLayout settingsFragment, @NonNull ImageView settingsGearImage) {
+      @NonNull Button buttonChangePassword, @NonNull SwitchCompat darkModeSwitch,
+      @NonNull TextView darkModeTextView, @NonNull Guideline guideline,
+      @NonNull ImageView settingsDarkModeImage, @NonNull ConstraintLayout settingsFragment,
+      @NonNull ImageView settingsGearImage) {
     this.rootView = rootView;
+    this.buttonChangePassword = buttonChangePassword;
     this.darkModeSwitch = darkModeSwitch;
     this.darkModeTextView = darkModeTextView;
     this.guideline = guideline;
@@ -79,6 +85,12 @@ public final class FragmentSettingsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button_change_password;
+      Button buttonChangePassword = rootView.findViewById(id);
+      if (buttonChangePassword == null) {
+        break missingId;
+      }
+
       id = R.id.dark_mode_switch;
       SwitchCompat darkModeSwitch = rootView.findViewById(id);
       if (darkModeSwitch == null) {
@@ -111,8 +123,9 @@ public final class FragmentSettingsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSettingsBinding((ConstraintLayout) rootView, darkModeSwitch,
-          darkModeTextView, guideline, settingsDarkModeImage, settingsFragment, settingsGearImage);
+      return new FragmentSettingsBinding((ConstraintLayout) rootView, buttonChangePassword,
+          darkModeSwitch, darkModeTextView, guideline, settingsDarkModeImage, settingsFragment,
+          settingsGearImage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
