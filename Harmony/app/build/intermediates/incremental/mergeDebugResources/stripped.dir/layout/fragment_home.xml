@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/image_logo_home"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_width="180dp"
+        android:layout_height="171dp"
         android:src="@drawable/android_harmony_logo"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5"/>
+        app:layout_constraintGuide_percent="0.35"/>
 
     <TextView
         android:id="@+id/text_email_home"
@@ -60,7 +60,6 @@
         android:id="@+id/text_notifications_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:text="@string/text_notification_home"
         android:textSize="24sp"
