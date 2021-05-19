@@ -12,10 +12,9 @@
         android:id="@+id/imageView_mainConditionsPlaceholder"
         android:layout_width="47dp"
         android:layout_height="42dp"
-        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toBottomOf="@+id/text_email_home" />
 
     <ImageView
         android:id="@+id/image_logo_home"
@@ -90,7 +89,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:visibility="visible">
+        tools:visibility="gone">
 
         <ProgressBar
             android:id="@+id/progressBar"
