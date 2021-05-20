@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * This builds the strings that are sent over from the Generator class.
  * @author Austin Scott
- * @version 1.0
+ * @version 1.1
  */
 public class NotificationItem implements Serializable{
 

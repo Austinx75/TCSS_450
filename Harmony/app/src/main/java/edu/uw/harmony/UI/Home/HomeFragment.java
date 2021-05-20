@@ -29,7 +29,7 @@ import edu.uw.harmony.databinding.FragmentWeatherBinding;
  * fragment navigated to when the user signs in.
  *
  * @author  Austin Scott
- * @version 1.0
+ * @version 1.1
  */
 public class HomeFragment extends Fragment {
 
