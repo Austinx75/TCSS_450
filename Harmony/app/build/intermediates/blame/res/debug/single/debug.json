@@ -1,334 +1,334 @@
 [
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_dark_mode_24.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\ic_dark_mode_24.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_contact_chat_bubble_24dp.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\ic_contact_chat_bubble_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_light_theme_24.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\ic_light_theme_24.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_log_in_harmony_logo.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-xhdpi\\log_in_harmony_logo.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_boy_512.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\contact_boy_512.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_wb_sunny_24.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\ic_baseline_wb_sunny_24.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_auth.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\activity_auth.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_home.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_weather_sun_black_24dp.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\weather_sun_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_auth.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\activity_auth.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_man_2_512.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\contact_man_2_512.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_new_chat.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_new_chat.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_contact_list.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_contact_list.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_password_recovery.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_password_recovery.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_settings_24.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\ic_settings_24.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_weather_clouds.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\weather_clouds.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_person_search_24.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\ic_baseline_person_search_24.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_hacker_512.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\contact_hacker_512.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat_chats_black_24dp.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\chat_chats_black_24dp.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_wb_sunny_24.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\ic_baseline_wb_sunny_24.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat_add_new_chat2_24dp.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\chat_add_new_chat2_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_chat_message.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat_message.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_log_in.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_log_in.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_light_theme_24.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\ic_light_theme_24.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_log_in_harmony_logo.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\mipmap-xhdpi\\log_in_harmony_logo.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_man_1_512.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\contact_man_1_512.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_weather_hourly_forecast_card.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_weather_hourly_forecast_card.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_track.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\track.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_thumb1.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\thumb1.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_chat_room.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat_room.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat_notification_24dp.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\chat_notification_24dp.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_password_change_success.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_password_change_success.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_contact.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_contact.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_weather_thunderstorm.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\weather_thunderstorm.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_thumb1.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\thumb1.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_track.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\track.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_kitty_512.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\contact_kitty_512.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_search_new_contact_24dp.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\search_new_contact_24dp.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_notification_card.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_notification_card.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_chat_list.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat_list.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_recovery_complete.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_recovery_complete.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_user_512.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\contact_user_512.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_new_chat.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_new_chat.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_contact_card.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_contact_card.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_man_2_512.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\contact_man_2_512.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_weather_thunderstorm.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\weather_thunderstorm.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_weather.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_weather.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_kitty_512.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\contact_kitty_512.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_settings.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_settings.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_black_24dp.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\home_black_24dp.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_barista_512.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\contact_barista_512.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_logo.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\home_logo.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\navigation_auth_nav_graph.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\navigation\\auth_nav_graph.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_search_new_contact_24dp.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\search_new_contact_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_password_recovery.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_password_recovery.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_group_add_24.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\ic_baseline_group_add_24.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_logo.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\home_logo.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat_current_face_chat_24dp.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\chat_current_face_chat_24dp.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\menu_toolbar.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\menu\\toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_weather_sunny.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\weather_sunny.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_weather_weekly_forecast_card.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_weather_weekly_forecast_card.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat_send_new_chat_24dp.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\chat_send_new_chat_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_android_harmony_logo.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\android_harmony_logo.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_weather_snow.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\weather_snow.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_settings.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_settings.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_contact_list.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_contact_list.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_chat_card.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat_card.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_black_24dp.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\contact_black_24dp.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_password_change_success.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_password_change_success.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_contact.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_contact.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_woman_512.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\contact_woman_512.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat_add_new_chat_24dp.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\chat_add_new_chat_24dp.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottom_nav_menu.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\menu\\bottom_nav_menu.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_black_24dp.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\home_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_man_1_512.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\contact_man_1_512.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_woman_512.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\contact_woman_512.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_add_new_contact.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_add_new_contact.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat_baseline_chat_bubble_24.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\chat_baseline_chat_bubble_24.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_chat_card.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat_card.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_validation.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_validation.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_weather_rain.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\weather_rain.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_woman_1_512.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\contact_woman_1_512.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_man_512.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\contact_man_512.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_register.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_register.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_settings_24.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\ic_settings_24.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_chat_message.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat_message.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\navigation_auth_nav_graph.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\navigation\\auth_nav_graph.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_delete_contact_24dp.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\ic_delete_contact_24dp.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_boy_512.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\contact_boy_512.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_woman_1_512.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\contact_woman_1_512.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_chat.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_notification_card.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_notification_card.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_weather_rain.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\weather_rain.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\navigation_main_graph.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\navigation\\main_graph.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_weather_hourly_forecast_card.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_weather_hourly_forecast_card.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_group_add_24.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\ic_baseline_group_add_24.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_chat_room.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat_room.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_person_search_24.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\ic_baseline_person_search_24.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_validation.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_validation.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_dark_mode_24.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\ic_dark_mode_24.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_hacker_512.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\contact_hacker_512.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\navigation_main_graph.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\navigation\\main_graph.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_weather_sun_black_24dp.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\weather_sun_black_24dp.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_man_512.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\contact_man_512.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_chat.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_weather_snow.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\weather_snow.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_password_change.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_password_change.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat_notification_24dp.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\chat_notification_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\menu_toolbar.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\menu\\toolbar.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_log_in.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_log_in.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_contact_chat_bubble_24dp.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\ic_contact_chat_bubble_24dp.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_user_512.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\contact_user_512.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_contact_card.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_contact_card.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_password_change.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_password_change.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat_add_new_chat_24dp.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\chat_add_new_chat_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_android_harmony_logo.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\android_harmony_logo.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_add_new_contact.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_add_new_contact.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_barista_512.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\contact_barista_512.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat_current_face_chat_24dp.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\chat_current_face_chat_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat_send_new_chat_24dp.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\chat_send_new_chat_24dp.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_chat_bubble_24.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\ic_baseline_chat_bubble_24.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_chat_bubble_24.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\ic_baseline_chat_bubble_24.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_chat_list.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_chat_list.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat_baseline_chat_bubble_24.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\chat_baseline_chat_bubble_24.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_weather_weekly_forecast_card.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_weather_weekly_forecast_card.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_weather_clouds.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\weather_clouds.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_weather.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_weather.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_weather_sunny.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\weather_sunny.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat_chats_black_24dp.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\chat_chats_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_contact_black_24dp.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\contact_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chat_add_new_chat2_24dp.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\drawable\\chat_add_new_chat2_24dp.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_register.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\layout\\fragment_register.xml"
     },
     {
-        "merged": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_recovery_complete.xml.flat",
-        "source": "C:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\src\\main\\res\\layout\\fragment_recovery_complete.xml"
+        "merged": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_delete_contact_24dp.xml.flat",
+        "source": "C:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\src\\main\\res\\drawable\\ic_delete_contact_24dp.xml"
     }
 ]
