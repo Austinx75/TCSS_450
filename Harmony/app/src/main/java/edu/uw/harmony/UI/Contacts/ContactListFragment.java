@@ -1,5 +1,6 @@
 package edu.uw.harmony.UI.Contacts;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
+import edu.uw.harmony.databinding.FragmentContactBinding;
 import edu.uw.harmony.databinding.FragmentContactListBinding;
 
 /**
@@ -25,9 +28,14 @@ public class ContactListFragment extends Fragment {
 
     private ContactListViewModel mModel;
 
+    SettingsViewModel settingsViewModel;
+
+    private FragmentContactListBinding binding;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
         mModel = new ViewModelProvider(getActivity()).get(ContactListViewModel.class);
         mModel.connectGet();
     }
@@ -35,12 +43,19 @@ public class ContactListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_contact_list, container, false);
-        View contactView = view.findViewById(R.id.list_root);
+        binding = FragmentContactListBinding.inflate(inflater);
+        View contactView = binding.listRoot;
         if (contactView instanceof RecyclerView){
             ((RecyclerView) contactView).setAdapter(new ContactRecyclerViewAdapter(ContactGenerator.getContactList()));
         }
-        return view;
+        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+            binding.AddNewContact.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
+            binding.AddNewContact.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.tan)));
+        } else {
+            binding.AddNewContact.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_200)));
+            binding.AddNewContact.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+        }
+        return binding.getRoot();
     }
 
     @Override

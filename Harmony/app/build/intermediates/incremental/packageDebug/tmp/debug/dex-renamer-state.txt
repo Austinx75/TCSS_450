@@ -1,7 +1,7 @@
-#Wed May 19 18:51:46 PDT 2021
-base.0=C\:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+#Wed May 19 19:25:50 PDT 2021
+base.0=C\:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\hermi\\Desktop\\UW Spring 2021\\TCSS 450 Mobile Development\\Temp2\\Harmony\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
+base.1=C\:\\Users\\Austim Skott\\Desktop\\Class\\Spring 2021\\TCSS 450\\Project\\Harmony\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
