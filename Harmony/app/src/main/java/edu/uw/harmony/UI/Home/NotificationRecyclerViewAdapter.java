@@ -12,7 +12,12 @@ import java.util.List;
 import edu.uw.harmony.R;
 import edu.uw.harmony.databinding.FragmentNotificationCardBinding;
 
-
+/**
+ * This is the Recycler View adapter for the notifications.
+ * It sets the notifications sent over from the generator.
+ * @author Austin Scott
+ * @version 1.0
+ */
 public class NotificationRecyclerViewAdapter extends
         RecyclerView.Adapter<NotificationRecyclerViewAdapter.NotificationViewHolder>{
     /** Cretes a list of Notifications*/

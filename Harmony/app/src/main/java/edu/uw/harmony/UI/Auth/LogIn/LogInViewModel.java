@@ -26,6 +26,8 @@ import java.util.Objects;
 import edu.uw.harmony.UI.io.RequestQueueSingleton;
 
 /**
+ * This is the view model to connect to the web service and remember username / password.
+ * @author Austin Scott
  * This class is used to connect to our backend to retrieve login information.
  */
 public class LogInViewModel extends AndroidViewModel {

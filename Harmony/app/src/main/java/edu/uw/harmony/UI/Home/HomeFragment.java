@@ -28,7 +28,7 @@ import edu.uw.harmony.databinding.FragmentWeatherBinding;
  * This fragment shows a few components that summarize info throughout the app. This is the first
  * fragment navigated to when the user signs in.
  *
- * @author  Gary Kono
+ * @author  Austin Scott
  * @version 1.0
  */
 public class HomeFragment extends Fragment {

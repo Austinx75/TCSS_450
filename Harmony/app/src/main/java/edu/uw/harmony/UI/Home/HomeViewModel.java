@@ -35,6 +35,11 @@ import edu.uw.harmony.databinding.FragmentWeatherBinding;
 
 import static edu.uw.harmony.util.WeatherUtils.determineImageFromDescription;
 
+/**
+ * This is a view model to capture the current weather for the home page.
+ * @author Austin Scott
+ * @version 1.0
+ */
 public class HomeViewModel extends AndroidViewModel{
 
     /** JWT token*/

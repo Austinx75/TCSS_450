@@ -21,6 +21,8 @@ import edu.uw.harmony.databinding.FragmentContactCardBinding;
 import edu.uw.harmony.databinding.FragmentNotificationCardBinding;
 
 /**
+ * @author Austin Scott
+ * @version 1.0
  * A simple {@link Fragment} subclass.
  */
 public class NotificationCardFragment extends Fragment {
@@ -51,7 +53,11 @@ public class NotificationCardFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
-
+            binding.cardRoot.setBackgroundColor(getResources().getColor(R.color.colorOffWhite));
+            binding.imageMessageNotificationHome.setColorFilter(Color.BLACK);
+            binding.textMessageHome.setTextColor(getResources().getColor(R.color.black));
+            binding.textToPersonHome.setTextColor(getResources().getColor(R.color.black));
+            binding.textTOHome.setTextColor(getResources().getColor(R.color.black));
         } else {
             binding.cardRoot.setBackgroundColor(Color.BLACK);
             binding.imageMessageNotificationHome.setColorFilter(Color.WHITE);

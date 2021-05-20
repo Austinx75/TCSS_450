@@ -37,6 +37,8 @@ import static edu.uw.harmony.util.PasswordValidator.checkPwdSpecialChar;
 
 
 /**
+ * @author Austin Scott, Larry
+ * @version 1.0
  * A simple {@link Fragment} subclass.
  * This Fragment subclass enables the user to
  * type in a username and password. It then validates the credentials,
