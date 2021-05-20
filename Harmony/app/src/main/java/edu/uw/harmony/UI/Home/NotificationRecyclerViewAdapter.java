@@ -1,29 +1,40 @@
 package edu.uw.harmony.UI.Home;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentNotificationCardBinding;
 
-
+/**
+ * This is the Recycler View adapter for the notifications.
+ * It sets the notifications sent over from the generator.
+ * @author Austin Scott
+ * @version 1.1
+ */
 public class NotificationRecyclerViewAdapter extends
         RecyclerView.Adapter<NotificationRecyclerViewAdapter.NotificationViewHolder>{
     /** Cretes a list of Notifications*/
     private final List<NotificationItem> mNotifications;
 
+    SettingsViewModel sModel;
+
     /**
      * Instantiates the list of Notifications
      * @param items
      */
-    public NotificationRecyclerViewAdapter(List<NotificationItem> items){
+    public NotificationRecyclerViewAdapter(List<NotificationItem> items, SettingsViewModel model){
         this.mNotifications = items;
+        this.sModel = model;
     }
 
     /**
@@ -44,7 +55,7 @@ public class NotificationRecyclerViewAdapter extends
     @NonNull
     @Override
     public NotificationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new NotificationViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_notification_card, parent, false));
+        return new NotificationViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_notification_card, parent, false), sModel);
     }
 
     /**
@@ -65,15 +76,17 @@ public class NotificationRecyclerViewAdapter extends
         public final View mView;
         public FragmentNotificationCardBinding binding;
         private NotificationItem mNotifications;
+        SettingsViewModel settingsViewModel;
 
         /**
          * Constructor that instantiates the view and the binding.
          * @param view
          */
-        public NotificationViewHolder(View view) {
+        public NotificationViewHolder(View view, SettingsViewModel sModel) {
             super(view);
             mView = view;
             binding = FragmentNotificationCardBinding.bind(view);
+            settingsViewModel = sModel;
         }
 
         /**
@@ -84,6 +97,19 @@ public class NotificationRecyclerViewAdapter extends
             mNotifications = notifications;
             binding.textToPersonHome.setText(mNotifications.getSender());
             binding.textMessageHome.setText(mNotifications.getMessage());
+            if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+                binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.offwhite));
+                binding.textTOHome.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
+                binding.textToPersonHome.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
+                binding.textMessageHome.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
+                binding.imageMessageNotificationHome.setColorFilter(binding.getRoot().getResources().getColor(R.color.tan));
+            } else {
+                binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.black));
+                binding.textTOHome.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
+                binding.textToPersonHome.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
+                binding.textMessageHome.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
+                binding.imageMessageNotificationHome.setColorFilter(Color.WHITE);
+            }
 
         }
     }

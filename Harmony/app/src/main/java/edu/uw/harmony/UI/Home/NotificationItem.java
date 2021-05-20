@@ -4,9 +4,16 @@ import android.util.Log;
 
 import java.io.Serializable;
 
+/**
+ * This builds the strings that are sent over from the Generator class.
+ * @author Austin Scott
+ * @version 1.1
+ */
 public class NotificationItem implements Serializable{
 
+    /** This is the sender attribute of the notification*/
     private final String mSender;
+    /** This is the message attribute of the notification*/
     private final String mMessage;
 
 

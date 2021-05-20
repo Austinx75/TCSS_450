@@ -3,6 +3,11 @@ package edu.uw.harmony.UI.Home;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Generates notification statements for the notification cards.
+ * @author Austin Scott
+ * @version 1.1
+ */
 public class NotificationGenerator {
     /** Creats an array for the Notifications*/
     private static final NotificationItem[] NOTIFICATION_ITEMS;

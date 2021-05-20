@@ -28,8 +28,8 @@ import edu.uw.harmony.databinding.FragmentWeatherBinding;
  * This fragment shows a few components that summarize info throughout the app. This is the first
  * fragment navigated to when the user signs in.
  *
- * @author  Gary Kono
- * @version 1.0
+ * @author  Austin Scott
+ * @version 1.1
  */
 public class HomeFragment extends Fragment {
 
@@ -60,8 +60,10 @@ public class HomeFragment extends Fragment {
         View notificationView = binding.listRoot;
         if (notificationView instanceof RecyclerView){
             Log.d("Test", "Notification Size: " + NotificationGenerator.getNotificationList().toString());
-            ((RecyclerView) notificationView).setAdapter(new NotificationRecyclerViewAdapter(NotificationGenerator.getNotificationList()));
+            ((RecyclerView) notificationView).setAdapter(new NotificationRecyclerViewAdapter(NotificationGenerator.getNotificationList(), settingsViewModel));
         }
+
+
         return binding.getRoot();
     }
 

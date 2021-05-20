@@ -53,12 +53,12 @@ public class WeatherFragment extends Fragment {
 
         if (binding.hourlyListRoot instanceof RecyclerView) {
             ((RecyclerView) binding.hourlyListRoot).setAdapter(
-                    new HourlyForecastRecyclerViewAdapter(HourlyForecastItemGenerator.getHourlyForecastList()));
+                    new HourlyForecastRecyclerViewAdapter(HourlyForecastItemGenerator.getHourlyForecastList(), settingsViewModel));
         }
 
         if (binding.weeklyListRoot instanceof RecyclerView) {
             ((RecyclerView) binding.weeklyListRoot).setAdapter(
-                    new WeeklyForecastRecyclerViewAdapter(WeeklyForecastItemGenerator.getWeeklyForecastList()));
+                    new WeeklyForecastRecyclerViewAdapter(WeeklyForecastItemGenerator.getWeeklyForecastList(), settingsViewModel));
         }
 
         return inflater.inflate(R.layout.fragment_weather, container, false);
@@ -83,13 +83,13 @@ public class WeatherFragment extends Fragment {
         mModel.addHourlyForecastItemListObserver(getViewLifecycleOwner(), hourlyList -> {
             if (binding.hourlyListRoot instanceof RecyclerView) {
                 (binding.hourlyListRoot).setAdapter(
-                        new HourlyForecastRecyclerViewAdapter(hourlyList));
+                        new HourlyForecastRecyclerViewAdapter(hourlyList, settingsViewModel));
             }
         });
         mModel.addWeeklyForecastItemListObserver(getViewLifecycleOwner(), weeklyList -> {
             if (binding.weeklyListRoot instanceof RecyclerView) {
                 (binding.weeklyListRoot).setAdapter(
-                        new WeeklyForecastRecyclerViewAdapter(weeklyList));
+                        new WeeklyForecastRecyclerViewAdapter(weeklyList, settingsViewModel));
             }
         });
         /** Dependent on the theme, this will set all text / image fields to a certain color. */

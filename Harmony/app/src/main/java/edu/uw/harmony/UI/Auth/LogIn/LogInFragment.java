@@ -37,6 +37,8 @@ import static edu.uw.harmony.util.PasswordValidator.checkPwdSpecialChar;
 
 
 /**
+ * @author Austin Scott, Larry
+ * @version 1.0
  * A simple {@link Fragment} subclass.
  * This Fragment subclass enables the user to
  * type in a username and password. It then validates the credentials,
@@ -107,6 +109,7 @@ public class LogInFragment extends Fragment {
             binding.editTextEmail.setHintTextColor(Color.BLACK);
             binding.buttonLoginFragmentRegister.setTextColor(getResources().getColor(R.color.orange));
             binding.loginHarmonyLogo.setColorFilter(Color.BLACK);
+            binding.buttonLoginFragmentForgotPassword.setTextColor(getResources().getColor(R.color.orange));
         } else {
             binding.editTextPassword.setTextColor(Color.WHITE);
             binding.editTextPassword.setHintTextColor(Color.WHITE);
@@ -114,6 +117,7 @@ public class LogInFragment extends Fragment {
             binding.editTextEmail.setTextColor(Color.WHITE);
             binding.buttonLoginFragmentRegister.setTextColor(getResources().getColor(R.color.teal_200));
             binding.loginHarmonyLogo.setColorFilter(Color.WHITE);
+            binding.buttonLoginFragmentForgotPassword.setTextColor(getResources().getColor(R.color.teal_200));
         }
         // Inflate the layout for this fragment
         return binding.getRoot();

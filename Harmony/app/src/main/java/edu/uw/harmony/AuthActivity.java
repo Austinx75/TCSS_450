@@ -13,6 +13,11 @@ import me.pushy.sdk.Pushy;
 
 import edu.uw.harmony.UI.settings.SettingsFragment;
 
+/**
+ * This is the activity that handles the log in and registration
+ * @author Austin Scott
+ * @version 1.0
+ */
 public class AuthActivity extends AppCompatActivity {
 
     @Override

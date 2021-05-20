@@ -71,7 +71,7 @@ public class ChatListFragment extends Fragment {
             Log.d("string", ""+blogList.size());
             if (!blogList.isEmpty()) {
                 Log.d("string", "not empty");
-                binding.listRoot.setAdapter( new ChatRecyclerViewAdapter(blogList)
+                binding.listRoot.setAdapter( new ChatRecyclerViewAdapter(blogList, settingsViewModel)
                 );
             }
         });

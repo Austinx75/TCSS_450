@@ -29,9 +29,12 @@ import java.util.Objects;
 /**
  * This class is used to connect to the backend to verify information regarding
  * registration.
+ * @author Austin Scott
+ * @version 1.0
  */
 public class RegisterViewModel extends AndroidViewModel {
 
+    /** Array of JSONObject*/
     private MutableLiveData<JSONObject> mResponse;
 
     public RegisterViewModel(@NonNull Application application) {
@@ -45,6 +48,10 @@ public class RegisterViewModel extends AndroidViewModel {
         mResponse.observe(owner, observer);
     }
 
+    /**
+     * Handles errors if missing info or unable to connect.
+     * @param error
+     */
     private void handleError(final VolleyError error) {
         if (Objects.isNull(error.networkResponse)) {
             try {
@@ -69,6 +76,13 @@ public class RegisterViewModel extends AndroidViewModel {
         }
     }
 
+    /**
+     * Connects to the web service to register user.
+     * @param first
+     * @param last
+     * @param email
+     * @param password
+     */
     public void connect(final String first,
                         final String last,
                         final String email,

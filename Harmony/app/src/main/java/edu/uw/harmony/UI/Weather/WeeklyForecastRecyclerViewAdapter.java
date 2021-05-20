@@ -1,5 +1,6 @@
 package edu.uw.harmony.UI.Weather;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentWeatherWeeklyForecastCardBinding;
 
 import static edu.uw.harmony.util.WeatherUtils.determineImageFromDescription;
@@ -26,8 +28,11 @@ public class WeeklyForecastRecyclerViewAdapter extends
     //Store all of the blogs to present
     private final List<WeeklyForecastItem> mWeeklyForecasts;
 
-    public WeeklyForecastRecyclerViewAdapter(List<WeeklyForecastItem> items) {
+    private SettingsViewModel sModel;
+
+    public WeeklyForecastRecyclerViewAdapter(List<WeeklyForecastItem> items, SettingsViewModel model) {
         this.mWeeklyForecasts = items;
+        sModel = model;
     }
 
     @Override
@@ -39,7 +44,7 @@ public class WeeklyForecastRecyclerViewAdapter extends
     @Override
     public WeeklyForecastRecyclerViewAdapter.WeeklyForecastViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new WeeklyForecastRecyclerViewAdapter.WeeklyForecastViewHolder(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_weather_weekly_forecast_card, parent, false));
+                .inflate(R.layout.fragment_weather_weekly_forecast_card, parent, false), sModel);
     }
 
     @Override
@@ -55,11 +60,13 @@ public class WeeklyForecastRecyclerViewAdapter extends
         public final View mView;
         public FragmentWeatherWeeklyForecastCardBinding binding;
         private WeeklyForecastItem mWeeklyForecast;
+        private SettingsViewModel settingsViewModel;
 
-        public WeeklyForecastViewHolder(View view) {
+        public WeeklyForecastViewHolder(View view, SettingsViewModel model) {
             super(view);
             mView = view;
             binding = FragmentWeatherWeeklyForecastCardBinding.bind(view);
+            settingsViewModel = model;
         }
 
         void setWeeklyForecastItem(final WeeklyForecastItem weeklyForecast) {
@@ -75,6 +82,17 @@ public class WeeklyForecastRecyclerViewAdapter extends
 
             //Set the text for the temperature
             binding.textWeeklyTemp.setText((int)mWeeklyForecast.getTemp() + "°");
+            if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+                binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.offwhite));
+                binding.textWeeklyDay.setTextColor(Color.BLACK);
+                binding.textWeeklyDay.setBackgroundColor(binding.getRoot().getResources().getColor(R.color.tan));
+                binding.textWeeklyTemp.setTextColor(Color.BLACK);
+            } else {
+                binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.black));
+                binding.textWeeklyDay.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
+                binding.textWeeklyDay.setBackgroundColor(binding.getRoot().getResources().getColor(R.color.teal_200));
+                binding.textWeeklyTemp.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
+            }
         }
     }
 

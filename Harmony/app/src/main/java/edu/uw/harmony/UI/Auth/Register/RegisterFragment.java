@@ -33,6 +33,7 @@ import static edu.uw.harmony.util.PasswordValidator.checkPwdUpperCase;
 
 
 /**
+ * @author Austin Scott
  * A simple {@link Fragment} subclass.
  * The register fragment allows the user to enter a
  * First name, Last name, email, password, and retyped password.
@@ -178,6 +179,9 @@ public class RegisterFragment extends Fragment {
         // result of connect().
     }
 
+    /**
+     * Navigates to login upon successful registration.
+     */
     private void navigateToLogin() {
         RegisterFragmentDirections.ActionRegisterFragmentToValidationFragment directions =
                 RegisterFragmentDirections.actionRegisterFragmentToValidationFragment();

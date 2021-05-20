@@ -28,6 +28,9 @@ import edu.uw.harmony.databinding.FragmentLogInBinding;
 import edu.uw.harmony.databinding.FragmentSettingsBinding;
 
 /**
+ * This is the fragment where you can change color theme, and reset password.
+ * @author Austin Scott
+ * @version 1.1
  * A simple {@link Fragment} subclass.
  */
 public class SettingsFragment extends Fragment{
