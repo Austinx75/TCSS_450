@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import edu.uw.harmony.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -18,6 +19,9 @@ import java.lang.String;
 public final class FragmentContactListBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
+
+  @NonNull
+  public final FloatingActionButton AddNewContact;
 
   @NonNull
   public final ConstraintLayout layoutRoot;
@@ -32,9 +36,11 @@ public final class FragmentContactListBinding implements ViewBinding {
   public final ProgressBar progressBar;
 
   private FragmentContactListBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout layoutRoot, @NonNull ConstraintLayout layoutWait,
-      @NonNull RecyclerView listRoot, @NonNull ProgressBar progressBar) {
+      @NonNull FloatingActionButton AddNewContact, @NonNull ConstraintLayout layoutRoot,
+      @NonNull ConstraintLayout layoutWait, @NonNull RecyclerView listRoot,
+      @NonNull ProgressBar progressBar) {
     this.rootView = rootView;
+    this.AddNewContact = AddNewContact;
     this.layoutRoot = layoutRoot;
     this.layoutWait = layoutWait;
     this.listRoot = listRoot;
@@ -68,6 +74,12 @@ public final class FragmentContactListBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.AddNewContact;
+      FloatingActionButton AddNewContact = rootView.findViewById(id);
+      if (AddNewContact == null) {
+        break missingId;
+      }
+
       ConstraintLayout layoutRoot = (ConstraintLayout) rootView;
 
       id = R.id.layout_wait;
@@ -88,8 +100,8 @@ public final class FragmentContactListBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentContactListBinding((ConstraintLayout) rootView, layoutRoot, layoutWait,
-          listRoot, progressBar);
+      return new FragmentContactListBinding((ConstraintLayout) rootView, AddNewContact, layoutRoot,
+          layoutWait, listRoot, progressBar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

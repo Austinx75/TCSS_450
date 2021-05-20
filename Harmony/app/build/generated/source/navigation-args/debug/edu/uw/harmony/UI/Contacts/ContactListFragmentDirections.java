@@ -35,6 +35,11 @@ public class ContactListFragmentDirections {
     return new ActionNavigationContactToContactFragment(username, status);
   }
 
+  @NonNull
+  public static NavDirections actionNavigationContactToAddNewContactFragment() {
+    return new ActionOnlyNavDirections(R.id.action_navigation_contact_to_addNewContactFragment);
+  }
+
   public static class ActionNavigationContactToContactCardFragment implements NavDirections {
     private final HashMap arguments = new HashMap();
 
