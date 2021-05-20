@@ -117,5 +117,10 @@
         android:id="@+id/addNewContactFragment"
         android:name="edu.uw.harmony.UI.Contacts.AddNewContactFragment"
         android:label="AddNewContactFragment" />
+    <activity
+        android:id="@+id/navigation_contacts_activity"
+        android:name="edu.uw.harmony.UI.Contacts.ContactsActivity"
+        android:label="@string/title_contacts_page"
+        tools:layout="@layout/activity_contacts" />
 
 </navigation>
