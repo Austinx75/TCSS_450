@@ -1,5 +1,6 @@
 package edu.uw.harmony.UI.Chat.page;
 
+import android.graphics.Color;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,6 +20,7 @@ import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Chat.page.ChatListFragmentDirections;
 import edu.uw.harmony.UI.Chat.page.ChatPost;
 import edu.uw.harmony.UI.model.NewMessageCountViewModel;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentChatCardBinding;
 
 /**
@@ -28,12 +30,15 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
     /** Stores all of the rooms*/
     private final List<ChatPost> mChats;
 
+    private SettingsViewModel sModel;
+
     /**
      * Constructor for the Recycler View Adapter
      * @param items the items that will be created
      */
-    public ChatRecyclerViewAdapter(List<ChatPost> items) {
+    public ChatRecyclerViewAdapter(List<ChatPost> items, SettingsViewModel model) {
         this.mChats = items;
+        this.sModel = model;
     }
 
     /**
@@ -75,6 +80,19 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
                 );
             });
             binding.textTitle.setText(chat.getTitle());
+            if(sModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+                binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.offwhite));
+                binding.imageFace.setColorFilter(binding.getRoot().getResources().getColor(R.color.tan));
+                binding.textTitle.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
+                binding.textPubdate.setBackgroundColor(binding.getRoot().getResources().getColor(R.color.offwhite));
+                binding.textPubdate.setTextColor(Color.BLACK);
+            } else {
+                binding.cardRoot.setCardBackgroundColor(Color.BLACK);
+                binding.imageFace.setColorFilter(Color.WHITE);
+                binding.textTitle.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
+                binding.textPubdate.setBackgroundColor(Color.BLACK);
+                binding.textPubdate.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
+            }
         }
     }
 

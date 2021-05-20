@@ -1,5 +1,6 @@
 package edu.uw.harmony.UI.Weather;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentWeatherHourlyForecastCardBinding;
 
 import static edu.uw.harmony.util.WeatherUtils.determineImageFromDescription;
@@ -26,8 +28,11 @@ public class HourlyForecastRecyclerViewAdapter extends
     //Store all of the blogs to present
     private final List<HourlyForecastItem> mHourlyForecasts;
 
-    public HourlyForecastRecyclerViewAdapter(List<HourlyForecastItem> items) {
+    private SettingsViewModel sModel;
+
+    public HourlyForecastRecyclerViewAdapter(List<HourlyForecastItem> items, SettingsViewModel model) {
         this.mHourlyForecasts = items;
+        this.sModel = model;
     }
 
     @Override
@@ -39,7 +44,7 @@ public class HourlyForecastRecyclerViewAdapter extends
     @Override
     public HourlyForecastViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new HourlyForecastViewHolder(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_weather_hourly_forecast_card, parent, false));
+                .inflate(R.layout.fragment_weather_hourly_forecast_card, parent, false), sModel);
     }
 
     @Override
@@ -55,11 +60,13 @@ public class HourlyForecastRecyclerViewAdapter extends
         public final View mView;
         public FragmentWeatherHourlyForecastCardBinding binding;
         private HourlyForecastItem mHourlyForecast;
+        private SettingsViewModel settingsViewModel;
 
-        public HourlyForecastViewHolder(View view) {
+        public HourlyForecastViewHolder(View view, SettingsViewModel model) {
             super(view);
             mView = view;
             binding = FragmentWeatherHourlyForecastCardBinding.bind(view);
+            settingsViewModel = model;
         }
 
         void setHourlyForecastItem(final HourlyForecastItem hourlyForecast) {
@@ -74,9 +81,19 @@ public class HourlyForecastRecyclerViewAdapter extends
             //Set the image
             this.binding.imageViewHourlyForecastCondition.setImageResource(
                     determineImageFromDescription(mHourlyForecast.getDescription()));
-
             //Set the text for the temperature
             binding.textHourlyTemp.setText((int)mHourlyForecast.getTemp() + "°");
+            if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+                binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.offwhite));
+                binding.textHourlyTime.setBackgroundColor(binding.getRoot().getResources().getColor(R.color.tan));
+                binding.textHourlyTime.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
+                binding.textHourlyTemp.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
+            } else {
+                binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.black));
+                binding.textHourlyTime.setBackgroundColor(binding.getRoot().getResources().getColor(R.color.teal_200));
+                binding.textHourlyTime.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
+                binding.textHourlyTemp.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
+            }
         }
     }
 }

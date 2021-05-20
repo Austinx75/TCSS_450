@@ -1,6 +1,8 @@
 package edu.uw.harmony.UI.Home;
 
+import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.ColorFilter;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -31,9 +33,7 @@ public class NotificationCardFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentNotificationCardBinding.inflate(inflater);
-        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
-
+        binding = FragmentNotificationCardBinding.inflate(inflater, container, false);
         // Inflate the layout for this fragment
         return binding.getRoot();
     }
@@ -47,18 +47,5 @@ public class NotificationCardFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
-            binding.cardRoot.setBackgroundColor(getResources().getColor(R.color.colorOffWhite));
-            binding.imageMessageNotificationHome.setColorFilter(Color.BLACK);
-            binding.textMessageHome.setTextColor(getResources().getColor(R.color.black));
-            binding.textToPersonHome.setTextColor(getResources().getColor(R.color.black));
-            binding.textTOHome.setTextColor(getResources().getColor(R.color.black));
-        } else {
-            binding.cardRoot.setBackgroundColor(Color.BLACK);
-            binding.imageMessageNotificationHome.setColorFilter(Color.WHITE);
-            binding.textMessageHome.setTextColor(getResources().getColor(R.color.teal_200));
-            binding.textToPersonHome.setTextColor(getResources().getColor(R.color.teal_200));
-            binding.textTOHome.setTextColor(getResources().getColor(R.color.teal_200));
-        }
     }
 }

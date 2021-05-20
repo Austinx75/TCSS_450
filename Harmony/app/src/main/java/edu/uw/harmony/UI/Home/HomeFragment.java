@@ -60,8 +60,10 @@ public class HomeFragment extends Fragment {
         View notificationView = binding.listRoot;
         if (notificationView instanceof RecyclerView){
             Log.d("Test", "Notification Size: " + NotificationGenerator.getNotificationList().toString());
-            ((RecyclerView) notificationView).setAdapter(new NotificationRecyclerViewAdapter(NotificationGenerator.getNotificationList()));
+            ((RecyclerView) notificationView).setAdapter(new NotificationRecyclerViewAdapter(NotificationGenerator.getNotificationList(), settingsViewModel));
         }
+
+
         return binding.getRoot();
     }
 
