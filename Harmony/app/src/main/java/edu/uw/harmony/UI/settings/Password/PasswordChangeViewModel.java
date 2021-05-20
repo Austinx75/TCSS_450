@@ -29,21 +29,35 @@ import edu.uw.harmony.UI.io.RequestQueueSingleton;
  * This class is used to connect to our backend to retrieve login information.
  */
 public class PasswordChangeViewModel extends AndroidViewModel {
-
+    /** The response*/
     private MutableLiveData<JSONObject> mResponse;
 
+    /**
+     * The constructor to create the password change view model
+     * @param application the application
+     */
     public PasswordChangeViewModel(@NonNull Application application) {
         super(application);
         mResponse = new MutableLiveData<>();
         mResponse.setValue(new JSONObject());
     }
 
+    /**
+     * Adds a listener on the mResponse
+     * @param owner the owner
+     * @param observer the observer
+     */
     public void addResponseObserver(@NonNull LifecycleOwner owner,
                                     @NonNull Observer<? super JSONObject> observer) {
         mResponse.observe(owner, observer);
     }
 
-
+    /**
+     * Connects to the backend to try and update the password
+     * @param oldPassword the current password
+     * @param newPassword the new password
+     * @param jwt the users jwt
+     */
     public void connect(final String oldPassword, final String newPassword, final String jwt){
         Log.e("Old Password", oldPassword);
         Log.e("New Password", newPassword);
@@ -83,7 +97,10 @@ public class PasswordChangeViewModel extends AndroidViewModel {
 
     }
 
-
+    /**
+     * Handles the error from the backend
+     * @param error the error
+     */
     private void handleError(final VolleyError error) {
         if (Objects.isNull(error.networkResponse)) {
             try {

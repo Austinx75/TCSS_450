@@ -21,7 +21,11 @@ import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentValidationBinding;
 
 /**
+ * @author Larry
+ * @version 1.0
  * A simple {@link Fragment} subclass.
+ * This fragment is used to notify the user that an email has been sent to their provided email
+ * and the next steps
  */
 public class ValidationFragment extends Fragment {
 

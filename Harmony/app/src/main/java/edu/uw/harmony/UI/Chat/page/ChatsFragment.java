@@ -17,7 +17,10 @@ import edu.uw.harmony.UI.Chat.page.ChatsFragmentDirections;
 import edu.uw.harmony.databinding.FragmentChatBinding;
 
 /**
+ * @author Larry
+ * @version 1.0
  * A simple {@link Fragment} subclass.
+ *
  */
 public class ChatsFragment extends Fragment {
 

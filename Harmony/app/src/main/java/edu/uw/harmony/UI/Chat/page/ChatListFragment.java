@@ -23,7 +23,11 @@ import edu.uw.harmony.databinding.FragmentChatListBinding;
 import edu.uw.harmony.databinding.FragmentLogInBinding;
 
 /**
+ * @author Larry
+ * @version 1.0
  * A simple {@link Fragment} subclass.
+ * This fragment holds the list of chats that the user is in. The chats are listed in descending order
+ * by the activity within the chat
  */
 public class ChatListFragment extends Fragment {
     /** Chatlist view model*/

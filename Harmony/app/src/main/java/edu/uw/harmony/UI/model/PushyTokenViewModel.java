@@ -27,9 +27,13 @@ import edu.uw.harmony.R;
 import edu.uw.harmony.io.RequestQueueSingleton;
 import me.pushy.sdk.Pushy;
 
+/**
+ * Pushy Token View Model that handles the getting and creation of our push token
+ */
 public class PushyTokenViewModel extends AndroidViewModel{
-
+    /** The push token from the server*/
     private final MutableLiveData<String> mPushyToken;
+    /** The response from the server*/
     private final MutableLiveData<JSONObject> mResponse;
 
     public PushyTokenViewModel(@NonNull Application application) {

@@ -21,10 +21,11 @@ import edu.uw.harmony.databinding.FragmentPasswordChangeSuccessBinding;
  * A simple {@link Fragment} subclass.
  */
 public class PasswordChangeSuccessFragment extends Fragment {
-
+    /** The view binding*/
     private FragmentPasswordChangeSuccessBinding binding;
-
+    /** The settings viwe model*/
     private SettingsViewModel settingsViewModel;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

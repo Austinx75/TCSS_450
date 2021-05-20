@@ -65,16 +65,29 @@ public class ChatMessageRecyclerViewAdapter extends RecyclerView.Adapter<ChatMes
         return mMessages.size();
     }
 
+    /**
+     * Class to Build/Represent a chat message
+     */
     class MessageViewHolder extends RecyclerView.ViewHolder {
+        /** The view that is connected to the message*/
         private final View mView;
+        /** The binding for the fragment chat message*/
         private FragmentChatMessageBinding binding;
 
+        /**
+         * Constructor to create a Message View holder
+         * @param view the view that will be userd
+         */
         public MessageViewHolder(@NonNull View view) {
             super(view);
             mView = view;
             binding = FragmentChatMessageBinding.bind(view);
         }
 
+        /**
+         * Creates the message and places the message on the screen in the appropriate area
+         * @param message the new message that needs to be shown on screen
+         */
         void setMessage(final ChatMessage message) {
             final Resources res = mView.getContext().getResources();
             final MaterialCardView card = binding.cardRoot;

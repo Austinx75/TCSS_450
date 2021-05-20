@@ -49,14 +49,17 @@ import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.databinding.ActivityMainBinding;
 import edu.uw.harmony.services.PushReceiver;
 
-
+/**
+ * The main activity for our app
+ */
 public class MainActivity extends AppCompatActivity {
-
+    /** The push message receiver*/
     private MainPushMessageReceiver mPushMessageReceiver;
+    /** The new message count view model*/
     private NewMessageCountViewModel mNewMessageModel;
-
+    /** The binding for the main activity*/
     private ActivityMainBinding binding;
-
+    /** The bottom navigation */
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -102,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
         mNewMessageModel = new ViewModelProvider(this).get(NewMessageCountViewModel.class);
 
-;
+        // Observes the new messages and sums the total of new messages
         mNewMessageModel.addMessageCountObserver(this, mapping -> {
             int total = sum(mapping);
             Log.e("total ", "" +total);
@@ -165,10 +168,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * A BroadcastReceiver that
+     * A BroadcastReceiver that handles the onReceive functionaltiy
      */
     private class MainPushMessageReceiver extends BroadcastReceiver {
-
+        /** The chat View model*/
         private ChatViewModel mModel = new ViewModelProvider(MainActivity.this)
                 .get(ChatViewModel.class);
 
@@ -191,7 +194,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
 
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.toolbar, menu);

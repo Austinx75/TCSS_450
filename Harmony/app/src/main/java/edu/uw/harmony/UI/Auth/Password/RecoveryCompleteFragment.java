@@ -19,11 +19,16 @@ import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentRecoveryCompleteBinding;
 
 /**
+ * @author  Larry
+ * @version 1.0
  * A simple {@link Fragment} subclass.
+ * This fragment is used to notify the user that the request went through and provides them
+ * with instructions on how to fully reset their password
  */
 public class RecoveryCompleteFragment extends Fragment {
-
+    /** The view binding for the recovery complete fragment*/
     private FragmentRecoveryCompleteBinding binding;
+    /** The settings view model*/
     private SettingsViewModel settingsViewModel;
 
     @Override

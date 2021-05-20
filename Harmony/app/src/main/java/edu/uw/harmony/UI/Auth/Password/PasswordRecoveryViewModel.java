@@ -26,24 +26,36 @@ import java.util.Objects;
 import edu.uw.harmony.UI.io.RequestQueueSingleton;
 
 /**
- * This class is used to connect to our backend to retrieve login information.
+ * This class is used to connect to our backend to initiate a password recovery
  */
 public class PasswordRecoveryViewModel extends AndroidViewModel {
-
+    /** The response from the server*/
     private MutableLiveData<JSONObject> mResponse;
 
+    /**
+     * The Constructor
+     * @param application The application
+     */
     public PasswordRecoveryViewModel(@NonNull Application application) {
         super(application);
         mResponse = new MutableLiveData<>();
         mResponse.setValue(new JSONObject());
     }
 
+    /**
+     * Adds a response observer for the mResponse field
+     * @param owner the owner
+     * @param observer the observer
+     */
     public void addResponseObserver(@NonNull LifecycleOwner owner,
                                     @NonNull Observer<? super JSONObject> observer) {
         mResponse.observe(owner, observer);
     }
 
-
+    /**
+     * Connects to the server and initiates a request to recover the password of a given email
+     * @param email the email of the user
+     */
     public void connect(final String email){
         Log.e("EMaIL", email);
         String url = "https://team-9-tcss450-backend.herokuapp.com/password/recover";
@@ -73,7 +85,10 @@ public class PasswordRecoveryViewModel extends AndroidViewModel {
 
     }
 
-
+    /**
+     * Handles the error from the connect request
+     * @param error the error that occured
+     */
     private void handleError(final VolleyError error) {
         if (Objects.isNull(error.networkResponse)) {
             try {

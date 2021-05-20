@@ -19,16 +19,25 @@ import edu.uw.harmony.databinding.FragmentChatRoomBinding;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 
 /**
+ * @author Larry
+ * @version 1.0
  * A simple {@link Fragment} subclass.
+ * This fragment acts as the chat room for the user. All chats sent by the user stays on the right
+ * and new chats from others in the chat room stays on the left.
  */
 public class ChatRoomFragment extends Fragment {
 
+    /** The Chat View Model*/
     private ChatViewModel mChatModel;
+    /** The user View Model*/
     private UserInfoViewModel mUserModel;
-
+    /** The Chat Send View Model*/
     private ChatSendViewModel mSendModel;
+    /** The chat id for the room*/
     private int mChatId= 0;
+    /** The Settings View Model*/
     private SettingsViewModel settingsViewModel;
+    /** The new Message Count View Model*/
     private NewMessageCountViewModel mChatCountViewModel;
 
     public ChatRoomFragment() {

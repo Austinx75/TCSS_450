@@ -27,12 +27,17 @@ import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentPasswordRecoveryBinding;
 
 /**
+ * @author  Larry
+ * @version 1.0
  * A simple {@link Fragment} subclass.
+ * This fragment allows the user to enter their email to recover their account
  */
 public class PasswordRecoveryFragment extends Fragment {
-
+    /** The binding for the password recovery fragment*/
     private FragmentPasswordRecoveryBinding binding;
+    /** The settings view model*/
     private SettingsViewModel settingsViewModel;
+    /** The password recovery view model*/
     private PasswordRecoveryViewModel mModel;
 
     @Override

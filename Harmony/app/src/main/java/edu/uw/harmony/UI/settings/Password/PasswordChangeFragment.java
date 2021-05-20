@@ -37,15 +37,24 @@ import static edu.uw.harmony.util.PasswordValidator.checkPwdSpecialChar;
 import static edu.uw.harmony.util.PasswordValidator.checkPwdUpperCase;
 
 /**
+ * @author Larry
+ * @version 1.0
  * A simple {@link Fragment} subclass.
+ * This fragment allows the user to enter the current and new password so they can update
+ * their password
  */
 public class PasswordChangeFragment extends Fragment {
-
+    /** The view binding*/
     private FragmentPasswordChangeBinding binding;
+    /** The Password change view model*/
     private PasswordChangeViewModel mModel;
+    /** The user info view model*/
     private UserInfoViewModel mUserModel;
+    /** If the user is currently trying to update their password*/
     private boolean mIsValidating;
+    /** The settigns view model*/
     private SettingsViewModel settingsViewModel;
+    /** The password validator*/
     private PasswordValidator mPassWordValidator =
             checkClientPredicate(pwd -> pwd.equals(binding.passwordChangeNew.getText().toString()))
                     .and(checkPwdLength(7))
@@ -118,6 +127,9 @@ public class PasswordChangeFragment extends Fragment {
         }
     }
 
+    /**
+     * Upon a successful password change, navigate to the success page
+     */
     private void navigateToSuccess() {
         View view = getActivity().getCurrentFocus();
         if (view != null) {
@@ -133,8 +145,15 @@ public class PasswordChangeFragment extends Fragment {
 
     }
 
+    /**
+     * Begins the attempt to upate to the new password
+     * @param button the button that was clicked
+     */
     private void attemptChange(final View button) {  validateNewPasswords();}
 
+    /**
+     * Validates if the user typed the same password for confirmation. If false we set the error on the field
+     */
     private void validateNewPasswords() {
         if (binding.passwordChangeNew.getText().toString().equals(binding.passwordChangeConfirmNew.getText().toString())) {
             this.confirmPassword();
@@ -143,6 +162,9 @@ public class PasswordChangeFragment extends Fragment {
         }
     }
 
+    /**
+     * Confirms that the new password meets all of the app requirements
+     */
     private void confirmPassword() {
         mPassWordValidator.processResult(
                 mPassWordValidator.apply(binding.passwordChangeNew.getText().toString()),
@@ -156,6 +178,9 @@ public class PasswordChangeFragment extends Fragment {
                         "\nNo spaces."));
     }
 
+    /**
+     * Attempts a connection to the backend to attempt a password update
+     */
     private void verifyAuthWithServer() {
         this.mIsValidating = false;
         mModel.connect(
