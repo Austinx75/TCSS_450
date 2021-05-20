@@ -1836,9 +1836,12 @@ drawable home_black_24dp
 drawable home_logo
 drawable ic_baseline_chat_bubble_24
 drawable ic_baseline_group_add_24
+drawable ic_baseline_person_search_24
 drawable ic_baseline_wb_sunny_24
 drawable ic_clock_black_24dp
+drawable ic_contact_chat_bubble_24dp
 drawable ic_dark_mode_24
+drawable ic_delete_contact_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1881,6 +1884,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable open_on_phone
+drawable search_new_contact_24dp
 drawable test_custom_background
 drawable thumb1
 drawable tooltip_frame_dark
@@ -1914,6 +1918,7 @@ fraction ws_action_drawer_item_last_item_bottom_padding
 fraction ws_action_drawer_item_left_padding
 fraction ws_action_drawer_item_right_padding
 id ALT
+id AddNewContact
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
@@ -1984,6 +1989,7 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_navigation_chat_list_to_navigation_new_chat
 id action_navigation_chats_to_newChatFragment
+id action_navigation_contact_to_addNewContactFragment
 id action_navigation_contact_to_contactCardFragment
 id action_navigation_contact_to_contactFragment
 id action_navigation_contact_to_navigation_new_chat
@@ -1999,6 +2005,7 @@ id action_validationFragment_to_logInFragment
 id actions
 id activity_chooser_view_content
 id add
+id addNewContactFragment
 id alertTitle
 id aligned
 id all
@@ -2034,8 +2041,6 @@ id button_validationFragment_validate
 id cache_measures
 id cancel_action
 id cancel_button
-id cardAvatar
-id cardMessage
 id cardView
 id card_root
 id center
@@ -2062,6 +2067,7 @@ id contactCardFragment
 id contactFragment
 id contact_Avatar
 id contact_card
+id contact_delete
 id contact_message
 id contact_status
 id contact_username
@@ -2328,6 +2334,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id searchNewContact
 id search_badge
 id search_bar
 id search_button
@@ -2406,6 +2413,7 @@ id textView4
 id textView6
 id textView_cityPlaceholder
 id textView_mainTemperaturePlaceholder
+id text_Preview
 id text_TO_home
 id text_ToPerson_home
 id text_Verification_Validation
@@ -2576,6 +2584,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_add_new_contact
 layout fragment_chat
 layout fragment_chat_card
 layout fragment_chat_list
@@ -2851,6 +2860,7 @@ string text_register_LName
 string text_register_RetypePassword
 string text_validation
 string title_activity_auth
+string title_activity_contacts
 string title_activity_main
 string title_chats
 string title_contact

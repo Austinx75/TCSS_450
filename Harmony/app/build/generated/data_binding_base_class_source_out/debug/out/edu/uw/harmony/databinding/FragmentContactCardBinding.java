@@ -22,12 +22,6 @@ public final class FragmentContactCardBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
-  public final CardView cardAvatar;
-
-  @NonNull
-  public final CardView cardMessage;
-
-  @NonNull
   public final CardView cardRoot;
 
   @NonNull
@@ -35,6 +29,9 @@ public final class FragmentContactCardBinding implements ViewBinding {
 
   @NonNull
   public final ConstraintLayout contactCard;
+
+  @NonNull
+  public final ImageButton contactDelete;
 
   @NonNull
   public final ImageButton contactMessage;
@@ -45,19 +42,23 @@ public final class FragmentContactCardBinding implements ViewBinding {
   @NonNull
   public final TextView contactUsername;
 
-  private FragmentContactCardBinding(@NonNull CardView rootView, @NonNull CardView cardAvatar,
-      @NonNull CardView cardMessage, @NonNull CardView cardRoot, @NonNull ImageView contactAvatar,
-      @NonNull ConstraintLayout contactCard, @NonNull ImageButton contactMessage,
-      @NonNull TextView contactStatus, @NonNull TextView contactUsername) {
+  @NonNull
+  public final TextView textPreview;
+
+  private FragmentContactCardBinding(@NonNull CardView rootView, @NonNull CardView cardRoot,
+      @NonNull ImageView contactAvatar, @NonNull ConstraintLayout contactCard,
+      @NonNull ImageButton contactDelete, @NonNull ImageButton contactMessage,
+      @NonNull TextView contactStatus, @NonNull TextView contactUsername,
+      @NonNull TextView textPreview) {
     this.rootView = rootView;
-    this.cardAvatar = cardAvatar;
-    this.cardMessage = cardMessage;
     this.cardRoot = cardRoot;
     this.contactAvatar = contactAvatar;
     this.contactCard = contactCard;
+    this.contactDelete = contactDelete;
     this.contactMessage = contactMessage;
     this.contactStatus = contactStatus;
     this.contactUsername = contactUsername;
+    this.textPreview = textPreview;
   }
 
   @Override
@@ -87,18 +88,6 @@ public final class FragmentContactCardBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.cardAvatar;
-      CardView cardAvatar = rootView.findViewById(id);
-      if (cardAvatar == null) {
-        break missingId;
-      }
-
-      id = R.id.cardMessage;
-      CardView cardMessage = rootView.findViewById(id);
-      if (cardMessage == null) {
-        break missingId;
-      }
-
       CardView cardRoot = (CardView) rootView;
 
       id = R.id.contact_Avatar;
@@ -110,6 +99,12 @@ public final class FragmentContactCardBinding implements ViewBinding {
       id = R.id.contact_card;
       ConstraintLayout contactCard = rootView.findViewById(id);
       if (contactCard == null) {
+        break missingId;
+      }
+
+      id = R.id.contact_delete;
+      ImageButton contactDelete = rootView.findViewById(id);
+      if (contactDelete == null) {
         break missingId;
       }
 
@@ -131,8 +126,14 @@ public final class FragmentContactCardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentContactCardBinding((CardView) rootView, cardAvatar, cardMessage, cardRoot,
-          contactAvatar, contactCard, contactMessage, contactStatus, contactUsername);
+      id = R.id.text_Preview;
+      TextView textPreview = rootView.findViewById(id);
+      if (textPreview == null) {
+        break missingId;
+      }
+
+      return new FragmentContactCardBinding((CardView) rootView, cardRoot, contactAvatar,
+          contactCard, contactDelete, contactMessage, contactStatus, contactUsername, textPreview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

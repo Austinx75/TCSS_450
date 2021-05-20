@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_navigation_contact_to_contactFragment"
             app:destination="@id/contactFragment" />
+        <action
+            android:id="@+id/action_navigation_contact_to_addNewContactFragment"
+            app:destination="@id/addNewContactFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_chats"
@@ -110,5 +113,9 @@
             android:id="@+id/action_passwordChangeSuccessFragment_to_navigation_home"
             app:destination="@id/navigation_home" />
     </fragment>
+    <fragment
+        android:id="@+id/addNewContactFragment"
+        android:name="edu.uw.harmony.UI.Contacts.AddNewContactFragment"
+        android:label="AddNewContactFragment" />
 
 </navigation>

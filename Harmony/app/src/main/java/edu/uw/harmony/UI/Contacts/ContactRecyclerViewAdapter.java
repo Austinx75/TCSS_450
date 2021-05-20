@@ -1,5 +1,6 @@
 package edu.uw.harmony.UI.Contacts;
 
+import android.graphics.drawable.Icon;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,9 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
     @NonNull
     @Override
     public ContactViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ContactViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_contact_card, parent, false));
+        return new ContactViewHolder(LayoutInflater
+                .from(parent.getContext())
+                .inflate(R.layout.fragment_contact_card, parent, false));
     }
 
     @Override
@@ -54,7 +57,6 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
     /**
      * Objects from this class represent an Individual row View from the List* of rows in the Blog Recycler View.
      */
-
     public class ContactViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public FragmentContactCardBinding binding;
@@ -69,9 +71,13 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             super(view);
             mView = view;
             binding = FragmentContactCardBinding.bind(view);
-            //binding.contactMessage.setOnClickListener(button ->  Navigation.findNavController(getView())
-            //       .navigate(ContactCardFragmentDirections.actionContactCardFragmentToNavigationNewChat()));
-            //binding.buttonMore.setOnClickListener(this::handleMoreOrLess);
+            // binding.contactDelete.setOnClickListener(this::handleMoreOrLess);
+            binding.contactCard.setOnClickListener(this::handleMoreOrLess);
+
+//            binding.contactMessage.setOnClickListener(button ->  Navigation.findNavController(getView())
+//                   .navigate(ContactCardFragmentDirections.actionContactCardFragmentToNavigationNewChat()));
+//            binding.buttonMore.setOnClickListener(this::handleMoreOrLess);
+
         }
 
         /**
@@ -81,8 +87,8 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
          * more state.
          * @param button the button that was clicked*/
 
-        private void displayCard(final View button) {
-            //mExpandedFlags.put(mContact, !mExpandedFlags.get(mContact));
+        private void handleMoreOrLess(final View button) {
+            mExpandedFlags.put(mContact, !mExpandedFlags.get(mContact));
             displayPreview();
         }
 
@@ -90,11 +96,11 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
          * Helper used to determine if the preview should be displayed or not. */
 
         private void displayPreview() {
-            /*if (mExpandedFlags.get(mContact)) {
+            if (mExpandedFlags.get(mContact)) {
                 binding.textPreview.setVisibility(View.VISIBLE);
             } else {
                 binding.textPreview.setVisibility(View.GONE);
-            }*/
+            }
         }
 
 
@@ -105,13 +111,25 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             binding.contactStatus.setText(contact.getStatus());
             binding.contactAvatar.setImageResource(images[rand.nextInt(images.length)]);
 
-            binding.contactCard.setOnClickListener(button ->
-                    Navigation.findNavController(mView).navigate(
-                            ContactListFragmentDirections.actionNavigationContactToContactFragment(binding.contactUsername.getText().toString(),  binding.contactStatus.getText().toString())));
+//            binding.contactCard.setOnClickListener(button ->
+//                    Navigation.findNavController(mView).navigate(
+//                            ContactListFragmentDirections.actionNavigationContactToContactFragment(binding.contactUsername.getText().toString(),  binding.contactStatus.getText().toString())));
 
-            binding.contactMessage.setOnClickListener(button ->
-                    Navigation.findNavController(mView).navigate(
-                            ContactListFragmentDirections.actionNavigationContactToNavigationNewChat()));
+//            binding.contactMessage.setOnClickListener(button ->
+//                    Navigation.findNavController(mView).navigate(
+//                            ContactListFragmentDirections.actionNavigationContactToNavigationNewChat()));
+
+            String name = contact.getName();
+            String user = contact.getUsername();
+            String id = contact.getId();
+            String number = contact.getNumber();
+
+            String preview = "\r\n" + "Full Name: "+name + "\r\n" +
+                    "Username: "+user + "\r\n" +
+                    "ID: "+id + "\r\n" +
+                    "Number: "+number;
+            binding.textPreview.setText(preview);
+            displayPreview();
 
         }
 
