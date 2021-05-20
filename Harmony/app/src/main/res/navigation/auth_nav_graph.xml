@@ -24,6 +24,9 @@
             android:name="password"
             app:argType="string"
             android:defaultValue="default" />
+        <action
+            android:id="@+id/action_logInFragment_to_passwordRecoveryFragment"
+            app:destination="@id/passwordRecoveryFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -60,6 +63,28 @@
             android:defaultValue="default" />
         <action
             android:id="@+id/action_validationFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordRecoveryFragment"
+        android:name="edu.uw.harmony.UI.Auth.Password.PasswordRecoveryFragment"
+        android:label="fragment_password_recovery"
+        tools:layout="@layout/fragment_password_recovery" >
+        <action
+            android:id="@+id/action_passwordRecoveryFragment_to_recoveryCompleteFragment"
+            app:destination="@id/recoveryCompleteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recoveryCompleteFragment"
+        android:name="edu.uw.harmony.UI.Auth.Password.RecoveryCompleteFragment"
+        android:label="fragment_recovery_complete"
+        tools:layout="@layout/fragment_recovery_complete" >
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue="default" />
+        <action
+            android:id="@+id/action_recoveryCompleteFragment_to_logInFragment"
             app:destination="@id/logInFragment" />
     </fragment>
 </navigation>

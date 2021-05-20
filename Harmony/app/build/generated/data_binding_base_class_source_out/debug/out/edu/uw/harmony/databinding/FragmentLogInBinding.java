@@ -21,6 +21,9 @@ public final class FragmentLogInBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final Button buttonLoginFragmentForgotPassword;
+
+  @NonNull
   public final Button buttonLoginFragmentLogin;
 
   @NonNull
@@ -39,10 +42,12 @@ public final class FragmentLogInBinding implements ViewBinding {
   public final ImageView loginHarmonyLogo;
 
   private FragmentLogInBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button buttonLoginFragmentLogin, @NonNull Button buttonLoginFragmentRegister,
-      @NonNull EditText editTextEmail, @NonNull EditText editTextPassword,
-      @NonNull ConstraintLayout frameLayout, @NonNull ImageView loginHarmonyLogo) {
+      @NonNull Button buttonLoginFragmentForgotPassword, @NonNull Button buttonLoginFragmentLogin,
+      @NonNull Button buttonLoginFragmentRegister, @NonNull EditText editTextEmail,
+      @NonNull EditText editTextPassword, @NonNull ConstraintLayout frameLayout,
+      @NonNull ImageView loginHarmonyLogo) {
     this.rootView = rootView;
+    this.buttonLoginFragmentForgotPassword = buttonLoginFragmentForgotPassword;
     this.buttonLoginFragmentLogin = buttonLoginFragmentLogin;
     this.buttonLoginFragmentRegister = buttonLoginFragmentRegister;
     this.editTextEmail = editTextEmail;
@@ -78,7 +83,13 @@ public final class FragmentLogInBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button_loginFragment_login;
+      id = R.id.button_loginFragment_forgot_password;
+      Button buttonLoginFragmentForgotPassword = rootView.findViewById(id);
+      if (buttonLoginFragmentForgotPassword == null) {
+        break missingId;
+      }
+
+      id = R.id.button_login_fragment_login;
       Button buttonLoginFragmentLogin = rootView.findViewById(id);
       if (buttonLoginFragmentLogin == null) {
         break missingId;
@@ -110,9 +121,9 @@ public final class FragmentLogInBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentLogInBinding((ConstraintLayout) rootView, buttonLoginFragmentLogin,
-          buttonLoginFragmentRegister, editTextEmail, editTextPassword, frameLayout,
-          loginHarmonyLogo);
+      return new FragmentLogInBinding((ConstraintLayout) rootView,
+          buttonLoginFragmentForgotPassword, buttonLoginFragmentLogin, buttonLoginFragmentRegister,
+          editTextEmail, editTextPassword, frameLayout, loginHarmonyLogo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

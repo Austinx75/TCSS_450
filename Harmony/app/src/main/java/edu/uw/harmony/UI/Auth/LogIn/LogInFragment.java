@@ -129,6 +129,7 @@ public class LogInFragment extends Fragment {
                 ));
 
         binding.buttonLoginFragmentLogin.setOnClickListener(this::attemptSignIn);
+        binding.buttonLoginFragmentForgotPassword.setOnClickListener(this::recoverPassword);
 
         mSignInModel.addResponseObserver(
                 getViewLifecycleOwner(),
@@ -174,6 +175,11 @@ public class LogInFragment extends Fragment {
 
     private void attemptSignIn(final View button) {
         validateEmail();
+    }
+
+    private void recoverPassword(final View button) {
+        Navigation.findNavController(getView())
+                .navigate(LogInFragmentDirections.actionLogInFragmentToPasswordRecoveryFragment());
     }
 
     private void validateEmail() {
@@ -233,7 +239,6 @@ public class LogInFragment extends Fragment {
      * @param response the Response from the server
      */
     private void observeResponse(final JSONObject response) {
-
         if (response.length() > 0) {
             if (response.has("code")) {
                 try {
