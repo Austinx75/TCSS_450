@@ -134,14 +134,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-<<<<<<< HEAD
+
     /**
      * Allows us to navigate between fragments.
      * @return
      */
-=======
-
->>>>>>> 5871fbec3e52f180c86616f675611b38d6c2c8a8
     @Override
         public boolean onSupportNavigateUp() {
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
