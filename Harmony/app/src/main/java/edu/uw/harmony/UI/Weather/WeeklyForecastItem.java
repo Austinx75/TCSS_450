@@ -8,7 +8,7 @@ import java.io.Serializable;
  * This class represents a single day on the 5 day forecast list used in WeatherFragment.
  *
  * @author  Gary Kono
- * @version 1.0
+ * @version 1.1
  */
 public class WeeklyForecastItem implements Serializable {
     private final String mDay;
@@ -48,6 +48,13 @@ public class WeeklyForecastItem implements Serializable {
         this.mTemp = builder.mTemp;
     }
 
+    /**
+     * Helper function that converts an integer provided by the response of the GET request to our
+     * web service endpoint into the day of the week it represents
+     *
+     * @param numberRepresentationOfDay An integer from 0-6 where 0=Monday, 1=Tuesday, etc.
+     * @return The string representation of that weekday
+     */
     private static String convertToDayString(int numberRepresentationOfDay) {
         switch(numberRepresentationOfDay) {
             case 0:

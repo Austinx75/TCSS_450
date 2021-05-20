@@ -19,13 +19,18 @@ import static edu.uw.harmony.util.WeatherUtils.determineImageFromDescription;
  * Recycler View used in WeatherFragment.
  *
  * @author  Gary Kono
- * @version 1.0
+ * @version 1.1
  */
 public class HourlyForecastRecyclerViewAdapter extends
         RecyclerView.Adapter<HourlyForecastRecyclerViewAdapter.HourlyForecastViewHolder> {
     //Store all of the blogs to present
     private final List<HourlyForecastItem> mHourlyForecasts;
 
+    /**
+     * Constructor for an HourlyForecastRecyclerViewAdapter
+     *
+     * @param items The HourlyForecastItems that will be displayed on the 24 hour forecast of the weather fragment
+     */
     public HourlyForecastRecyclerViewAdapter(List<HourlyForecastItem> items) {
         this.mHourlyForecasts = items;
     }
@@ -56,12 +61,22 @@ public class HourlyForecastRecyclerViewAdapter extends
         public FragmentWeatherHourlyForecastCardBinding binding;
         private HourlyForecastItem mHourlyForecast;
 
+        /**
+         * Constructor for HourlyForecastViewHolder
+         *
+         * @param view The view this will be displayed on
+         */
         public HourlyForecastViewHolder(View view) {
             super(view);
             mView = view;
             binding = FragmentWeatherHourlyForecastCardBinding.bind(view);
         }
 
+        /**
+         * Set the display component data for this individual HourlyForecastItem
+         *
+         * @param hourlyForecast The individual HourlyForecastItem that will be altered
+         */
         void setHourlyForecastItem(final HourlyForecastItem hourlyForecast) {
             mHourlyForecast = hourlyForecast;
 

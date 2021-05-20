@@ -35,6 +35,12 @@ import java.util.function.IntFunction;
 
 import static edu.uw.harmony.util.WeatherUtils.determineImageFromDescription;
 
+/**
+ * A view model that manages the data stored in the weather page
+ *
+ * @author  Gary Kono
+ * @version 1.1
+ */
 public class WeatherViewModel extends AndroidViewModel {
     private String mJwt;
     private MutableLiveData<List<HourlyForecastItem>> mHourlyList;
@@ -42,12 +48,13 @@ public class WeatherViewModel extends AndroidViewModel {
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
 
-
-
     private FragmentWeatherBinding weatherBinding;
 
-    private String currentSetWeather;
-
+    /**
+     * Default constructor for WeatherViewModel
+     *
+     * @param application
+     */
     public WeatherViewModel(@NonNull Application application) {
         super(application);
         mHourlyList = new MutableLiveData<>();
@@ -57,16 +64,32 @@ public class WeatherViewModel extends AndroidViewModel {
         mWeeklyList.setValue(new ArrayList<>());
     }
 
+    /**
+     * Add an observer (the 24 hour forecast list) to the weather fragment lifecycle owner
+     *
+     * @param owner The lifecycle owner of the weather fragment
+     * @param observer The observer whenever the 24 hour forecast list is updated
+     */
     public void addHourlyForecastItemListObserver(@NonNull LifecycleOwner owner,
                                     @NonNull Observer<? super List<HourlyForecastItem>> observer) {
         mHourlyList.observe(owner, observer);
     }
 
+    /**
+     * Add an observer (the 5 day forecast list) to the weather fragment lifecycle owner
+     *
+     * @param owner The lifecycle owner of the weather fragment
+     * @param observer The observer whenever the 5 day forecast list is updated
+     */
     public void addWeeklyForecastItemListObserver(@NonNull LifecycleOwner owner,
                                                   @NonNull Observer<? super List<WeeklyForecastItem>> observer) {
         mWeeklyList.observe(owner, observer);
     }
 
+    /**
+     * The error handler when there is an error in making a request to the custom weather endpoint weather
+     * @param error
+     */
     private void handleError(final VolleyError error) {
         //you should add much better error handling in a production release.
         // i.e. YOUR PROJECT
@@ -74,6 +97,11 @@ public class WeatherViewModel extends AndroidViewModel {
         throw new IllegalStateException(error.getMessage());
     }
 
+    /**
+     * Updates all relevant information when data is received from the custom weather endpoint
+     *
+     * @param result The result provided by the custom weather endpoint
+     */
     private void handleResult(final JSONObject result) {
         weatherBinding.layoutComponents.setVisibility(View.GONE);
         weatherBinding.layoutWait.setVisibility(View.VISIBLE);
@@ -150,6 +178,9 @@ public class WeatherViewModel extends AndroidViewModel {
         weatherBinding.layoutWait.setVisibility(View.GONE);
     }
 
+    /**
+     * Makes a GET request to our custom weather endpoint
+     */
     public void connectGet() {
         String url = "https://team-9-tcss450-backend.herokuapp.com/weather?lat=47.474190&long=-122.206650";
         Request request = new JsonObjectRequest(
@@ -173,23 +204,37 @@ public class WeatherViewModel extends AndroidViewModel {
                 .add(request);
     }
 
+    /**
+     *
+     * @param jwt Current user's jwt
+     */
     public void setJWT(String jwt) {
         this.mJwt = jwt;
     }
 
-    public String getCurrentWeather(){
-        return currentSetWeather;
-    }
-
+    /**
+     * Give the weather view model access to the weather fragment's binding so that its components can
+     * be changed when new weather information is received.
+     *
+     * @param binding WeatherFragment's binding
+     */
     public void setWeatherBinding(FragmentWeatherBinding binding) {
         this.weatherBinding = binding;
     }
 
+    /**
+     * Update all current weather information (current temperature and conditions)
+     *
+     * @param currentWeather The JSON object within the response of the connectGet method that contains
+     *                       information specifically about the current temp and conditions
+     * @throws JSONException
+     */
     private void handleCurrentWeather(JSONObject currentWeather) throws JSONException {
         IntFunction<String> getString = getApplication().getResources()::getString;
 
         int image = R.drawable.weather_clouds;
 
+        //Update the current weather image
         this.weatherBinding.imageViewMainConditionsPlaceholder.setImageResource(
                 determineImageFromDescription(
                         currentWeather.getString(
@@ -199,10 +244,8 @@ public class WeatherViewModel extends AndroidViewModel {
         );
 
         //TODO: Update city name
-        currentSetWeather = (int) Double.parseDouble(
-                currentWeather.getString(
-                        getString.apply(
-                                R.string.keys_temp))) + "°";
+
+        //Update the current weather temperature
         this.weatherBinding.textViewMainTemperaturePlaceholder.setText(
                 (int) Double.parseDouble(
                         currentWeather.getString(

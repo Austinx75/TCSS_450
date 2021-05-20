@@ -28,7 +28,7 @@ import edu.uw.harmony.databinding.FragmentWeatherBinding;
  * for that city.
  *
  * @author  Gary Kono
- * @version 1.0
+ * @version 1.1
  */
 public class WeatherFragment extends Fragment {
     private WeatherViewModel mModel;
@@ -51,16 +51,6 @@ public class WeatherFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentWeatherBinding.inflate(inflater);
 
-        if (binding.hourlyListRoot instanceof RecyclerView) {
-            ((RecyclerView) binding.hourlyListRoot).setAdapter(
-                    new HourlyForecastRecyclerViewAdapter(HourlyForecastItemGenerator.getHourlyForecastList()));
-        }
-
-        if (binding.weeklyListRoot instanceof RecyclerView) {
-            ((RecyclerView) binding.weeklyListRoot).setAdapter(
-                    new WeeklyForecastRecyclerViewAdapter(WeeklyForecastItemGenerator.getWeeklyForecastList()));
-        }
-
         return inflater.inflate(R.layout.fragment_weather, container, false);
 
     }
@@ -78,8 +68,10 @@ public class WeatherFragment extends Fragment {
         mModel.setJWT(model.getJwt());
 
         binding = FragmentWeatherBinding.bind(getView());
+
         mModel.setWeatherBinding(binding);
 
+        //Add observers to the recycler views
         mModel.addHourlyForecastItemListObserver(getViewLifecycleOwner(), hourlyList -> {
             if (binding.hourlyListRoot instanceof RecyclerView) {
                 (binding.hourlyListRoot).setAdapter(

@@ -6,11 +6,10 @@ import java.io.Serializable;
  * This class represents a single hour on the 24 hour forecast list used in WeatherFragment.
  *
  * @author  Gary Kono
- * @version 1.0
+ * @version 1.1
  */
 public class HourlyForecastItem implements Serializable {
     private final int mHour;
-    //TODO: Add an image that represents the condition (sunny, rainy, etc.)
     private final String mDescription;
     private final double mTemp;
 
@@ -40,6 +39,10 @@ public class HourlyForecastItem implements Serializable {
         }
     }
 
+    /**
+     * Constructs a new HourlyForecastItem from the builder
+     * @param builder The builder used to initiate an instance of HourlyForecastItem
+     */
     private HourlyForecastItem(final Builder builder) {
         this.mHour = builder.mHour;
         this.mDescription = builder.mDescription;

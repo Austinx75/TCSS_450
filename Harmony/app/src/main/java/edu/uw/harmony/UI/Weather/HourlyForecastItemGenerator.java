@@ -7,7 +7,7 @@ import java.util.List;
  * Creates a list of sample hourly forecast items used for dummy data in the 24 Hour forecast section of WeatherFragment.
  *
  * @author  Gary Kono
- * @version 1.0
+ * @version 1.1
  */
 public class HourlyForecastItemGenerator {
     private static final HourlyForecastItem[] HOURLY_FORECAST_ITEMS;

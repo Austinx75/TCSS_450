@@ -7,7 +7,7 @@ import java.util.List;
  * Creates a list of sample weekly forecast items used for dummy data in the 5 day forecast section of WeatherFragment.
  *
  * @author  Gary Kono
- * @version 1.0
+ * @version 1.1
  */
 public class WeeklyForecastItemGenerator {
     private static final WeeklyForecastItem[] WEEKLY_FORECAST_ITEMS;
