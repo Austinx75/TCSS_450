@@ -7,22 +7,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import edu.uw.harmony.R;
-import edu.uw.harmony.UI.Contacts.ContactCardFragmentArgs;
-import edu.uw.harmony.UI.Contacts.ContactListFragmentDirections;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
-import edu.uw.harmony.databinding.FragmentContactCardBinding;
 import edu.uw.harmony.databinding.FragmentNotificationCardBinding;
 
 /**
  * @author Austin Scott
- * @version 1.0
+ * @version 1.1
  * A simple {@link Fragment} subclass.
  */
 public class NotificationCardFragment extends Fragment {

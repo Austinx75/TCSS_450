@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Generates notification statements for the notification cards.
  * @author Austin Scott
- * @version 1.0
+ * @version 1.1
  */
 public class NotificationGenerator {
     /** Creats an array for the Notifications*/

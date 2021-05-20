@@ -14,7 +14,7 @@ import edu.uw.harmony.R;
  * This view model utilizes shared preferences to change the theme.
  * It also is used to remember what theme it is, and what position the switch button is in.
  * @author Austin Scott
- * @version 1.0
+ * @version 1.1
  */
 public class SettingsViewModel extends AndroidViewModel {
 
