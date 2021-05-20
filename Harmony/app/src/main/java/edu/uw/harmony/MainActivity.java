@@ -1,12 +1,19 @@
 package edu.uw.harmony;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.viewpager.widget.ViewPager;
 
 
 import android.content.Context;
@@ -24,6 +31,9 @@ import android.util.Log;
 import com.auth0.android.jwt.JWT;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import edu.uw.harmony.UI.Contacts.ContactListFragment;
+import edu.uw.harmony.UI.Contacts.ContactsActivity;
+import edu.uw.harmony.UI.Contacts.ContactsPendingRequestList;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 
 import android.view.Menu;
@@ -39,7 +49,10 @@ import edu.uw.harmony.UI.settings.SettingsFragment;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
+import com.google.android.material.tabs.TabLayout;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import edu.uw.harmony.UI.Chat.message.ChatMessage;
@@ -56,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
     private NewMessageCountViewModel mNewMessageModel;
 
     private ActivityMainBinding binding;
-
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -90,11 +102,9 @@ public class MainActivity extends AppCompatActivity {
             navView.setItemTextColor(ColorStateList.valueOf(getResources().getColor(R.color.white, null)));
         }
 
-
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_contact, R.id.navigation_chat_list, R.id.navigation_weather
         ).build();
-
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController,mAppBarConfiguration);
@@ -132,8 +142,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return total;
     }
-
-
 
     @Override
         public boolean onSupportNavigateUp() {
