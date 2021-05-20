@@ -7,7 +7,7 @@
         android:title="Home"
         />
     <item
-        android:id="@+id/navigation_contacts_activity"
+        android:id="@+id/navigation_contact"
         android:icon="@drawable/contact_black_24dp"
         android:title="Contacts"
         />

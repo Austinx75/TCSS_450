@@ -16,5 +16,4 @@
     <!-- Added to access units in dps programmatically. -->
     <dimen name="chat_margin">5dp</dimen>
     <dimen name="chat_margin_sided">50dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
 </resources>

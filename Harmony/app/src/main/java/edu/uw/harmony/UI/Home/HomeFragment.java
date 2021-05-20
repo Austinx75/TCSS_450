@@ -47,10 +47,6 @@ public class HomeFragment extends Fragment {
 //        super.onCreate(savedInstanceState);
 //    }
 
-//    public HomeFragment() {
-//        super();
-//    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
