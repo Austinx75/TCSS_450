@@ -12,7 +12,6 @@ import java.io.Serializable;
 public class ContactCard implements Serializable{
 
     private String name;
-    private String number;
     private String username;
     private final String id;
     private String status;
@@ -23,7 +22,6 @@ public class ContactCard implements Serializable{
      */
     public static class Builder{
         private String name;
-        private String number = "";
         private String username = "";
         private final String id;
         private String status = "";
@@ -40,15 +38,6 @@ public class ContactCard implements Serializable{
             this.id = id;
         }
 
-        /**
-         * Method to add number to Builder obj
-         * @param val string of number
-         * @return builder obj
-         */
-        public Builder addNumber(String val){
-            number = val;
-            return this;
-        }
 
         /**
          * Method to add username to Builder obj
@@ -89,11 +78,10 @@ public class ContactCard implements Serializable{
 
     /**
      * Construct a ContactCard using Builder as parameter
-     * @param builder
+     * @param builder Builder
      */
     private ContactCard(final Builder builder){
         this.name = builder.name;
-        this.number = builder.number;
         this.username = builder.username;
         this.id = builder.id;
         this.status = builder.status;
@@ -105,10 +93,6 @@ public class ContactCard implements Serializable{
      */
     public String getName(){ return name; }
 
-    /**
-     * @return The number this class represents.
-     */
-    public String getNumber() { return number; }
 
     /**
      * @return The username this class represents.

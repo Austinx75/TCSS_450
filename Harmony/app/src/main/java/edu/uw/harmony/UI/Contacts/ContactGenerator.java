@@ -39,7 +39,7 @@ public class ContactGenerator {
         CONTACTS = new ContactCard[COUNT];
         for (int i = 0; i < CONTACTS.length; i++) {
             CONTACTS[i] = new ContactCard
-                    .Builder(names[i], String.valueOf(0x000+i)).addUsername(usernames[i]).addNumber("2156062185").addStatus(status[rand.nextInt(status.length)]).addAvatar(images[rand.nextInt(images.length)])
+                    .Builder(names[i], String.valueOf(0x000+i)).addUsername(usernames[i]).addStatus(status[rand.nextInt(status.length)]).addAvatar(images[rand.nextInt(images.length)])
                     .build();
         }
     }

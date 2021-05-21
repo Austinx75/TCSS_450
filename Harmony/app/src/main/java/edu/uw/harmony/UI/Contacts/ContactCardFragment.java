@@ -32,6 +32,7 @@ import edu.uw.harmony.databinding.FragmentLogInBinding;
 
 public class ContactCardFragment extends Fragment {
     private FragmentContactCardBinding binding;
+    ContactListViewModel mModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,14 +47,6 @@ public class ContactCardFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ContactCardFragmentArgs args = ContactCardFragmentArgs.fromBundle(getArguments());
         binding = FragmentContactCardBinding.bind(getView());
-        binding.contactCard.setOnClickListener(button ->
-                Navigation.findNavController(getView()).navigate(
-                        ContactListFragmentDirections.actionNavigationContactToContactFragment(binding.contactUsername.getText().toString(),  binding.contactStatus.getText().toString())));
-
-        binding.contactMessage.setOnClickListener(button ->
-                Navigation.findNavController(getView()).navigate(
-                        ContactListFragmentDirections.actionNavigationContactToNavigationNewChat()));
-
     }
 
 }
