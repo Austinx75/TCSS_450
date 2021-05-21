@@ -7,4 +7,23 @@
     <string name="keys_hour_time">hourTime</string>
     <string name="keys_temp">temp</string>
     <string name="keys_description">description</string>
+
+    <!-- contacts -->
+    <string name="keys_json_contacts_firstname">firstname</string>
+    <string name="keys_json_contacts_lastname">lastname</string>
+    <string name="keys_json_contacts_number">number</string>
+    <string name="keys_json_contacts_username">username</string>
+    <string name="keys_json_contacts_memberid">memberid</string>
+    <string name="keys_json_contacts_status">status</string>
+    <string name="keys_json_contacts_avatar">avatar</string>
+    <string name="keys_json_contacts_verification">verification</string>
+
+    <string name="keys_json_contacts_list">contactsList</string>
+    <string name="keys_json_contacts_response">response</string>
+
+    <string name="keys_json_contacts_get">get</string>
+    <string name="keys_json_contacts_add">add</string>
+    <string name="keys_json_contacts_delete">delete</string>
+    <string name="keys_json_contacts_update">update</string>
+
 </resources>

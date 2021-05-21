@@ -7,16 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".UI.Chat.page.NewChatFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <EditText
         android:id="@+id/enterName"
         android:layout_width="284dp"
         android:layout_height="54dp"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="type name..."
+        android:hint="Member ID"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.22"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,33 +25,25 @@
         android:id="@+id/searchNewContact"
         android:layout_width="50dp"
         android:layout_height="44dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="652dp"
+        android:layout_marginEnd="28dp"
         android:src="@drawable/search_new_contact_24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/enterName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/enterName"
+        app:layout_constraintVertical_bias="0.015" />
+
+    <TextView
+        android:id="@+id/contact_error_message"
+        android:layout_width="249dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:text="error"
+        android:textColor="@color/black"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-    <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--    xmlns:tools="http://schemas.android.com/tools"-->
-    <!--    android:id="@+id/frameLayout3"-->
-    <!--    android:layout_width="match_parent"-->
-    <!--    android:layout_height="match_parent"-->
-    <!--    tools:context=".UI.Chat.NewChatFragment">-->
-
-    <!--    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
-    <!--    <TextView-->
-    <!--        android:id="@+id/textView"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="0dp"-->
-    <!--        android:text="@string/hello_blank_fragment"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
