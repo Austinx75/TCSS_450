@@ -31,8 +31,14 @@ public class ContactListFragment extends Fragment {
 
     /** Instantiate view models to be used*/
     private ContactListViewModel mModel;
+
+    /** view model instance for the settings class */
     private UserInfoViewModel mUserModel;
+
     private FragmentContactListBinding binding;
+
+
+    /** binding variable that allows interaction with views */
     SettingsViewModel settingsViewModel;
 
     @Override

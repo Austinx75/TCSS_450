@@ -35,7 +35,11 @@ import edu.uw.harmony.R;
  */
 
 public class ContactListViewModel extends AndroidViewModel {
+
+    /** live data for the list of contacts */
     private MutableLiveData<List<ContactCard>> mContactList;
+
+    /** view model for the contact list class */
     private final MutableLiveData<JSONObject> mResponse;
 
     public ContactListViewModel(@NonNull Application application){

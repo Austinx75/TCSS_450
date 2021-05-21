@@ -29,6 +29,7 @@ import edu.uw.harmony.databinding.FragmentContactCardBinding;
 
 public class ContactFragment extends Fragment {
 
+    /** array of images used for contacts avatars */
     public int[] images = {R.drawable.contact_boy_512, R.drawable.contact_hacker_512,R.drawable.contact_barista_512,
             R.drawable.contact_kitty_512,R.drawable.contact_man_512,R.drawable.contact_man_1_512,
             R.drawable.contact_man_2_512,R.drawable.contact_user_512,R.drawable.contact_woman_512,
