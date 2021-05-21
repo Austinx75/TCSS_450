@@ -73,7 +73,7 @@ public class ContactListFragment extends Fragment {
         mModel.addContactListObserver(getViewLifecycleOwner(), contactList -> {
             if (!contactList.isEmpty()) {
                 binding.listRoot.setAdapter(
-                        new ContactRecyclerViewAdapter(contactList,mModel,mUserModel));
+                        new ContactRecyclerViewAdapter(contactList,mModel,mUserModel, settingsViewModel));
                 binding.layoutWait.setVisibility(View.GONE);
             }
         });

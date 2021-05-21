@@ -116,6 +116,6 @@
     <fragment
         android:id="@+id/addNewContactFragment"
         android:name="edu.uw.harmony.UI.Contacts.AddNewContactFragment"
-        android:label="AddNewContactFragment" />
+        android:label="@string/fragment_add_contact" />
 
 </navigation>

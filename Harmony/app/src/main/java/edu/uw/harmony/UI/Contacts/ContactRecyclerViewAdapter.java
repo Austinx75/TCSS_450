@@ -1,5 +1,6 @@
 package edu.uw.harmony.UI.Contacts;
 
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,11 +33,13 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
     private final Map<ContactCard, Boolean> mExpandedFlags;
     ContactListViewModel mModel;
     UserInfoViewModel uModel;
+    SettingsViewModel sModel;
 
-    public ContactRecyclerViewAdapter(List<ContactCard> items, ContactListViewModel mModel, UserInfoViewModel uModel) {
+    public ContactRecyclerViewAdapter(List<ContactCard> items, ContactListViewModel mModel, UserInfoViewModel uModel, SettingsViewModel model) {
         this.mContact= items;
         this.mModel = mModel;
         this.uModel = uModel;
+        this.sModel = model;
         mExpandedFlags = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
     }
 
@@ -129,6 +132,23 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
                     "Username: "+user + "\r\n" +
                     "ID: "+id + "\r\n";
             binding.textPreview.setText(preview);
+            if(sModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+                binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.offwhite));
+                binding.contactUsername.setTextColor(Color.BLACK);
+                binding.contactStatus.setTextColor(Color.BLACK);
+                binding.contactMessage.setColorFilter(binding.getRoot().getResources().getColor(R.color.tan));
+                binding.contactDelete.setColorFilter(binding.getRoot().getResources().getColor(R.color.tan));
+                binding.contactStatus.setTextColor(Color.BLACK);
+                binding.textPreview.setTextColor(Color.BLACK);
+            } else {
+                binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.black));
+                binding.contactUsername.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
+                binding.contactStatus.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
+                binding.contactMessage.setColorFilter(binding.getRoot().getResources().getColor(R.color.white));
+                binding.contactDelete.setColorFilter(binding.getRoot().getResources().getColor(R.color.white));
+                binding.contactStatus.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
+                binding.textPreview.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
+            }
             displayPreview();
 
         }
