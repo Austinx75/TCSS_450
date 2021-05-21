@@ -55,9 +55,13 @@ public class AddNewContactFragment extends Fragment {
         if(sModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
             binding.searchNewContact.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.tan)));
             binding.searchNewContact.setColorFilter(getResources().getColor(R.color.orange));
+            binding.enterName.setHintTextColor(Color.BLACK);
+            binding.enterName.setTextColor(Color.BLACK);
         } else {
             binding.searchNewContact.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
             binding.searchNewContact.setColorFilter(getResources().getColor(R.color.teal_200));
+            binding.enterName.setHintTextColor(Color.WHITE);
+            binding.enterName.setTextColor(Color.WHITE);
             //binding.searchNewContact.setBackgroundColor(Color.WHITE);
         }
         binding.searchNewContact.setOnClickListener(button -> mModel.contactAdd(mUserViewModel.getJwt(), Integer.parseInt(binding.enterName.getText().toString())));
