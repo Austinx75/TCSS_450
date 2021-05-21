@@ -29,8 +29,9 @@ import edu.uw.harmony.databinding.FragmentLogInBinding;
  * @author Jack Lin
  * @version 1.0
  */
-
 public class ContactCardFragment extends Fragment {
+
+    /** binding variable that allows interaction with views */
     private FragmentContactCardBinding binding;
     ContactListViewModel mModel;
 
