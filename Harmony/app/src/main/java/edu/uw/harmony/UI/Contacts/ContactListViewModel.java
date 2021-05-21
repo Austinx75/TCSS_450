@@ -85,8 +85,6 @@ public class ContactListViewModel extends AndroidViewModel {
                     list.add(contact);
                 }
                 mContactList.setValue(list);
-
-                Log.d("Ending", "handleResult: getting");
             } else {
                 Log.e("ERROR!", "No contact list array in contacts endpoint response");
             }
@@ -168,6 +166,7 @@ public class ContactListViewModel extends AndroidViewModel {
      * @param id Int Member ID
      */
     public void contactDelete (final String jwt, int id){
+        Log.d("Contact Delete",  "Trying method");
         String url = "https://team-9-tcss450-backend.herokuapp.com/contacts";
         JSONObject body = new JSONObject();
         try {

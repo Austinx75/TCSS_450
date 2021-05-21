@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
+import edu.uw.harmony.databinding.FragmentChatListBinding;
 import edu.uw.harmony.databinding.FragmentContactBinding;
 import edu.uw.harmony.databinding.FragmentContactListBinding;
 
@@ -31,6 +32,7 @@ public class ContactListFragment extends Fragment {
     /** Instantiate view models to be used*/
     private ContactListViewModel mModel;
     private UserInfoViewModel mUserModel;
+    private FragmentContactListBinding binding;
     SettingsViewModel settingsViewModel;
 
     @Override
@@ -45,11 +47,8 @@ public class ContactListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        edu.uw.harmony.databinding.FragmentContactListBinding binding = FragmentContactListBinding.inflate(inflater);
-//        View contactView = binding.listRoot;
-//        if (contactView instanceof RecyclerView){
-//            ((RecyclerView) contactView).setAdapter(new ContactRecyclerViewAdapter(ContactGenerator.getContactList()));
-//        }
+        binding = FragmentContactListBinding.inflate(inflater);
+
         if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
             binding.AddNewContact.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
             binding.AddNewContact.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.tan)));
@@ -71,11 +70,9 @@ public class ContactListFragment extends Fragment {
         FragmentContactListBinding binding = FragmentContactListBinding.bind(getView());
         binding.layoutWait.setVisibility(View.GONE);
         mModel.addContactListObserver(getViewLifecycleOwner(), contactList -> {
-            if (!contactList.isEmpty()) {
                 binding.listRoot.setAdapter(
                         new ContactRecyclerViewAdapter(contactList,mModel,mUserModel));
                 binding.layoutWait.setVisibility(View.GONE);
-            }
         });
         binding.AddNewContact.setOnClickListener(button -> Navigation.findNavController(getView()).navigate(ContactListFragmentDirections.actionNavigationContactToAddNewContactFragment()));
     }
