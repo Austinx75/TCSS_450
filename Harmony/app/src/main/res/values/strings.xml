@@ -31,6 +31,8 @@
         registered email, please verify it.</string>
     <string name="button_validation_validate">Continue</string>
 
+<!--    NEW CHAT ROOM-->
+    <string name="text_new_chat_title">Enter Chat Name</string>
 
     <!-- Bottom Navigation -->
     <string name="title_home">Home</string>

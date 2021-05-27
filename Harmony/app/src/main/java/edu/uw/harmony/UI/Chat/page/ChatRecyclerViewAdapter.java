@@ -61,6 +61,7 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
          */
         void setChat(final ChatPost chat) {
             mChat = chat;
+            binding.imageFace.setImageResource((R.drawable.contact_boy_512));
 
             binding.textTitle.setOnClickListener(view -> {
                 Navigation.findNavController(mView).navigate(
@@ -68,7 +69,7 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
                 );
             });
 
-            binding.textPubdate.setOnClickListener(view -> {
+            binding.textRecentMessage.setOnClickListener(view -> {
                 Navigation.findNavController(mView).navigate(
                         ChatListFragmentDirections.actionChatListFragmentToChatPostFragment(mChat.getChatId())
                 );
@@ -80,18 +81,22 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
                 );
             });
             binding.textTitle.setText(chat.getTitle());
+            binding.textRecentMessage.setText(chat.getRecentMessage());
+
             if(sModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
                 binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.offwhite));
-                binding.imageFace.setColorFilter(binding.getRoot().getResources().getColor(R.color.tan));
+//                binding.imageFace.setColorFilter(binding.getRoot().getResources().getColor(R.color.tan));
+                binding.textTitle.setBackgroundColor(binding.getRoot().getResources().getColor(R.color.offwhite));
                 binding.textTitle.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
-                binding.textPubdate.setBackgroundColor(binding.getRoot().getResources().getColor(R.color.offwhite));
-                binding.textPubdate.setTextColor(Color.BLACK);
+                binding.textRecentMessage.setBackgroundColor(binding.getRoot().getResources().getColor(R.color.offwhite));
+                binding.textRecentMessage.setTextColor(Color.BLACK);
             } else {
                 binding.cardRoot.setCardBackgroundColor(Color.BLACK);
-                binding.imageFace.setColorFilter(Color.WHITE);
+//                binding.imageFace.setColorFilter(Color.WHITE);
+                binding.textRecentMessage.setBackgroundColor(Color.BLACK);
+                binding.textRecentMessage.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
+                binding.textTitle.setBackgroundColor(Color.BLACK);
                 binding.textTitle.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
-                binding.textPubdate.setBackgroundColor(Color.BLACK);
-                binding.textPubdate.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
             }
         }
     }

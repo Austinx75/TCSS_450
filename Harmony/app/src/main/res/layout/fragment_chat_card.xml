@@ -16,9 +16,9 @@
         app:layout_constraintTop_toTopOf="@+id/text_title">
 
         <TextView
-            android:id="@+id/text_pubdate"
+            android:id="@+id/text_title"
             android:layout_width="275dp"
-            android:layout_height="30dp"
+            android:layout_height="45dp"
             android:layout_marginTop="4dp"
             android:background="@color/white"
             android:paddingLeft="8dp"
@@ -31,10 +31,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/text_title"
+            android:id="@+id/text_recent_message"
             android:layout_width="271dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="32dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="4dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
@@ -43,18 +43,17 @@
             android:textStyle="bold"
             android:clickable="true"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/text_pubdate" />
+            app:layout_constraintTop_toTopOf="@+id/text_title" />
 
         <ImageView
             android:id="@+id/image_face"
-            android:layout_width="67dp"
-            android:layout_height="62dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.407"
-            app:srcCompat="@drawable/chat_current_face_chat_24dp" />
+            app:srcCompat="@drawable/contact_man_512" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

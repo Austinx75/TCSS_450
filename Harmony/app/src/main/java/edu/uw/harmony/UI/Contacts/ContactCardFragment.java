@@ -19,7 +19,6 @@ import java.util.Random;
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Auth.LogIn.LogInFragmentDirections;
 import edu.uw.harmony.UI.Auth.Register.RegisterFragmentDirections;
-import edu.uw.harmony.UI.Chat.page.ChatsFragmentDirections;
 import edu.uw.harmony.databinding.FragmentContactCardBinding;
 import edu.uw.harmony.databinding.FragmentLogInBinding;
 

@@ -38,21 +38,13 @@ public class ChatPost implements Serializable {
          * @param Id the chat id
          * @param members all member ids for members in the chatroom
          */
-        public Builder(int Id, List<Integer> members, String title) {
+        public Builder(int Id, List<Integer> members, String title, String recentMessage) {
             this.mChatId = Id;
             this.mMemberIds = members;
             this.mTitle = title;
+            mRecentMessage = recentMessage;
         }
 
-        /**
-         * Add the most recent chat message to preview
-         * @param val the most recent chat message
-         * @return the Builder of this chat
-         */
-        public Builder addRecentMessage(final String val) {
-            mRecentMessage = val;
-            return this;
-        }
 
         public ChatPost build() {
             return new ChatPost(this);
@@ -85,5 +77,5 @@ public class ChatPost implements Serializable {
      */
     public String getTitle() {return mTitle;}
 
-
+    public String getRecentMessage() {return mRecentMessage;}
 }
