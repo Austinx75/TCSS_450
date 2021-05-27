@@ -7,8 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -16,6 +18,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.Auth.Register.RegisterFragmentDirections;
+import edu.uw.harmony.UI.Chat.NewChat.NewChatFragmentDirections;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentContactCardBinding;
@@ -34,12 +38,28 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
     ContactListViewModel mModel;
     UserInfoViewModel uModel;
     SettingsViewModel sModel;
+    boolean newChat;
+    List<String> selected;
+    String autofill;
 
+    public ContactRecyclerViewAdapter(List<ContactCard> items, ContactListViewModel mModel, UserInfoViewModel uModel, SettingsViewModel model, boolean newChat, List<String> selected, String autoFill) {
+        this.mContact= items;
+        this.mModel = mModel;
+        this.uModel = uModel;
+        this.sModel = model;
+        this.newChat = newChat;
+        this.selected = selected;
+        this.autofill = autoFill;
+        mExpandedFlags = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
+    }
     public ContactRecyclerViewAdapter(List<ContactCard> items, ContactListViewModel mModel, UserInfoViewModel uModel, SettingsViewModel model) {
         this.mContact= items;
         this.mModel = mModel;
         this.uModel = uModel;
         this.sModel = model;
+        this.newChat = false;
+        this.selected = new ArrayList<String>();
+        this.autofill="";
         mExpandedFlags = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
     }
 
@@ -48,7 +68,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
     public ContactViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ContactViewHolder(LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.fragment_contact_card, parent, false), mModel, uModel);
+                .inflate(R.layout.fragment_contact_card, parent, false), mModel, uModel, this.selected, this.autofill);
     }
 
     @Override
@@ -70,6 +90,8 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
         private ContactCard mContact;
         ContactListViewModel contactListViewModel;
         UserInfoViewModel userInfoViewModel;
+        List<String> selected;
+        String autofill;
 
         public int[] images = {R.drawable.contact_boy_512, R.drawable.contact_hacker_512,R.drawable.contact_barista_512,
                 R.drawable.contact_kitty_512,R.drawable.contact_man_512,R.drawable.contact_man_1_512,
@@ -77,17 +99,50 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
                 R.drawable.contact_woman_1_512};
         Random rand = new Random();
 
-        public ContactViewHolder(View view, ContactListViewModel mModel, UserInfoViewModel uModel) {
+        public ContactViewHolder(View view, ContactListViewModel mModel, UserInfoViewModel uModel, List<String> selected, String autofill) {
             super(view);
             mView = view;
             contactListViewModel = mModel;
             userInfoViewModel = uModel;
+            this.selected = selected;
+            this.autofill=autofill;
 
             binding = FragmentContactCardBinding.bind(view);
-            binding.contactCard.setOnClickListener(this::handleMoreOrLess);
-            binding.contactDelete.setOnClickListener(button -> {mModel.contactDelete(uModel.getJwt(), Integer.parseInt(mContact.getId()));});
-            binding.contactMessage.setOnClickListener(button -> {
-                Log.d("ID", (mContact.getId()));});
+            binding.contactNewChatAdded.setVisibility(View.GONE);
+            if (!newChat) {
+                binding.contactCard.setOnClickListener(this::handleMoreOrLess);
+                binding.contactDelete.setOnClickListener(button -> {mModel.contactDelete(uModel.getJwt(), Integer.parseInt(mContact.getId()));});
+                binding.contactMessage.setOnClickListener(button -> {
+                    Log.d("ID", (mContact.getId()));
+                    ContactListFragmentDirections.ActionNavigationContactToNavigationNewChat directions
+                            = ContactListFragmentDirections.actionNavigationContactToNavigationNewChat();
+
+                    directions.setEmail(binding.contactUsername.getText().toString());
+                    Navigation.findNavController(mView).navigate(directions);
+                });
+                binding.contactNewChatAdded.setVisibility(View.GONE);
+            } else{
+                binding.contactCard.setOnClickListener(button -> {
+                    if (binding.contactNewChatAdded.getVisibility() == View.VISIBLE) {
+                        binding.contactNewChatAdded.setVisibility(View.GONE);
+                        this.selected.remove(binding.contactUsername.getText().toString());
+                    }else{
+                        binding.contactNewChatAdded.setVisibility(View.VISIBLE);
+                        this.selected.add(binding.contactUsername.getText().toString());
+                    }
+                });
+                binding.contactNewChatAdded.setOnClickListener(button -> {
+                    if (binding.contactNewChatAdded.getVisibility() == View.VISIBLE) {
+                        binding.contactNewChatAdded.setVisibility(View.GONE);
+                        this.selected.remove(binding.contactUsername.getText().toString());
+                    }else{
+                        binding.contactNewChatAdded.setVisibility(View.VISIBLE);
+                        this.selected.add(binding.contactUsername.getText().toString());
+                    }
+                });
+                binding.contactDelete.setVisibility(View.GONE);
+                binding.contactMessage.setVisibility(View.GONE);
+            }
         }
 
         /**
@@ -118,6 +173,9 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
          * @param contact ContactCard Object
          */
         void setContact(final ContactCard contact) {
+            if (newChat && contact.getUsername().equals(this.autofill)) {
+                binding.contactNewChatAdded.setVisibility(View.VISIBLE);
+            }
             mContact = contact;
 
             binding.contactUsername.setText(contact.getUsername());
@@ -138,6 +196,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
                 binding.contactStatus.setTextColor(Color.BLACK);
                 binding.contactMessage.setColorFilter(binding.getRoot().getResources().getColor(R.color.tan));
                 binding.contactDelete.setColorFilter(binding.getRoot().getResources().getColor(R.color.tan));
+                binding.contactNewChatAdded.setColorFilter(binding.getRoot().getResources().getColor(R.color.tan));
                 binding.contactStatus.setTextColor(Color.BLACK);
                 binding.textPreview.setTextColor(Color.BLACK);
             } else {
@@ -146,6 +205,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
                 binding.contactStatus.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
                 binding.contactMessage.setColorFilter(binding.getRoot().getResources().getColor(R.color.white));
                 binding.contactDelete.setColorFilter(binding.getRoot().getResources().getColor(R.color.white));
+                binding.contactNewChatAdded.setColorFilter(binding.getRoot().getResources().getColor(R.color.white));
                 binding.contactStatus.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
                 binding.textPreview.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
             }

@@ -55,7 +55,7 @@
             android:text="@string/contact_status"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contact_username"/>
+            app:layout_constraintTop_toBottomOf="@+id/contact_username" />
 
         <ImageButton
             android:id="@+id/contact_message"
@@ -64,7 +64,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginTop="28dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginEnd="56dp"
             android:contentDescription="@string/contact_message"
             android:minWidth="0dp"
             android:minHeight="0dp"
@@ -99,6 +99,26 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/contact_new_chat_added"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/contact_message"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/contact_status"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_new_chat_added" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

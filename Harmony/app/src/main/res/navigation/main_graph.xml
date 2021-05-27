@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/navigation_contact"
         android:name="edu.uw.harmony.UI.Contacts.ContactListFragment"
-        android:label="@string/title_contact">
+        android:label="Contacts">
         <action
             android:id="@+id/action_navigation_contact_to_contactCardFragment"
             app:destination="@id/contactCardFragment" />
@@ -29,19 +29,19 @@
             app:destination="@id/addNewContactFragment" />
     </fragment>
     <fragment
-        android:id="@+id/navigation_chats"
-        android:name="edu.uw.harmony.UI.Chat.page.ChatsFragment"
-        android:label="Messages"
-        tools:layout="@layout/fragment_chat">
-        <action
-            android:id="@+id/action_navigation_chats_to_newChatFragment"
-            app:destination="@id/navigation_new_chat" />
-    </fragment>
-    <fragment
         android:id="@+id/navigation_new_chat"
-        android:name="edu.uw.harmony.UI.Chat.page.NewChatFragment"
+        android:name="edu.uw.harmony.UI.Chat.NewChat.NewChatFragment"
         android:label="New Chat"
-        tools:layout="@layout/fragment_new_chat" />
+        tools:layout="@layout/fragment_new_chat" >
+        <action
+            android:id="@+id/action_navigation_new_chat_to_navigation_chat_post"
+            app:destination="@id/navigation_chat_post"
+            app:popUpTo="@id/navigation_chat_list" />
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue="default" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_weather"
         android:name="edu.uw.harmony.UI.Weather.WeatherFragment"
@@ -66,6 +66,10 @@
         <action
             android:id="@+id/action_navigation_chat_list_to_navigation_new_chat"
             app:destination="@id/navigation_new_chat" />
+        <argument
+            android:name="chatid"
+            app:argType="integer"
+            android:defaultValue="-1" />
     </fragment>
     <fragment
         android:id="@+id/contactCardFragment"

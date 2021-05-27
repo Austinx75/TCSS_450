@@ -1,4 +1,4 @@
-package edu.uw.harmony.UI.Chat.page;
+package edu.uw.harmony.UI.Chat.NewChat;
 
 import android.app.Application;
 import android.util.Log;
@@ -30,29 +30,32 @@ import edu.uw.harmony.R;
 /**
  * View model to store the information of the list of chats the user has
  */
-public class ChatListViewModel extends AndroidViewModel {
+public class NewChatViewModel extends AndroidViewModel {
 
-    /** The list of chats that the user is currently in*/
-    private MutableLiveData<List<ChatPost>> mChatList;
+    /**
+     * The response
+     */
+    private final MutableLiveData<JSONObject> mResponse;
 
     /**
      * Constructor for the chat list view model
      * @param application the application
      */
-    public ChatListViewModel(@NonNull Application application) {
+    public NewChatViewModel(@NonNull Application application) {
         super(application);
-        mChatList = new MutableLiveData<>();
-        mChatList.setValue(new ArrayList<>());
+        mResponse=new MutableLiveData<>();
+        mResponse.setValue(new JSONObject());
     }
 
+
     /**
-     * Adds a blog list observer
+     * Adds observers to the response
      * @param owner the owner
      * @param observer the observer
      */
-    public void addBlogListObserver(@NonNull LifecycleOwner owner,
-                                    @NonNull Observer<? super List<ChatPost>> observer) {
-        mChatList.observe(owner, observer);
+    public void addResponseObserver(@NonNull LifecycleOwner owner,
+                                    @NonNull Observer<? super JSONObject> observer) {
+        mResponse.observe(owner, observer);
     }
 
     /**
@@ -62,7 +65,7 @@ public class ChatListViewModel extends AndroidViewModel {
     private void handleError(final VolleyError error) {
         //you should add much better error handling in a production release.
         //i.e. YOUR PROJECT
-        Log.e("ERROR","USER HAS NOT STARTED ANY CHATS");
+        Log.e("ERROR","Something went wrong when creating the chat room");
     }
 
     /**
@@ -70,40 +73,11 @@ public class ChatListViewModel extends AndroidViewModel {
      * @param result the result from the web service
      */
     private void handleResult(final JSONObject result) {
-        IntFunction<String> getString =
-                getApplication().getResources()::getString;
-        try {
-            mChatList.setValue(new ArrayList<>());
-            JSONObject root = result;
-            JSONArray chats = root.getJSONArray("chats");
-            Log.e("-----------------------", chats.get(0).toString());
-            for (int i = 0; i < chats.length(); i++) {
-                JSONObject room = chats.getJSONObject(i);
+       Log.e("PASSED", "Chatroom was created");
+    }
 
-                List<Integer> members = new ArrayList<>();
-
-                ChatPost post = new ChatPost
-                        .Builder(
-                                (int)room.get("chatid"),
-                                members,
-                            "" + room.get("name"),
-                        ""+room.get("username") + ": " +room.get("message")).build();
-                Log.e("-----------", mChatList.getValue() + " ");
-                boolean contains = false;
-                List <ChatPost> list = mChatList.getValue();
-                for (ChatPost chat: list) {
-                    if ((int)room.get("chatid") == chat.getChatId()) {
-                        contains = true;
-                    }
-                }
-                if (!contains) {
-                    mChatList.getValue().add(post); }
-            }
-        } catch (JSONException e){
-            e.printStackTrace();
-            Log.e("ERROR!", e.getMessage());
-        }
-        mChatList.setValue(mChatList.getValue());
+    public void done() {
+        mResponse.setValue(new JSONObject());
     }
 
     /**
@@ -111,14 +85,22 @@ public class ChatListViewModel extends AndroidViewModel {
      * @param jwt the users jwt
      * @param email the users email
      */
-    public void connectGet(final String jwt, final String email) {
+    public void connectPost(final String jwt, final String email, String selected, String chatName) {
+        JSONObject body = new JSONObject();
+
+        try{
+            body.put("members",selected);
+            body.put("name",chatName);
+        } catch (JSONException e){
+            e.printStackTrace();
+        }
         String url =
                 getApplication().getResources().getString(R.string.base_url) + "chatroom/" + email;
         Request request = new JsonObjectRequest(
-                Request.Method.GET,
+                Request.Method.POST,
                 url,
-                null,
-                this::handleResult,
+                body,
+                mResponse::setValue, // we get a response but do nothing with it
                 this::handleError) {
             @Override
             public Map<String, String> getHeaders() {

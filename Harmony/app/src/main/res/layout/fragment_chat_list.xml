@@ -17,7 +17,7 @@
         app:layoutManager="LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -29,13 +29,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
-        android:layout_marginTop="544dp"
-        android:layout_marginEnd="64dp"
-        android:src="@drawable/chat_add_new_chat2_24dp"
+        android:layout_marginTop="596dp"
+        android:layout_marginEnd="16dp"
         android:background="@color/dark_grey"
+        android:src="@drawable/chat_add_new_chat2_24dp"
+        android:theme="@style/Theme_1_Harmony"
         app:backgroundTint="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        android:theme="@style/Theme_1_Harmony"
         app:layout_constraintTop_toTopOf="parent" />
 
 
