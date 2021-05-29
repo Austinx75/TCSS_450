@@ -54,6 +54,9 @@
         <argument
             android:name="chatId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_navigation_chat_post_to_updateChatFragment"
+            app:destination="@id/updateChatFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_chat_list"
@@ -121,5 +124,14 @@
         android:id="@+id/addNewContactFragment"
         android:name="edu.uw.harmony.UI.Contacts.AddNewContactFragment"
         android:label="@string/fragment_add_contact" />
+    <fragment
+        android:id="@+id/updateChatFragment"
+        android:name="edu.uw.harmony.UI.Chat.update.UpdateChatFragment"
+        android:label="fragment_update_chat"
+        tools:layout="@layout/fragment_update_chat" >
+        <argument
+            android:name="chatId"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>

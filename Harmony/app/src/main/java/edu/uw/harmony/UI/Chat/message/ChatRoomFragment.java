@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import edu.uw.harmony.R;
@@ -108,6 +109,11 @@ public class ChatRoomFragment extends Fragment {
         });
         mSendModel.addResponseObserver(getViewLifecycleOwner(), response ->
                 binding.editMessage.setText(""));
+
+        binding.imageButton.setOnClickListener(button -> {
+            Navigation.findNavController(getView()).navigate(
+                    ChatRoomFragmentDirections.actionNavigationChatPostToUpdateChatFragment(mChatId));
+        });
     }
 
     @Override
