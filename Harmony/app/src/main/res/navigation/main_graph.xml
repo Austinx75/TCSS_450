@@ -121,5 +121,9 @@
         android:id="@+id/addNewContactFragment"
         android:name="edu.uw.harmony.UI.Contacts.AddNewContactFragment"
         android:label="@string/fragment_add_contact" />
+    <fragment
+        android:id="@+id/navigation_contact_container"
+        android:name="edu.uw.harmony.UI.Contacts.ContactContainerFragment"
+        android:label="Contacts" />
 
 </navigation>

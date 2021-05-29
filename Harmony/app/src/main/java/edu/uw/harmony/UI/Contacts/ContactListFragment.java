@@ -2,6 +2,8 @@ package edu.uw.harmony.UI.Contacts;
 
 import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +38,8 @@ public class ContactListFragment extends Fragment {
     private UserInfoViewModel mUserModel;
 
     private FragmentContactListBinding binding;
+    private long mLastClickTime = 0;
+    private boolean hasClickedNewContact = false;
 
 
     /** binding variable that allows interaction with views */
@@ -80,7 +84,16 @@ public class ContactListFragment extends Fragment {
                         new ContactRecyclerViewAdapter(contactList,mModel,mUserModel, settingsViewModel));
                 binding.layoutWait.setVisibility(View.GONE);
         });
-        binding.AddNewContact.setOnClickListener(button -> Navigation.findNavController(getView()).navigate(ContactListFragmentDirections.actionNavigationContactToAddNewContactFragment()));
+
+//        binding.AddNewContact.setOnClickListener(button ->
+//                Navigation.findNavController(getView()).
+//                        navigate(ContactListFragmentDirections.actionNavigationContactToAddNewContactFragment()));
+
+            binding.AddNewContact.setOnClickListener(button ->
+                    Navigation.findNavController(getView()).
+                            navigate(ContactListFragmentDirections.actionNavigationContactToAddNewContactFragment()));
+//            binding.AddNewContact.setOnClickListener(button ->
+//                    Log.d("The Tag", "I clicked on the button"));
     }
 
     /**

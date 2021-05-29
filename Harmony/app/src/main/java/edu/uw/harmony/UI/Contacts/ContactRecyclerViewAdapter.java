@@ -116,7 +116,6 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
                     Log.d("ID", (mContact.getId()));
                     ContactListFragmentDirections.ActionNavigationContactToNavigationNewChat directions
                             = ContactListFragmentDirections.actionNavigationContactToNavigationNewChat();
-
                     directions.setEmail(binding.contactUsername.getText().toString());
                     Navigation.findNavController(mView).navigate(directions);
                 });
