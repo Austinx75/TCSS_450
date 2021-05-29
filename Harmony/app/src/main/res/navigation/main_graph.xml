@@ -124,6 +124,10 @@
     <fragment
         android:id="@+id/navigation_contact_container"
         android:name="edu.uw.harmony.UI.Contacts.ContactContainerFragment"
-        android:label="Contacts" />
+        android:label="Contacts" >
+        <action
+            android:id="@+id/action_navigation_contact_container_to_navigation_new_chat2"
+            app:destination="@id/navigation_new_chat" />
+    </fragment>
 
 </navigation>
