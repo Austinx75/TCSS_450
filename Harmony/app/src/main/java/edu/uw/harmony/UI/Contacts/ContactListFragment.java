@@ -20,6 +20,7 @@ import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentChatListBinding;
 import edu.uw.harmony.databinding.FragmentContactBinding;
+import edu.uw.harmony.databinding.FragmentContactContainerBinding;
 import edu.uw.harmony.databinding.FragmentContactListBinding;
 
 /**
@@ -78,22 +79,21 @@ public class ContactListFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         FragmentContactListBinding binding = FragmentContactListBinding.bind(getView());
-        binding.layoutWait.setVisibility(View.GONE);
+        //FragmentContactContainerBinding binding = FragmentContactContainerBinding.bind(getView());
+//        binding.layoutWait.setVisibility(View.GONE);
         mModel.addContactListObserver(getViewLifecycleOwner(), contactList -> {
                 binding.listRoot.setAdapter(
                         new ContactRecyclerViewAdapter(contactList,mModel,mUserModel, settingsViewModel));
                 binding.layoutWait.setVisibility(View.GONE);
         });
 
-//        binding.AddNewContact.setOnClickListener(button ->
-//                Navigation.findNavController(getView()).
-//                        navigate(ContactListFragmentDirections.actionNavigationContactToAddNewContactFragment()));
+        binding.AddNewContact.setOnClickListener(button ->
+                Navigation.findNavController(getView()).
+                                navigate(ContactContainerFragmentDirections.actionNavigationContactContainerToNavigationNewChat2()));
 
-            binding.AddNewContact.setOnClickListener(button ->
-                    Navigation.findNavController(getView()).
-                            navigate(ContactListFragmentDirections.actionNavigationContactToAddNewContactFragment()));
 //            binding.AddNewContact.setOnClickListener(button ->
 //                    Log.d("The Tag", "I clicked on the button"));
+
     }
 
     /**
