@@ -52,4 +52,6 @@ dependencies {
     apply plugin: "androidx.navigation.safeargs"
     compileOnly 'com.google.android.wearable:wearable:2.6.0'
     implementation 'me.pushy:sdk:1.0.54'
+
+    
 }
