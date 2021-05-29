@@ -6,8 +6,10 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.util.Log;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
 import org.json.JSONException;
@@ -15,6 +17,7 @@ import org.json.JSONException;
 import edu.uw.harmony.AuthActivity;
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Chat.message.ChatMessage;
+import edu.uw.harmony.UI.Home.NotificationItem;
 import me.pushy.sdk.Pushy;
 
 import static android.app.ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND;
@@ -26,8 +29,10 @@ public class PushReceiver extends BroadcastReceiver {
 
     private static final String CHANNEL_ID = "1";
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onReceive(Context context, Intent intent) {
+//        NotificationGenerator g1 = new NotificationGenerator();
 
         //the following variables are used to store the information sent from Pushy
         //In the WS, you define what gets sent. You can change it there to suit your needs
@@ -62,7 +67,6 @@ public class PushReceiver extends BroadcastReceiver {
             i.putExtras(intent.getExtras());
 
             context.sendBroadcast(i);
-
         } else {
             //app is in the background so create and post a notification
             Log.d("PUSHY", "Message received in background: " + message.getMessage());
@@ -92,6 +96,8 @@ public class PushReceiver extends BroadcastReceiver {
 
             // Build the notification and display it
             notificationManager.notify(1, builder.build());
+//            notificationManager.getActiveNotifications().;
+
         }
 
     }

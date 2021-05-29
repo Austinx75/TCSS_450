@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="@string/home_notification_card_TO"
+            android:text="@string/home_notification_card_From"
             app:layout_constraintStart_toStartOf="@+id/image_messageNotification_home"
             app:layout_constraintTop_toBottomOf="@+id/image_messageNotification_home" />
 

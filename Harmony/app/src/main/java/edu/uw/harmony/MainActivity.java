@@ -9,6 +9,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
@@ -19,11 +21,13 @@ import android.content.Intent;
 import android.content.IntentFilter;
 
 import android.os.Bundle;
+import android.service.notification.StatusBarNotification;
 import android.util.Log;
 
 import com.auth0.android.jwt.JWT;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import edu.uw.harmony.UI.Home.NotificationViewModel;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 
 import android.view.Menu;
@@ -58,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     private AppBarConfiguration mAppBarConfiguration;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -172,24 +178,39 @@ public class MainActivity extends AppCompatActivity {
 
         private ChatViewModel mModel = new ViewModelProvider(MainActivity.this)
                 .get(ChatViewModel.class);
+        private NotificationViewModel nModel = new ViewModelProvider(MainActivity.this).get(NotificationViewModel.class);
+
 
         @Override
         public void onReceive(Context context, Intent intent) {
+
             NavController nc = Navigation.findNavController(
                     MainActivity.this, R.id.nav_host_fragment);
 
             NavDestination nd = nc.getCurrentDestination();
             if (intent.hasExtra("chatMessage")) {
                 ChatMessage cm = (ChatMessage) intent.getSerializableExtra("chatMessage");
+                Log.d("MAin Activity", cm.getMessage());
                 if (cm.getChatId() == mNewMessageModel.getCurrentChatRoom()){
                     mNewMessageModel.reset();
                 }
                 else {
                     mNewMessageModel.increment(cm.getChatId());
                 }
+                nModel.addNotification(cm);
 
+                NotificationManager notificationManager =
+                        (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
+//
+                StatusBarNotification[] s1 = notificationManager.getActiveNotifications();
+
+
+                for(int i = 0; i < s1.length; i++){
+                    nModel.addNotification(s1[i].getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).toString(),s1[i].getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString());
+                }
                 mModel.addMessage(intent.getIntExtra("chatid", -1), cm);
             }
+
         }
     }
 

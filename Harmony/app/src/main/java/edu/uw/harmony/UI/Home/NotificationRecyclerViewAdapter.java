@@ -1,6 +1,7 @@
 package edu.uw.harmony.UI.Home;
 
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.uw.harmony.R;
@@ -33,6 +35,9 @@ public class NotificationRecyclerViewAdapter extends
      * @param items
      */
     public NotificationRecyclerViewAdapter(List<NotificationItem> items, SettingsViewModel model){
+        if(items.isEmpty()){
+            Log.d("Test", "Notifications is empty");
+        }
         this.mNotifications = items;
         this.sModel = model;
     }
@@ -95,6 +100,7 @@ public class NotificationRecyclerViewAdapter extends
          */
         void setNotifications(final NotificationItem notifications) {
             mNotifications = notifications;
+            Log.d("Message in Set Notifications", mNotifications.getMessage());
             binding.textToPersonHome.setText(mNotifications.getSender());
             binding.textMessageHome.setText(mNotifications.getMessage());
             if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
