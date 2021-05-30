@@ -72,7 +72,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        hModel.connectGet();
+//        hModel.connectGet();
         hModel.setJWT(model.getJwt());
         hModel.setHomeBinding(binding);
 
