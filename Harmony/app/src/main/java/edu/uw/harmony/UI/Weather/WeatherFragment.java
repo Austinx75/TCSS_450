@@ -96,10 +96,11 @@ public class WeatherFragment extends Fragment {
         if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
             binding.textViewCityPlaceholder.setTextColor(Color.BLACK);
             binding.textViewMainTemperaturePlaceholder.setTextColor(Color.BLACK);
+            binding.textViewWindSpeedPlaceholder.setTextColor(Color.BLACK);
         } else {
             binding.textViewCityPlaceholder.setTextColor(Color.WHITE);
             binding.textViewMainTemperaturePlaceholder.setTextColor(Color.WHITE);
-
+            binding.textViewWindSpeedPlaceholder.setTextColor(Color.WHITE);
         }
     }
 }

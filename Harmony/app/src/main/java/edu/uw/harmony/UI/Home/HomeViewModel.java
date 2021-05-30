@@ -146,7 +146,10 @@ public class HomeViewModel extends AndroidViewModel{
                 determineImageFromDescription(
                         currentWeather.getString(
                                 getString.apply(
-                                        R.string.keys_description))
+                                        R.string.keys_description)),
+                        Integer.parseInt(currentWeather.getString(
+                                getString.apply(
+                                        R.string.keys_hour_time)))
                 )
         );
 

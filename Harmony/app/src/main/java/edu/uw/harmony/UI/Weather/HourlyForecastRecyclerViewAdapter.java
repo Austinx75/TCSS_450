@@ -74,13 +74,17 @@ public class HourlyForecastRecyclerViewAdapter extends
 
             //Set the text for what time (hour)
             int currentHour = mHourlyForecast.getHour();
-            binding.textHourlyTime.setText(
-                    currentHour <= 12 ? (currentHour + " AM") : (currentHour % 12 + " PM")
-            );
+            String currentHourText;
+            if(currentHour == 0) {
+                currentHourText = "12 AM";
+            } else {
+                currentHourText = currentHour <= 12 ? (currentHour + " AM") : (currentHour % 12 + " PM");
+            }
+            binding.textHourlyTime.setText(currentHourText);
 
             //Set the image
             this.binding.imageViewHourlyForecastCondition.setImageResource(
-                    determineImageFromDescription(mHourlyForecast.getDescription()));
+                    determineImageFromDescription(mHourlyForecast.getDescription(), currentHour));
             //Set the text for the temperature
             binding.textHourlyTemp.setText((int)mHourlyForecast.getTemp() + "°");
             if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
