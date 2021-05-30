@@ -25,6 +25,7 @@ import java.util.List;
 
 import edu.uw.harmony.R;
 import edu.uw.harmony.databinding.FragmentContactContainerBinding;
+import edu.uw.harmony.databinding.FragmentContactListBinding;
 import edu.uw.harmony.databinding.FragmentContactRequestListBinding;
 
 /**
@@ -44,6 +45,17 @@ public class ContactContainerFragment extends Fragment {
         tabLayout = myFragment.findViewById(R.id.tabs);
         return myFragment;
     }
+
+//    @Override
+//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+//        FragmentContactListBinding binding = FragmentContactListBinding.bind(getView());
+//                binding.AddNewContact.setOnClickListener(button ->
+//                Navigation.findNavController(getView()).
+//                        navigate(ContactListFragmentDirections.actionNavigationContactToAddNewContactFragment()));
+//
+//
+//
+//    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
