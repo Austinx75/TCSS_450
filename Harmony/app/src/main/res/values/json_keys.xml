@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="keys_city">city</string>
+    <string name="keys_wind_speed">windSpeed</string>
     <string name="keys_current_weather">currentConditions</string>
     <string name="keys_hourly_forecast">hourlyForecast</string>
     <string name="keys_five_day_forecast">fiveDayForecast</string>

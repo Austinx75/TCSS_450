@@ -37,19 +37,26 @@ import static edu.uw.harmony.util.WeatherUtils.determineImageFromDescription;
 
 public class WeatherViewModel extends AndroidViewModel {
     private String mJwt;
+
+    private Boolean useZip;
+    private String zipCode;
+    private double latitude;
+    private double longitude;
+
     private MutableLiveData<List<HourlyForecastItem>> mHourlyList;
     private MutableLiveData<List<WeeklyForecastItem>> mWeeklyList;
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
 
-
-
     private FragmentWeatherBinding weatherBinding;
-
-    private String currentSetWeather;
 
     public WeatherViewModel(@NonNull Application application) {
         super(application);
+        useZip = false;
+        zipCode = "98059";
+        latitude = 40.0150;
+        longitude = -105.2705;
+
         mHourlyList = new MutableLiveData<>();
         mHourlyList.setValue(new ArrayList<>());
 
@@ -81,10 +88,12 @@ public class WeatherViewModel extends AndroidViewModel {
         IntFunction<String> getString = getApplication().getResources()::getString;
         try {
             //Current conditions
-            if (result.has(getString.apply(R.string.keys_current_weather))) {
+            if (result.has(getString.apply(R.string.keys_current_weather))
+                    && result.has(getString.apply(R.string.keys_city))) {
+                String city = result.getString(getString.apply(R.string.keys_city));
                 JSONObject currentWeather = result.getJSONObject(getString.apply(
                         R.string.keys_current_weather));
-                handleCurrentWeather(currentWeather);
+                handleCurrentWeather(city, currentWeather);
             } else {
                 Log.e("ERROR!", "No current conditions object in weather endpoint response");
             }
@@ -151,7 +160,14 @@ public class WeatherViewModel extends AndroidViewModel {
     }
 
     public void connectGet() {
-        String url = "https://team-9-tcss450-backend.herokuapp.com/weather?lat=47.474190&long=-122.206650";
+        String url = "https://team-9-tcss450-backend.herokuapp.com/weather?";
+
+        if(useZip) {
+            url += "zip=" + this.zipCode;
+        } else {
+            url += "lat=" + this.latitude + "&long=" + this.longitude;
+        };
+
         Request request = new JsonObjectRequest(
                 Request.Method.GET,
                 url,
@@ -177,37 +193,43 @@ public class WeatherViewModel extends AndroidViewModel {
         this.mJwt = jwt;
     }
 
-    public String getCurrentWeather(){
-        return currentSetWeather;
-    }
-
     public void setWeatherBinding(FragmentWeatherBinding binding) {
         this.weatherBinding = binding;
     }
 
-    private void handleCurrentWeather(JSONObject currentWeather) throws JSONException {
+    private void handleCurrentWeather(String city, JSONObject currentWeather)
+            throws JSONException {
         IntFunction<String> getString = getApplication().getResources()::getString;
 
-        int image = R.drawable.weather_clouds;
-
+        //Update weather image
         this.weatherBinding.imageViewMainConditionsPlaceholder.setImageResource(
                 determineImageFromDescription(
                         currentWeather.getString(
                                 getString.apply(
-                                        R.string.keys_description))
+                                        R.string.keys_description)),
+                        Integer.parseInt(currentWeather.getString(
+                                getString.apply(
+                                        R.string.keys_hour_time)))
                 )
         );
 
-        //TODO: Update city name
-        currentSetWeather = (int) Double.parseDouble(
-                currentWeather.getString(
-                        getString.apply(
-                                R.string.keys_temp))) + "°";
+        //Update city name
+        this.weatherBinding.textViewCityPlaceholder.setText(city);
+
+        //Update current temperature
         this.weatherBinding.textViewMainTemperaturePlaceholder.setText(
                 (int) Double.parseDouble(
                         currentWeather.getString(
                                 getString.apply(
                                         R.string.keys_temp))) + "°");
 
+        //Update wind speed
+        this.weatherBinding.textViewWindSpeedPlaceholder.setText(
+                "Wind Speed: " +
+                Math.round((Double.parseDouble(
+                            currentWeather.getString(
+                                    getString.apply(
+                                            R.string.keys_wind_speed))) * 100.0) / 100.0) + " mph"
+        );
     }
 }
