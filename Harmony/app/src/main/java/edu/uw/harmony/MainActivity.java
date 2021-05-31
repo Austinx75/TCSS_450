@@ -257,7 +257,9 @@ public class MainActivity extends AppCompatActivity {
 
             NavDestination nd = nc.getCurrentDestination();
             if (intent.hasExtra("chatMessage")) {
+
                 ChatMessage cm = (ChatMessage) intent.getSerializableExtra("chatMessage");
+                Log.e("CM ID", "CM" +  cm.getChatId() + " CURRENT ROOm" +mNewMessageModel.getCurrentChatRoom());
                 if (cm.getChatId() == mNewMessageModel.getCurrentChatRoom()){
                     mNewMessageModel.reset();
                 }

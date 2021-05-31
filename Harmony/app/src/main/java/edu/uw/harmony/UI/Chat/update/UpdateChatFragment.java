@@ -45,6 +45,8 @@ public class UpdateChatFragment extends Fragment {
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
     private int chatId;
+    private StringBuilder updatedMembers;
+    private List<String> updated;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -59,6 +61,8 @@ public class UpdateChatFragment extends Fragment {
         mModel.connectGet(mUserModel.getJwt(), mUserModel.getEmail(), args.getChatid());
         chatId = args.getChatid();
         mModel.connectDelete(mUserModel.getJwt(), mUserModel.getEmail(), chatId);
+        updatedMembers = new StringBuilder();
+        updated = new ArrayList<>();
     }
 
     @Override
@@ -89,7 +93,6 @@ public class UpdateChatFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        List<String> updated = new ArrayList<>();
         binding.layoutWait.setVisibility(View.GONE);
         mContactModel.addContactListObserver(getViewLifecycleOwner(), contactList -> {
             binding.listRoot.setAdapter(
@@ -98,13 +101,7 @@ public class UpdateChatFragment extends Fragment {
             binding.layoutWait.setVisibility(View.GONE);
         });
         binding.button.setOnClickListener(button -> {
-            StringBuilder updatedMembers = new StringBuilder();
-            updatedMembers.append(updated.get(0) + " ");
-            for (int i = 1; i < updated.size(); i++ ){
-                updatedMembers.append(" " +updated.get(i));
-            }
-            mModel.connectPost(mUserModel.getJwt(),mUserModel.getEmail(), chatId, updatedMembers.toString());
-
+            Navigation.findNavController(getView()).navigate(UpdateChatFragmentDirections.actionUpdateChatFragmentToNavigationChatPost(chatId));
             Log.e("UPDATED", updated.toString());
         });
         mModel.addResponseObserver(getViewLifecycleOwner(), response ->{
@@ -132,6 +129,12 @@ public class UpdateChatFragment extends Fragment {
     @Override
     public void onDestroy(){
         super.onDestroy();
+        updatedMembers.append(updated.get(0) + " ");
+        for (int i = 1; i < updated.size(); i++ ){
+            updatedMembers.append(" " +updated.get(i));
+        }
+        mModel.connectPost(mUserModel.getJwt(),mUserModel.getEmail(), chatId, updatedMembers.toString());
+        Log.e("SELECTED ON DESTROY", this.selected.toString());
         this.selected.clear();
         mModel.done();
     }

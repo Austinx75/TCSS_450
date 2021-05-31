@@ -99,6 +99,7 @@ public class NewChatFragment extends Fragment {
             binding.listRoot.setAdapter(
                     new ContactRecyclerViewAdapter(contactList,mContactModel,mUserModel, settingsViewModel, true, selected, this.emails));
             binding.layoutWait.setVisibility(View.GONE);
+            Log.e("EMAILS FROM NEW CHAT", this.emails.toString());
         });
 
         mModel.addResponseObserver(getViewLifecycleOwner(), response ->{
