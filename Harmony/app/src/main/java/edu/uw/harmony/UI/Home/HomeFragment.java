@@ -3,10 +3,12 @@ package edu.uw.harmony.UI.Home;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
@@ -20,6 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
@@ -32,6 +35,7 @@ import edu.uw.harmony.UI.Contacts.ContactRecyclerViewAdapter;
 import edu.uw.harmony.UI.Weather.HourlyForecastRecyclerViewAdapter;
 import edu.uw.harmony.UI.Weather.WeatherViewModel;
 import edu.uw.harmony.UI.Weather.WeeklyForecastRecyclerViewAdapter;
+import edu.uw.harmony.UI.model.NewMessageCountViewModel;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentHomeBinding;
@@ -57,12 +61,36 @@ public class HomeFragment extends Fragment {
 
     private NotificationViewModel nModel;
 
+    ArrayList<StatusBarNotification> notifications;
 
+    NotificationManager notificationManager;
+
+    private NewMessageCountViewModel mNewMessageModel;
+
+    private static final String CHANNEL_ID = "1";
+
+//
 //    @Override
 //    public void onCreate(@Nullable Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
+//        nModel = new ViewModelProvider(this).get(NotificationViewModel.class);
+//
+//        NotificationManager notificationManager =
+//                (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+//
+//        StatusBarNotification[] s1 = notificationManager.getActiveNotifications();
+//        Log.d("Status Bar", String.valueOf(s1.length));
+//        SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
+//        for(int i = 0; i < s1.length; i++){
+//            String dateString = formatter.format(new Date(s1[i].getPostTime()));
+//            nModel.addNotification(s1[i].getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).toString()
+//                            .substring(13,s1[i].getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).length()),
+//                    s1[i].getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
+//
+//        }
 //    }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -72,8 +100,23 @@ public class HomeFragment extends Fragment {
         model = new ViewModelProvider(getActivity()).get(UserInfoViewModel.class);
         hModel = new ViewModelProvider(getActivity()).get(HomeViewModel.class);
         nModel = new ViewModelProvider(getActivity()).get(NotificationViewModel.class);
+        mNewMessageModel = new ViewModelProvider(getActivity()).get(NewMessageCountViewModel.class);
 
 
+        notificationManager =
+                (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+        StatusBarNotification[] s1 = notificationManager.getActiveNotifications();
+        notifications = new ArrayList<>(Arrays.asList(s1));
+        Log.d("Status Bar", String.valueOf(s1.length));
+        SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
+        for(int i = 0; i < notifications.size(); i++){
+            String dateString = formatter.format(new Date(notifications.get(i).getPostTime()));
+            nModel.addNotification(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).toString()
+            .substring(13,notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).length()),
+                    notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
+
+
+        }
 
         /** I instantiate the recycler view here.*/
         View notificationView = binding.listRoot;
@@ -94,6 +137,8 @@ public class HomeFragment extends Fragment {
         hModel.setJWT(model.getJwt());
         hModel.setHomeBinding(binding);
         binding.buttonClearHome.setOnClickListener(button -> {
+            notificationManager.cancelAll();
+            notifications.clear();
             nModel.clearNotifications();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.detach(this).attach(this).commit();
