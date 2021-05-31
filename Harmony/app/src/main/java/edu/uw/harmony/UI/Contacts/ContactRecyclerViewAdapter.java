@@ -190,6 +190,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
                     "Username: "+user + "\r\n" +
                     "ID: "+id + "\r\n";
             binding.textPreview.setText(preview);
+
             if(sModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
                 binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.offwhite));
                 binding.contactUsername.setTextColor(Color.BLACK);
