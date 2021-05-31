@@ -1,5 +1,7 @@
 package edu.uw.harmony.UI.Home;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -10,10 +12,19 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.service.notification.StatusBarNotification;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Contacts.ContactGenerator;
@@ -62,15 +73,15 @@ public class HomeFragment extends Fragment {
         hModel = new ViewModelProvider(getActivity()).get(HomeViewModel.class);
         nModel = new ViewModelProvider(getActivity()).get(NotificationViewModel.class);
 
+
+
         /** I instantiate the recycler view here.*/
         View notificationView = binding.listRoot;
         if (notificationView instanceof RecyclerView){
             Log.d("View Model Notifications", "It made it to this point");
             ((RecyclerView) notificationView).setAdapter(new NotificationRecyclerViewAdapter(nModel.getNotifications(), settingsViewModel));
+
         }
-
-
-
         return binding.getRoot();
     }
 
@@ -88,8 +99,10 @@ public class HomeFragment extends Fragment {
             ft.detach(this).attach(this).commit();
                 });
 
+
         nModel.addNotificationObserver(getViewLifecycleOwner(), notification -> {
             if (binding.listRoot instanceof RecyclerView) {
+
                 (binding.listRoot).setAdapter(
                         new NotificationRecyclerViewAdapter(notification, settingsViewModel));
             }

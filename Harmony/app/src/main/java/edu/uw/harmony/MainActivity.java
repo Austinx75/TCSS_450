@@ -44,6 +44,9 @@ import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import edu.uw.harmony.UI.Chat.message.ChatMessage;
@@ -58,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     private MainPushMessageReceiver mPushMessageReceiver;
     private NewMessageCountViewModel mNewMessageModel;
+    private NotificationViewModel nModel;
 
     private ActivityMainBinding binding;
 
@@ -73,6 +77,23 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        nModel = new ViewModelProvider(this).get(NotificationViewModel.class);
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+//        NotificationManager notificationManager =
+//                (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+
+        StatusBarNotification[] s1 = notificationManager.getActiveNotifications();
+        Log.d("Status Bar", String.valueOf(s1.length));
+        SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
+        for(int i = 0; i < s1.length; i++){
+            String dateString = formatter.format(new Date(s1[i].getPostTime()));
+            nModel.addNotification(s1[i].getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).toString()
+                            .substring(13,s1[i].getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).length()),
+                    s1[i].getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
+
+        }
 
         MainActivityArgs args = MainActivityArgs.fromBundle(getIntent().getExtras());
         JWT jwt = new JWT(args.getJwt());
@@ -197,17 +218,11 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     mNewMessageModel.increment(cm.getChatId());
                 }
-                nModel.addNotification(cm);
-
-                NotificationManager notificationManager =
-                        (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
-//
-                StatusBarNotification[] s1 = notificationManager.getActiveNotifications();
-
-
-                for(int i = 0; i < s1.length; i++){
-                    nModel.addNotification(s1[i].getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).toString(),s1[i].getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString());
-                }
+                Timestamp ts = new Timestamp(System.currentTimeMillis());
+                Date date = new Date(ts.getTime());
+                SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
+                String dateString = formatter.format(date);
+                nModel.addNotification(cm, dateString);
                 mModel.addMessage(intent.getIntExtra("chatid", -1), cm);
             }
 

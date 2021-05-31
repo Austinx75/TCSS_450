@@ -103,18 +103,21 @@ public class NotificationRecyclerViewAdapter extends
             Log.d("Message in Set Notifications", mNotifications.getMessage());
             binding.textToPersonHome.setText(mNotifications.getSender());
             binding.textMessageHome.setText(mNotifications.getMessage());
+            binding.fragmentTimeNotification.setText(mNotifications.getTime());
             if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
                 binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.offwhite));
                 binding.textTOHome.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
                 binding.textToPersonHome.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
                 binding.textMessageHome.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
                 binding.imageMessageNotificationHome.setColorFilter(binding.getRoot().getResources().getColor(R.color.tan));
+                binding.fragmentTimeNotification.setTextColor(Color.BLACK);
             } else {
                 binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.black));
                 binding.textTOHome.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
                 binding.textToPersonHome.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
                 binding.textMessageHome.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
                 binding.imageMessageNotificationHome.setColorFilter(Color.WHITE);
+                binding.fragmentTimeNotification.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
             }
 
         }
