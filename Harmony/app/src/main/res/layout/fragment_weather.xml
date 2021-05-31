@@ -83,6 +83,16 @@
         app:layout_constraintVertical_bias="0.821"
         tools:context=".UI.Weather.WeatherFragment"
         tools:listitem="@layout/fragment_weather_hourly_forecast_card" />
+
+        <TextView
+            android:id="@+id/textView_windSpeedPlaceholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

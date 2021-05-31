@@ -130,4 +130,15 @@
             app:destination="@id/navigation_new_chat" />
     </fragment>
 
+    <fragment
+        android:id="@+id/navigation_weather_container"
+        android:name="edu.uw.harmony.UI.Weather.WeatherContainerFragment"
+        android:label="Weather"
+        tools:layout="@layout/fragment_weather_container" />
+    <fragment
+        android:id="@+id/weatherLocationFragment"
+        android:name="edu.uw.harmony.UI.Weather.WeatherLocationFragment"
+        android:label="fragment_weather_location"
+        tools:layout="@layout/fragment_weather_location" />
+
 </navigation>

@@ -77,8 +77,9 @@ public class WeeklyForecastRecyclerViewAdapter extends
             binding.textWeeklyDay.setText(mWeeklyForecast.getDay());
 
             //Set the image
+            //Uses hourOfDay:10 just to tell determineImageFromDescription that it's not night time.
             this.binding.imageViewWeeklyForecastCondition.setImageResource(
-                    determineImageFromDescription(mWeeklyForecast.getDescription()));
+                    determineImageFromDescription(mWeeklyForecast.getDescription(), 10));
 
             //Set the text for the temperature
             binding.textWeeklyTemp.setText((int)mWeeklyForecast.getTemp() + "°");
