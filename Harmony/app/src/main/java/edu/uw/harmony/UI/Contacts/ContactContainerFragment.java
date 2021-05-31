@@ -4,19 +4,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.navigation.Navigation;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
-import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -24,9 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.uw.harmony.R;
-import edu.uw.harmony.databinding.FragmentContactContainerBinding;
-import edu.uw.harmony.databinding.FragmentContactListBinding;
-import edu.uw.harmony.databinding.FragmentContactRequestListBinding;
+import edu.uw.harmony.UI.Request.RequestListFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -86,7 +79,8 @@ public class ContactContainerFragment extends Fragment {
         ViewPageAdapter adapter = new ViewPageAdapter(getChildFragmentManager());
 
         adapter.addFragment(new ContactListFragment(), "Contacts");
-        adapter.addFragment(new ContactRequestListFragment(), "Requests");
+        //adapter.addFragment(new ContactRequestListFragment(), "Requests");
+        adapter.addFragment(new RequestListFragment(), "Requests");
 
         viewPager.setAdapter(adapter);
     }
