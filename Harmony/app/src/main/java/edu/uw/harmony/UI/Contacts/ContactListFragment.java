@@ -87,6 +87,10 @@ public class ContactListFragment extends Fragment {
                 binding.layoutWait.setVisibility(View.GONE);
         });
 
+//        binding.AddNewContact.setOnClickListener(button ->
+//                Navigation.findNavController(getView()).
+//                                navigate(ContactContainerFragmentDirections.actionNavigationContactContainerToNavigationNewChat2()));
+
         binding.AddNewContact.setOnClickListener(button ->
                 Navigation.findNavController(getView()).
                                 navigate(ContactContainerFragmentDirections.actionNavigationContactContainerToAddNewContactFragment()));

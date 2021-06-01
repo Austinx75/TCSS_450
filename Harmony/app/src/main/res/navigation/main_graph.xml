@@ -10,7 +10,11 @@
         android:id="@+id/navigation_home"
         android:name="edu.uw.harmony.UI.Home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_chat_list"
+            app:destination="@id/navigation_chat_list" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_contact"
         android:name="edu.uw.harmony.UI.Contacts.ContactListFragment"
@@ -153,6 +157,8 @@
             android:id="@+id/action_updateChatFragment_to_navigation_chat_post"
             app:destination="@id/navigation_chat_post"
             app:popUpTo="@id/navigation_chat_post" />
+ 
+
     </fragment>
 
     <fragment
