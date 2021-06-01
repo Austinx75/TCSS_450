@@ -1,17 +1,21 @@
 package edu.uw.harmony.UI.Home;
 
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.Chat.page.ChatListFragmentDirections;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentNotificationCardBinding;
 
@@ -33,6 +37,9 @@ public class NotificationRecyclerViewAdapter extends
      * @param items
      */
     public NotificationRecyclerViewAdapter(List<NotificationItem> items, SettingsViewModel model){
+        if(items.isEmpty()){
+            Log.d("Test", "Notifications is empty");
+        }
         this.mNotifications = items;
         this.sModel = model;
     }
@@ -95,21 +102,30 @@ public class NotificationRecyclerViewAdapter extends
          */
         void setNotifications(final NotificationItem notifications) {
             mNotifications = notifications;
+            Log.d("Message in Set Notifications", mNotifications.getMessage());
             binding.textToPersonHome.setText(mNotifications.getSender());
             binding.textMessageHome.setText(mNotifications.getMessage());
+            binding.fragmentTimeNotification.setText(mNotifications.getTime());
             if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
                 binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.offwhite));
                 binding.textTOHome.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
                 binding.textToPersonHome.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
                 binding.textMessageHome.setTextColor(binding.getRoot().getResources().getColor(R.color.black));
                 binding.imageMessageNotificationHome.setColorFilter(binding.getRoot().getResources().getColor(R.color.tan));
+                binding.fragmentTimeNotification.setTextColor(Color.BLACK);
             } else {
                 binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.black));
                 binding.textTOHome.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
                 binding.textToPersonHome.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
                 binding.textMessageHome.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
                 binding.imageMessageNotificationHome.setColorFilter(Color.WHITE);
+                binding.fragmentTimeNotification.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
             }
+            binding.cardRoot.setOnClickListener(view -> {
+                Navigation.findNavController(mView).navigate(
+                        HomeFragmentDirections.actionNavigationHomeToNavigationChatList());
+
+            });
 
         }
     }

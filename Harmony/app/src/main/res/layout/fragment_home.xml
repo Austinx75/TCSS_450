@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="68"
+        android:text="@string/fragment_blank_home"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView_mainConditionsPlaceholder"
         app:layout_constraintHorizontal_bias="0.517"
@@ -104,6 +104,16 @@
             tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/button_clear_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="@string/fragment_clear_home"
+        app:layout_constraintBottom_toBottomOf="@+id/text_notifications_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_notifications_home" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,22 @@
 package edu.uw.harmony;
 
+import android.Manifest;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
+import android.location.Location;
+import android.os.Bundle;
+import android.service.notification.StatusBarNotification;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.lifecycle.ViewModelProvider;
@@ -9,22 +26,6 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-
-import android.Manifest;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.content.res.ColorStateList;
-
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-
-import android.location.Location;
-import android.os.Bundle;
-import android.util.Log;
-
 import com.auth0.android.jwt.JWT;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -32,39 +33,33 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import edu.uw.harmony.UI.model.LocationViewModel;
-import edu.uw.harmony.UI.model.UserInfoViewModel;
-
-import android.view.Menu;
-import android.view.MenuItem;
-
-
-import com.auth0.android.jwt.JWT;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import edu.uw.harmony.UI.model.UserInfoViewModel;
-import edu.uw.harmony.UI.settings.SettingsFragment;
-
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.Map;
 
 import edu.uw.harmony.UI.Chat.message.ChatMessage;
 import edu.uw.harmony.UI.Chat.message.ChatViewModel;
+import edu.uw.harmony.UI.Home.NotificationViewModel;
+import edu.uw.harmony.UI.model.LocationViewModel;
 import edu.uw.harmony.UI.model.NewMessageCountViewModel;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
+import edu.uw.harmony.UI.settings.SettingsFragment;
 import edu.uw.harmony.databinding.ActivityMainBinding;
 import edu.uw.harmony.services.PushReceiver;
 
 
-public class MainActivity extends AppCompatActivity {
+public class  MainActivity extends AppCompatActivity {
 
     private MainPushMessageReceiver mPushMessageReceiver;
     private NewMessageCountViewModel mNewMessageModel;
+    private NotificationViewModel nModel;
 
     private ActivityMainBinding binding;
 
@@ -94,6 +89,41 @@ public class MainActivity extends AppCompatActivity {
 
     //The ViewModel that will store the current location
     private LocationViewModel mLocationModel;
+    /** Notification manager that accesses system services*/
+    NotificationManager notificationManager;
+    /** Stores the status bar notifications*/
+    ArrayList<StatusBarNotification> notifications;
+
+
+    /**
+     * Recieves messages from system service and adds them to notification view model.
+     */
+    public void onStart() {
+        super.onStart();
+        nModel = new ViewModelProvider(this).get(NotificationViewModel.class);
+        notificationManager = (NotificationManager) this.getSystemService(this.NOTIFICATION_SERVICE);
+        notifications = new ArrayList<>(Arrays.asList(notificationManager.getActiveNotifications()));
+
+        SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
+        for(int i = 0; i < notifications.size(); i++){
+            String dateString = formatter.format(new Date(notifications.get(i).getPostTime()));
+            nModel.addNotification(notifications
+                            .get(i)
+                            .getNotification()
+                            .extras
+                            .getCharSequence(Notification.EXTRA_TITLE)
+                            .toString()
+                            .substring(13,notifications.
+                                    get(i)
+                                    .getNotification()
+                                    .extras
+                                    .getCharSequence(Notification.EXTRA_TITLE)
+                                    .length()),
+                            notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
+        }
+        notifications.clear();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
         MainActivityArgs args = MainActivityArgs.fromBundle(getIntent().getExtras());
         JWT jwt = new JWT(args.getJwt());
@@ -249,24 +280,33 @@ public class MainActivity extends AppCompatActivity {
 
         private ChatViewModel mModel = new ViewModelProvider(MainActivity.this)
                 .get(ChatViewModel.class);
+        private NotificationViewModel nModel = new ViewModelProvider(MainActivity.this).get(NotificationViewModel.class);
+
 
         @Override
         public void onReceive(Context context, Intent intent) {
+
             NavController nc = Navigation.findNavController(
                     MainActivity.this, R.id.nav_host_fragment);
 
             NavDestination nd = nc.getCurrentDestination();
             if (intent.hasExtra("chatMessage")) {
                 ChatMessage cm = (ChatMessage) intent.getSerializableExtra("chatMessage");
+                Log.d("MAin Activity", cm.getMessage());
                 if (cm.getChatId() == mNewMessageModel.getCurrentChatRoom()){
                     mNewMessageModel.reset();
                 }
                 else {
                     mNewMessageModel.increment(cm.getChatId());
                 }
-
+                Timestamp ts = new Timestamp(System.currentTimeMillis());
+                Date date = new Date(ts.getTime());
+                SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
+                String dateString = formatter.format(date);
+                nModel.addNotification(cm, dateString);
                 mModel.addMessage(intent.getIntExtra("chatid", -1), cm);
             }
+
         }
     }
 
