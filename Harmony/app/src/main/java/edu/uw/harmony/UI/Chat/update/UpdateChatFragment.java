@@ -77,6 +77,8 @@ public class UpdateChatFragment extends Fragment {
 //            binding.sendMessage.setBackgroundColor(Color.WHITE);
 //            binding.sendMessage.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
         } else {
+            binding.buttonDelete.setBackgroundColor((Color.RED));
+            binding.buttonDelete.setTextColor(Color.BLACK);
             binding.editTextChatname.setHintTextColor(ColorStateList.valueOf(getResources().getColor(R.color.offwhite, null)));
             binding.editTextChatname.setTextColor(Color.WHITE);
         }
@@ -100,7 +102,7 @@ public class UpdateChatFragment extends Fragment {
             Log.e("Updated members",updated.size() + "");
             binding.layoutWait.setVisibility(View.GONE);
         });
-        binding.button.setOnClickListener(button -> {
+        binding.buttonContinue .setOnClickListener(button -> {
             Navigation.findNavController(getView()).navigate(UpdateChatFragmentDirections.actionUpdateChatFragmentToNavigationChatPost(chatId));
             Log.e("UPDATED", updated.toString());
         });
