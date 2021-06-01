@@ -97,6 +97,7 @@ public class PushReceiver extends BroadcastReceiver {
 
             // Build the notification and display it
             notificationManager.notify(1, builder.build());
+            Log.d("Pushy", notificationManager.getActiveNotifications().toString());
 //            notificationManager.getActiveNotifications().;
 
         }

@@ -48,7 +48,9 @@ public class NotificationViewModel extends AndroidViewModel{
     public void addNotification(String theSender, String theMessage, String theTime){
         mNotifications.getValue().add(new NotificationItem.Builder(theSender, theMessage, theTime).build());
         mNotifications.setValue(mNotifications.getValue());
-        //Log.d("Notifications", mNotifications.getValue().get(0).getMessage());
+        //Log.d("View", mNotifications.toString());
+        Log.d("View", mNotifications.getValue().toString() + "Size: " + String.valueOf(mNotifications));
+
     }
 
     public List<NotificationItem> getNotifications(){

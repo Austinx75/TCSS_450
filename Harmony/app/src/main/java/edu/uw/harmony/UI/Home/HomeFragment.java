@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment {
 
     private NotificationViewModel nModel;
 
-    ArrayList<StatusBarNotification> notifications;
+//    ArrayList<StatusBarNotification> notifications;
 
     NotificationManager notificationManager;
 
@@ -90,6 +90,27 @@ public class HomeFragment extends Fragment {
 //        }
 //    }
 
+
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//
+//        notificationManager =
+//                (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+//        //StatusBarNotification[] s1 = notificationManager.getActiveNotifications();
+//        notifications = new ArrayList<>(Arrays.asList(notificationManager.getActiveNotifications()));
+//        Log.d("size", String.valueOf(notifications.size()));
+//        Log.d("Status Bar", notifications.toString());
+//        SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
+//        for(int i = 0; i < notifications.size(); i++){
+//            String dateString = formatter.format(new Date(notifications.get(i).getPostTime()));
+//            nModel.addNotification(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).toString()
+//                            .substring(13,notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).length()),
+//                    notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
+//        }
+//        notifications.clear();
+//    }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -101,22 +122,8 @@ public class HomeFragment extends Fragment {
         hModel = new ViewModelProvider(getActivity()).get(HomeViewModel.class);
         nModel = new ViewModelProvider(getActivity()).get(NotificationViewModel.class);
         mNewMessageModel = new ViewModelProvider(getActivity()).get(NewMessageCountViewModel.class);
+        notificationManager = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
 
-
-        notificationManager =
-                (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
-        StatusBarNotification[] s1 = notificationManager.getActiveNotifications();
-        notifications = new ArrayList<>(Arrays.asList(s1));
-        Log.d("Status Bar", String.valueOf(s1.length));
-        SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
-        for(int i = 0; i < notifications.size(); i++){
-            String dateString = formatter.format(new Date(notifications.get(i).getPostTime()));
-            nModel.addNotification(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).toString()
-            .substring(13,notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).length()),
-                    notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
-
-
-        }
 
         /** I instantiate the recycler view here.*/
         View notificationView = binding.listRoot;
@@ -138,7 +145,6 @@ public class HomeFragment extends Fragment {
         hModel.setHomeBinding(binding);
         binding.buttonClearHome.setOnClickListener(button -> {
             notificationManager.cancelAll();
-            notifications.clear();
             nModel.clearNotifications();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.detach(this).attach(this).commit();

@@ -8,12 +8,14 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.Chat.page.ChatListFragmentDirections;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentNotificationCardBinding;
 
@@ -119,6 +121,11 @@ public class NotificationRecyclerViewAdapter extends
                 binding.imageMessageNotificationHome.setColorFilter(Color.WHITE);
                 binding.fragmentTimeNotification.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
             }
+            binding.cardRoot.setOnClickListener(view -> {
+                Navigation.findNavController(mView).navigate(
+                        HomeFragmentDirections.actionNavigationHomeToNavigationChatList());
+
+            });
 
         }
     }
