@@ -58,60 +58,11 @@ public class HomeFragment extends Fragment {
     private UserInfoViewModel model;
     /** This is the home view model*/
     private HomeViewModel hModel;
-
+    /** This accesses the notifcations*/
     private NotificationViewModel nModel;
-
-//    ArrayList<StatusBarNotification> notifications;
-
+    /** This is the notification manager that accesses the list of active notifications*/
     NotificationManager notificationManager;
 
-    private NewMessageCountViewModel mNewMessageModel;
-
-    private static final String CHANNEL_ID = "1";
-
-//
-//    @Override
-//    public void onCreate(@Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        nModel = new ViewModelProvider(this).get(NotificationViewModel.class);
-//
-//        NotificationManager notificationManager =
-//                (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
-//
-//        StatusBarNotification[] s1 = notificationManager.getActiveNotifications();
-//        Log.d("Status Bar", String.valueOf(s1.length));
-//        SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
-//        for(int i = 0; i < s1.length; i++){
-//            String dateString = formatter.format(new Date(s1[i].getPostTime()));
-//            nModel.addNotification(s1[i].getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).toString()
-//                            .substring(13,s1[i].getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).length()),
-//                    s1[i].getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
-//
-//        }
-//    }
-
-
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//
-//        notificationManager =
-//                (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
-//        //StatusBarNotification[] s1 = notificationManager.getActiveNotifications();
-//        notifications = new ArrayList<>(Arrays.asList(notificationManager.getActiveNotifications()));
-//        Log.d("size", String.valueOf(notifications.size()));
-//        Log.d("Status Bar", notifications.toString());
-//        SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
-//        for(int i = 0; i < notifications.size(); i++){
-//            String dateString = formatter.format(new Date(notifications.get(i).getPostTime()));
-//            nModel.addNotification(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).toString()
-//                            .substring(13,notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).length()),
-//                    notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
-//        }
-//        notifications.clear();
-//    }
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -121,7 +72,6 @@ public class HomeFragment extends Fragment {
         model = new ViewModelProvider(getActivity()).get(UserInfoViewModel.class);
         hModel = new ViewModelProvider(getActivity()).get(HomeViewModel.class);
         nModel = new ViewModelProvider(getActivity()).get(NotificationViewModel.class);
-        mNewMessageModel = new ViewModelProvider(getActivity()).get(NewMessageCountViewModel.class);
         notificationManager = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
 
 
@@ -132,6 +82,7 @@ public class HomeFragment extends Fragment {
             ((RecyclerView) notificationView).setAdapter(new NotificationRecyclerViewAdapter(nModel.getNotifications(), settingsViewModel));
 
         }
+
         return binding.getRoot();
     }
 
@@ -180,6 +131,7 @@ public class HomeFragment extends Fragment {
         Log.d("STATUS", "Got to success");
         binding.textEmailHome.setText(model.getEmail());
         binding.layoutWait.setVisibility(view.GONE);
+
     }
 
     @Override

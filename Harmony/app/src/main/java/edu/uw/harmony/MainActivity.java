@@ -55,7 +55,7 @@ import edu.uw.harmony.databinding.ActivityMainBinding;
 import edu.uw.harmony.services.PushReceiver;
 
 
-public class MainActivity extends AppCompatActivity {
+public class  MainActivity extends AppCompatActivity {
 
     private MainPushMessageReceiver mPushMessageReceiver;
     private NewMessageCountViewModel mNewMessageModel;
@@ -89,32 +89,37 @@ public class MainActivity extends AppCompatActivity {
 
     //The ViewModel that will store the current location
     private LocationViewModel mLocationModel;
-
+    /** Notification manager that accesses system services*/
     NotificationManager notificationManager;
-
+    /** Stores the status bar notifications*/
     ArrayList<StatusBarNotification> notifications;
 
 
-
-
-
-
+    /**
+     * Recieves messages from system service and adds them to notification view model.
+     */
     public void onStart() {
         super.onStart();
-
         nModel = new ViewModelProvider(this).get(NotificationViewModel.class);
-
-        notificationManager =
-                (NotificationManager) this.getSystemService(this.NOTIFICATION_SERVICE);
+        notificationManager = (NotificationManager) this.getSystemService(this.NOTIFICATION_SERVICE);
         notifications = new ArrayList<>(Arrays.asList(notificationManager.getActiveNotifications()));
-        Log.d("size", String.valueOf(notifications.size()));
-        Log.d("Status Bar", notifications.toString());
+
         SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
         for(int i = 0; i < notifications.size(); i++){
             String dateString = formatter.format(new Date(notifications.get(i).getPostTime()));
-            nModel.addNotification(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).toString()
-                            .substring(13,notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).length()),
-                    notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
+            nModel.addNotification(notifications
+                            .get(i)
+                            .getNotification()
+                            .extras
+                            .getCharSequence(Notification.EXTRA_TITLE)
+                            .toString()
+                            .substring(13,notifications.
+                                    get(i)
+                                    .getNotification()
+                                    .extras
+                                    .getCharSequence(Notification.EXTRA_TITLE)
+                                    .length()),
+                            notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
         }
         notifications.clear();
     }
