@@ -93,7 +93,7 @@ public class ContactListFragment extends Fragment {
 
         binding.AddNewContact.setOnClickListener(button ->
                 Navigation.findNavController(getView()).
-                        navigate(ContactContainerFragmentDirections.actionNavigationContactContainerToAddNewContactFragment()));
+                                navigate(ContactContainerFragmentDirections.actionNavigationContactContainerToAddNewContactFragment()));
 
 //            binding.AddNewContact.setOnClickListener(button ->
 //                    Log.d("The Tag", "I clicked on the button"));

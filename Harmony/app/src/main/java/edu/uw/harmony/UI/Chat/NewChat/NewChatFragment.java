@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 
 import org.json.JSONException;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,7 +45,7 @@ public class NewChatFragment extends Fragment {
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
 
-    private String autofill = "";
+    private List<String> emails = new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,7 +57,7 @@ public class NewChatFragment extends Fragment {
         mContactModel.connectGet(mUserModel.getJwt());
         NewChatFragmentArgs args = NewChatFragmentArgs.fromBundle(getArguments());
         if (!args.getEmail().equals("default")) {
-            this.autofill = args.getEmail();
+            this.emails.add(args.getEmail());
         }
     }
 
@@ -96,7 +97,7 @@ public class NewChatFragment extends Fragment {
         binding.layoutWait.setVisibility(View.GONE);
         mContactModel.addContactListObserver(getViewLifecycleOwner(), contactList -> {
             binding.listRoot.setAdapter(
-                    new ContactRecyclerViewAdapter(contactList,mContactModel,mUserModel, settingsViewModel, true, selected, this.autofill));
+                    new ContactRecyclerViewAdapter(contactList,mContactModel,mUserModel, settingsViewModel, true, selected, this.emails));
             binding.layoutWait.setVisibility(View.GONE);
         });
 
@@ -113,18 +114,12 @@ public class NewChatFragment extends Fragment {
     }
 
     private void attemptNewChat(List<String> selected) {
-        if (selected.size() > 1 && binding.editTextChatname.getText().toString().length() == 0){
-            binding.editTextChatname.setError("Please Enter a chat name for group chats");
+        if (binding.editTextChatname.getText().toString().length() == 0){
+            binding.editTextChatname.setError("Please Enter a chat name");
         } else if (selected.size() == 0) {
             binding.editTextChatname.setError("Please add someone to your chat room");
         }
-        if (selected.size() == 1 && binding.editTextChatname.getText().toString().length() > 0){
-            attemptConnect(selected, binding.editTextChatname.getText().toString());
-        }
-        if (selected.size() == 1 && binding.editTextChatname.getText().toString().length() == 0) {
-            attemptConnect(selected, selected.get(0));
-        }
-        if (selected.size() > 1 && binding.editTextChatname.getText().toString().length() > 0){
+        if (selected.size() > 0 && binding.editTextChatname.getText().toString().length() !=  0) {
             attemptConnect(selected, binding.editTextChatname.getText().toString());
         }
     }

@@ -25,6 +25,7 @@
     <string name="button_password_change_success">Back</string>
     <string name="title_fragment_change_password">Change Password</string>
     <string name="button_login_forgot_password">Forgot your password?</string>
+    <string name="button_update_chat_leave">Leave Chat</string>
 
     <!--    Auth Validation-->
     <string name="text_validation">We sent a verification email to your
