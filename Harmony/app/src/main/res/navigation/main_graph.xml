@@ -58,6 +58,9 @@
         <argument
             android:name="chatId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_navigation_chat_post_to_updateChatFragment"
+            app:destination="@id/updateChatFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_chat_list"
@@ -133,8 +136,32 @@
             android:id="@+id/action_navigation_contact_container_to_navigation_new_chat2"
             app:destination="@id/navigation_new_chat" />
         <action
+            android:id="@+id/action_navigation_contact_container_to_contactCardFragment"
+            app:destination="@id/contactCardFragment" />
+        <action
             android:id="@+id/action_navigation_contact_container_to_addNewContactFragment"
             app:destination="@id/addNewContactFragment" />
+        <action
+            android:id="@+id/action_navigation_contact_container_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateChatFragment"
+        android:name="edu.uw.harmony.UI.Chat.update.UpdateChatFragment"
+        android:label="fragment_update_chat"
+        tools:layout="@layout/fragment_update_chat" >
+        <argument
+            android:name="chatid"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_updateChatFragment_to_navigation_chat_post"
+            app:destination="@id/navigation_chat_post"
+            app:popUpTo="@id/navigation_chat_list" />
+        <action
+            android:id="@+id/action_updateChatFragment_to_navigation_chat_list"
+            app:destination="@id/navigation_chat_list" />
+
+
     </fragment>
 
     <fragment
