@@ -46,8 +46,6 @@ public class PushReceiver extends BroadcastReceiver {
     }
 
     public void handleChatNotification(Context context, Intent intent) {
-//        NotificationGenerator g1 = new NotificationGenerator();
-
         //the following variables are used to store the information sent from Pushy
         //In the WS, you define what gets sent. You can change it there to suit your needs
         //Then here on the Android side, decide what to do with the message you got
@@ -106,11 +104,6 @@ public class PushReceiver extends BroadcastReceiver {
 
             // Automatically configure a ChatMessageNotification Channel for devices running Android O+
             Pushy.setNotificationChannel(builder, context);
-//
-//            builder.setStyle(inboxStyle);
-//            TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
-//            stackBuilder.addNextIntent(intent);
-//            builder.setContentIntent(pendingIntent);
 
             // Get an instance of the NotificationManager service
             NotificationManager notificationManager =

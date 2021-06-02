@@ -100,6 +100,7 @@ public class  MainActivity extends AppCompatActivity {
      */
     public void onStart() {
         super.onStart();
+
         nModel = new ViewModelProvider(this).get(NotificationViewModel.class);
         notificationManager = (NotificationManager) this.getSystemService(this.NOTIFICATION_SERVICE);
         notifications = new ArrayList<>(Arrays.asList(notificationManager.getActiveNotifications()));
