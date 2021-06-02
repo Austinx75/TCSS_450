@@ -64,6 +64,14 @@ public class HomeFragment extends Fragment {
     NotificationManager notificationManager;
 
     @Override
+    public void onStart() {
+        super.onStart();
+        View notificationView = binding.listRoot;
+        ((RecyclerView) notificationView).setAdapter(new NotificationRecyclerViewAdapter(nModel.getNotifications(), settingsViewModel));
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
