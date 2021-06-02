@@ -34,6 +34,7 @@ public class ChatListViewModel extends AndroidViewModel {
 
     /** The list of chats that the user is currently in*/
     private MutableLiveData<List<ChatPost>> mChatList;
+    private boolean isWorking;
 
     /**
      * Constructor for the chat list view model
@@ -43,6 +44,7 @@ public class ChatListViewModel extends AndroidViewModel {
         super(application);
         mChatList = new MutableLiveData<>();
         mChatList.setValue(new ArrayList<>());
+        isWorking = false;
     }
 
     /**
@@ -55,6 +57,15 @@ public class ChatListViewModel extends AndroidViewModel {
         mChatList.observe(owner, observer);
     }
 
+    public void done() {
+        mChatList.setValue(new ArrayList<>());
+        isWorking = false;
+    }
+
+    public boolean isWorking() {
+        return isWorking;
+    }
+
     /**
      * Handles the error from Volley
      * @param error The error from Volley
@@ -63,6 +74,7 @@ public class ChatListViewModel extends AndroidViewModel {
         //you should add much better error handling in a production release.
         //i.e. YOUR PROJECT
         Log.e("ERROR","USER HAS NOT STARTED ANY CHATS");
+        done();
     }
 
     /**
@@ -76,7 +88,6 @@ public class ChatListViewModel extends AndroidViewModel {
             mChatList.setValue(new ArrayList<>());
             JSONObject root = result;
             JSONArray chats = root.getJSONArray("chats");
-            Log.e("-----------------------", chats.get(0).toString());
             for (int i = 0; i < chats.length(); i++) {
                 JSONObject room = chats.getJSONObject(i);
 
@@ -102,6 +113,7 @@ public class ChatListViewModel extends AndroidViewModel {
             e.printStackTrace();
             Log.e("ERROR!", e.getMessage());
         }
+        isWorking = false;
         mChatList.setValue(mChatList.getValue());
     }
 
@@ -111,6 +123,7 @@ public class ChatListViewModel extends AndroidViewModel {
      * @param email the users email
      */
     public void connectGet(final String jwt, final String email) {
+        isWorking = true;
         String url =
                 getApplication().getResources().getString(R.string.base_url) + "chatroom/" + email;
         Request request = new JsonObjectRequest(

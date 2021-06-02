@@ -27,6 +27,7 @@ import edu.uw.harmony.UI.Chat.NewChat.NewChatFragmentDirections;
 import edu.uw.harmony.UI.Chat.NewChat.NewChatViewModel;
 import edu.uw.harmony.UI.Contacts.ContactListViewModel;
 import edu.uw.harmony.UI.Contacts.ContactRecyclerViewAdapter;
+import edu.uw.harmony.UI.model.NewMessageCountViewModel;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentNewChatBinding;
@@ -47,6 +48,7 @@ public class UpdateChatFragment extends Fragment {
     private int chatId;
     private StringBuilder updatedMembers;
     private List<String> updated;
+    private NewMessageCountViewModel mChatCountViewModel;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,12 +59,12 @@ public class UpdateChatFragment extends Fragment {
         mUserModel = new ViewModelProvider(getActivity()).get(UserInfoViewModel.class);
         mContactModel = new ViewModelProvider(getActivity()).get(ContactListViewModel.class);
         UpdateChatFragmentArgs args = UpdateChatFragmentArgs.fromBundle(getArguments());
-        Log.e("CHAT ROOm", args.getChatid() + "");
         mModel.connectGet(mUserModel.getJwt(), mUserModel.getEmail(), args.getChatid());
         chatId = args.getChatid();
-        mModel.connectDelete(mUserModel.getJwt(), mUserModel.getEmail(), chatId);
         updatedMembers = new StringBuilder();
         updated = new ArrayList<>();
+        mModel.done();
+
     }
 
     @Override
@@ -95,18 +97,24 @@ public class UpdateChatFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.layoutWait.setVisibility(View.GONE);
         mContactModel.addContactListObserver(getViewLifecycleOwner(), contactList -> {
             binding.listRoot.setAdapter(
                     new ContactRecyclerViewAdapter(contactList,mContactModel,mUserModel, settingsViewModel, true, updated, this.selected));
-            Log.e("Updated members",updated.size() + "");
             binding.layoutWait.setVisibility(View.GONE);
         });
         binding.buttonContinue .setOnClickListener(button -> {
+            updatedMembers.append(updated.get(0));
+            for (int i = 1; i < updated.size(); i++ ){
+                updatedMembers.append(" " +updated.get(i));
+            }
+            mModel.connectPost(mUserModel.getJwt(), mUserModel.getEmail(), chatId, updatedMembers.toString());
             Navigation.findNavController(getView()).navigate(UpdateChatFragmentDirections.actionUpdateChatFragmentToNavigationChatPost(chatId));
-            Log.e("UPDATED", updated.toString());
         });
-        mModel.addResponseObserver(getViewLifecycleOwner(), response ->{
+        binding.buttonDelete.setOnClickListener(button -> {
+           mModel.connectDelete(mUserModel.getJwt(), mUserModel.getEmail(), chatId);
+           Navigation.findNavController(getView()).navigate(UpdateChatFragmentDirections.actionUpdateChatFragmentToNavigationChatList());
+        });
+        mModel.addResponseGetObserver(getViewLifecycleOwner(), response ->{
             if (response.has("code")) {
 //                this error cannot be fixed by the user changing credentials
                 binding.editTextChatname.setError("Something went wrong. Please restart");
@@ -119,7 +127,6 @@ public class UpdateChatFragment extends Fragment {
                         this.selected.add(emails.get(i).toString());
                         updated.add(emails.get(i).toString());
                     }
-                    Log.e("EMAILS", this.selected.toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -131,13 +138,11 @@ public class UpdateChatFragment extends Fragment {
     @Override
     public void onDestroy(){
         super.onDestroy();
-        updatedMembers.append(updated.get(0) + " ");
-        for (int i = 1; i < updated.size(); i++ ){
-            updatedMembers.append(" " +updated.get(i));
-        }
-        mModel.connectPost(mUserModel.getJwt(),mUserModel.getEmail(), chatId, updatedMembers.toString());
-        Log.e("SELECTED ON DESTROY", this.selected.toString());
+        mChatCountViewModel = new ViewModelProvider(getActivity()).get(NewMessageCountViewModel.class);
+        mChatCountViewModel.setCurrentChatRoom(chatId);
+        mChatCountViewModel.reset();
         this.selected.clear();
+        this.updated.clear();
         mModel.done();
     }
 }

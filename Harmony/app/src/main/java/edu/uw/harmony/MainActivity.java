@@ -171,10 +171,10 @@ public class  MainActivity extends AppCompatActivity {
 
 ;
         mNewMessageModel.addMessageCountObserver(this, mapping -> {
-            int total = sum(mapping);
+            int total = sum(mapping) ;
             Log.e("total ", "" +total);
             BadgeDrawable badge = binding.navView.getOrCreateBadge(R.id.navigation_chat_list);
-            badge.setMaxCharacterCount(2);
+            badge.setMaxCharacterCount(3);
             if ( total > 0) {
                 //new messages! update and show the notification badge.
                 badge.setNumber(total);
@@ -232,7 +232,8 @@ public class  MainActivity extends AppCompatActivity {
     private int sum(Map<Integer, Integer> map) {
         int total = 0;
         for (Map.Entry<Integer, Integer> entry: map.entrySet()) {
-            total += entry.getValue();
+            if (entry.getKey() != mNewMessageModel.getCurrentChatRoom()) {
+            total += entry.getValue();}
         }
         return total;
     }

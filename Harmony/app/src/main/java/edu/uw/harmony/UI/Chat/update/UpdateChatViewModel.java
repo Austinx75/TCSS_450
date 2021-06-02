@@ -35,6 +35,14 @@ public class UpdateChatViewModel extends AndroidViewModel {
     /**
      * The response
      */
+    private final MutableLiveData<JSONObject> mResponseGet;
+    /**
+     * The response
+     */
+    private final MutableLiveData<JSONObject> mResponseDelete;
+    /**
+     * The response
+     */
     private final MutableLiveData<JSONObject> mResponse;
 
     /**
@@ -45,6 +53,10 @@ public class UpdateChatViewModel extends AndroidViewModel {
         super(application);
         mResponse=new MutableLiveData<>();
         mResponse.setValue(new JSONObject());
+        mResponseGet=new MutableLiveData<>();
+        mResponseGet.setValue(new JSONObject());
+        mResponseDelete=new MutableLiveData<>();
+        mResponseDelete.setValue(new JSONObject());
     }
 
 
@@ -59,6 +71,26 @@ public class UpdateChatViewModel extends AndroidViewModel {
     }
 
     /**
+     * Adds observers to the response
+     * @param owner the owner
+     * @param observer the observer
+     */
+    public void addResponseGetObserver(@NonNull LifecycleOwner owner,
+                                    @NonNull Observer<? super JSONObject> observer) {
+        mResponseGet.observe(owner, observer);
+    }
+
+    /**
+     * Adds observers to the response
+     * @param owner the owner
+     * @param observer the observer
+     */
+    public void addResponseDeleteObserver(@NonNull LifecycleOwner owner,
+                                       @NonNull Observer<? super JSONObject> observer) {
+        mResponseDelete.observe(owner, observer);
+    }
+
+    /**
      * Handles the error from Volley
      * @param error The error from Volley
      */
@@ -66,6 +98,15 @@ public class UpdateChatViewModel extends AndroidViewModel {
         //you should add much better error handling in a production release.
         //i.e. YOUR PROJECT
         Log.e("ERROR","Something went wrong when creating the chat room");
+    }
+    /**
+     * Handles the error from Volley
+     * @param error The error from Volley
+     */
+    private void handleDelete(final VolleyError error) {
+        //you should add much better error handling in a production release.
+        //i.e. YOUR PROJECT
+        Log.e("ERROR","SOmething went wrong");
     }
 
     /**
@@ -77,6 +118,8 @@ public class UpdateChatViewModel extends AndroidViewModel {
     }
 
     public void done() {
+        mResponseGet.setValue(new JSONObject());
+        mResponseDelete.setValue(new JSONObject());
         mResponse.setValue(new JSONObject());
     }
 
@@ -93,7 +136,7 @@ public class UpdateChatViewModel extends AndroidViewModel {
                 Request.Method.GET,
                 url,
                 null,
-                mResponse::setValue, // we get a response but do nothing with it
+                mResponseGet::setValue, // we get a response but do nothing with it
                 this::handleError) {
             @Override
             public Map<String, String> getHeaders() {
@@ -156,16 +199,22 @@ public class UpdateChatViewModel extends AndroidViewModel {
      * @param jwt the users jwt
      * @param email the users email
      */
-    public void connectDelete(final String jwt, final String email, int chatid) {
+    public void connectDelete(final String jwt, final String email, final int chatId) {
         JSONObject body = new JSONObject();
+        try {
+            body.put("chatid", chatId);
+            body.put("email", email);
+        } catch (JSONException err){
+            Log.e("Delete error", err.toString());
+        }
         String url =
-                getApplication().getResources().getString(R.string.base_url) + "chatroom/" + chatid;
+                getApplication().getResources().getString(R.string.base_url) + "chatroom/" + email + "/" + chatId;
         Request request = new JsonObjectRequest(
                 Request.Method.DELETE,
                 url,
                 body,
-                mResponse::setValue, // we get a response but do nothing with it
-                this::handleError) {
+                mResponseDelete::setValue, // we get a response but do nothing with it
+                this::handleDelete) {
             @Override
             public Map<String, String> getHeaders() {
                 Map<String, String> headers = new HashMap<>();

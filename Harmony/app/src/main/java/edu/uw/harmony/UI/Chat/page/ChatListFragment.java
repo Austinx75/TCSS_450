@@ -42,8 +42,8 @@ public class ChatListFragment extends Fragment {
         ViewModelProvider provider = new ViewModelProvider(getActivity());
         mModel = new ViewModelProvider(getActivity()).get(ChatListViewModel.class);
         mUserModel = provider.get(UserInfoViewModel.class);
-
         mModel.connectGet(mUserModel.getJwt(), mUserModel.getEmail());
+        mModel.done();
     }
 
     @Override
@@ -68,11 +68,13 @@ public class ChatListFragment extends Fragment {
         FragmentChatListBinding binding = FragmentChatListBinding.bind(getView());
 
         mModel.addBlogListObserver(getViewLifecycleOwner(), blogList -> {
-            Log.d("string", ""+blogList.size());
-            if (!blogList.isEmpty()) {
+            if (mModel.isWorking()) {
+                binding.layoutWait.setVisibility(View.VISIBLE);
                 Log.d("string", "not empty");
                 binding.listRoot.setAdapter( new ChatRecyclerViewAdapter(blogList, settingsViewModel)
                 );
+
+                binding.layoutWait.setVisibility(View.GONE);
             }
         });
 
@@ -85,4 +87,5 @@ public class ChatListFragment extends Fragment {
         super.onResume();
         mModel.connectGet(mUserModel.getJwt(), mUserModel.getEmail());
     }
+
 }

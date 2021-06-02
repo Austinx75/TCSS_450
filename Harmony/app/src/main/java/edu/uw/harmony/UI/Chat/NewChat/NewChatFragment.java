@@ -99,7 +99,6 @@ public class NewChatFragment extends Fragment {
             binding.listRoot.setAdapter(
                     new ContactRecyclerViewAdapter(contactList,mContactModel,mUserModel, settingsViewModel, true, selected, this.emails));
             binding.layoutWait.setVisibility(View.GONE);
-            Log.e("EMAILS FROM NEW CHAT", this.emails.toString());
         });
 
         mModel.addResponseObserver(getViewLifecycleOwner(), response ->{
@@ -115,18 +114,12 @@ public class NewChatFragment extends Fragment {
     }
 
     private void attemptNewChat(List<String> selected) {
-        if (selected.size() > 1 && binding.editTextChatname.getText().toString().length() == 0){
-            binding.editTextChatname.setError("Please Enter a chat name for group chats");
+        if (binding.editTextChatname.getText().toString().length() == 0){
+            binding.editTextChatname.setError("Please Enter a chat name");
         } else if (selected.size() == 0) {
             binding.editTextChatname.setError("Please add someone to your chat room");
         }
-        if (selected.size() == 1 && binding.editTextChatname.getText().toString().length() > 0){
-            attemptConnect(selected, binding.editTextChatname.getText().toString());
-        }
-        if (selected.size() == 1 && binding.editTextChatname.getText().toString().length() == 0) {
-            attemptConnect(selected, selected.get(0));
-        }
-        if (selected.size() > 1 && binding.editTextChatname.getText().toString().length() > 0){
+        if (selected.size() > 0 && binding.editTextChatname.getText().toString().length() !=  0) {
             attemptConnect(selected, binding.editTextChatname.getText().toString());
         }
     }
