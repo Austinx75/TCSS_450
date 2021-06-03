@@ -1,6 +1,9 @@
 package edu.uw.harmony.UI.Chat.page;
 
 import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +16,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Chat.page.ChatListFragmentDirections;
@@ -58,6 +63,7 @@ public class ChatListFragment extends Fragment {
         } else {
             binding.buttonNewChat.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_200)));
             binding.buttonNewChat.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+            binding.buttonNewChat.setForeground(getResources().getDrawable(R.drawable.shape));
         }
         return binding.getRoot();
     }

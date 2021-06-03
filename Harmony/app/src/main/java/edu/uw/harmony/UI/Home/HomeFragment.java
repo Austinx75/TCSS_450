@@ -67,6 +67,14 @@ public class HomeFragment extends Fragment {
     NotificationManager notificationManager;
 
     @Override
+    public void onStart() {
+        super.onStart();
+        View notificationView = binding.listRoot;
+        ((RecyclerView) notificationView).setAdapter(new NotificationRecyclerViewAdapter(nModel.getNotifications(), settingsViewModel));
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -84,7 +92,6 @@ public class HomeFragment extends Fragment {
         /** I instantiate the recycler view here.*/
         View notificationView = binding.listRoot;
         if (notificationView instanceof RecyclerView){
-            Log.d("View Model Notifications", "It made it to this point");
             ((RecyclerView) notificationView).setAdapter(new NotificationRecyclerViewAdapter(nModel.getNotifications(), settingsViewModel));
 
         }
@@ -102,7 +109,7 @@ public class HomeFragment extends Fragment {
             hModel.setHomeBinding(binding);
         }
 
-//        hModel.connectGet();
+        hModel.connectGet();
         hModel.setJWT(model.getJwt());
         hModel.setHomeBinding(binding);
         binding.buttonClearHome.setOnClickListener(button -> {
