@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,6 +65,17 @@ public class AddNewContactFragment extends Fragment {
             binding.enterName.setTextColor(Color.WHITE);
             //binding.searchNewContact.setBackgroundColor(Color.WHITE);
         }
-        binding.searchNewContact.setOnClickListener(button -> mModel.contactAdd(mUserViewModel.getJwt(), Integer.parseInt(binding.enterName.getText().toString())));
+        binding.searchNewContact.setOnClickListener(button -> {
+            if (!binding.enterName.getText().toString().equals("")) {
+                mModel.contactAdd(mUserViewModel.getJwt(), Integer.parseInt(binding.enterName.getText().toString()));
+
+                    binding.enterName.setText("");
+                    binding.contactErrorMessage.setText(R.string.contact_add_sent);
+
+            } else {
+                binding.contactErrorMessage.setText(R.string.contact_add_non_exist);
+            }
+            binding.contactErrorMessage.setVisibility(View.VISIBLE);
+        });
     }
 }

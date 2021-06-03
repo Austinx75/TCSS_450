@@ -45,34 +45,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/contact_status"
-            android:layout_width="87dp"
-            android:layout_height="30dp"
-            android:layout_marginEnd="196dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingBottom="8dp"
-            android:text="@string/contact_status"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contact_username" />
-
-        <ImageButton
-            android:id="@+id/contact_message"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="56dp"
-            android:contentDescription="@string/contact_message"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_contact_chat_bubble_24dp" />
-
         <ImageButton
             android:id="@+id/contact_delete"
             style="?android:attr/borderlessButtonStyle"
@@ -80,19 +52,21 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginTop="28dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="60dp"
+            android:contentDescription="@string/contact_request_delete"
             android:minWidth="0dp"
             android:minHeight="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_delete_contact_24dp" />
+            app:srcCompat="@drawable/ic_decline_request_24dp" />
+
 
         <TextView
-            android:id="@+id/text_Preview"
+            android:id="@+id/contact_Preview"
             android:layout_width="321dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="84dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="44dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:paddingBottom="8dp"
@@ -102,24 +76,23 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/contact_new_chat_added"
+            android:id="@+id/contact_accept"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_marginStart="60dp"
             android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:contentDescription="@string/contact_message"
+            android:contentDescription="@string/contact_request_accept"
             android:minWidth="0dp"
             android:minHeight="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/contact_status"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/ic_new_chat_added" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
+
