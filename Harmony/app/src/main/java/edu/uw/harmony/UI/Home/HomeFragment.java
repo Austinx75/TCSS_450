@@ -42,10 +42,12 @@ public class HomeFragment extends Fragment {
     /** This is the home view model*/
     private HomeViewModel hModel;
 
-//    @Override
-//    public void onCreate(@Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//    }
+    private boolean mUpdatedByWeatherFragment = false;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,6 +57,9 @@ public class HomeFragment extends Fragment {
         settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
         model = new ViewModelProvider(getActivity()).get(UserInfoViewModel.class);
         hModel = new ViewModelProvider(getActivity()).get(HomeViewModel.class);
+
+        WeatherViewModel weatherModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
+        weatherModel.setHomeFragment(this);
 
         /** I instantiate the recycler view here.*/
         View notificationView = binding.listRoot;
@@ -71,10 +76,11 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-        hModel.connectGet();
-        hModel.setJWT(model.getJwt());
-        hModel.setHomeBinding(binding);
+        if(!mUpdatedByWeatherFragment) {
+            hModel.connectGet();
+            hModel.setJWT(model.getJwt());
+            hModel.setHomeBinding(binding);
+        }
 
         /** Dependent on the theme, this will set all text / image fields to a certain color. */
         if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
@@ -99,5 +105,9 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public void setUpdatedByWeatherFragment(boolean b) {
+        mUpdatedByWeatherFragment = b;
     }
 }

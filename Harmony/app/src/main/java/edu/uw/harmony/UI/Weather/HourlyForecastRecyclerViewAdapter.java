@@ -77,8 +77,10 @@ public class HourlyForecastRecyclerViewAdapter extends
             String currentHourText;
             if(currentHour == 0) {
                 currentHourText = "12 AM";
-            } else {
-                currentHourText = currentHour <= 12 ? (currentHour + " AM") : (currentHour % 12 + " PM");
+            } else if(currentHour == 12) {
+                currentHourText = "12 PM";
+            }else {
+                currentHourText = currentHour < 12 ? (currentHour + " AM") : (currentHour % 12 + " PM");
             }
             binding.textHourlyTime.setText(currentHourText);
 

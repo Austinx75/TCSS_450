@@ -12,6 +12,7 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -20,13 +21,19 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.Home.HomeFragment;
+import edu.uw.harmony.UI.model.LocationViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
+import edu.uw.harmony.databinding.FragmentHomeBinding;
 import edu.uw.harmony.databinding.FragmentWeatherBinding;
+import edu.uw.harmony.databinding.FragmentWeatherLocationBinding;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,26 +43,32 @@ import java.util.function.IntFunction;
 import static edu.uw.harmony.util.WeatherUtils.determineImageFromDescription;
 
 public class WeatherViewModel extends AndroidViewModel {
+    Activity mActivity;
     private String mJwt;
 
-    private Boolean useZip;
-    private String zipCode;
-    private double latitude;
-    private double longitude;
+    private WeatherLocationSource mWeatherLocationSource;
+    private String mZipCode;
+    private double mLatitude;
+    private double mLongitude;
 
     private MutableLiveData<List<HourlyForecastItem>> mHourlyList;
     private MutableLiveData<List<WeeklyForecastItem>> mWeeklyList;
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
 
-    private FragmentWeatherBinding weatherBinding;
+    private FragmentHomeBinding mHomeBinding;
+    private LocationViewModel mLocationModel;
+    private FragmentWeatherBinding mWeatherBinding;
+    private FragmentWeatherLocationBinding mWeatherLocationBinding;
+    private WeatherLocationFragment mWeatherLocationFragment;
+    private HomeFragment mHomeFragment;
+
+    private boolean mLocationIsValid;
 
     public WeatherViewModel(@NonNull Application application) {
         super(application);
-        useZip = false;
-        zipCode = "98059";
-        latitude = 40.0150;
-        longitude = -105.2705;
+
+        mWeatherLocationSource = WeatherLocationSource.LAT_LONG;
 
         mHourlyList = new MutableLiveData<>();
         mHourlyList.setValue(new ArrayList<>());
@@ -77,13 +90,33 @@ public class WeatherViewModel extends AndroidViewModel {
     private void handleError(final VolleyError error) {
         //you should add much better error handling in a production release.
         // i.e. YOUR PROJECT
-        Log.e("CONNECTION ERROR", "" + error.getLocalizedMessage());
-        throw new IllegalStateException(error.getMessage());
+        String expectedBadLocationRequestError = "Location for given latitude/longitude or zip code not found";
+
+        String data = new String(error.networkResponse.data, Charset.defaultCharset());
+        JSONObject dataJSON;
+        try {
+            dataJSON = new JSONObject(data);
+            if(dataJSON.get("message").toString().equals(expectedBadLocationRequestError)) {
+                //Update that the location is unsuccessful
+                this.mLocationIsValid = false;
+                if(mWeatherLocationFragment != null
+                        && mWeatherLocationFragment.isVisible()
+                        && mWeatherLocationFragment.getUserVisibleHint()) {
+                    mWeatherLocationFragment.afterServerResponse();
+                }
+                useDefaultLocation();
+            } else {
+                Log.e("Connection to web service error: ", dataJSON.get("message").toString());
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        //throw new IllegalStateException(error.getMessage());
     }
 
     private void handleResult(final JSONObject result) {
-        weatherBinding.layoutComponents.setVisibility(View.GONE);
-        weatherBinding.layoutWait.setVisibility(View.VISIBLE);
+        mWeatherBinding.layoutComponents.setVisibility(View.GONE);
+        mWeatherBinding.layoutWait.setVisibility(View.VISIBLE);
 
         IntFunction<String> getString = getApplication().getResources()::getString;
         try {
@@ -155,17 +188,24 @@ public class WeatherViewModel extends AndroidViewModel {
             e.printStackTrace();
             Log.e("ERROR!", e.getMessage());
         }
-        weatherBinding.layoutComponents.setVisibility(View.VISIBLE);
-        weatherBinding.layoutWait.setVisibility(View.GONE);
+        mWeatherBinding.layoutComponents.setVisibility(View.VISIBLE);
+        mWeatherBinding.layoutWait.setVisibility(View.GONE);
+
+        mLocationIsValid = true;
+        if(mWeatherLocationFragment != null
+                && mWeatherLocationFragment.isVisible()
+                && mWeatherLocationFragment.getUserVisibleHint()) {
+            mWeatherLocationFragment.afterServerResponse();
+        }
     }
 
     public void connectGet() {
         String url = "https://team-9-tcss450-backend.herokuapp.com/weather?";
 
-        if(useZip) {
-            url += "zip=" + this.zipCode;
+        if(mWeatherLocationSource.equals(WeatherLocationSource.ZIP)) {
+            url += "zip=" + this.mZipCode;
         } else {
-            url += "lat=" + this.latitude + "&long=" + this.longitude;
+            url += "lat=" + this.mLatitude + "&long=" + this.mLongitude;
         };
 
         Request request = new JsonObjectRequest(
@@ -189,47 +229,129 @@ public class WeatherViewModel extends AndroidViewModel {
                 .add(request);
     }
 
-    public void setJWT(String jwt) {
-        this.mJwt = jwt;
-    }
-
-    public void setWeatherBinding(FragmentWeatherBinding binding) {
-        this.weatherBinding = binding;
-    }
-
     private void handleCurrentWeather(String city, JSONObject currentWeather)
             throws JSONException {
         IntFunction<String> getString = getApplication().getResources()::getString;
 
         //Update weather image
-        this.weatherBinding.imageViewMainConditionsPlaceholder.setImageResource(
-                determineImageFromDescription(
-                        currentWeather.getString(
-                                getString.apply(
-                                        R.string.keys_description)),
-                        Integer.parseInt(currentWeather.getString(
-                                getString.apply(
-                                        R.string.keys_hour_time)))
-                )
-        );
+        int image = determineImageFromDescription(
+                currentWeather.getString(
+                        getString.apply(
+                                R.string.keys_description)),
+                Integer.parseInt(currentWeather.getString(
+                        getString.apply(
+                                R.string.keys_hour_time))));
+        this.mWeatherBinding.imageViewMainConditionsPlaceholder.setImageResource(image);
 
         //Update city name
-        this.weatherBinding.textViewCityPlaceholder.setText(city);
+        this.mWeatherBinding.textViewCityPlaceholder.setText(city);
 
         //Update current temperature
-        this.weatherBinding.textViewMainTemperaturePlaceholder.setText(
-                (int) Double.parseDouble(
-                        currentWeather.getString(
-                                getString.apply(
-                                        R.string.keys_temp))) + "°");
+        String temperature = (int) Double.parseDouble(
+                currentWeather.getString(
+                        getString.apply(
+                                R.string.keys_temp))) + "°";
+        this.mWeatherBinding.textViewMainTemperaturePlaceholder.setText(temperature);
+
+
+        //Update home fragment with the above values
+        if(mHomeFragment != null && mHomeFragment.isVisible()) {
+            this.mHomeBinding.imageViewMainConditionsPlaceholder.setImageResource(image);
+            this.mHomeBinding.textDegHome.setText(temperature);
+            mHomeFragment.setUpdatedByWeatherFragment(true);
+        }
+
 
         //Update wind speed
-        this.weatherBinding.textViewWindSpeedPlaceholder.setText(
+        this.mWeatherBinding.textViewWindSpeedPlaceholder.setText(
                 "Wind Speed: " +
                 Math.round((Double.parseDouble(
                             currentWeather.getString(
                                     getString.apply(
                                             R.string.keys_wind_speed))) * 100.0) / 100.0) + " mph"
         );
+    }
+
+    public void setJWT(String jwt) {
+        this.mJwt = jwt;
+    }
+
+    public void setHomeBinding(FragmentHomeBinding binding) {
+        this.mHomeBinding = binding;
+    }
+
+    public void setWeatherBinding(FragmentWeatherBinding binding) {
+        this.mWeatherBinding = binding;
+    }
+
+    public void setWeatherLocationBinding(FragmentWeatherLocationBinding binding) {
+        this.mWeatherLocationBinding = binding;
+    }
+
+    /**
+     * Connect this view model to an activity so that it can access components such as the user's
+     * current location
+     *
+     * @param activity
+     */
+    public void setCurrentActivity(Activity activity) {
+        mActivity = activity;
+    }
+
+    /**
+     * Connect the weather view model to the location model in the current activity
+     */
+    public void setupLocationModel() {
+        mLocationModel = new ViewModelProvider((ViewModelStoreOwner) mActivity)
+                .get(LocationViewModel.class);
+    }
+
+    public void setHomeFragment(HomeFragment homeFragment) {
+        mHomeFragment = homeFragment;
+    }
+
+    public void setWeatherLocationFragment(WeatherLocationFragment weatherLocationFragment) {
+        mWeatherLocationFragment = weatherLocationFragment;
+    }
+
+    public void useCurrentLocation() {
+        mWeatherLocationSource = WeatherLocationSource.LAT_LONG;
+        mLatitude = mLocationModel.getCurrentLocation().getLatitude();
+        mLongitude = mLocationModel.getCurrentLocation().getLongitude();
+        connectGet();
+    }
+
+    public void useZipLocation(String zip) {
+        mWeatherLocationSource = WeatherLocationSource.ZIP;
+        mZipCode = zip;
+        connectGet();
+    }
+
+    public void useMapLocation(double latitude, double longitude) {
+        mWeatherLocationSource = WeatherLocationSource.LAT_LONG;
+        mLatitude = latitude;
+        mLongitude = longitude;
+        connectGet();
+    }
+
+    public void useDefaultLocation() {
+        mLatitude = 47.474190;
+        mLongitude = -122.206650;
+        mWeatherLocationSource = WeatherLocationSource.LAT_LONG;
+        connectGet();
+    }
+
+    public boolean getLocationIsValid() {
+        return mLocationIsValid;
+    }
+
+    public WeatherLocationSource getWeatherLocationSource() {
+        return mWeatherLocationSource;
+    }
+
+    public enum WeatherLocationSource {
+        ZIP,
+        LAT_LONG,
+        MAP
     }
 }
