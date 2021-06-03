@@ -11,9 +11,12 @@ import androidx.lifecycle.ViewModel;
 
 public class LocationViewModel extends ViewModel {
     private MutableLiveData<Location> mLocation;
+    private boolean mLoadedFirstLocation;
 
     public LocationViewModel() {
         mLocation = new MediatorLiveData<>();
+
+        mLoadedFirstLocation = false;
     }
 
     public void addLocationObserver(@NonNull LifecycleOwner owner,
@@ -25,9 +28,14 @@ public class LocationViewModel extends ViewModel {
         if (!location.equals(mLocation.getValue())) {
             mLocation.setValue(location);
         }
+        mLoadedFirstLocation = true;
     }
 
     public Location getCurrentLocation() {
         return new Location(mLocation.getValue());
+    }
+
+    public boolean getLoadedFirstLocation() {
+        return mLoadedFirstLocation;
     }
 }
