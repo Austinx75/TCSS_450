@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="@string/home_notification_card_TO"
+            android:text="@string/home_notification_card_From"
             app:layout_constraintStart_toStartOf="@+id/image_messageNotification_home"
             app:layout_constraintTop_toBottomOf="@+id/image_messageNotification_home" />
 
@@ -54,6 +54,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/text_TO_home"
             app:layout_constraintTop_toBottomOf="@+id/text_TO_home" />
+
+        <TextView
+            android:id="@+id/fragment_time_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

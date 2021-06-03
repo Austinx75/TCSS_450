@@ -104,7 +104,6 @@ public class WeatherViewModel extends AndroidViewModel {
                         && mWeatherLocationFragment.getUserVisibleHint()) {
                     mWeatherLocationFragment.afterServerResponse();
                 }
-                useDefaultLocation();
             } else {
                 Log.e("Connection to web service error: ", dataJSON.get("message").toString());
             }

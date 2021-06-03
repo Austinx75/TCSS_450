@@ -40,9 +40,9 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
     SettingsViewModel sModel;
     boolean newChat;
     List<String> selected;
-    String autofill;
+    List<String> autofill;
 
-    public ContactRecyclerViewAdapter(List<ContactCard> items, ContactListViewModel mModel, UserInfoViewModel uModel, SettingsViewModel model, boolean newChat, List<String> selected, String autoFill) {
+    public ContactRecyclerViewAdapter(List<ContactCard> items, ContactListViewModel mModel, UserInfoViewModel uModel, SettingsViewModel model, boolean newChat, List<String> selected, List<String> autoFill) {
         this.mContact= items;
         this.mModel = mModel;
         this.uModel = uModel;
@@ -59,7 +59,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
         this.sModel = model;
         this.newChat = false;
         this.selected = new ArrayList<String>();
-        this.autofill="";
+        this.autofill= new ArrayList<String>();
         mExpandedFlags = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
     }
 
@@ -91,7 +91,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
         ContactListViewModel contactListViewModel;
         UserInfoViewModel userInfoViewModel;
         List<String> selected;
-        String autofill;
+        List<String> autofill;
 
         public int[] images = {R.drawable.contact_boy_512, R.drawable.contact_hacker_512,R.drawable.contact_barista_512,
                 R.drawable.contact_kitty_512,R.drawable.contact_man_512,R.drawable.contact_man_1_512,
@@ -99,7 +99,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
                 R.drawable.contact_woman_1_512};
         Random rand = new Random();
 
-        public ContactViewHolder(View view, ContactListViewModel mModel, UserInfoViewModel uModel, List<String> selected, String autofill) {
+        public ContactViewHolder(View view, ContactListViewModel mModel, UserInfoViewModel uModel, List<String> selected, List<String> autofill) {
             super(view);
             mView = view;
             contactListViewModel = mModel;
@@ -117,7 +117,6 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
                     ContactContainerFragmentDirections.ActionNavigationContactContainerToNavigationNewChat2 directions
                             = ContactContainerFragmentDirections.actionNavigationContactContainerToNavigationNewChat2();
                     directions.setEmail(binding.contactUsername.getText().toString());
-
                     Navigation.findNavController(mView).navigate(directions);
                 });
                 binding.contactNewChatAdded.setVisibility(View.GONE);
@@ -173,7 +172,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
          * @param contact ContactCard Object
          */
         void setContact(final ContactCard contact) {
-            if (newChat && contact.getUsername().equals(this.autofill)) {
+            if (newChat && this.autofill.contains(contact.getUsername())) {
                 binding.contactNewChatAdded.setVisibility(View.VISIBLE);
             }
             mContact = contact;
@@ -190,6 +189,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
                     "Username: "+user + "\r\n" +
                     "ID: "+id + "\r\n";
             binding.textPreview.setText(preview);
+
             if(sModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
                 binding.cardRoot.setCardBackgroundColor(binding.getRoot().getResources().getColor(R.color.offwhite));
                 binding.contactUsername.setTextColor(Color.BLACK);

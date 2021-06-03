@@ -15,6 +15,8 @@ public class NotificationItem implements Serializable{
     private final String mSender;
     /** This is the message attribute of the notification*/
     private final String mMessage;
+    /** String for the time stamp*/
+    private final String time;
 
 
     public static class Builder {
@@ -22,6 +24,8 @@ public class NotificationItem implements Serializable{
         private final String mSender;
         /** String for the message information*/
         private final String mMessage;
+        /** String for the time stamp*/
+        private final String time;
 
         /**
          * Constructs a new Builder.
@@ -29,9 +33,10 @@ public class NotificationItem implements Serializable{
          * @param theSender The person that sent the message
          * @param theMessage the message from that person
          */
-        public Builder(String theSender, String theMessage) {
+        public Builder(String theSender, String theMessage, String theTime) {
             this.mSender = theSender;
             this.mMessage = theMessage;
+            this.time = theTime;
         }
 
         /**
@@ -50,6 +55,7 @@ public class NotificationItem implements Serializable{
     private NotificationItem(final Builder builder) {
         this.mSender = builder.mSender;
         this.mMessage = builder.mMessage;
+        this.time = builder.time;
     }
 
     /**
@@ -66,6 +72,14 @@ public class NotificationItem implements Serializable{
      */
     public String getMessage(){
         return mMessage;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getTime(){
+        return time;
     }
 
 }

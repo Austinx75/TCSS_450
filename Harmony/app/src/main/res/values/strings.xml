@@ -25,6 +25,7 @@
     <string name="button_password_change_success">Back</string>
     <string name="title_fragment_change_password">Change Password</string>
     <string name="button_login_forgot_password">Forgot your password?</string>
+    <string name="button_update_chat_leave">Leave Chat</string>
 
     <!--    Auth Validation-->
     <string name="text_validation">We sent a verification email to your
@@ -70,7 +71,7 @@
     <string name="switch_sign_in">Stay Signed in</string>
     <string name="keys_shared_prefs">My Auth App Shared Prefs</string>
     <string name="keys_prefs_jwt">Sharded Prefs JWT</string>
-    <string name="home_notification_card_TO">To</string>
+    <string name="home_notification_card_From">From:</string>
     <string name="title_activity_contacts">ContactsActivity</string>
     <string name="fragment_add_contact">Add Contact</string>
 
@@ -88,6 +89,8 @@
     <string name="weather_location_map_location_not_found">*No weather information could be found for this map location.</string>
     <string name="weather_location_server_timeout">*No weather information could be found for this map location.</string>
 
+    <string name="fragment_clear_home">Clear</string>
+    <string name="fragment_blank_home"></string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
