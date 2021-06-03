@@ -34,6 +34,8 @@ public class PushReceiver extends BroadcastReceiver {
 
     public static final String RECEIVED_NEW_CONTACT = "contacts page update from push";
 
+    public static final String NEW_CHAT = "new chat has been created";
+
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -42,7 +44,11 @@ public class PushReceiver extends BroadcastReceiver {
             handleContactsNotification(context, intent);
         } else if (typeOfMessage.equals("msg")) {
             handleChatNotification(context, intent);
-        }
+        } //else if(typeOfMessage.equals("chat")){
+            //handleNewChatNotifications(context, intent);
+
+
+        //}
     }
 
     public void handleChatNotification(Context context, Intent intent) {
@@ -98,8 +104,6 @@ public class PushReceiver extends BroadcastReceiver {
                     .setContentText(message.getMessage())
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                     .setContentIntent(pendingIntent);
-//            NotificationCompat.InboxStyle inboxStyle =
-//                    new NotificationCompat.InboxStyle();
 
 
             // Automatically configure a ChatMessageNotification Channel for devices running Android O+
@@ -168,6 +172,55 @@ public class PushReceiver extends BroadcastReceiver {
             int n = random.nextInt(300);
             notificationManager.notify(n, builder.build());
 
+        }
+    }
+
+    /**
+     * Handles an incoming chats notification. Updates all chat information.
+     * @param context the context of the message.
+     * @param intent the intent of the message.
+     */
+    private void handleNewChatNotifications(final Context context, final Intent intent) {
+        ActivityManager.RunningAppProcessInfo appProcessInfo = new ActivityManager.RunningAppProcessInfo();
+        ActivityManager.getMyMemoryState(appProcessInfo);
+//        Log.d("Chat", "it made it this far");
+//
+        if (appProcessInfo.importance == IMPORTANCE_FOREGROUND || appProcessInfo.importance == IMPORTANCE_VISIBLE) {
+//            //app is in the foreground so send the message to the active Activities
+//            Log.d("PUSHY", "Chat notification recieved in foreground: ");
+//
+//            //create an Intent to broadcast a message to other parts of the app.
+//            Intent i = new Intent(NEW_CHAT);
+//            i.putExtras(intent.getExtras());
+//            context.sendBroadcast(i);
+        } else {
+//            //app is in the background so create and post a notification
+//            Log.d("PUSHY", "Chat info updated in background");
+//
+//            Intent i = new Intent(context, AuthActivity.class);
+//            i.putExtras(intent.getExtras());
+//
+//            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
+//                    i, PendingIntent.FLAG_UPDATE_CURRENT);
+//
+//            //research more on notifications the how to display them
+//            //https://developer.android.com/guide/topics/ui/notifiers/notifications
+//            NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
+//                    .setAutoCancel(true)
+//                    .setSmallIcon(R.drawable.chat_notification_24dp)
+//                    .setContentTitle("New Chat")
+//                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+//                    .setContentIntent(pendingIntent);
+//
+//            // Automatically configure a ChatMessageNotification Channel for devices running Android O+
+//            Pushy.setNotificationChannel(builder, context);
+//
+//            // Get an instance of the NotificationManager service
+//            NotificationManager notificationManager =
+//                    (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
+//
+//            // Build the notification and display it
+//            notificationManager.notify(1, builder.build());
         }
     }
 

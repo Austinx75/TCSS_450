@@ -118,7 +118,7 @@ public class  MainActivity extends AppCompatActivity {
         for(int i = 0; i < notifications.size(); i++){
             if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE) == null){
                 Log.d("Null Test", String.valueOf(i));
-            } else{
+            } else {
                 String dateString = formatter.format(new Date(notifications.get(i).getPostTime()));
                 nModel.addNotification(notifications
                                 .get(i)
@@ -136,7 +136,6 @@ public class  MainActivity extends AppCompatActivity {
             }
         }
         notifications.clear();
-
     }
 
 
@@ -301,6 +300,8 @@ public class  MainActivity extends AppCompatActivity {
                 .get(ChatViewModel.class);
         private NotificationViewModel nModel = new ViewModelProvider(MainActivity.this).get(NotificationViewModel.class);
 
+        private UserInfoViewModel model = new ViewModelProvider(MainActivity.this).get(UserInfoViewModel.class);
+
 
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -324,7 +325,9 @@ public class  MainActivity extends AppCompatActivity {
                 Date date = new Date(ts.getTime());
                 SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
                 String dateString = formatter.format(date);
-                nModel.addNotification(cm, dateString);
+                if(!cm.getSender().equals(model.getEmail())){
+                    nModel.addNotification(cm, dateString);
+                }
                 mModel.addMessage(intent.getIntExtra("chatid", -1), cm);
             }
 
