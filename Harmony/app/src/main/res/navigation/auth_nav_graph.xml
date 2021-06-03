@@ -36,6 +36,13 @@
         <action
             android:id="@+id/action_registerFragment_to_validationFragment"
             app:destination="@id/validationFragment" />
+        <argument
+            android:name="avatar"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_registerFragment_to_avatarListFragment"
+            app:destination="@id/avatarFragmentList" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"
@@ -87,4 +94,21 @@
             android:id="@+id/action_recoveryCompleteFragment_to_logInFragment"
             app:destination="@id/logInFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/avatarFragmentList"
+        android:name="edu.uw.harmony.UI.Avatar.AvatarListFragment"
+        android:label="fragment_avatar_list"
+        tools:layout="@layout/fragment_avatar_list" >
+        <action
+            android:id="@+id/action_avatarListFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_avatarFragmentList_to_avatarFragment"
+            app:destination="@id/avatarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/avatarFragment"
+        android:name="edu.uw.harmony.UI.Avatar.AvatarFragment"
+        android:label="fragment_avatar"
+        tools:layout="@layout/fragment_avatar" />
 </navigation>

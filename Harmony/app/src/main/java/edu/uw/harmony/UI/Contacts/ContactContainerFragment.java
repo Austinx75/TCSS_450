@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.uw.harmony.R;
-import edu.uw.harmony.UI.Request.RequestListFragment;
+import edu.uw.harmony.UI.Contacts.ContactRequestListFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,7 +80,7 @@ public class ContactContainerFragment extends Fragment {
 
         adapter.addFragment(new ContactListFragment(), "Contacts");
         //adapter.addFragment(new ContactRequestListFragment(), "Requests");
-        adapter.addFragment(new RequestListFragment(), "Requests");
+        adapter.addFragment(new ContactRequestListFragment(), "Requests");
 
         viewPager.setAdapter(adapter);
     }
