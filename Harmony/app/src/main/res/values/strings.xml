@@ -11,6 +11,7 @@
     <string name="text_register_FName">First Name</string>
     <string name="text_register_LName">Last Name</string>
     <string name="text_register_RetypePassword">Retype Password</string>
+    <string name="text_select_avatar">Change Avatar</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_auth">AuthActivity</string>
     <string name="text_password_recovery_enter_email">Please enter the email you used
@@ -34,6 +35,9 @@
 
     <!--    NEW CHAT ROOM-->
     <string name="text_new_chat_title">Enter Chat Name</string>
+    <string name="title_update_chat">Update</string>
+
+    <string name="text_leave_validation">You have successfully left the chat.</string>
 
     <!-- Bottom Navigation -->
     <string name="title_home">Home</string>
@@ -52,6 +56,11 @@
     <string name="contact_status">Status</string>
     <string name="contact_card">Card</string>
     <string name="contact_message">Message</string>
+    <string name="contact_request_card">Card</string>
+    <string name="contact_request_accept">Accept</string>
+    <string name="contact_request_delete">Delete</string>
+    <string name="contact_add_sent">Request sent to user</string>
+    <string name="contact_add_non_exist">User does not exist</string>
 
     <!-- This is for Chat Fragments-->
 

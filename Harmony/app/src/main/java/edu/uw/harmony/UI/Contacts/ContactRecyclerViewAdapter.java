@@ -32,9 +32,10 @@ import edu.uw.harmony.databinding.FragmentContactCardBinding;
  */
 
 public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecyclerViewAdapter.ContactViewHolder>{
-    private final List<ContactCard> mContact;
+    private final List<ContactCard> mContacts;
     //Store the expanded state for each List item, true -> expanded, false -> not
     private final Map<ContactCard, Boolean> mExpandedFlags;
+    private final Map<ContactCard, Boolean> mInChat;
     ContactListViewModel mModel;
     UserInfoViewModel uModel;
     SettingsViewModel sModel;
@@ -43,17 +44,19 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
     List<String> autofill;
 
     public ContactRecyclerViewAdapter(List<ContactCard> items, ContactListViewModel mModel, UserInfoViewModel uModel, SettingsViewModel model, boolean newChat, List<String> selected, List<String> autoFill) {
-        this.mContact= items;
+        this.mContacts= items;
         this.mModel = mModel;
         this.uModel = uModel;
         this.sModel = model;
         this.newChat = newChat;
         this.selected = selected;
         this.autofill = autoFill;
+
         mExpandedFlags = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
+        mInChat = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
     }
     public ContactRecyclerViewAdapter(List<ContactCard> items, ContactListViewModel mModel, UserInfoViewModel uModel, SettingsViewModel model) {
-        this.mContact= items;
+        this.mContacts= items;
         this.mModel = mModel;
         this.uModel = uModel;
         this.sModel = model;
@@ -61,6 +64,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
         this.selected = new ArrayList<String>();
         this.autofill= new ArrayList<String>();
         mExpandedFlags = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
+        mInChat = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
     }
 
     @NonNull
@@ -73,12 +77,12 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
 
     @Override
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
-        holder.setContact(mContact.get(position));
+        holder.setContact(mContacts.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return mContact.size();
+        return mContacts.size();
     }
 
     /**
@@ -111,7 +115,11 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             binding.contactNewChatAdded.setVisibility(View.GONE);
             if (!newChat) {
                 binding.contactCard.setOnClickListener(this::handleMoreOrLess);
-                binding.contactDelete.setOnClickListener(button -> {mModel.contactDelete(uModel.getJwt(), Integer.parseInt(mContact.getId()));});
+                binding.contactDelete.setOnClickListener(button -> {
+                    mContacts.remove(mContact);
+                    notifyItemRemoved(mContacts.indexOf(mContact));
+                    mModel.contactDelete(uModel.getJwt(), Integer.parseInt(mContact.getId()));
+                });
                 binding.contactMessage.setOnClickListener(button -> {
                     Log.d("ID", (mContact.getId()));
                     ContactContainerFragmentDirections.ActionNavigationContactContainerToNavigationNewChat2 directions
@@ -123,22 +131,24 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             } else{
                 binding.contactCard.setOnClickListener(button -> {
                     if (binding.contactNewChatAdded.getVisibility() == View.VISIBLE) {
-                        binding.contactNewChatAdded.setVisibility(View.GONE);
+//                        binding.contactNewChatAdded.setVisibility(View.GONE);
                         this.selected.remove(binding.contactUsername.getText().toString());
                     }else{
-                        binding.contactNewChatAdded.setVisibility(View.VISIBLE);
+//                        binding.contactNewChatAdded.setVisibility(View.VISIBLE);
                         this.selected.add(binding.contactUsername.getText().toString());
                     }
+                    handleSelected(button);
+                    displaySelected();
                 });
-                binding.contactNewChatAdded.setOnClickListener(button -> {
-                    if (binding.contactNewChatAdded.getVisibility() == View.VISIBLE) {
-                        binding.contactNewChatAdded.setVisibility(View.GONE);
-                        this.selected.remove(binding.contactUsername.getText().toString());
-                    }else{
-                        binding.contactNewChatAdded.setVisibility(View.VISIBLE);
-                        this.selected.add(binding.contactUsername.getText().toString());
-                    }
-                });
+//                binding.contactNewChatAdded.setOnClickListener(button -> {
+//                    if (binding.contactNewChatAdded.getVisibility() == View.VISIBLE) {
+//                        binding.contactNewChatAdded.setVisibility(View.GONE);
+//                        this.selected.remove(binding.contactUsername.getText().toString());
+//                    }else{
+//                        binding.contactNewChatAdded.setVisibility(View.VISIBLE);
+//                        this.selected.add(binding.contactUsername.getText().toString());
+//                    }
+//                });
                 binding.contactDelete.setVisibility(View.GONE);
                 binding.contactMessage.setVisibility(View.GONE);
             }
@@ -156,6 +166,10 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             displayPreview();
         }
 
+        private void handleSelected(final View button) {
+            mInChat.put(mContact, !mInChat.get(mContact));
+        }
+
         /**
          * Helper used to determine if the preview should be displayed or not. */
 
@@ -167,12 +181,22 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             }
         }
 
+        private void displaySelected() {
+            if (mInChat.get(mContact)) {
+                binding.contactNewChatAdded.setVisibility(View.VISIBLE);
+            } else {
+                binding.contactNewChatAdded.setVisibility(View.GONE);
+            }
+        }
+
         /**
          * Method to fill each contact card with information
          * @param contact ContactCard Object
          */
         void setContact(final ContactCard contact) {
             if (newChat && this.autofill.contains(contact.getUsername())) {
+                Log.e("AUTOFILL", autofill.toString());
+                mInChat.put(contact, true);
                 binding.contactNewChatAdded.setVisibility(View.VISIBLE);
             }
             mContact = contact;
@@ -210,7 +234,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
                 binding.textPreview.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
             }
             displayPreview();
-
+            displaySelected();
         }
 
     }
