@@ -16,6 +16,7 @@ import android.service.notification.StatusBarNotification;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -25,6 +26,7 @@ import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.auth0.android.jwt.JWT;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -33,6 +35,22 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import edu.uw.harmony.UI.Weather.WeatherViewModel;
+import edu.uw.harmony.UI.model.LocationViewModel;
+import edu.uw.harmony.UI.model.UserInfoViewModel;
+
+import android.view.Menu;
+import android.view.MenuItem;
+
+
+import com.auth0.android.jwt.JWT;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import edu.uw.harmony.UI.model.UserInfoViewModel;
+import edu.uw.harmony.UI.settings.SettingsFragment;
+
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
@@ -46,12 +64,15 @@ import java.util.Map;
 
 import edu.uw.harmony.UI.Chat.message.ChatMessage;
 import edu.uw.harmony.UI.Chat.message.ChatViewModel;
+import edu.uw.harmony.UI.Home.NotificationRecyclerViewAdapter;
 import edu.uw.harmony.UI.Home.NotificationViewModel;
 import edu.uw.harmony.UI.model.LocationViewModel;
 import edu.uw.harmony.UI.model.NewMessageCountViewModel;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.UI.settings.SettingsFragment;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.ActivityMainBinding;
+import edu.uw.harmony.databinding.FragmentHomeBinding;
 import edu.uw.harmony.services.PushReceiver;
 
 
@@ -64,6 +85,8 @@ public class  MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     private AppBarConfiguration mAppBarConfiguration;
+
+    private FragmentHomeBinding fBinding;
 
     /**
      * The desired interval for location updates. Inexact. Updates may be more or less frequent.
@@ -94,32 +117,39 @@ public class  MainActivity extends AppCompatActivity {
     /** Stores the status bar notifications*/
     ArrayList<StatusBarNotification> notifications;
 
+    private SettingsViewModel settingsViewModel;
+
 
     /**
      * Recieves messages from system service and adds them to notification view model.
      */
     public void onStart() {
         super.onStart();
+
         nModel = new ViewModelProvider(this).get(NotificationViewModel.class);
         notificationManager = (NotificationManager) this.getSystemService(this.NOTIFICATION_SERVICE);
         notifications = new ArrayList<>(Arrays.asList(notificationManager.getActiveNotifications()));
 
         SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
         for(int i = 0; i < notifications.size(); i++){
-            String dateString = formatter.format(new Date(notifications.get(i).getPostTime()));
-            nModel.addNotification(notifications
-                            .get(i)
-                            .getNotification()
-                            .extras
-                            .getCharSequence(Notification.EXTRA_TITLE)
-                            .toString()
-                            .substring(13,notifications.
-                                    get(i)
-                                    .getNotification()
-                                    .extras
-                                    .getCharSequence(Notification.EXTRA_TITLE)
-                                    .length()),
-                            notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
+            if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE) == null){
+                Log.d("Null Test", String.valueOf(i));
+            } else {
+                String dateString = formatter.format(new Date(notifications.get(i).getPostTime()));
+                nModel.addNotification(notifications
+                                .get(i)
+                                .getNotification()
+                                .extras
+                                .getCharSequence(Notification.EXTRA_TITLE)
+                                .toString()
+                                .substring(13,notifications.
+                                        get(i)
+                                        .getNotification()
+                                        .extras
+                                        .getCharSequence(Notification.EXTRA_TITLE)
+                                        .length()),
+                                notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
+            }
         }
         notifications.clear();
     }
@@ -133,6 +163,9 @@ public class  MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        fBinding = FragmentHomeBinding.inflate(getLayoutInflater());
+        settingsViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
+
 
 
         MainActivityArgs args = MainActivityArgs.fromBundle(getIntent().getExtras());
@@ -185,7 +218,6 @@ public class  MainActivity extends AppCompatActivity {
                 badge.setVisible(false);
             }
         });
-
 
         //Location Setup
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
@@ -283,6 +315,8 @@ public class  MainActivity extends AppCompatActivity {
                 .get(ChatViewModel.class);
         private NotificationViewModel nModel = new ViewModelProvider(MainActivity.this).get(NotificationViewModel.class);
 
+        private UserInfoViewModel model = new ViewModelProvider(MainActivity.this).get(UserInfoViewModel.class);
+
 
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -306,7 +340,9 @@ public class  MainActivity extends AppCompatActivity {
                 Date date = new Date(ts.getTime());
                 SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
                 String dateString = formatter.format(date);
-                nModel.addNotification(cm, dateString);
+                if(!cm.getSender().equals(model.getEmail())){
+                    nModel.addNotification(cm, dateString);
+                }
                 mModel.addMessage(intent.getIntExtra("chatid", -1), cm);
             }
 
@@ -381,6 +417,10 @@ public class  MainActivity extends AppCompatActivity {
                                             .get(LocationViewModel.class);
                                 }
                                 mLocationModel.setLocation(location);
+
+                                //When first getting a location, setup the weather view model so that
+                                //it can connect to the current location from here
+                                setupWeatherModel();
                             }
                         }
                     });
@@ -428,6 +468,17 @@ public class  MainActivity extends AppCompatActivity {
         mLocationRequest.setFastestInterval(FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS);
 
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+    }
+
+    /**
+     * Initializes the weather model with a connection to this activity (to also connect to the location
+     * view model) so that it has access to the user's current location before visiting the weather fragment
+     */
+    private void setupWeatherModel() {
+        WeatherViewModel weatherModel = new ViewModelProvider(this).get(WeatherViewModel.class);
+        weatherModel.setCurrentActivity(this);
+        weatherModel.setupLocationModel();
+        weatherModel.useCurrentLocation();
     }
 
     /**

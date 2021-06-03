@@ -58,10 +58,21 @@ public class HomeFragment extends Fragment {
     private UserInfoViewModel model;
     /** This is the home view model*/
     private HomeViewModel hModel;
+
+    private boolean mUpdatedByWeatherFragment = false;
+
     /** This accesses the notifcations*/
     private NotificationViewModel nModel;
     /** This is the notification manager that accesses the list of active notifications*/
     NotificationManager notificationManager;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        View notificationView = binding.listRoot;
+        ((RecyclerView) notificationView).setAdapter(new NotificationRecyclerViewAdapter(nModel.getNotifications(), settingsViewModel));
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,10 +86,12 @@ public class HomeFragment extends Fragment {
         notificationManager = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
 
 
+        WeatherViewModel weatherModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
+        weatherModel.setHomeFragment(this);
+
         /** I instantiate the recycler view here.*/
         View notificationView = binding.listRoot;
         if (notificationView instanceof RecyclerView){
-            Log.d("View Model Notifications", "It made it to this point");
             ((RecyclerView) notificationView).setAdapter(new NotificationRecyclerViewAdapter(nModel.getNotifications(), settingsViewModel));
 
         }
@@ -90,6 +103,11 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        if(!mUpdatedByWeatherFragment) {
+            hModel.connectGet();
+            hModel.setJWT(model.getJwt());
+            hModel.setHomeBinding(binding);
+        }
 
         hModel.connectGet();
         hModel.setJWT(model.getJwt());
@@ -138,5 +156,9 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public void setUpdatedByWeatherFragment(boolean b) {
+        mUpdatedByWeatherFragment = b;
     }
 }

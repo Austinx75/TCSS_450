@@ -80,6 +80,21 @@
     <string name="home_notification_card_From">From:</string>
     <string name="title_activity_contacts">ContactsActivity</string>
     <string name="fragment_add_contact">Add Contact</string>
+
+    <!-- Weather Strings -->
+    <string name="weather_use_current_location">Use Your Current Location</string>
+    <string name="weather_use_zipcode">Use A Zip Code</string>
+    <string name="weather_use_map">Use a Location on the Map:</string>
+    <string name="weather_select">Select</string>
+
+    <!-- Weather Errors -->
+    <string name="weather_location_current_location_not_found">*No weather information could be found for your current location.</string>
+    <string name="weather_location_zip_invalid">*Please select a valid zip code.</string>
+    <string name="weather_location_zip_location_not_found">*No weather information could be found for this zip code.</string>
+    <string name="weather_location_map_location_not_selected">*Please select a location on the map.</string>
+    <string name="weather_location_map_location_not_found">*No weather information could be found for this map location.</string>
+    <string name="weather_location_server_timeout">*No weather information could be found for this map location.</string>
+
     <string name="fragment_clear_home">Clear</string>
     <string name="fragment_blank_home"></string>
     <!--

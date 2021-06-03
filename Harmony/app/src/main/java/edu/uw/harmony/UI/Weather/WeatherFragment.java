@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Auth.LogIn.LogInViewModel;
+import edu.uw.harmony.UI.model.LocationViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentLogInBinding;
 
@@ -31,7 +32,7 @@ import edu.uw.harmony.databinding.FragmentWeatherBinding;
  * @version 1.0
  */
 public class WeatherFragment extends Fragment {
-    private WeatherViewModel mModel;
+    private WeatherViewModel mWeatherModel;
     private FragmentWeatherBinding binding;
 
 
@@ -42,8 +43,7 @@ public class WeatherFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
-        mModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
-
+        mWeatherModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
     }
 
     @Override
@@ -69,24 +69,24 @@ public class WeatherFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mModel.connectGet();
+        mWeatherModel.connectGet();
 
         //Note argument sent to the ViewModelProvider constructor. It is the Activity that
         //holds this fragment.
         UserInfoViewModel model = new ViewModelProvider(getActivity())
                 .get(UserInfoViewModel.class);
-        mModel.setJWT(model.getJwt());
+        mWeatherModel.setJWT(model.getJwt());
 
         binding = FragmentWeatherBinding.bind(getView());
-        mModel.setWeatherBinding(binding);
+        mWeatherModel.setWeatherBinding(binding);
 
-        mModel.addHourlyForecastItemListObserver(getViewLifecycleOwner(), hourlyList -> {
+        mWeatherModel.addHourlyForecastItemListObserver(getViewLifecycleOwner(), hourlyList -> {
             if (binding.hourlyListRoot instanceof RecyclerView) {
                 (binding.hourlyListRoot).setAdapter(
                         new HourlyForecastRecyclerViewAdapter(hourlyList, settingsViewModel));
             }
         });
-        mModel.addWeeklyForecastItemListObserver(getViewLifecycleOwner(), weeklyList -> {
+        mWeatherModel.addWeeklyForecastItemListObserver(getViewLifecycleOwner(), weeklyList -> {
             if (binding.weeklyListRoot instanceof RecyclerView) {
                 (binding.weeklyListRoot).setAdapter(
                         new WeeklyForecastRecyclerViewAdapter(weeklyList, settingsViewModel));

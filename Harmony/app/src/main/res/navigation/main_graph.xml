@@ -172,7 +172,11 @@
         android:id="@+id/navigation_weather_container"
         android:name="edu.uw.harmony.UI.Weather.WeatherContainerFragment"
         android:label="Weather"
-        tools:layout="@layout/fragment_weather_container" />
+        tools:layout="@layout/fragment_weather_container" >
+        <action
+            android:id="@+id/action_navigation_weather_container_self"
+            app:destination="@id/navigation_weather_container" />
+    </fragment>
     <fragment
         android:id="@+id/weatherLocationFragment"
         android:name="edu.uw.harmony.UI.Weather.WeatherLocationFragment"

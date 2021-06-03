@@ -66,6 +66,7 @@ public class ContactListFragment extends Fragment {
         } else {
             binding.AddNewContact.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_200)));
             binding.AddNewContact.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+            binding.AddNewContact.setForeground(getResources().getDrawable(R.drawable.shape));
         }
         return binding.getRoot();
     }
