@@ -113,6 +113,8 @@ public class RegisterFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.buttonRegisterFragmentRegister.setOnClickListener(this::attemptRegister);
+        binding.changeAvatar.setOnClickListener(button ->  Navigation.findNavController(getView()).
+                navigate(RegisterFragmentDirections.actionRegisterFragmentToAvatarListFragment()));
         mRegisterModel.addResponseObserver(getViewLifecycleOwner(),
                 this::observeResponse);
     }

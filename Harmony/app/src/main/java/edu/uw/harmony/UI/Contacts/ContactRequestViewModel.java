@@ -34,7 +34,7 @@ import edu.uw.harmony.R;
  * @version 1.1
  */
 
-public class ContactListViewModel extends AndroidViewModel {
+public class ContactRequestViewModel extends AndroidViewModel {
 
     /** live data for the list of contacts */
     private MutableLiveData<List<ContactCard>> mContactList;
@@ -42,7 +42,7 @@ public class ContactListViewModel extends AndroidViewModel {
     /** view model for the contact list class */
     private final MutableLiveData<JSONObject> mResponse;
 
-    public ContactListViewModel(@NonNull Application application){
+    public ContactRequestViewModel(@NonNull Application application){
         super(application);
         mContactList = new MutableLiveData<>();
         mContactList.setValue(new ArrayList<>());
@@ -82,7 +82,7 @@ public class ContactListViewModel extends AndroidViewModel {
                         R.string.keys_json_contacts_list));
                 for (int i = 0; i < contacts.length(); i++) {
                     JSONObject contactList = contacts.getJSONObject(i);
-                    if (Integer.parseInt(contactList.get("verified").toString()) == 1)  {
+                    if (Integer.parseInt(contactList.get("verified").toString()) == 0)  {
                         ContactCard contact = new ContactCard.Builder(
                                 contactList.getString(getString.apply(R.string.keys_json_contacts_firstname)) + " " + contactList.getString(getString.apply(R.string.keys_json_contacts_lastname)),
                                 contactList.getString(getString.apply(R.string.keys_json_contacts_memberid))).addUsername(contactList.getString(getString.apply(R.string.keys_json_contacts_username)))
@@ -133,48 +133,13 @@ public class ContactListViewModel extends AndroidViewModel {
     }
 
     /**
-     * Post method to add contacts to the user table
-     * @param jwt String jwt
-     * @param id Int member ID
-     */
-    public void contactAdd (final String jwt, int id){
-        String url = "https://team-9-tcss450-backend.herokuapp.com/contacts";
-        JSONObject body = new JSONObject();
-        try {
-            body.put("MemberId", id);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        Request request = new JsonObjectRequest(
-                Request.Method.POST,
-                url,
-                body,
-                this::handleResult,
-                this::handleError) {
-            @Override
-            public Map<String, String> getHeaders() {
-                Map<String, String> headers = new HashMap<>();
-                headers.put("Authorization", jwt);
-                return headers;
-            }
-        };
-        request.setRetryPolicy(new DefaultRetryPolicy(
-                10_000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        Volley.newRequestQueue(getApplication().getApplicationContext())
-                .add(request);
-    }
-
-    /**
      * Delete method to delete existing contacts from the user table
      * @param jwt String jwt
      * @param id Int Member ID
      */
     public void contactDelete (final String jwt, int id){
         Log.d("Contact Delete",  "Trying method");
-        String url = "https://team-9-tcss450-backend.herokuapp.com/contacts/"+ id;
-
+        String url = "https://team-9-tcss450-backend.herokuapp.com/contacts/" + id;
         Request request = new JsonObjectRequest(
                 Request.Method.DELETE,
                 url,
@@ -197,4 +162,38 @@ public class ContactListViewModel extends AndroidViewModel {
                 .add(request);
     }
 
+    /**
+     * Update method to update pending status if accepted or decline contact invitation
+     * @param jwt String jwt
+     * @param id Int Member ID
+     */
+    public void contactUpdate(final String jwt, int id){
+        String url = "https://team-9-tcss450-backend.herokuapp.com/contacts";
+        JSONObject body = new JSONObject();
+        try {
+            body.put("MemberId", id);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Request request = new JsonObjectRequest(
+                Request.Method.PUT,
+                url,
+                body,
+                this::handleResult,
+                this::handleError) {
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> headers = new HashMap<>();
+                // add headers <key,value>
+                headers.put("Authorization", jwt);
+                return headers;
+            }
+        };
+        request.setRetryPolicy(new DefaultRetryPolicy(
+                10_000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        Volley.newRequestQueue(getApplication().getApplicationContext())
+                .add(request);
+    }
 }
