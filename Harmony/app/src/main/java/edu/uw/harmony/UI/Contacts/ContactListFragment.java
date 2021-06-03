@@ -92,6 +92,8 @@ public class ContactListFragment extends Fragment {
                 Navigation.findNavController(getView()).
                                 navigate(ContactContainerFragmentDirections.actionNavigationContactContainerToAddNewContactFragment()));
 
+        // Made invisible for now because we have the toolbar version of it
+        binding.AddNewContact.setVisibility(View.INVISIBLE);
     }
 
     /**
