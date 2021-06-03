@@ -52,8 +52,8 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
         this.selected = selected;
         this.autofill = autoFill;
 
-        mExpandedFlags = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
-        mInChat = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
+        mExpandedFlags = mContacts.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
+        mInChat = mContacts.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
     }
     public ContactRecyclerViewAdapter(List<ContactCard> items, ContactListViewModel mModel, UserInfoViewModel uModel, SettingsViewModel model) {
         this.mContacts= items;
@@ -63,8 +63,8 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
         this.newChat = false;
         this.selected = new ArrayList<String>();
         this.autofill= new ArrayList<String>();
-        mExpandedFlags = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
-        mInChat = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
+        mExpandedFlags = mContacts.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
+        mInChat = mContacts.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
     }
 
     @NonNull

@@ -34,6 +34,7 @@ import edu.uw.harmony.databinding.FragmentUpdateChatBinding;
 public class ConfirmationDeleteFragment extends Fragment {
 
     FragmentConfirmationDeleteBinding binding;
+    SettingsViewModel settingsViewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,12 +47,18 @@ public class ConfirmationDeleteFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
 
 
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+            binding.confirmationText.setTextColor(Color.BLACK);
+        } else {
+            binding.confirmationText.setTextColor(Color.WHITE);
+        }
         binding.continueButton.setOnClickListener(button ->
                 Navigation.findNavController(getView()).navigate(ConfirmationDeleteFragmentDirections.actionConfirmationDeleteFragmentToNavigationChatList()));
     }
