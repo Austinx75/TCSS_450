@@ -7,9 +7,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.navigation.Navigation;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -38,17 +42,6 @@ public class ContactContainerFragment extends Fragment {
         tabLayout = myFragment.findViewById(R.id.tabs);
         return myFragment;
     }
-
-//    @Override
-//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-//        FragmentContactListBinding binding = FragmentContactListBinding.bind(getView());
-//                binding.AddNewContact.setOnClickListener(button ->
-//                Navigation.findNavController(getView()).
-//                        navigate(ContactListFragmentDirections.actionNavigationContactToAddNewContactFragment()));
-//
-//
-//
-//    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -85,9 +78,30 @@ public class ContactContainerFragment extends Fragment {
         viewPager.setAdapter(adapter);
     }
 
+    // inflates tool bar menu
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.contact_tool_bar, menu);
+    }
+
+    // makes tool bar menu visible
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    // handles when tool bar menu's item is clicked
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_add_new_contact:
+                Navigation.findNavController(getView()).
+                        navigate(ContactContainerFragmentDirections.actionNavigationContactContainerToAddNewContactFragment());
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     /**

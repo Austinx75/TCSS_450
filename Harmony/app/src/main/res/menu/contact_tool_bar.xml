@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_add_new_contact"
+        android:orderInCategory="100"
+        android:title="Add New Contact"
+        android:icon="@drawable/search_new_contact_24dp"
+        app:showAsAction="ifRoom" />
+</menu>
