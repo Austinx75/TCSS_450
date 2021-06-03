@@ -152,8 +152,8 @@
     <fragment
         android:id="@+id/updateChatFragment"
         android:name="edu.uw.harmony.UI.Chat.update.UpdateChatFragment"
-        android:label="fragment_update_chat"
-        tools:layout="@layout/fragment_update_chat" >
+        android:label="Update"
+        tools:layout="@layout/fragment_update_chat">
         <argument
             android:name="chatid"
             app:argType="integer" />
@@ -162,8 +162,8 @@
             app:destination="@id/navigation_chat_post"
             app:popUpTo="@id/navigation_chat_list" />
         <action
-            android:id="@+id/action_updateChatFragment_to_navigation_chat_list"
-            app:destination="@id/navigation_chat_list" />
+            android:id="@+id/action_updateChatFragment_to_confirmationDeleteFragment"
+            app:destination="@id/confirmationDeleteFragment" />
 
 
     </fragment>
@@ -192,9 +192,19 @@
             app:destination="@id/contactRequestCardFragment" />
     </fragment>
     <fragment
+        android:id="@+id/confirmationDeleteFragment"
+        android:name="edu.uw.harmony.UI.Chat.update.ConfirmationDeleteFragment"
+        android:label="fragment_confirmation_delete"
+        tools:layout="@layout/fragment_confirmation_delete" >
+        <action
+            android:id="@+id/action_confirmationDeleteFragment_to_navigation_chat_list"
+            app:destination="@id/navigation_chat_list" />
+    </fragment>
+    <fragment
         android:id="@+id/contactRequestCardFragment"
         android:name="edu.uw.harmony.UI.Contacts.ContactRequestCardFragment"
         android:label="fragment_contact_request_card"
         tools:layout="@layout/fragment_contact_request_card" />
+
 
 </navigation>
