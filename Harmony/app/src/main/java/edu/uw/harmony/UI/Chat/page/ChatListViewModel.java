@@ -57,11 +57,18 @@ public class ChatListViewModel extends AndroidViewModel {
         mChatList.observe(owner, observer);
     }
 
+    /**
+     * Removes and resets any values used in the view model
+     */
     public void done() {
         mChatList.setValue(new ArrayList<>());
         isWorking = false;
     }
 
+    /**
+     * Notifies if the view model is in the process of a connection
+     * @return if the view model is connected to the web service or processing the response
+     */
     public boolean isWorking() {
         return isWorking;
     }
