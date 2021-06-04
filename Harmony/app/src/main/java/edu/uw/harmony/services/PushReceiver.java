@@ -38,6 +38,13 @@ public class PushReceiver extends BroadcastReceiver {
 
 
     @Override
+    /**
+     * Handles notification types.
+     * @version 1.3
+     * @author Austin Scott
+     * @param context the context of the message.
+     * @param intent the intent of the message.
+     */
     public void onReceive(Context context, Intent intent) {
         String typeOfMessage = intent.getStringExtra("type");
         if (typeOfMessage.equals("contacts")) {
@@ -51,6 +58,12 @@ public class PushReceiver extends BroadcastReceiver {
         }
     }
 
+    /**
+     * Handles new messages.
+     * @version 1.3
+     * @param context the context of the message.
+     * @param intent the intent of the message.
+     */
     public void handleChatNotification(Context context, Intent intent) {
         //the following variables are used to store the information sent from Pushy
         //In the WS, you define what gets sent. You can change it there to suit your needs
@@ -125,7 +138,9 @@ public class PushReceiver extends BroadcastReceiver {
     }
 
     /**
-     * Handles an incoming contacts notification. Updates all contacts information.
+     * Handles new contact notifications.
+     * @version 1.3
+     * @author Austin Scott
      * @param context the context of the message.
      * @param intent the intent of the message.
      */
@@ -176,7 +191,9 @@ public class PushReceiver extends BroadcastReceiver {
     }
 
     /**
-     * Handles an incoming chats notification. Updates all chat information.
+     * Handles new chats.
+     * @version 1.3
+     * @author Austin Scott
      * @param context the context of the message.
      * @param intent the intent of the message.
      */

@@ -116,7 +116,7 @@ public class  MainActivity extends AppCompatActivity {
     NotificationManager notificationManager;
     /** Stores the status bar notifications*/
     ArrayList<StatusBarNotification> notifications;
-
+    /** Accesses the settings**/
     private SettingsViewModel settingsViewModel;
 
 
@@ -138,7 +138,16 @@ public class  MainActivity extends AppCompatActivity {
                 Date date = new Date(ts.getTime());
                 SimpleDateFormat formatter1 = new SimpleDateFormat("hh:mm a");
                 String dateString = formatter1.format(date);
-                nModel.addNotification(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).toString(), notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
+                nModel.addNotification(notifications
+                        .get(i)
+                        .getNotification()
+                        .extras
+                        .getCharSequence(Notification.EXTRA_TITLE).toString(),
+                        notifications.get(i).getNotification()
+                                .extras
+                                .getCharSequence(Notification.EXTRA_TEXT)
+                                .toString(),
+                        dateString);
             } else {
                 if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE) == null){
                     Log.d("Null Test", String.valueOf(i));

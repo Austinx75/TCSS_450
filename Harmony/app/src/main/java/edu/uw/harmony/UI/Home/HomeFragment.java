@@ -112,6 +112,8 @@ public class HomeFragment extends Fragment {
         hModel.connectGet();
         hModel.setJWT(model.getJwt());
         hModel.setHomeBinding(binding);
+
+        /** Clears the notifications from home screen */
         binding.buttonClearHome.setOnClickListener(button -> {
             notificationManager.cancelAll();
             nModel.clearNotifications();
@@ -122,7 +124,6 @@ public class HomeFragment extends Fragment {
 
         nModel.addNotificationObserver(getViewLifecycleOwner(), notification -> {
             if (binding.listRoot instanceof RecyclerView) {
-
                 (binding.listRoot).setAdapter(
                         new NotificationRecyclerViewAdapter(notification, settingsViewModel));
             }
