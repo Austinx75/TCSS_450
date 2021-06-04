@@ -27,7 +27,6 @@ import edu.uw.harmony.databinding.FragmentContactRequestCardBinding;
  * @author Jack Lin
  * @version 1.0
  */
-
 public class ContactRequestRecyclerViewAdapter extends RecyclerView.Adapter<ContactRequestRecyclerViewAdapter.ContactViewHolder>{
     private final List<ContactCard> mContacts;
     //Store the expanded state for each List item, true -> expanded, false -> not
@@ -39,6 +38,9 @@ public class ContactRequestRecyclerViewAdapter extends RecyclerView.Adapter<Cont
     List<String> selected;
     String autofill;
 
+    /**
+     * Constructor for contact request recycler view adapter. Initializes necessary fields
+     */
     public ContactRequestRecyclerViewAdapter(List<ContactCard> items, ContactRequestViewModel rModel, UserInfoViewModel uModel, SettingsViewModel model) {
         this.mContacts= items;
         this.rModel = rModel;
@@ -87,6 +89,9 @@ public class ContactRequestRecyclerViewAdapter extends RecyclerView.Adapter<Cont
                 R.drawable.contact_woman_1_512};
         Random rand = new Random();
 
+        /**
+         * Public constructor for the contact view holder. Initializes all necessary fields
+         */
         public ContactViewHolder(View view, ContactRequestViewModel mModel, UserInfoViewModel uModel, List<String> selected, String autofill) {
             super(view);
             mView = view;
@@ -166,9 +171,6 @@ public class ContactRequestRecyclerViewAdapter extends RecyclerView.Adapter<Cont
                 binding.contactPreview.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
             }
             displayPreview();
-
         }
-
     }
-
 }

@@ -30,7 +30,6 @@ import edu.uw.harmony.databinding.FragmentContactCardBinding;
  * @author Jack Lin
  * @version 1.0
  */
-
 public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecyclerViewAdapter.ContactViewHolder>{
     private final List<ContactCard> mContacts;
     //Store the expanded state for each List item, true -> expanded, false -> not
@@ -43,6 +42,9 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
     List<String> selected;
     List<String> autofill;
 
+    /**
+     * Constructor that initializes all relevant fields for contact list fragment
+     */
     public ContactRecyclerViewAdapter(List<ContactCard> items, ContactListViewModel mModel, UserInfoViewModel uModel, SettingsViewModel model, boolean newChat, List<String> selected, List<String> autoFill) {
         this.mContacts= items;
         this.mModel = mModel;
@@ -55,6 +57,8 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
         mExpandedFlags = mContacts.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
         mInChat = mContacts.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
     }
+
+    /** Constructor for the Contact recycler view adapter that initializes all necessary fields */
     public ContactRecyclerViewAdapter(List<ContactCard> items, ContactListViewModel mModel, UserInfoViewModel uModel, SettingsViewModel model) {
         this.mContacts= items;
         this.mModel = mModel;
@@ -103,6 +107,9 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
                 R.drawable.contact_woman_1_512};
         Random rand = new Random();
 
+        /**
+         * Constructor for the Contact view holder that initializes all needed fields
+         */
         public ContactViewHolder(View view, ContactListViewModel mModel, UserInfoViewModel uModel, List<String> selected, List<String> autofill) {
             super(view);
             mView = view;
@@ -244,7 +251,5 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             displayPreview();
             displaySelected();
         }
-
     }
-
 }
