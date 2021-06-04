@@ -33,7 +33,8 @@ import edu.uw.harmony.UI.model.LocationViewModel;
 import edu.uw.harmony.databinding.FragmentWeatherLocationBinding;
 
 /**
- *
+ * A fragment that contains options to change the location to get weather information about. Can select
+ * from the user's current location, a zip code, or a spot on a map.
  *
  *
  * @author  Gary Kono
@@ -141,11 +142,17 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
                         latLng, mMap.getCameraPosition().zoom));
     }
 
+    /**
+     * Update the weather information in the weather model based on the user's location.
+     */
     public void onUseCurrentLocation(View v) {
         //Get current location
         mWeatherModel.useCurrentLocation();
     }
 
+    /**
+     * Update the weather information in the weather model based on a zip code.
+     */
     public void onUseZipCode(View v) {
         //Get zip code from text field
         String zipCode = this.binding.editTextZipInput.getText().toString();
@@ -157,6 +164,9 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
         mWeatherModel.useZipLocation(zipCode);
     }
 
+    /**
+     * Update the weather information in the weather model based a location selected on the map.
+     */
     public void onUseMapLocation(View v) {
         //Get zip code from text field
         if(currentMarker != null) {
@@ -168,6 +178,10 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
         }
     }
 
+    /**
+     * Post an error message if the location provided is not valid. Otherwise, navigate to the weather report
+     * fragment.
+     */
     public void afterServerResponse() {
         if(mWeatherModel.getLocationIsValid()) {
             Navigation.findNavController(getView())

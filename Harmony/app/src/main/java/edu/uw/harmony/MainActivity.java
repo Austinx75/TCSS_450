@@ -132,24 +132,35 @@ public class  MainActivity extends AppCompatActivity {
 
         SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
         for(int i = 0; i < notifications.size(); i++){
-            if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE) == null){
-                Log.d("Null Test", String.valueOf(i));
+            if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).equals("New Chat")){
+                Log.d("Back", "Enters right if");
+                Timestamp ts = new Timestamp(System.currentTimeMillis());
+                Date date = new Date(ts.getTime());
+                SimpleDateFormat formatter1 = new SimpleDateFormat("hh:mm a");
+                String dateString = formatter1.format(date);
+                nModel.addNotification(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).toString(), notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
             } else {
-                String dateString = formatter.format(new Date(notifications.get(i).getPostTime()));
-                nModel.addNotification(notifications
-                                .get(i)
-                                .getNotification()
-                                .extras
-                                .getCharSequence(Notification.EXTRA_TITLE)
-                                .toString()
-                                .substring(13,notifications.
-                                        get(i)
-                                        .getNotification()
-                                        .extras
-                                        .getCharSequence(Notification.EXTRA_TITLE)
-                                        .length()),
-                                notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
+                if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE) == null){
+                    Log.d("Null Test", String.valueOf(i));
+                } else {
+                    Log.d("Back", "Enters wrong if");
+                    String dateString = formatter.format(new Date(notifications.get(i).getPostTime()));
+                    nModel.addNotification(notifications
+                                    .get(i)
+                                    .getNotification()
+                                    .extras
+                                    .getCharSequence(Notification.EXTRA_TITLE)
+                                    .toString()
+                                    .substring(13,notifications.
+                                            get(i)
+                                            .getNotification()
+                                            .extras
+                                            .getCharSequence(Notification.EXTRA_TITLE)
+                                            .length()),
+                            notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
+                }
             }
+
         }
         notifications.clear();
     }
@@ -192,7 +203,7 @@ public class  MainActivity extends AppCompatActivity {
 
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_contact_container, R.id.navigation_chat_list, R.id.navigation_weather
+                R.id.navigation_home, R.id.navigation_contact_container, R.id.navigation_chat_list, R.id.navigation_weather_container
         ).build();
 
 
@@ -325,6 +336,8 @@ public class  MainActivity extends AppCompatActivity {
                     MainActivity.this, R.id.nav_host_fragment);
 
             NavDestination nd = nc.getCurrentDestination();
+            Log.d("intent", intent.toString());
+            Log.d("intent", intent.getExtras().toString());
             if (intent.hasExtra("chatMessage")) {
 
                 ChatMessage cm = (ChatMessage) intent.getSerializableExtra("chatMessage");
@@ -345,7 +358,28 @@ public class  MainActivity extends AppCompatActivity {
                 }
                 mModel.addMessage(intent.getIntExtra("chatid", -1), cm);
             }
+            if(intent.hasExtra("newChat")){
+                Log.d("Messages", "made it to main activity");
+            }
 
+        }
+    }
+
+    private class ChatPushReceiver extends BroadcastReceiver{
+        private NotificationViewModel nModel = new ViewModelProvider(MainActivity.this).get(NotificationViewModel.class);
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d("ChatReceiver", intent.getExtras().toString());
+            NavController nc = Navigation.findNavController(
+                    MainActivity.this, R.id.nav_host_fragment);
+            if(intent.hasExtra("newChat")){
+                Timestamp ts = new Timestamp(System.currentTimeMillis());
+                Date date = new Date(ts.getTime());
+                SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
+                String dateString = formatter.format(date);
+                nModel.addNotification("New Chat", intent.getStringExtra("message"), dateString);
+
+            }
         }
     }
 

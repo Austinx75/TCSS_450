@@ -13,10 +13,13 @@ import java.util.List;
  * @version 14 September 2018
  */
 public class ChatPost implements Serializable {
-
+    /** The chat id*/
     private final int mChatId;
+    /** The ids for the members */
     private List<Integer> mMemberIds;
+    /** The most recent message in the chat room*/
     private final String mRecentMessage;
+    /** Title for chat*/
     private  String mTitle;
 
 
@@ -26,9 +29,13 @@ public class ChatPost implements Serializable {
      * @author Charles Bryan
      */
     public static class Builder {
+        /** Chat id*/
         private final int mChatId;
+        /** List of members in chat*/
         private List<Integer> mMemberIds;
+        /** The chat title*/
         private  String mTitle;
+        /** The most recent message within the chat*/
         private  String mRecentMessage = "";
 
 
@@ -77,5 +84,9 @@ public class ChatPost implements Serializable {
      */
     public String getTitle() {return mTitle;}
 
+    /**
+     * Gets the most recent message within the chat
+     * @return the most recent message
+     */
     public String getRecentMessage() {return mRecentMessage;}
 }

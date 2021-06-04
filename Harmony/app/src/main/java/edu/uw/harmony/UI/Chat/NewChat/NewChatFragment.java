@@ -33,18 +33,22 @@ import edu.uw.harmony.databinding.FragmentContactListBinding;
 import edu.uw.harmony.databinding.FragmentNewChatBinding;
 
 /**
+ * A fragment that contains the fields used to create a new chat room. This allows the person to add
+ * people to the chat room and then also name the chat room
  * A simple {@link Fragment} subclass.
  */
 public class NewChatFragment extends Fragment {
-
+    /** View binding for the new chat fragment*/
     FragmentNewChatBinding binding;
+    /** View model for the contact list*/
     private ContactListViewModel mContactModel;
+    /** View Model for the user*/
     private UserInfoViewModel mUserModel;
+    /** View model for the new chat*/
     private NewChatViewModel mModel;
-
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
-
+    /** Emails for the new chat*/
     private List<String> emails = new ArrayList<>();
 
     @Override
@@ -113,6 +117,10 @@ public class NewChatFragment extends Fragment {
 
     }
 
+    /**
+     * Attempts to create a new chat with the selected emails
+     * @param selected the emails selected for the new chat
+     */
     private void attemptNewChat(List<String> selected) {
         if (binding.editTextChatname.getText().toString().length() == 0){
             binding.editTextChatname.setError("Please Enter a chat name");
@@ -124,6 +132,11 @@ public class NewChatFragment extends Fragment {
         }
     }
 
+    /**
+     * Attempts to connect and post the new chat to the web server.
+     * @param selected The selected members for the chat
+     * @param chatName The name for the chat
+     */
     private void attemptConnect(List<String> selected, String chatName) {
         StringBuilder members = new StringBuilder();
         members.append(selected.get(0));

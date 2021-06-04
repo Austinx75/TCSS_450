@@ -42,10 +42,19 @@ import java.util.function.IntFunction;
 
 import static edu.uw.harmony.util.WeatherUtils.determineImageFromDescription;
 
+/**
+ * Manages all weather information based on a selected location. If the location is changed, this class
+ * handles updating components listening for a location change.
+ *
+ *
+ * @author  Gary Kono
+ * @version 1.2
+ */
 public class WeatherViewModel extends AndroidViewModel {
     Activity mActivity;
     private String mJwt;
 
+    /** What type of location was selected to get weather information about (i.e. Map, Zip, etc.) */
     private WeatherLocationSource mWeatherLocationSource;
     private String mZipCode;
     private double mLatitude;
@@ -63,7 +72,9 @@ public class WeatherViewModel extends AndroidViewModel {
     private WeatherLocationFragment mWeatherLocationFragment;
     private HomeFragment mHomeFragment;
 
+    /** A flag whether the most recent location selected was a valid location. */
     private boolean mLocationIsValid;
+
 
     public WeatherViewModel(@NonNull Application application) {
         super(application);
@@ -77,16 +88,26 @@ public class WeatherViewModel extends AndroidViewModel {
         mWeeklyList.setValue(new ArrayList<>());
     }
 
+    /**
+     * Add an observer to the HourlyForecastList
+     */
     public void addHourlyForecastItemListObserver(@NonNull LifecycleOwner owner,
                                     @NonNull Observer<? super List<HourlyForecastItem>> observer) {
         mHourlyList.observe(owner, observer);
     }
 
+    /**
+     * Add an observer to the WeeklyForecastList
+     */
     public void addWeeklyForecastItemListObserver(@NonNull LifecycleOwner owner,
                                                   @NonNull Observer<? super List<WeeklyForecastItem>> observer) {
         mWeeklyList.observe(owner, observer);
     }
 
+    /**
+     * Handle an error from a request to the weather service endpoint. Mainly updates an error message
+     * shown in a fragment if a location could not be found.
+     */
     private void handleError(final VolleyError error) {
         //you should add much better error handling in a production release.
         // i.e. YOUR PROJECT
@@ -113,6 +134,9 @@ public class WeatherViewModel extends AndroidViewModel {
         //throw new IllegalStateException(error.getMessage());
     }
 
+    /**
+     * Handle the response given by the request to the web service endpoint. Updates the weather report.
+     */
     private void handleResult(final JSONObject result) {
         mWeatherBinding.layoutComponents.setVisibility(View.GONE);
         mWeatherBinding.layoutWait.setVisibility(View.VISIBLE);
@@ -198,6 +222,9 @@ public class WeatherViewModel extends AndroidViewModel {
         }
     }
 
+    /**
+     * Make a request to the web service endpoint for weather information about the selected location.
+     */
     public void connectGet() {
         String url = "https://team-9-tcss450-backend.herokuapp.com/weather?";
 
@@ -228,6 +255,12 @@ public class WeatherViewModel extends AndroidViewModel {
                 .add(request);
     }
 
+    /**
+     * Updates the weather information for the current weather on the weather report fragment.
+     * @param city Name of the location's city.
+     * @param currentWeather A JSON from the webservice endpoint that contains current weather info.
+     * @throws JSONException
+     */
     private void handleCurrentWeather(String city, JSONObject currentWeather)
             throws JSONException {
         IntFunction<String> getString = getApplication().getResources()::getString;
@@ -313,6 +346,10 @@ public class WeatherViewModel extends AndroidViewModel {
         mWeatherLocationFragment = weatherLocationFragment;
     }
 
+    /**
+     * Update the weather information stored in this view model and make a request to the endpoint based
+     * on the user's current location.
+     */
     public void useCurrentLocation() {
         mWeatherLocationSource = WeatherLocationSource.LAT_LONG;
         mLatitude = mLocationModel.getCurrentLocation().getLatitude();
@@ -320,12 +357,20 @@ public class WeatherViewModel extends AndroidViewModel {
         connectGet();
     }
 
+    /**
+     * Update the weather information stored in this view model and make a request to the endpoint based
+     * on the zip code provided.
+     */
     public void useZipLocation(String zip) {
         mWeatherLocationSource = WeatherLocationSource.ZIP;
         mZipCode = zip;
         connectGet();
     }
 
+    /**
+     * Update the weather information stored in this view model and make a request to the endpoint based
+     * on the location selected on the map.
+     */
     public void useMapLocation(double latitude, double longitude) {
         mWeatherLocationSource = WeatherLocationSource.LAT_LONG;
         mLatitude = latitude;
@@ -333,6 +378,9 @@ public class WeatherViewModel extends AndroidViewModel {
         connectGet();
     }
 
+    /**
+     * A method that serves as a temporary solution for errors with updating the location. The location is Seattle.
+     */
     public void useDefaultLocation() {
         mLatitude = 47.474190;
         mLongitude = -122.206650;

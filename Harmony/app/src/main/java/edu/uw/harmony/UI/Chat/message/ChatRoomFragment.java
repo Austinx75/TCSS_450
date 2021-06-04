@@ -20,16 +20,21 @@ import edu.uw.harmony.databinding.FragmentChatRoomBinding;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 
 /**
+ * Fragment that contains the chat room and messages linked to the chat id.
  * A simple {@link Fragment} subclass.
  */
 public class ChatRoomFragment extends Fragment {
-
+    /** View model for the chat room*/
     private ChatViewModel mChatModel;
+    /** View model for the user*/
     private UserInfoViewModel mUserModel;
-
+    /** View model for sending chat messages*/
     private ChatSendViewModel mSendModel;
+    /** Room chat id*/
     private int mChatId= 0;
+    /** View model for the settings*/
     private SettingsViewModel settingsViewModel;
+    /** View model for the new messages from the push receiver*/
     private NewMessageCountViewModel mChatCountViewModel;
 
     public ChatRoomFragment() {

@@ -3,17 +3,16 @@ package edu.uw.harmony.UI.Chat.update;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
-
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,32 +21,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.uw.harmony.R;
-import edu.uw.harmony.UI.Chat.NewChat.NewChatFragmentArgs;
-import edu.uw.harmony.UI.Chat.NewChat.NewChatFragmentDirections;
-import edu.uw.harmony.UI.Chat.NewChat.NewChatViewModel;
 import edu.uw.harmony.UI.Contacts.ContactListViewModel;
 import edu.uw.harmony.UI.Contacts.ContactRecyclerViewAdapter;
 import edu.uw.harmony.UI.model.NewMessageCountViewModel;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
-import edu.uw.harmony.databinding.FragmentNewChatBinding;
 import edu.uw.harmony.databinding.FragmentUpdateChatBinding;
 
 /**
+ * Fragment that contains the fields to update the members in the chat room. They will be able to
+ * select the people within the chat and change them or leave the chat.
  * A simple {@link Fragment} subclass.
  */
 public class UpdateChatFragment extends Fragment {
 
+    /** View Binding for the update chat fragment*/
     FragmentUpdateChatBinding binding;
+    /** View model for the contact list*/
     private ContactListViewModel mContactModel;
+    /** View model for the user*/
     private UserInfoViewModel mUserModel;
+    /** View model for update chat*/
     private UpdateChatViewModel mModel;
+    /** The members that are currently in the room*/
     private List<String> selected;
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
+    /** the chat id that we are updating*/
     private int chatId;
+    /** The updated members for the chat*/
     private StringBuilder updatedMembers;
+    /** List of all members that are selected*/
     private List<String> updated;
+    /** View Model for the new messages*/
     private NewMessageCountViewModel mChatCountViewModel;
 
     @Override
@@ -79,11 +85,12 @@ public class UpdateChatFragment extends Fragment {
 //            binding.sendMessage.setBackgroundColor(Color.WHITE);
 //            binding.sendMessage.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
         } else {
-            binding.buttonDelete.setBackgroundColor((Color.RED));
-            binding.buttonDelete.setTextColor(Color.BLACK);
             binding.editTextChatname.setHintTextColor(ColorStateList.valueOf(getResources().getColor(R.color.offwhite, null)));
             binding.editTextChatname.setTextColor(Color.WHITE);
         }
+        binding.buttonDelete.setBackgroundColor((Color.RED));
+        binding.buttonDelete.setTextColor(Color.BLACK);
+        binding.frameLayout3.setVisibility(View.GONE);
 
         // Inflate the layout for this fragment
         return binding.getRoot();
@@ -100,7 +107,7 @@ public class UpdateChatFragment extends Fragment {
         mContactModel.addContactListObserver(getViewLifecycleOwner(), contactList -> {
             binding.listRoot.setAdapter(
                     new ContactRecyclerViewAdapter(contactList,mContactModel,mUserModel, settingsViewModel, true, updated, this.selected));
-            binding.layoutWait.setVisibility(View.GONE);
+
         });
         binding.buttonContinue .setOnClickListener(button -> {
             updatedMembers.append(updated.get(0));
@@ -112,7 +119,7 @@ public class UpdateChatFragment extends Fragment {
         });
         binding.buttonDelete.setOnClickListener(button -> {
            mModel.connectDelete(mUserModel.getJwt(), mUserModel.getEmail(), chatId);
-           Navigation.findNavController(getView()).navigate(UpdateChatFragmentDirections.actionUpdateChatFragmentToNavigationChatList());
+           Navigation.findNavController(getView()).navigate(UpdateChatFragmentDirections.actionUpdateChatFragmentToConfirmationDeleteFragment());
         });
         mModel.addResponseGetObserver(getViewLifecycleOwner(), response ->{
             if (response.has("code")) {
@@ -127,6 +134,9 @@ public class UpdateChatFragment extends Fragment {
                         this.selected.add(emails.get(i).toString());
                         updated.add(emails.get(i).toString());
                     }
+                    Log.e("MEMBERS", selected.toString());
+                    binding.layoutWait.setVisibility(View.GONE);
+                    binding.frameLayout3.setVisibility(View.VISIBLE);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
