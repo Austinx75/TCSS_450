@@ -29,20 +29,31 @@ import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentUpdateChatBinding;
 
 /**
+ * Fragment that contains the fields to update the members in the chat room. They will be able to
+ * select the people within the chat and change them or leave the chat.
  * A simple {@link Fragment} subclass.
  */
 public class UpdateChatFragment extends Fragment {
 
+    /** View Binding for the update chat fragment*/
     FragmentUpdateChatBinding binding;
+    /** View model for the contact list*/
     private ContactListViewModel mContactModel;
+    /** View model for the user*/
     private UserInfoViewModel mUserModel;
+    /** View model for update chat*/
     private UpdateChatViewModel mModel;
+    /** The members that are currently in the room*/
     private List<String> selected;
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
+    /** the chat id that we are updating*/
     private int chatId;
+    /** The updated members for the chat*/
     private StringBuilder updatedMembers;
+    /** List of all members that are selected*/
     private List<String> updated;
+    /** View Model for the new messages*/
     private NewMessageCountViewModel mChatCountViewModel;
 
     @Override

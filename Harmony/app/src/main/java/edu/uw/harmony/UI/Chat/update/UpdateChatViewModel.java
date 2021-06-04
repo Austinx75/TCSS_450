@@ -81,16 +81,6 @@ public class UpdateChatViewModel extends AndroidViewModel {
     }
 
     /**
-     * Adds observers to the response
-     * @param owner the owner
-     * @param observer the observer
-     */
-    public void addResponseDeleteObserver(@NonNull LifecycleOwner owner,
-                                       @NonNull Observer<? super JSONObject> observer) {
-        mResponseDelete.observe(owner, observer);
-    }
-
-    /**
      * Handles the error from Volley
      * @param error The error from Volley
      */

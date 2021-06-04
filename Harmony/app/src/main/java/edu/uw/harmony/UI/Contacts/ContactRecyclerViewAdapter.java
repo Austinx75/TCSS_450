@@ -166,6 +166,11 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             displayPreview();
         }
 
+        /**
+         * When the card is clicked, it will show a check mark indicating it is selected. We then
+         * reflect this in the mInChat map.
+         * @param button the button pressed
+         */
         private void handleSelected(final View button) {
             mInChat.put(mContact, !mInChat.get(mContact));
         }
@@ -181,6 +186,9 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             }
         }
 
+        /**
+         * Reflects to the card that the card is currently selected
+         */
         private void displaySelected() {
             if (mInChat.get(mContact)) {
                 binding.contactNewChatAdded.setVisibility(View.VISIBLE);

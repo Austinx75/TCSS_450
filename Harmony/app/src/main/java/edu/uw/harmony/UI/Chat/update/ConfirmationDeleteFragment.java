@@ -29,10 +29,11 @@ import edu.uw.harmony.databinding.FragmentConfirmationDeleteBinding;
 import edu.uw.harmony.databinding.FragmentUpdateChatBinding;
 
 /**
+ * A fragment used to confirm to the user that they left the chat room that they were in.
  * A simple {@link Fragment} subclass.
  */
 public class ConfirmationDeleteFragment extends Fragment {
-
+    /** View binding for the delete confirmation fragment*/
     FragmentConfirmationDeleteBinding binding;
     SettingsViewModel settingsViewModel;
 

@@ -28,6 +28,7 @@ import edu.uw.harmony.databinding.FragmentChatListBinding;
 import edu.uw.harmony.databinding.FragmentLogInBinding;
 
 /**
+ * A fragment containing the list of chats that the person is in
  * A simple {@link Fragment} subclass.
  */
 public class ChatListFragment extends Fragment {
