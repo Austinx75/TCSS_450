@@ -194,8 +194,8 @@
     <fragment
         android:id="@+id/confirmationDeleteFragment"
         android:name="edu.uw.harmony.UI.Chat.update.ConfirmationDeleteFragment"
-        android:label="fragment_confirmation_delete"
-        tools:layout="@layout/fragment_confirmation_delete" >
+        android:label="@string/textView_confirmation_DeleteFragment"
+        tools:layout="@layout/fragment_confirmation_delete">
         <action
             android:id="@+id/action_confirmationDeleteFragment_to_navigation_chat_list"
             app:destination="@id/navigation_chat_list" />

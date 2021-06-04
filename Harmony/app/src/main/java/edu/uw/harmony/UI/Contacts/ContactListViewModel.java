@@ -138,6 +138,7 @@ public class ContactListViewModel extends AndroidViewModel {
      * @param id Int member ID
      */
     public void contactAdd (final String jwt, int id){
+//        String url = "https://localhost:5000/contacts";
         String url = "https://team-9-tcss450-backend.herokuapp.com/contacts";
         JSONObject body = new JSONObject();
         try {
