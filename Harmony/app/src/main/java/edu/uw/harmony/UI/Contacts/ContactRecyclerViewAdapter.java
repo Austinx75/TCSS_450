@@ -52,8 +52,8 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
         this.selected = selected;
         this.autofill = autoFill;
 
-        mExpandedFlags = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
-        mInChat = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
+        mExpandedFlags = mContacts.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
+        mInChat = mContacts.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
     }
     public ContactRecyclerViewAdapter(List<ContactCard> items, ContactListViewModel mModel, UserInfoViewModel uModel, SettingsViewModel model) {
         this.mContacts= items;
@@ -63,8 +63,8 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
         this.newChat = false;
         this.selected = new ArrayList<String>();
         this.autofill= new ArrayList<String>();
-        mExpandedFlags = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
-        mInChat = mContact.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
+        mExpandedFlags = mContacts.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
+        mInChat = mContacts.stream().collect(Collectors.toMap(Function.identity(), contacts -> false));
     }
 
     @NonNull
@@ -166,6 +166,11 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             displayPreview();
         }
 
+        /**
+         * When the card is clicked, it will show a check mark indicating it is selected. We then
+         * reflect this in the mInChat map.
+         * @param button the button pressed
+         */
         private void handleSelected(final View button) {
             mInChat.put(mContact, !mInChat.get(mContact));
         }
@@ -181,6 +186,9 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             }
         }
 
+        /**
+         * Reflects to the card that the card is currently selected
+         */
         private void displaySelected() {
             if (mInChat.get(mContact)) {
                 binding.contactNewChatAdded.setVisibility(View.VISIBLE);

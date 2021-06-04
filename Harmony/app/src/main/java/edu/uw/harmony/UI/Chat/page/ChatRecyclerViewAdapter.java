@@ -67,24 +67,6 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
                         ChatListFragmentDirections.actionChatListFragmentToChatPostFragment(mChat.getChatId())
                 );
             });
-
-//            binding.textTitle.setOnClickListener(view -> {
-//                Navigation.findNavController(mView).navigate(
-//                        ChatListFragmentDirections.actionChatListFragmentToChatPostFragment(mChat.getChatId())
-//                );
-//            });
-//
-//            binding.textRecentMessage.setOnClickListener(view -> {
-//                Navigation.findNavController(mView).navigate(
-//                        ChatListFragmentDirections.actionChatListFragmentToChatPostFragment(mChat.getChatId())
-//                );
-//            });
-//
-//            binding.imageFace.setOnClickListener(view -> {
-//                Navigation.findNavController(mView).navigate(
-//                        ChatListFragmentDirections.actionChatListFragmentToChatPostFragment(mChat.getChatId())
-//                );
-//            });
             binding.textTitle.setText(chat.getTitle());
             binding.textRecentMessage.setText(chat.getRecentMessage());
 

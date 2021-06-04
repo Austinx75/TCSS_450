@@ -12,10 +12,15 @@ import java.io.Serializable;
  */
 public final class ChatMessage implements Serializable {
 
+    /** The message id*/
     private final int mMessageId;
+    /** The message*/
     private final String mMessage;
+    /** The sender*/
     private final String mSender;
+    /** The timestamp that the message was sent*/
     private final String mTimeStamp;
+    /** The chat id the message belongs to*/
     private final int mChatId;
 
     /**
