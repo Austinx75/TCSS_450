@@ -23,9 +23,16 @@ import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Auth.Register.RegisterFragmentDirections;
 import edu.uw.harmony.databinding.FragmentAvatarListBinding;
 
-
+/**
+ * This is a Fragment of a list of avatar instances.
+ *
+ * @author Jack Lin
+ * @version 1.1
+ */
 public class AvatarListFragment extends Fragment {
+    /** binding variable that allows interaction with views */
     private FragmentAvatarListBinding binding;
+    /** Instantiate view models to be used*/
     private AvatarViewModel aModel;
 
     private List<Avatar> mAvatarList;
@@ -48,6 +55,11 @@ public class AvatarListFragment extends Fragment {
         return binding.getRoot();
     }
 
+    /**
+     * Override onViewCreated, add a observer to contact list and update it based on changes
+     * @param view View
+     * @param savedInstanceState Bundle
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);

@@ -22,9 +22,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * This is a view model for the AvatarListFragment.
+ *
+ * @author Jack Lin
+ * @version 1.0
+ */
 public class AvatarViewModel extends AndroidViewModel {
+    /** live data for the list of contacts */
     private MutableLiveData<List<Avatar>> mAvatarList;
+    /** view model for the contact list class */
     private final MutableLiveData<JSONObject> mResponse;
 
     public AvatarViewModel(@NonNull Application application){
@@ -35,6 +42,11 @@ public class AvatarViewModel extends AndroidViewModel {
         mResponse.setValue(new JSONObject());
     }
 
+    /**
+     * Observer method to listen for changes made to avatar list
+     * @param owner Lifecycle owner
+     * @param observer Observer List<Avatar>
+     */
     public void addAvatarListObserver(@NonNull LifecycleOwner owner, @NonNull Observer<? super List<Avatar>> observer){
         mAvatarList.observe(owner, observer);
     }

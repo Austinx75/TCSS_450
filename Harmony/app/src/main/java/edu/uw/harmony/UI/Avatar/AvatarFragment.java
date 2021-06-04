@@ -12,9 +12,14 @@ import androidx.fragment.app.Fragment;
 
 import edu.uw.harmony.R;
 import edu.uw.harmony.databinding.FragmentAvatarBinding;
-
+/**
+ * This is a Fragment of a single avatar card instance.
+ *
+ * @author Jack Lin
+ * @version 1.0
+ */
 public class AvatarFragment extends Fragment {
-
+    /** binding variable that allows interaction with views */
     private FragmentAvatarBinding binding;
 
     public AvatarFragment() {

@@ -15,12 +15,22 @@ import edu.uw.harmony.R;
 import edu.uw.harmony.databinding.FragmentAvatarBinding;
 import edu.uw.harmony.databinding.FragmentAvatarListBinding;
 
+/**
+ * This is a Recycler Adapter that creates the AvatarListFragment.
+ *
+ * @author Jack Lin
+ * @version 1.0
+ */
 public class AvatarAdapter extends RecyclerView.Adapter<AvatarAdapter.AvatarViewHolder> {
     private final List<Avatar> mAvatarList;
     private FragmentAvatarListBinding listBinding;
     private View listView;
     AvatarViewModel avatarViewModel;
 
+
+    /**
+     * Constructor that initializes all relevant fields for avatar list fragment
+     */
     public AvatarAdapter(List<Avatar> avatarList, AvatarViewModel aModel, View listView){
         this.mAvatarList = avatarList;
         this.avatarViewModel = aModel;
@@ -45,12 +55,19 @@ public class AvatarAdapter extends RecyclerView.Adapter<AvatarAdapter.AvatarView
         return mAvatarList.size();
     }
 
+    /**
+     * Objects from this class represent an Individual row View from the List* of rows in the Avatar Recycler View.
+     */
     public static class AvatarViewHolder extends RecyclerView.ViewHolder{
         public FragmentAvatarBinding binding;
         public FragmentAvatarListBinding listBinding;
         AvatarViewModel avatarViewModel;
         private Avatar avatar;
 
+
+        /**
+         * Constructor for the Avatar view holder that initializes all needed fields
+         */
         public AvatarViewHolder(@NonNull View view, @NonNull View listView, AvatarViewModel aModel) {
             super(view);
             avatarViewModel = aModel;
