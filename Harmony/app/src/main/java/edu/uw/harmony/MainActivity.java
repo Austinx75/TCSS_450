@@ -132,10 +132,10 @@ public class  MainActivity extends AppCompatActivity {
 
         SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
         for(int i = 0; i < notifications.size(); i++){
-            if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).equals("New Chat")){
-                if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE) == null){
-                    Log.d("Null Test", String.valueOf(i));
-                } else {
+            if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE) == null){
+
+            } else {
+                if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).equals("New Chat")){
                     Log.d("Back", "Enters right if");
                     Timestamp ts = new Timestamp(System.currentTimeMillis());
                     Date date = new Date(ts.getTime());
@@ -151,12 +151,7 @@ public class  MainActivity extends AppCompatActivity {
                                     .getCharSequence(Notification.EXTRA_TEXT)
                                     .toString(),
                             dateString);
-                }
-            } else {
-                if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE) == null){
-                    Log.d("Null Test", String.valueOf(i));
                 } else {
-                    Log.d("Back", "Enters wrong if");
                     String dateString = formatter.format(new Date(notifications.get(i).getPostTime()));
                     nModel.addNotification(notifications
                                     .get(i)
@@ -173,7 +168,6 @@ public class  MainActivity extends AppCompatActivity {
                             notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
                 }
             }
-
         }
         notifications.clear();
     }
