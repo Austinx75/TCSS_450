@@ -183,7 +183,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
 
             binding.contactUsername.setText(contact.getUsername());
             binding.contactStatus.setText(contact.getStatus());
-            binding.contactAvatar.setImageResource(images[rand.nextInt(images.length)]);
+            binding.contactAvatar.setImageResource(contact.getAvatar());
 
             String name = contact.getName();
             String user = contact.getUsername();

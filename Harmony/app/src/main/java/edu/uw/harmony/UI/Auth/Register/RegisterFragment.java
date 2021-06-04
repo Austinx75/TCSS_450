@@ -19,6 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.uw.harmony.R;
+import edu.uw.harmony.UI.Avatar.AvatarViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentRegisterBinding;
 import edu.uw.harmony.util.PasswordValidator;
@@ -50,6 +51,7 @@ public class RegisterFragment extends Fragment {
 
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
+    private AvatarViewModel avatarViewModel;
 
     private PasswordValidator mNameValidator = checkPwdLength(1);
 
@@ -75,6 +77,7 @@ public class RegisterFragment extends Fragment {
         settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
         mRegisterModel = new ViewModelProvider(getActivity())
                 .get(RegisterViewModel.class);
+        avatarViewModel = new ViewModelProvider(getActivity()).get(AvatarViewModel.class);
     }
 
     @Override
@@ -111,8 +114,9 @@ public class RegisterFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        RegisterFragmentArgs args = RegisterFragmentArgs.fromBundle(getArguments());
         binding.buttonRegisterFragmentRegister.setOnClickListener(this::attemptRegister);
+        binding.changeAvatar.setImageResource(args.getAvatar());
         binding.changeAvatar.setOnClickListener(button ->  Navigation.findNavController(getView()).
                 navigate(RegisterFragmentDirections.actionRegisterFragmentToAvatarListFragment()));
         mRegisterModel.addResponseObserver(getViewLifecycleOwner(),
@@ -172,11 +176,13 @@ public class RegisterFragment extends Fragment {
     }
 
     private void verifyAuthWithServer() {
+        RegisterFragmentArgs args = RegisterFragmentArgs.fromBundle(getArguments());
         mRegisterModel.connect(
                 binding.editTextFirstName.getText().toString(),
                 binding.editTextLastName.getText().toString(),
                 binding.editTextEmail.getText().toString(),
                 binding.editTextPassword.getText().toString());
+                //args.getAvatar());
         //This is an Asynchronous call. No statements after should rely on the
         // result of connect().
     }
@@ -185,6 +191,7 @@ public class RegisterFragment extends Fragment {
      * Navigates to login upon successful registration.
      */
     private void navigateToLogin() {
+
         RegisterFragmentDirections.ActionRegisterFragmentToValidationFragment directions =
                 RegisterFragmentDirections.actionRegisterFragmentToValidationFragment();
 
