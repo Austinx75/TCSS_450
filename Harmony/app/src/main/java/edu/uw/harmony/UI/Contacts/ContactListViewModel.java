@@ -85,7 +85,7 @@ public class ContactListViewModel extends AndroidViewModel {
                     if (Integer.parseInt(contactList.get("verified").toString()) == 1)  {
                         ContactCard contact = new ContactCard.Builder(
                                 contactList.getString(getString.apply(R.string.keys_json_contacts_firstname)) + " " + contactList.getString(getString.apply(R.string.keys_json_contacts_lastname)),
-                                contactList.getString(getString.apply(R.string.keys_json_contacts_memberid))).addUsername(contactList.getString(getString.apply(R.string.keys_json_contacts_username)))
+                                contactList.getString(getString.apply(R.string.keys_json_contacts_memberid))).addUsername(contactList.getString(getString.apply(R.string.keys_json_contacts_username))).addAvatar(Integer.parseInt(contactList.getString("avatar")))
                                 .build();
                         list.add(contact);
                     }
