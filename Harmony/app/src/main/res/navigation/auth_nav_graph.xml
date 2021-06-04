@@ -36,13 +36,12 @@
         <action
             android:id="@+id/action_registerFragment_to_validationFragment"
             app:destination="@id/validationFragment" />
-        <argument
-            android:name="avatar"
-            app:argType="integer"
-            android:defaultValue="0" />
         <action
             android:id="@+id/action_registerFragment_to_avatarListFragment"
             app:destination="@id/avatarFragmentList" />
+        <argument
+            android:name="avatar"
+            app:argType="integer" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"
@@ -110,5 +109,12 @@
         android:id="@+id/avatarFragment"
         android:name="edu.uw.harmony.UI.Avatar.AvatarFragment"
         android:label="fragment_avatar"
-        tools:layout="@layout/fragment_avatar" />
+        tools:layout="@layout/fragment_avatar" >
+        <argument
+            android:name="avatar"
+            app:argType="edu.uw.harmony.UI.Avatar.Avatar" />
+        <action
+            android:id="@+id/action_avatarFragment_to_avatarFragmentList"
+            app:destination="@id/avatarFragmentList" />
+    </fragment>
 </navigation>

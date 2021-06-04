@@ -1,6 +1,7 @@
 package edu.uw.harmony.UI.Avatar;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,9 +36,9 @@ public class AvatarFragment extends Fragment {
     @Override
     public void onViewCreated(@Nullable View view, @NonNull Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
-        //AvatarFragment args = AvatarFragmentAtgs.fromBundle(getArguments());
+        AvatarFragmentArgs args = AvatarFragmentArgs.fromBundle(getArguments());
         FragmentAvatarBinding binding = FragmentAvatarBinding.bind(getView());
-        binding.imageView.setImageResource(R.drawable.contact_boy_512);
+        binding.imageView.setImageResource(args.getAvatar().getImageSource());
     }
 
 }

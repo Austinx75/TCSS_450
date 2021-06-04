@@ -89,8 +89,8 @@
         android:layout_centerInParent="true"
         android:layout_margin="16dp"
         android:foregroundGravity="center"
-        app:cardCornerRadius="120dp"
-        app:cardElevation="16dp"
+        app:cardCornerRadius="70dp"
+        app:cardElevation="8dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextFirstName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -105,6 +105,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/avatars" />
+        <EditText
+            android:id="@+id/avatarID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView">
+        </EditText>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

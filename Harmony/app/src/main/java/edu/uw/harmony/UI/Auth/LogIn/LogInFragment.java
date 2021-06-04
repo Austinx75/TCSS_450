@@ -129,7 +129,7 @@ public class LogInFragment extends Fragment {
 
         binding.buttonLoginFragmentRegister.setOnClickListener(button ->
                 Navigation.findNavController(getView()).navigate(
-                        LogInFragmentDirections.actionLogInFragmentToRegisterFragment()
+                        LogInFragmentDirections.actionLogInFragmentToRegisterFragment(2131230854)
                 ));
 
         binding.buttonLoginFragmentLogin.setOnClickListener(this::attemptSignIn);

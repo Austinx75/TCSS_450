@@ -82,11 +82,13 @@ public class RegisterViewModel extends AndroidViewModel {
      * @param last
      * @param email
      * @param password
+     * @param avatar
      */
     public void connect(final String first,
                         final String last,
                         final String email,
                         final String password){
+                        //final int avatar){
         String url = "https://team-9-tcss450-backend.herokuapp.com/register";
 
         JSONObject body = new JSONObject();
@@ -96,6 +98,7 @@ public class RegisterViewModel extends AndroidViewModel {
             body.put("last", last);
             body.put("email", email);
             body.put("password", password);
+            //body.put("avatar", avatar);
         } catch (JSONException e){
             e.printStackTrace();
         }

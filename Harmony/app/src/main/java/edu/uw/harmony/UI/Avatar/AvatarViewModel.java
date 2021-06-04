@@ -9,12 +9,19 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AvatarViewModel extends AndroidViewModel {
     private MutableLiveData<List<Avatar>> mAvatarList;
@@ -46,7 +53,30 @@ public class AvatarViewModel extends AndroidViewModel {
      * @param result JSONObject
      */
     private void handleResult(final JSONObject result) {
+        Log.d("AvatarHandleResult", "Success");
+    }
 
+    public void connectAdd (int avatar){
+        String url = "https://team-9-tcss450-backend.herokuapp.com/avatar";
+        JSONObject body = new JSONObject();
+        try {
+            body.put("Avatar", avatar);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Request request = new JsonObjectRequest(
+                Request.Method.PUT,
+                url,
+                body,
+                this::handleResult,
+                this::handleError) {
+        };
+        request.setRetryPolicy(new DefaultRetryPolicy(
+                10_000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        Volley.newRequestQueue(getApplication().getApplicationContext())
+                .add(request);
     }
 
 
