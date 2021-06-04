@@ -9,6 +9,14 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 
+/**
+ * Manages information about the user's current location.
+ *
+ *
+ * @author  Charles Bryan
+ * @author  Gary Kono
+ * @version 1.1
+ */
 public class LocationViewModel extends ViewModel {
     private MutableLiveData<Location> mLocation;
     private boolean mLoadedFirstLocation;
