@@ -225,8 +225,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             String id = contact.getId();
 
             String preview = "\r\n" + "Full Name: "+name + "\r\n" +
-                    "Username: "+user + "\r\n" +
-                    "ID: "+id + "\r\n";
+                    "Username: "+user + "\r\n";
             binding.textPreview.setText(preview);
 
             if(sModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
