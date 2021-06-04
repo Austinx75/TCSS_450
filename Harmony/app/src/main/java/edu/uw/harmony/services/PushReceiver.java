@@ -147,6 +147,7 @@ public class PushReceiver extends BroadcastReceiver {
     private void handleContactsNotification(Context context, Intent intent) {
         ActivityManager.RunningAppProcessInfo appProcessInfo = new ActivityManager.RunningAppProcessInfo();
         ActivityManager.getMyMemoryState(appProcessInfo);
+        Log.d("Contact", "This end point works");
 
         if (appProcessInfo.importance == IMPORTANCE_FOREGROUND || appProcessInfo.importance == IMPORTANCE_VISIBLE) {
             //app is in the foreground so send the message to the active Activities

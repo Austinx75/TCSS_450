@@ -133,21 +133,25 @@ public class  MainActivity extends AppCompatActivity {
         SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
         for(int i = 0; i < notifications.size(); i++){
             if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).equals("New Chat")){
-                Log.d("Back", "Enters right if");
-                Timestamp ts = new Timestamp(System.currentTimeMillis());
-                Date date = new Date(ts.getTime());
-                SimpleDateFormat formatter1 = new SimpleDateFormat("hh:mm a");
-                String dateString = formatter1.format(date);
-                nModel.addNotification(notifications
-                        .get(i)
-                        .getNotification()
-                        .extras
-                        .getCharSequence(Notification.EXTRA_TITLE).toString(),
-                        notifications.get(i).getNotification()
-                                .extras
-                                .getCharSequence(Notification.EXTRA_TEXT)
-                                .toString(),
-                        dateString);
+                if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE) == null){
+                    Log.d("Null Test", String.valueOf(i));
+                } else {
+                    Log.d("Back", "Enters right if");
+                    Timestamp ts = new Timestamp(System.currentTimeMillis());
+                    Date date = new Date(ts.getTime());
+                    SimpleDateFormat formatter1 = new SimpleDateFormat("hh:mm a");
+                    String dateString = formatter1.format(date);
+                    nModel.addNotification(notifications
+                                    .get(i)
+                                    .getNotification()
+                                    .extras
+                                    .getCharSequence(Notification.EXTRA_TITLE).toString(),
+                            notifications.get(i).getNotification()
+                                    .extras
+                                    .getCharSequence(Notification.EXTRA_TEXT)
+                                    .toString(),
+                            dateString);
+                }
             } else {
                 if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE) == null){
                     Log.d("Null Test", String.valueOf(i));
