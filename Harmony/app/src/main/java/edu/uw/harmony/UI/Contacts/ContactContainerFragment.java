@@ -29,8 +29,14 @@ import edu.uw.harmony.UI.Contacts.ContactRequestListFragment;
  * A simple {@link Fragment} subclass.
  */
 public class ContactContainerFragment extends Fragment {
+
+    /** Current Fragment to be displayed */
     View myFragment;
+
+    /** View pager that is used to display chosen fragments*/
     ViewPager viewPager;
+
+    /** menu that contains the tabs */
     TabLayout tabLayout;
 
     @Override
@@ -46,52 +52,47 @@ public class ContactContainerFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
         setUpViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
     }
 
+    /**
+     * Creates a view pager for the fragments to use to navigate to
+     * @param viewPager - The body of the UI
+     */
     private void setUpViewPager(ViewPager viewPager) {
         ViewPageAdapter adapter = new ViewPageAdapter(getChildFragmentManager());
 
-        adapter.addFragment(new ContactListFragment(), "Contacts");
-        //adapter.addFragment(new ContactRequestListFragment(), "Requests");
+        adapter.addFragment(new ContactListFragment(), "My Contacts");
         adapter.addFragment(new ContactRequestListFragment(), "Requests");
 
         viewPager.setAdapter(adapter);
     }
 
-    // inflates tool bar menu
+    /**
+     * Inflates toolbar menu
+     * @param menu - Resource file that contains toolbar
+     * @param inflater - inflater parameter
+     */
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.contact_tool_bar, menu);
     }
 
-    // makes tool bar menu visible
+    /**
+     * Makes tool bar menu visible
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
     }
 
-    // handles when tool bar menu's item is clicked
+    /**
+     * handles when tool bar menu's item is clicked
+     * @param item - Selected Item
+     * @return true if item selected add new contacts
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -106,24 +107,30 @@ public class ContactContainerFragment extends Fragment {
 
     /**
      *
-     * This class handles the constructs the tool bar
+     * This class handles the constructs the tool bar and allows to add class in toolbar
      *
      * @author  Hermie Baylon
      * @version 1.0
      */
     private class ViewPageAdapter extends FragmentPagerAdapter {
 
+        /** List that stores all needed fragments for tabs */
         private List<Fragment> fragments = new ArrayList<>();
+
+        /** List of Fragment titles for fragments */
         private List<String> fragmentTitle = new ArrayList<>();
 
+        /** Constructor for Page adapter with behaviour paramenter */
         public ViewPageAdapter(@NonNull FragmentManager fm, int behavior) {
             super(fm, behavior);
         }
 
+        /** Constructor for page adapter */
         public ViewPageAdapter(@NonNull FragmentManager fm) {
             super(fm);
         }
 
+        /** Adds fragment and title to list */
         public void addFragment(Fragment fragment, String title) {
             fragments.add(fragment);
             fragmentTitle.add(title);
