@@ -438,6 +438,15 @@ public class  MainActivity extends AppCompatActivity {
 
             if(intent.hasExtra("newChat")){
                 Log.d("Messages", "made it to main activity");
+                Log.d("PUSHY", "Received in main in if statement");
+                Timestamp ts = new Timestamp(System.currentTimeMillis());
+                Date date = new Date(ts.getTime());
+                SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
+                String dateString = formatter.format(date);
+                nModel.addNotification(intent.getStringExtra("member"), intent.getStringExtra("newChat"), dateString);
+                if(nd.getId() != R.id.navigation_chat_list){
+                    mNewMessageModel.increment(intent.getIntExtra("chatid", -1));
+                }
             }
 
 
