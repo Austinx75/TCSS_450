@@ -2,12 +2,14 @@ package edu.uw.harmony.UI.Weather;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
@@ -30,6 +32,7 @@ import edu.uw.harmony.MainActivity;
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Auth.LogIn.LogInFragmentDirections;
 import edu.uw.harmony.UI.model.LocationViewModel;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentWeatherLocationBinding;
 
 /**
@@ -46,6 +49,7 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
     private WeatherViewModel mWeatherModel;
     private LocationViewModel mLocationModel;
     private GoogleMap mMap;
+    private SettingsViewModel settingsViewModel;
 
     private Marker currentMarker;
 
@@ -67,6 +71,7 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
 
         this.binding = FragmentWeatherLocationBinding.bind(getView());
         binding.textViewErrorMessage.setVisibility(View.INVISIBLE);
+        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
 
         mWeatherModel = new ViewModelProvider(getActivity())
                 .get(WeatherViewModel.class);
@@ -91,6 +96,19 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
         binding.buttonSelectCurrentLocation.setOnClickListener(this::onUseCurrentLocation);
         binding.buttonSelectZipLocation.setOnClickListener(this::onUseZipCode);
         binding.buttonSelectMapLocation.setOnClickListener(this::onUseMapLocation);
+        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+            binding.editTextZipInput.setTextColor(Color.BLACK);
+            binding.textViewCurrentLocation.setTextColor(Color.BLACK);
+            binding.textViewMapLocation.setTextColor(Color.BLACK);
+            binding.textViewZipLocation.setTextColor(Color.BLACK);
+            binding.textViewErrorMessage.setTextColor(Color.BLACK);
+        } else {
+            binding.editTextZipInput.setTextColor(Color.WHITE);
+            binding.textViewCurrentLocation.setTextColor(Color.WHITE);
+            binding.textViewMapLocation.setTextColor(Color.WHITE);
+            binding.textViewZipLocation.setTextColor(Color.WHITE);
+            binding.textViewErrorMessage.setTextColor(Color.WHITE);
+        }
     }
 
     @Override
