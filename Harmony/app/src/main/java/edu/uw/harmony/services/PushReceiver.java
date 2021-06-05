@@ -148,8 +148,6 @@ public class PushReceiver extends BroadcastReceiver {
      * @param intent the intent of the message.
      */
     private void handleContactsNotification(Context context, Intent intent) {
-        ActivityManager.RunningAppProcessInfo appProcessInfo = new ActivityManager.RunningAppProcessInfo();
-        ActivityManager.getMyMemoryState(appProcessInfo);
         Log.d("Contact", "This end point works");
         String contact="", message="";
         Log.d("Contacts", "made it to push reciever");
@@ -161,6 +159,9 @@ public class PushReceiver extends BroadcastReceiver {
         } catch (Exception e){
             Log.e("Contact Update Error", "Failed to retrieve contact information");
         }
+
+        ActivityManager.RunningAppProcessInfo appProcessInfo = new ActivityManager.RunningAppProcessInfo();
+        ActivityManager.getMyMemoryState(appProcessInfo);
 
         if (appProcessInfo.importance == IMPORTANCE_FOREGROUND || appProcessInfo.importance == IMPORTANCE_VISIBLE) {
             //app is in the foreground so send the message to the active Activities
@@ -179,7 +180,6 @@ public class PushReceiver extends BroadcastReceiver {
 
             Intent i = new Intent(context, AuthActivity.class);
             i.putExtra("contactId", intent.getStringExtra("contactId"));
-            i.putExtra("message", intent.getStringExtra("message"));
             i.putExtras(intent.getExtras());
 
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
@@ -219,6 +219,7 @@ public class PushReceiver extends BroadcastReceiver {
      * @param intent the intent of the message.
      */
     private void handleNewChatNotifications(Context context, Intent intent) {
+
         ActivityManager.RunningAppProcessInfo appProcessInfo = new ActivityManager.RunningAppProcessInfo();
         ActivityManager.getMyMemoryState(appProcessInfo);
         String message;
