@@ -3,6 +3,7 @@ package edu.uw.harmony;
 import android.Manifest;
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.location.Location;
 import android.os.Bundle;
+import android.provider.Telephony;
 import android.service.notification.StatusBarNotification;
 import android.util.Log;
 import android.view.Menu;
@@ -39,6 +41,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import edu.uw.harmony.UI.Weather.WeatherViewModel;
 import edu.uw.harmony.UI.model.LocationViewModel;
+import edu.uw.harmony.UI.model.NewContactCountViewModel;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 
 import android.view.Menu;
@@ -80,6 +83,7 @@ public class  MainActivity extends AppCompatActivity {
 
     private MainPushMessageReceiver mPushMessageReceiver;
     private NewMessageCountViewModel mNewMessageModel;
+    private NewContactCountViewModel mNewContactModel;
     private NotificationViewModel nModel;
 
     private ActivityMainBinding binding;
@@ -129,6 +133,9 @@ public class  MainActivity extends AppCompatActivity {
         nModel = new ViewModelProvider(this).get(NotificationViewModel.class);
         notificationManager = (NotificationManager) this.getSystemService(this.NOTIFICATION_SERVICE);
         notifications = new ArrayList<>(Arrays.asList(notificationManager.getActiveNotifications()));
+        NavController nc = Navigation.findNavController(
+                MainActivity.this, R.id.nav_host_fragment);
+        NavDestination nd = nc.getCurrentDestination();
 
         SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
         for(int i = 0; i < notifications.size(); i++){
@@ -151,6 +158,10 @@ public class  MainActivity extends AppCompatActivity {
                                     .getCharSequence(Notification.EXTRA_TEXT)
                                     .toString(),
                             dateString);
+
+                    if(nd.getId() != R.id.navigation_chat_list){
+                        mNewMessageModel.increment(Integer.parseInt(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_SUB_TEXT).toString()));
+                    }
                 } else if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_INFO_TEXT).equals("contacts")) {
 
                     Log.d("Back", "Enters right if");
@@ -170,6 +181,10 @@ public class  MainActivity extends AppCompatActivity {
                                     .extras.getCharSequence(Notification.EXTRA_TEXT)
                                     .toString(),
                             dateString);
+
+                    if(nd.getId() != R.id.navigation_contact_container){
+                        mNewContactModel.increment();
+                    }
                 } else {
                     String dateString = formatter.format(new Date(notifications.get(i).getPostTime()));
                     nModel.addNotification(notifications
@@ -185,6 +200,9 @@ public class  MainActivity extends AppCompatActivity {
                                             .getCharSequence(Notification.EXTRA_TITLE)
                                             .length()),
                             notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TEXT).toString(), dateString);
+                    if(nd.getId() != R.id.navigation_chat_list){
+                        mNewMessageModel.increment(Integer.parseInt(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_SUB_TEXT).toString()));
+                    }
                 }
             }
         }
@@ -238,7 +256,37 @@ public class  MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController,mAppBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
+        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+            if (destination.getId() == R.id.navigation_contact_container) {
+                mNewContactModel.reset();
+                BadgeDrawable badge = binding.navView.getOrCreateBadge(R.id.navigation_contact_container);
+                badge.clearNumber();
+                badge.setVisible(false);
+            }
+            if(destination.getId() == R.id.navigation_chat_list){
+                BadgeDrawable badge = binding.navView.getOrCreateBadge(R.id.navigation_chat_list);
+                badge.clearNumber();
+                badge.setVisible(false);
+            }
+        });
+
         mNewMessageModel = new ViewModelProvider(this).get(NewMessageCountViewModel.class);
+        mNewContactModel = new ViewModelProvider(this).get(NewContactCountViewModel.class);
+
+        mNewContactModel.addContactCountObserver(this, count ->{
+            Log.e("total ", "" +count);
+            BadgeDrawable badge = binding.navView.getOrCreateBadge(R.id.navigation_contact_container);
+            badge.setMaxCharacterCount(3);
+            if ( count > 0) {
+                //new messages! update and show the notification badge.
+                badge.setNumber(count);
+                badge.setVisible(true);
+            } else {
+                //user did some action to clear the new messages, remove the badge
+                badge.clearNumber();
+                badge.setVisible(false);
+            }
+        });
 
 ;
         mNewMessageModel.addMessageCountObserver(this, mapping -> {
@@ -255,6 +303,7 @@ public class  MainActivity extends AppCompatActivity {
                 badge.clearNumber();
                 badge.setVisible(false);
             }
+
         });
 
         //Location Setup
@@ -385,9 +434,13 @@ public class  MainActivity extends AppCompatActivity {
                 }
                 mModel.addMessage(intent.getIntExtra("chatid", -1), cm);
             }
+
+
             if(intent.hasExtra("newChat")){
                 Log.d("Messages", "made it to main activity");
             }
+
+
             if(intent.hasExtra("contactId")){
                 Log.d("PUSHY", "Received in main in if statement");
                 Timestamp ts = new Timestamp(System.currentTimeMillis());
@@ -395,6 +448,10 @@ public class  MainActivity extends AppCompatActivity {
                 SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
                 String dateString = formatter.format(date);
                 nModel.addNotification(intent.getStringExtra("contactId"), intent.getStringExtra("message"), dateString);
+
+                if(nd.getId() != R.id.navigation_contact_container){
+                    mNewContactModel.increment();
+                }
 
             }
 

@@ -110,11 +110,13 @@ public class PushReceiver extends BroadcastReceiver {
 
             //research more on notifications the how to display them
             //https://developer.android.com/guide/topics/ui/notifiers/notifications
+
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                     .setAutoCancel(true)
                     .setSmallIcon(R.drawable.chat_notification_24dp)
                     .setContentTitle("Message from: " + message.getSender())
                     .setContentText(message.getMessage())
+                    .setSubText(Integer.toString(message.getChatId()))
                     .setContentInfo(intent.getStringExtra("type"))
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                     .setContentIntent(pendingIntent);
@@ -221,9 +223,11 @@ public class PushReceiver extends BroadcastReceiver {
         ActivityManager.getMyMemoryState(appProcessInfo);
         String message;
         String member;
+        int chatid;
         try{
             message = intent.getStringExtra("message");
             member = intent.getStringExtra("member");
+            chatid = intent.getIntExtra("chatid", -1);
             Log.d("Message", intent.getStringExtra("message"));
         } catch(Exception e){
             throw new IllegalStateException("Error from Web Service. Contact Dev Support");
@@ -237,6 +241,7 @@ public class PushReceiver extends BroadcastReceiver {
             Intent i = new Intent(RECEIVED_NEW_CHAT);
             i.putExtra("newChat", message);
             i.putExtra("member", member);
+            i.putExtra("chatid", chatid);
             i.putExtras(intent.getExtras());
             Log.d("intent", i.getStringExtra("newChat"));
             context.sendBroadcast(i);
@@ -249,6 +254,7 @@ public class PushReceiver extends BroadcastReceiver {
 
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
                     i, PendingIntent.FLAG_UPDATE_CURRENT);
+            //Log.d("PUSHY", intent.getIntExtra("chatid", -1));
 
             //research more on notifications the how to display them
             //https://developer.android.com/guide/topics/ui/notifiers/notifications
@@ -258,6 +264,7 @@ public class PushReceiver extends BroadcastReceiver {
                     .setContentTitle(intent.getStringExtra("member"))
                     .setContentInfo(intent.getStringExtra("type"))
                     .setContentText(message)
+                    .setSubText(Integer.toString(intent.getIntExtra("chatid", -1)))
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                     .setContentIntent(pendingIntent);
 
