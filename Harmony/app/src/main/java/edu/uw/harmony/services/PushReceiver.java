@@ -32,7 +32,7 @@ public class PushReceiver extends BroadcastReceiver {
 
     private static final String CHANNEL_ID = "1";
 
-    public static final String RECEIVED_NEW_CONTACT = "contacts page update from push";
+    public static final String RECEIVED_NEW_CONTACT = "contacts page update from pushy";
 
     public static final String RECEIVED_NEW_CHAT = "new chat has been created";
 
@@ -115,6 +115,7 @@ public class PushReceiver extends BroadcastReceiver {
                     .setSmallIcon(R.drawable.chat_notification_24dp)
                     .setContentTitle("Message from: " + message.getSender())
                     .setContentText(message.getMessage())
+                    .setContentInfo(intent.getStringExtra("type"))
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                     .setContentIntent(pendingIntent);
 
@@ -148,6 +149,16 @@ public class PushReceiver extends BroadcastReceiver {
         ActivityManager.RunningAppProcessInfo appProcessInfo = new ActivityManager.RunningAppProcessInfo();
         ActivityManager.getMyMemoryState(appProcessInfo);
         Log.d("Contact", "This end point works");
+        String contact="", message="";
+        Log.d("Contacts", "made it to push reciever");
+
+        try{
+             contact = intent.getStringExtra("contactId");
+             message = intent.getStringExtra("message");
+
+        } catch (Exception e){
+            Log.e("Contact Update Error", "Failed to retrieve contact information");
+        }
 
         if (appProcessInfo.importance == IMPORTANCE_FOREGROUND || appProcessInfo.importance == IMPORTANCE_VISIBLE) {
             //app is in the foreground so send the message to the active Activities
@@ -155,13 +166,18 @@ public class PushReceiver extends BroadcastReceiver {
 
             //create an Intent to broadcast a message to other parts of the app.
             Intent i = new Intent(RECEIVED_NEW_CONTACT);
+            i.putExtra("contactId", contact);
+            i.putExtra("message",message);
             i.putExtras(intent.getExtras());
+            Log.d("PUSHY", "Contact Request Sender " + i.getStringExtra("contactId").toString());
             context.sendBroadcast(i);
         } else {
             //app is in the background so create and post a notification
             Log.d("PUSHY", "Contacts info updated in background");
 
             Intent i = new Intent(context, AuthActivity.class);
+            i.putExtra("contactId", intent.getStringExtra("contactId"));
+            i.putExtra("message", intent.getStringExtra("message"));
             i.putExtras(intent.getExtras());
 
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
@@ -172,7 +188,9 @@ public class PushReceiver extends BroadcastReceiver {
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                     .setAutoCancel(true)
                     .setSmallIcon(R.drawable.contact_black_24dp)
-                    .setContentTitle("Contacts Notification")
+                    .setContentTitle(i.getStringExtra("contactId"))
+                    .setContentText(i.getStringExtra("message"))
+                    .setContentInfo(intent.getStringExtra("type"))
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                     .setContentIntent(pendingIntent)
                     .setGroup("Harmony Notifications");
@@ -202,8 +220,10 @@ public class PushReceiver extends BroadcastReceiver {
         ActivityManager.RunningAppProcessInfo appProcessInfo = new ActivityManager.RunningAppProcessInfo();
         ActivityManager.getMyMemoryState(appProcessInfo);
         String message;
+        String member;
         try{
             message = intent.getStringExtra("message");
+            member = intent.getStringExtra("member");
             Log.d("Message", intent.getStringExtra("message"));
         } catch(Exception e){
             throw new IllegalStateException("Error from Web Service. Contact Dev Support");
@@ -216,6 +236,7 @@ public class PushReceiver extends BroadcastReceiver {
             //create an Intent to broadcast a message to other parts of the app.
             Intent i = new Intent(RECEIVED_NEW_CHAT);
             i.putExtra("newChat", message);
+            i.putExtra("member", member);
             i.putExtras(intent.getExtras());
             Log.d("intent", i.getStringExtra("newChat"));
             context.sendBroadcast(i);
@@ -234,7 +255,8 @@ public class PushReceiver extends BroadcastReceiver {
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                     .setAutoCancel(true)
                     .setSmallIcon(R.drawable.chat_notification_24dp)
-                    .setContentTitle("New Chat")
+                    .setContentTitle(intent.getStringExtra("member"))
+                    .setContentInfo(intent.getStringExtra("type"))
                     .setContentText(message)
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                     .setContentIntent(pendingIntent);

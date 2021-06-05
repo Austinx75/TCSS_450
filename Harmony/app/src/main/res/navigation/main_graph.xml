@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_navigation_home_to_navigation_chat_list"
             app:destination="@id/navigation_chat_list" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_contact_container"
+            app:destination="@id/navigation_contact_container" />
     </fragment>
     <fragment
         android:id="@+id/navigation_contact"

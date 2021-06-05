@@ -132,10 +132,10 @@ public class  MainActivity extends AppCompatActivity {
 
         SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
         for(int i = 0; i < notifications.size(); i++){
-            if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE) == null){
+            if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE) == null || notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_INFO_TEXT) == null){
 
             } else {
-                if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_TITLE).equals("New Chat")){
+                if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_INFO_TEXT).equals("chat")){
                     Log.d("Back", "Enters right if");
                     Timestamp ts = new Timestamp(System.currentTimeMillis());
                     Date date = new Date(ts.getTime());
@@ -149,6 +149,25 @@ public class  MainActivity extends AppCompatActivity {
                             notifications.get(i).getNotification()
                                     .extras
                                     .getCharSequence(Notification.EXTRA_TEXT)
+                                    .toString(),
+                            dateString);
+                } else if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_INFO_TEXT).equals("contacts")) {
+
+                    Log.d("Back", "Enters right if");
+                    Timestamp ts = new Timestamp(System.currentTimeMillis());
+                    Date date = new Date(ts.getTime());
+                    SimpleDateFormat formatter1 = new SimpleDateFormat("hh:mm a");
+                    String dateString = formatter1.format(date);
+                    nModel.addNotification(notifications
+                            .get(i)
+                            .getNotification()
+                            .extras
+                            .getCharSequence(Notification.EXTRA_TITLE)
+                            .toString(),
+                            notifications
+                                    .get(i)
+                                    .getNotification()
+                                    .extras.getCharSequence(Notification.EXTRA_TEXT)
                                     .toString(),
                             dateString);
                 } else {
@@ -170,6 +189,7 @@ public class  MainActivity extends AppCompatActivity {
             }
         }
         notifications.clear();
+        notificationManager.cancelAll();
     }
 
 
@@ -367,6 +387,15 @@ public class  MainActivity extends AppCompatActivity {
             }
             if(intent.hasExtra("newChat")){
                 Log.d("Messages", "made it to main activity");
+            }
+            if(intent.hasExtra("contactId")){
+                Log.d("PUSHY", "Received in main in if statement");
+                Timestamp ts = new Timestamp(System.currentTimeMillis());
+                Date date = new Date(ts.getTime());
+                SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
+                String dateString = formatter.format(date);
+                nModel.addNotification(intent.getStringExtra("contactId"), intent.getStringExtra("message"), dateString);
+
             }
 
         }
