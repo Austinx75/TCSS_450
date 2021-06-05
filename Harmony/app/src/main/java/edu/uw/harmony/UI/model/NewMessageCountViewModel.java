@@ -6,7 +6,9 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -53,6 +55,17 @@ public class NewMessageCountViewModel extends ViewModel {
      */
     public void setCurrentChatRoom(int id) {
         mCurrentChatRoom.setValue(id);
+    }
+
+    public List<Integer> getRoomsWithMessages() {
+        Map<Integer, Integer> map = mNewMessageCount.getValue();
+        List<Integer> newMessages = new ArrayList<>();
+        for (Map.Entry<Integer, Integer> entry: map.entrySet()) {
+            if (entry.getValue() > 0) {
+                newMessages.add(entry.getKey());
+            }
+        }
+        return newMessages;
     }
 
     /**
