@@ -108,6 +108,9 @@
         <action
             android:id="@+id/action_settingsFragment_to_passwordChangeFragment"
             app:destination="@id/passwordChangeFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_avatarListFragment2"
+            app:destination="@id/avatarListFragment2" />
     </fragment>
     <fragment
         android:id="@+id/passwordChangeFragment"
@@ -215,6 +218,15 @@
         android:id="@+id/addNewContactCardFragment"
         android:name="edu.uw.harmony.UI.Contacts.AddNewContactCardFragment"
         android:label="AddNewContactCardFragment" />
+    <fragment
+        android:id="@+id/avatarListFragment2"
+        android:name="edu.uw.harmony.UI.settings.AvatarListFragment"
+        android:label="fragment_avatar_list2"
+        tools:layout="@layout/fragment_avatar_list2" >
+        <action
+            android:id="@+id/action_avatarListFragment2_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
 
 
 </navigation>

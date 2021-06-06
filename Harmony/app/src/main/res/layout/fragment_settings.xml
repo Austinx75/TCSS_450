@@ -71,4 +71,17 @@
         app:layout_constraintTop_toBottomOf="@+id/dark_mode_textView"
         app:layout_constraintVertical_bias="0.0" />
 
+    <Button
+        android:id="@+id/button_change_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:text="@string/button_settings_change_avatar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dark_mode_textView"
+        app:layout_constraintVertical_bias="0.228" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

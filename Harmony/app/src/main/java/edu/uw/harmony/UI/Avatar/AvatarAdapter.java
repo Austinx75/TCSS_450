@@ -80,9 +80,6 @@ public class AvatarAdapter extends RecyclerView.Adapter<AvatarAdapter.AvatarView
             binding = FragmentAvatarBinding.bind(view);
             listBinding = FragmentAvatarListBinding.bind(listView);
 
-            binding.imageView.setOnClickListener(button -> {
-                Log.d("imageId", String.valueOf(binding.imageView.getId()));
-            });
         }
 
         public void setAvatar(final Avatar av) {
@@ -93,7 +90,6 @@ public class AvatarAdapter extends RecyclerView.Adapter<AvatarAdapter.AvatarView
             binding.imageView.setOnClickListener(button -> {
                 listBinding.currentAvatar.setImageResource(avatar.getImageSource());
                 listBinding.avatarID.setText(String.valueOf(avatar.getImageSource()));
-                System.out.println(listBinding.avatarID.getText().toString());
                 AvatarAdapter.currentAvatar = avatar.getImageSource();
             });
 

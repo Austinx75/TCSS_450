@@ -116,6 +116,8 @@ public class SettingsFragment extends Fragment{
             }
         });
 
+        binding.buttonChangeAvatar.setOnClickListener(button -> Navigation.findNavController(getView()).navigate(SettingsFragmentDirections.actionSettingsFragmentToAvatarListFragment2()));
+
     }
 
     /**

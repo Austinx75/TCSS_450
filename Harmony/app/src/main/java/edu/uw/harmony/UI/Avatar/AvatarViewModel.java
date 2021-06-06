@@ -68,7 +68,7 @@ public class AvatarViewModel extends AndroidViewModel {
         Log.d("AvatarHandleResult", "Success");
     }
 
-    public void connectAdd (int avatar){
+    public void connectAdd (final String jwt, int avatar){
         String url = "https://team-9-tcss450-backend.herokuapp.com/avatar";
         JSONObject body = new JSONObject();
         try {
@@ -82,6 +82,13 @@ public class AvatarViewModel extends AndroidViewModel {
                 body,
                 this::handleResult,
                 this::handleError) {
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> headers = new HashMap<>();
+                // add headers <key,value>
+                headers.put("Authorization", jwt);
+                return headers;
+            }
         };
         request.setRetryPolicy(new DefaultRetryPolicy(
                 10_000,
