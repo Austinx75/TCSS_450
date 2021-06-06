@@ -354,13 +354,24 @@ public class WeatherViewModel extends AndroidViewModel {
     public void updateLocationCoordinates(Location location) {
         if(mWeatherLocationSource == WeatherLocationSource.CURRENT) {
             if(!mGetStartingLocationHasBeenInitialized) {
-                useCurrentLocation();
+                useCurrentLocationObserveLocationChange(location);
                 mGetStartingLocationHasBeenInitialized = true;
             } else {
                 mLatitude = location.getLatitude();
                 mLongitude = location.getLongitude();
             }
         }
+    }
+
+    /**
+     * Update the weather information stored in this view model and make a request to the endpoint based
+     * on the user's current location.
+     */
+    public void useCurrentLocationObserveLocationChange(Location location) {
+        mLocationSourceUsedInRequest = WeatherLocationSource.CURRENT;
+        mLatitudeRequest = location.getLatitude();
+        mLongitudeRequest = location.getLongitude();
+        connectGet(true);
     }
 
     /**
