@@ -181,8 +181,8 @@ public class RegisterFragment extends Fragment {
                 binding.editTextFirstName.getText().toString(),
                 binding.editTextLastName.getText().toString(),
                 binding.editTextEmail.getText().toString(),
-                binding.editTextPassword.getText().toString());
-                //args.getAvatar());
+                binding.editTextPassword.getText().toString(),
+                args.getAvatar());
         //This is an Asynchronous call. No statements after should rely on the
         // result of connect().
     }

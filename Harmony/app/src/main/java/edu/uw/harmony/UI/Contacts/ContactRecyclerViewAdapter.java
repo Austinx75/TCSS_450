@@ -101,12 +101,6 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
         List<String> selected;
         List<String> autofill;
 
-        public int[] images = {R.drawable.contact_boy_512, R.drawable.contact_hacker_512,R.drawable.contact_barista_512,
-                R.drawable.contact_kitty_512,R.drawable.contact_man_512,R.drawable.contact_man_1_512,
-                R.drawable.contact_man_2_512,R.drawable.contact_user_512,R.drawable.contact_woman_512,
-                R.drawable.contact_woman_1_512};
-        Random rand = new Random();
-
         /**
          * Constructor for the Contact view holder that initializes all needed fields
          */
@@ -128,7 +122,6 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
                     mModel.contactDelete(uModel.getJwt(), Integer.parseInt(mContact.getId()));
                 });
                 binding.contactMessage.setOnClickListener(button -> {
-                    Log.d("ID", (mContact.getId()));
                     ContactContainerFragmentDirections.ActionNavigationContactContainerToNavigationNewChat2 directions
                             = ContactContainerFragmentDirections.actionNavigationContactContainerToNavigationNewChat2();
                     directions.setEmail(binding.contactUsername.getText().toString());
@@ -138,24 +131,13 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             } else{
                 binding.contactCard.setOnClickListener(button -> {
                     if (binding.contactNewChatAdded.getVisibility() == View.VISIBLE) {
-//                        binding.contactNewChatAdded.setVisibility(View.GONE);
                         this.selected.remove(binding.contactUsername.getText().toString());
                     }else{
-//                        binding.contactNewChatAdded.setVisibility(View.VISIBLE);
                         this.selected.add(binding.contactUsername.getText().toString());
                     }
                     handleSelected(button);
                     displaySelected();
                 });
-//                binding.contactNewChatAdded.setOnClickListener(button -> {
-//                    if (binding.contactNewChatAdded.getVisibility() == View.VISIBLE) {
-//                        binding.contactNewChatAdded.setVisibility(View.GONE);
-//                        this.selected.remove(binding.contactUsername.getText().toString());
-//                    }else{
-//                        binding.contactNewChatAdded.setVisibility(View.VISIBLE);
-//                        this.selected.add(binding.contactUsername.getText().toString());
-//                    }
-//                });
                 binding.contactDelete.setVisibility(View.GONE);
                 binding.contactMessage.setVisibility(View.GONE);
             }
@@ -219,6 +201,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             binding.contactUsername.setText(contact.getUsername());
             binding.contactStatus.setText(contact.getStatus());
             binding.contactAvatar.setImageResource(contact.getAvatar());
+            Log.d("AvatarID:", String.valueOf(contact.getAvatar()));
 
             String name = contact.getName();
             String user = contact.getUsername();

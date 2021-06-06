@@ -35,6 +35,8 @@ import edu.uw.harmony.R;
  */
 
 public class ContactListViewModel extends AndroidViewModel {
+    //private final String URL = "https://localhost:5000/contacts";
+    private final String URL = "https://team-9-tcss450-backend.herokuapp.com/contacts/";
 
     /** live data for the list of contacts */
     private MutableLiveData<List<ContactCard>> mContactList;
@@ -107,11 +109,9 @@ public class ContactListViewModel extends AndroidViewModel {
      * @param jwt String jwt
      */
     public void connectGet(final String jwt) {
-        String url = "https://team-9-tcss450-backend.herokuapp.com/contacts";
-        //String url = "https://localhost:5000/contacts";
         Request request = new JsonObjectRequest(
                 Request.Method.GET,
-                url,
+                URL,
                 null, //no body for this get request
                 this::handleResult,
                 this::handleError) {
@@ -132,40 +132,6 @@ public class ContactListViewModel extends AndroidViewModel {
         Volley.newRequestQueue(getApplication().getApplicationContext()).add(request);
     }
 
-    /**
-     * Post method to add contacts to the user table
-     * @param jwt String jwt
-     * @param id Int member ID
-     */
-    public void contactAdd (final String jwt, int id){
-//        String url = "https://localhost:5000/contacts";
-        String url = "https://team-9-tcss450-backend.herokuapp.com/contacts";
-        JSONObject body = new JSONObject();
-        try {
-            body.put("MemberId", id);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        Request request = new JsonObjectRequest(
-                Request.Method.POST,
-                url,
-                body,
-                this::handleResult,
-                this::handleError) {
-            @Override
-            public Map<String, String> getHeaders() {
-                Map<String, String> headers = new HashMap<>();
-                headers.put("Authorization", jwt);
-                return headers;
-            }
-        };
-        request.setRetryPolicy(new DefaultRetryPolicy(
-                10_000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        Volley.newRequestQueue(getApplication().getApplicationContext())
-                .add(request);
-    }
 
     /**
      * Delete method to delete existing contacts from the user table
@@ -173,9 +139,7 @@ public class ContactListViewModel extends AndroidViewModel {
      * @param id Int Member ID
      */
     public void contactDelete (final String jwt, int id){
-        Log.d("Contact Delete",  "Trying method");
-        String url = "https://team-9-tcss450-backend.herokuapp.com/contacts/"+ id;
-
+        String url = URL + id;
         Request request = new JsonObjectRequest(
                 Request.Method.DELETE,
                 url,

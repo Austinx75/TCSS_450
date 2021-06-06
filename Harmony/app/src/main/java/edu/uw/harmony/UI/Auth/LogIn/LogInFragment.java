@@ -52,6 +52,8 @@ public class LogInFragment extends Fragment {
     private FragmentLogInBinding binding;
     private LogInViewModel mSignInModel;
 
+    private int verifiedAccount;
+
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
 
@@ -69,6 +71,7 @@ public class LogInFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        this.verifiedAccount = -1;
         SharedPreferences prefs =
                 getActivity().getSharedPreferences(
                         getString(R.string.keys_shared_prefs),
@@ -129,7 +132,7 @@ public class LogInFragment extends Fragment {
 
         binding.buttonLoginFragmentRegister.setOnClickListener(button ->
                 Navigation.findNavController(getView()).navigate(
-                        LogInFragmentDirections.actionLogInFragmentToRegisterFragment(2131230854)
+                        LogInFragmentDirections.actionLogInFragmentToRegisterFragment(R.drawable.contact_boy_512)
                 ));
 
         binding.buttonLoginFragmentLogin.setOnClickListener(this::attemptSignIn);
@@ -230,7 +233,7 @@ public class LogInFragment extends Fragment {
 
         Navigation.findNavController(getView())
                 .navigate(LogInFragmentDirections
-                        .actionLogInFragmentToMainActivity(email, jwt));
+                        .actionLogInFragmentToMainActivity(email, jwt, this.verifiedAccount));
 
         getActivity().finish();
 
@@ -253,10 +256,20 @@ public class LogInFragment extends Fragment {
                 }
             } else {
                 try {
+                    Log.e("Recovering password", response.get("inPasswordRecoverProcess") + "");
+                    Log.e("Verified", response.get("verified").toString().equals("1") + "");
+                    SharedPreferences prefs =
+                            getActivity().getSharedPreferences(
+                                    getString(R.string.keys_shared_prefs),
+                                    Context.MODE_PRIVATE);//Store the credentials in SharedPrefs
+                    prefs.edit().putString(getString(R.string.keys_prefs_verified), response.getInt("verified")+ "").apply();
+                    prefs.edit().putString(getString(R.string.keys_prefs_recovering), response.getInt("inPasswordRecoverProcess")+ "").apply();
+                    this.verifiedAccount = response.getInt("verified");
                     mUserViewModel = new ViewModelProvider(getActivity(),
                             new UserInfoViewModel.UserInfoViewModelFactory(
                                     binding.editTextEmail.getText().toString(),
-                                    response.getString("token")
+                                    response.getString("token"),
+                                    response.getInt("verified")
                             )).get(UserInfoViewModel.class);
                     sendPushyToken();
                 } catch (JSONException e) {

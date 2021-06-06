@@ -2,6 +2,8 @@ package edu.uw.harmony.UI.Home;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Build;
@@ -13,14 +15,19 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.service.notification.StatusBarNotification;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -106,7 +113,6 @@ public class HomeFragment extends Fragment {
             mWeatherModel.updateLocationCoordinates(location);
         });
 
-
         /** I instantiate the recycler view here.*/
         View notificationView = binding.listRoot;
         if (notificationView instanceof RecyclerView){
@@ -120,6 +126,26 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        SharedPreferences prefs =
+                getActivity().getSharedPreferences(
+                        getString(R.string.keys_shared_prefs),
+                        Context.MODE_PRIVATE);//Store the credentials in SharedPrefs
+        if (prefs.contains(getString(R.string.keys_prefs_verified)) ) {
+            String token = prefs.getString(getString(R.string.keys_prefs_verified), "");
+            if (token.equals("0"))
+            Navigation.findNavController(view).navigate(HomeFragmentDirections.actionNavigationHomeToEmailVerificationFragment());
+        }
+
+        if (prefs.contains(getString(R.string.keys_prefs_recovering))) {
+            String token = prefs.getString(getString(R.string.keys_prefs_recovering), "");
+            Log.e("TOKEN for recovering", token);
+            if (token.equals("1")) {
+                Navigation.findNavController(view).navigate(HomeFragmentDirections.actionNavigationHomeToPasswordChangeFragment());
+            }
+        }
+
+        BottomNavigationView navBar = getActivity().findViewById(R.id.nav_view);
+        navBar.setVisibility(View.VISIBLE);
 
         hModel.setJWT(model.getJwt());
         hModel.setHomeBinding(binding);

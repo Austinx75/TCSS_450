@@ -126,13 +126,15 @@ public class  MainActivity extends AppCompatActivity {
     /** Accesses the settings**/
     private SettingsViewModel settingsViewModel;
 
+    private int mVerified;
+
 
     /**
      * Recieves messages from system service and adds them to notification view model.
      */
     public void onStart() {
         super.onStart();
-
+        this.mVerified = -1;
         nModel = new ViewModelProvider(this).get(NotificationViewModel.class);
         notificationManager = (NotificationManager) this.getSystemService(this.NOTIFICATION_SERVICE);
         notifications = new ArrayList<>(Arrays.asList(notificationManager.getActiveNotifications()));
@@ -146,7 +148,6 @@ public class  MainActivity extends AppCompatActivity {
 
             } else {
                 if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_INFO_TEXT).equals("chat")){
-                    Log.d("Back", "Enters right if");
                     Timestamp ts = new Timestamp(System.currentTimeMillis());
                     Date date = new Date(ts.getTime());
                     SimpleDateFormat formatter1 = new SimpleDateFormat("hh:mm a");
@@ -166,8 +167,6 @@ public class  MainActivity extends AppCompatActivity {
                         mNewMessageModel.increment(Integer.parseInt(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_SUB_TEXT).toString()));
                     }
                 } else if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_INFO_TEXT).equals("contacts")) {
-
-                    Log.d("Back", "Enters right if");
                     Timestamp ts = new Timestamp(System.currentTimeMillis());
                     Date date = new Date(ts.getTime());
                     SimpleDateFormat formatter1 = new SimpleDateFormat("hh:mm a");
@@ -228,11 +227,12 @@ public class  MainActivity extends AppCompatActivity {
 
 
         MainActivityArgs args = MainActivityArgs.fromBundle(getIntent().getExtras());
+        this.mVerified=args.getVerified();
         JWT jwt = new JWT(args.getJwt());
         String email = args.getEmail();
         new ViewModelProvider(
                 this,
-                new UserInfoViewModel.UserInfoViewModelFactory(email, jwt.toString()))
+                new UserInfoViewModel.UserInfoViewModelFactory(email, jwt.toString(), this.mVerified))
                 .get(UserInfoViewModel.class);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -259,6 +259,10 @@ public class  MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController,mAppBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
+
+        mNewMessageModel = new ViewModelProvider(this).get(NewMessageCountViewModel.class);
+        mNewContactModel = new ViewModelProvider(this).get(NewContactCountViewModel.class);
+
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
             if (destination.getId() == R.id.navigation_contact_container) {
                 mNewContactModel.reset();
@@ -272,9 +276,6 @@ public class  MainActivity extends AppCompatActivity {
                 badge.setVisible(false);
             }
         });
-
-        mNewMessageModel = new ViewModelProvider(this).get(NewMessageCountViewModel.class);
-        mNewContactModel = new ViewModelProvider(this).get(NewContactCountViewModel.class);
 
         mNewContactModel.addContactCountObserver(this, count ->{
             Log.e("total ", "" +count);
@@ -373,6 +374,10 @@ public class  MainActivity extends AppCompatActivity {
                     || super.onSupportNavigateUp();
     }
 
+    /**
+     * When entering the onResume part of the lifecycle,
+     * if the receivers are null, they will be instantiated and registered
+     */
     @Override
     public void onResume() {
         super.onResume();
@@ -396,11 +401,20 @@ public class  MainActivity extends AppCompatActivity {
         //startLocationUpdates();
     }
 
+    /**
+     * This unregisters the receivers if it enters this lifecycle
+     */
     @Override
     public void onPause() {
         super.onPause();
         if (mPushMessageReceiver != null) {
             unregisterReceiver(mPushMessageReceiver);
+        }
+        if(mContactPushReceiver != null){
+                unregisterReceiver(mContactPushReceiver);
+        }
+        if(mNewChatPushReceiver != null){
+            unregisterReceiver(mNewChatPushReceiver);
         }
 
         //stopLocationUpdates();

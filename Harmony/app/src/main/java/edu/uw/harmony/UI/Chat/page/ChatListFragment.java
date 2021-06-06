@@ -40,6 +40,7 @@ public class ChatListFragment extends Fragment {
     private FragmentChatListBinding binding;
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
+    private NewMessageCountViewModel mCountModel;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class ChatListFragment extends Fragment {
         ViewModelProvider provider = new ViewModelProvider(getActivity());
         mModel = new ViewModelProvider(getActivity()).get(ChatListViewModel.class);
         mUserModel = provider.get(UserInfoViewModel.class);
+        mCountModel = provider.get(NewMessageCountViewModel.class);
         mModel.connectGet(mUserModel.getJwt(), mUserModel.getEmail());
         mModel.done();
     }
@@ -78,7 +80,7 @@ public class ChatListFragment extends Fragment {
             if (mModel.isWorking()) {
                 binding.layoutWait.setVisibility(View.VISIBLE);
                 Log.d("string", "not empty");
-                binding.listRoot.setAdapter( new ChatRecyclerViewAdapter(blogList, settingsViewModel)
+                binding.listRoot.setAdapter( new ChatRecyclerViewAdapter(blogList, settingsViewModel, this.mCountModel)
                 );
 
                 binding.layoutWait.setVisibility(View.GONE);

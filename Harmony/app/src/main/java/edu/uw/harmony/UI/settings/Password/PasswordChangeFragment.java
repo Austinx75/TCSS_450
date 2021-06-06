@@ -1,6 +1,7 @@
 package edu.uw.harmony.UI.settings.Password;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -15,6 +16,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -64,6 +67,21 @@ public class PasswordChangeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentPasswordChangeBinding.inflate(inflater, container, false);
+
+        SharedPreferences prefs =
+                getActivity().getSharedPreferences(
+                        getString(R.string.keys_shared_prefs),
+                        Context.MODE_PRIVATE);//Store the credentials in SharedPrefs
+        if (prefs.contains(getString(R.string.keys_prefs_recovering))) {
+            String token = prefs.getString(getString(R.string.keys_prefs_recovering), "");
+            if (token.equals("1")) {
+                BottomNavigationView navBar = getActivity().findViewById(R.id.nav_view);
+                navBar.setVisibility(View.GONE);
+            } else{
+                binding.textView3.setVisibility(View.GONE);
+            }
+        }
+
         mModel = new ViewModelProvider(getActivity()).get(PasswordChangeViewModel.class);
         mModel.addResponseObserver(
                 getViewLifecycleOwner(),
@@ -101,6 +119,7 @@ public class PasswordChangeFragment extends Fragment {
      * @param response the Response from the server
      */
     private void observeResponse(final JSONObject response) {
+        Log.e("response", response + "l");
         if (response.length() > 0) {
             if (response.has("code")) {
                 try {
@@ -110,8 +129,20 @@ public class PasswordChangeFragment extends Fragment {
                     Log.e("JSON Parse Error", e.getMessage());
                 }
             } else {
-                if (!this.mIsValidating)
-                    navigateToSuccess();
+                try {
+                    Log.e("Verified account", response.get("success") + "");
+                    if (!this.mIsValidating) {
+                        SharedPreferences prefs =
+                                getActivity().getSharedPreferences(
+                                        getString(R.string.keys_shared_prefs),
+                                        Context.MODE_PRIVATE);//Store the credentials in SharedPrefs
+                        prefs.edit().putString(getString(R.string.keys_prefs_recovering), 0+"").apply();
+
+                        navigateToSuccess();
+                    }
+                } catch (JSONException e) {
+                    Log.e("JSON Parse Error", e.getMessage());
+                }
             }
         } else {
             Log.d("JSON Response", "No Response");

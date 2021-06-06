@@ -68,7 +68,7 @@ public class ContactRequestListFragment extends Fragment {
         FragmentContactRequestListBinding binding = FragmentContactRequestListBinding.bind(getView());
         mModel.addContactListObserver(getViewLifecycleOwner(), contactList -> {
             binding.listRoot.setAdapter(
-                    new ContactRequestRecyclerViewAdapter(contactList,mModel,mUserModel, settingsViewModel));
+                    new ContactRequestRecyclerViewAdapter(contactList,mModel, mUserModel, settingsViewModel));
         });
     }
 
@@ -78,6 +78,9 @@ public class ContactRequestListFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        mModel.connectGet(mUserModel.getJwt());
+        if(mUserModel != null){
+            mModel.connectGet(mUserModel.getJwt());
+        }
+
     }
 }

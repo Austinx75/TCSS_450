@@ -1,4 +1,4 @@
-package edu.uw.harmony.UI.Auth.Register;
+package edu.uw.harmony.UI.Auth.Validation;
 
 import android.app.Application;
 import android.util.Base64;
@@ -32,12 +32,12 @@ import java.util.Objects;
  * @author Austin Scott
  * @version 1.0
  */
-public class RegisterViewModel extends AndroidViewModel {
+public class EmailVerificationViewModel extends AndroidViewModel {
 
     /** Array of JSONObject*/
     private MutableLiveData<JSONObject> mResponse;
 
-    public RegisterViewModel(@NonNull Application application) {
+    public EmailVerificationViewModel(@NonNull Application application) {
         super(application);
         mResponse = new MutableLiveData<>();
         mResponse.setValue(new JSONObject());
@@ -78,37 +78,35 @@ public class RegisterViewModel extends AndroidViewModel {
 
     /**
      * Connects to the web service to register user.
-     * @param first
-     * @param last
-     * @param email
-     * @param password
-     * @param avatar
+     * @param code
      */
-    public void connect(final String first,
-                        final String last,
-                        final String email,
-                        final String password,
-                        final int avatar){
-        String url = "https://team-9-tcss450-backend.herokuapp.com/register";
+    public void connect(final String jwt, final String code){
+        //final int avatar){
+        String url = "https://team-9-tcss450-backend.herokuapp.com/register/validate";
 
         JSONObject body = new JSONObject();
 
         try{
-            body.put("first",first);
-            body.put("last", last);
-            body.put("email", email);
-            body.put("password", password);
-            body.put("avatar", avatar);
+            body.put("code",code);
         } catch (JSONException e){
             e.printStackTrace();
         }
 
         Request request = new JsonObjectRequest(
-                Request.Method.POST,
+                Request.Method.PUT,
                 url,
                 body,
                 mResponse::setValue,
-                this::handleError);
+                this::handleError){
+
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> headers = new HashMap<>();
+                // add headers <key,value>
+                headers.put("Authorization", jwt);
+                return headers;
+            }
+        };
 
         request.setRetryPolicy(new DefaultRetryPolicy(
                 10_000,
