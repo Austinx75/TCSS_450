@@ -68,7 +68,7 @@ public class ContactRequestListFragment extends Fragment {
         FragmentContactRequestListBinding binding = FragmentContactRequestListBinding.bind(getView());
         mModel.addContactListObserver(getViewLifecycleOwner(), contactList -> {
             binding.listRoot.setAdapter(
-                    new ContactRequestRecyclerViewAdapter(contactList,mModel,mUserModel, settingsViewModel));
+                    new ContactRequestRecyclerViewAdapter(contactList,mModel, mUserModel, settingsViewModel));
         });
     }
 

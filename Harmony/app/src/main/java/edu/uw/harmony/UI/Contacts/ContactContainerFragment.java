@@ -28,7 +28,7 @@ import edu.uw.harmony.UI.Contacts.ContactRequestListFragment;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ContactContainerFragment extends Fragment {
+public class ContactContainerFragment extends Fragment{
 
     /** Current Fragment to be displayed */
     View myFragment;
@@ -67,6 +67,25 @@ public class ContactContainerFragment extends Fragment {
         adapter.addFragment(new ContactRequestListFragment(), "Requests");
 
         viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            int CurrentPossition = 0;
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) { }
+            @Override
+            public void onPageSelected(int position) {
+                Fragment frag = adapter.fragments.get(position);
+                if(frag != null && frag instanceof ContactListFragment){
+                    ((ContactListFragment)frag).onResume();
+                }
+                if(frag != null && frag instanceof ContactRequestListFragment){
+                    ((ContactRequestListFragment)frag).onResume();
+                }
+            }
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     /**
@@ -104,6 +123,8 @@ public class ContactContainerFragment extends Fragment {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 
     /**
      *
