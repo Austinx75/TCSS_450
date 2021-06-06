@@ -134,6 +134,9 @@
         <action
             android:id="@+id/action_addNewContactFragment_to_navigation_contact2"
             app:destination="@id/navigation_contact" />
+        <action
+            android:id="@+id/action_addNewContactFragment_to_addNewContactCardFragment"
+            app:destination="@id/addNewContactCardFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_contact_container"
@@ -208,6 +211,10 @@
         android:name="edu.uw.harmony.UI.Contacts.ContactRequestCardFragment"
         android:label="fragment_contact_request_card"
         tools:layout="@layout/fragment_contact_request_card" />
+    <fragment
+        android:id="@+id/addNewContactCardFragment"
+        android:name="edu.uw.harmony.UI.Contacts.AddNewContactCardFragment"
+        android:label="AddNewContactCardFragment" />
 
 
 </navigation>
