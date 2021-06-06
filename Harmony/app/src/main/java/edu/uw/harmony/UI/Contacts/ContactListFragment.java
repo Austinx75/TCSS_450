@@ -102,6 +102,9 @@ public class ContactListFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        mModel.connectGet(mUserModel.getJwt());
+        if(mUserModel != null){
+            Log.d("BackButton", mUserModel.toString());
+            mModel.connectGet(mUserModel.getJwt());
+        }
     }
 }
