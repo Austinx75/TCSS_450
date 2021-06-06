@@ -81,7 +81,6 @@ public class AvatarListFragment extends Fragment {
             binding.setAvatar.setOnClickListener(button -> {
                 Navigation.findNavController(getView()).navigate(AvatarListFragmentDirections.actionAvatarListFragment2ToSettingsFragment());
                 aModel.connectAdd(uModel.getJwt(), aa.getCurrentAvatar());
-
             });
         });
 
