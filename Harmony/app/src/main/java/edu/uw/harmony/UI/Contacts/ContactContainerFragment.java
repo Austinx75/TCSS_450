@@ -68,7 +68,6 @@ public class ContactContainerFragment extends Fragment{
 
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            int CurrentPossition = 0;
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) { }
             @Override

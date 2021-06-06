@@ -25,6 +25,7 @@ public class AvatarAdapter extends RecyclerView.Adapter<AvatarAdapter.AvatarView
     private final List<Avatar> mAvatarList;
     private FragmentAvatarListBinding listBinding;
     private View listView;
+    public static int currentAvatar;
     AvatarViewModel avatarViewModel;
 
 
@@ -53,6 +54,10 @@ public class AvatarAdapter extends RecyclerView.Adapter<AvatarAdapter.AvatarView
     @Override
     public int getItemCount() {
         return mAvatarList.size();
+    }
+
+    public int getCurrentAvatar() {
+        return currentAvatar;
     }
 
     /**
@@ -84,10 +89,12 @@ public class AvatarAdapter extends RecyclerView.Adapter<AvatarAdapter.AvatarView
             this.avatar = av;
             binding.imageView.setImageResource(avatar.getImageSource());
             binding.avatarID.setText(avatar.getImageSource());
+
             binding.imageView.setOnClickListener(button -> {
                 listBinding.currentAvatar.setImageResource(avatar.getImageSource());
                 listBinding.avatarID.setText(String.valueOf(avatar.getImageSource()));
                 System.out.println(listBinding.avatarID.getText().toString());
+                AvatarAdapter.currentAvatar = avatar.getImageSource();
             });
 
         }
