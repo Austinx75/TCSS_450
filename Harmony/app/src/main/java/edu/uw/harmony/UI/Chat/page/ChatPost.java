@@ -21,6 +21,7 @@ public class ChatPost implements Serializable {
     private final String mRecentMessage;
     /** Title for chat*/
     private  String mTitle;
+    private int Avatar;
 
 
     /**
@@ -38,6 +39,8 @@ public class ChatPost implements Serializable {
         /** The most recent message within the chat*/
         private  String mRecentMessage = "";
 
+        private int Avatar;
+
 
         /**
          * Constructs a new Builder.
@@ -45,11 +48,12 @@ public class ChatPost implements Serializable {
          * @param Id the chat id
          * @param members all member ids for members in the chatroom
          */
-        public Builder(int Id, List<Integer> members, String title, String recentMessage) {
+        public Builder(int Id, List<Integer> members, String title, String recentMessage, int Avatar) {
             this.mChatId = Id;
             this.mMemberIds = members;
             this.mTitle = title;
             mRecentMessage = recentMessage;
+            this.Avatar = Avatar;
         }
 
 
@@ -68,6 +72,7 @@ public class ChatPost implements Serializable {
         this.mMemberIds = builder.mMemberIds;
         this.mRecentMessage = builder.mRecentMessage;
         this.mTitle=builder.mTitle;
+        this.Avatar=builder.Avatar;
     }
 
     /**
@@ -89,4 +94,6 @@ public class ChatPost implements Serializable {
      * @return the most recent message
      */
     public String getRecentMessage() {return mRecentMessage;}
+
+    public int getAvatar() {return this.Avatar;}
 }

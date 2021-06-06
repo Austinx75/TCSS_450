@@ -56,6 +56,7 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
         private ChatPost mChat;
         private NewMessageCountViewModel mModel;
         private List<Integer> newMessages;
+
         public ChatViewHolder(View view, NewMessageCountViewModel model) {
             super(view);
             mView = view;
@@ -75,7 +76,7 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
                 binding.contactNewChatAdded2.setVisibility(View.GONE);
             }
             mChat = chat;
-            binding.imageFace.setImageResource((R.drawable.contact_boy_512));
+            binding.imageFace.setImageResource((chat.getAvatar()));
             binding.cardRoot.setOnClickListener(view ->  navToChat());
             binding.textRecentMessage.setOnClickListener(view -> navToChat());
             binding.contactNewChatAdded2.setOnClickListener(view -> navToChat());
