@@ -102,7 +102,7 @@ public class NotificationRecyclerViewAdapter extends
          */
         void setNotifications(final NotificationItem notifications) {
             mNotifications = notifications;
-             if(mNotifications.getMessage().equals("New contact request.")){
+             if(mNotifications.getMessage().toLowerCase().contains("contact")){
                 binding.imageMessageNotificationHome.setImageDrawable(binding.getRoot().getResources().getDrawable(R.drawable.contact_black_24dp));
             }
             Log.d("Message in Set Notifications", mNotifications.getMessage());
@@ -125,7 +125,7 @@ public class NotificationRecyclerViewAdapter extends
                 binding.fragmentTimeNotification.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
             }
             binding.cardRoot.setOnClickListener(view -> {
-                if(mNotifications.getMessage().equals("New contact request.")){
+                if(mNotifications.getMessage().toLowerCase().contains("contact")){
                     Navigation.findNavController(mView).navigate(
                         HomeFragmentDirections.actionNavigationHomeToNavigationContactContainer());
                 } else {
