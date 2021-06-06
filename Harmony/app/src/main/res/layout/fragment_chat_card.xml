@@ -17,9 +17,10 @@
 
         <TextView
             android:id="@+id/text_title"
-            android:layout_width="275dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="4dp"
+            android:layout_width="236dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="64dp"
             android:background="@color/white"
             android:paddingLeft="8dp"
             android:paddingTop="8dp"
@@ -32,16 +33,16 @@
 
         <TextView
             android:id="@+id/text_recent_message"
-            android:layout_width="271dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="4dp"
+            android:layout_width="247dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="52dp"
+            android:clickable="true"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:paddingBottom="8dp"
             android:textAppearance="?attr/textAppearanceListItem"
             android:textStyle="bold"
-            android:clickable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/text_title" />
 
@@ -54,6 +55,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/contact_man_512" />
+
+        <ImageButton
+            android:id="@+id/contact_new_chat_added2"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:contentDescription="@string/contact_message"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/contact_status"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_notification_chat_24dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

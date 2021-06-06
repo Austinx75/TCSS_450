@@ -1,6 +1,7 @@
 package edu.uw.harmony.UI.Auth.Password;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -17,11 +18,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Auth.Register.RegisterFragmentDirections;
+import edu.uw.harmony.UI.Home.HomeFragmentDirections;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentPasswordRecoveryBinding;
