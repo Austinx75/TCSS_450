@@ -3,6 +3,7 @@ package edu.uw.harmony.UI.Home;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.graphics.Color;
+import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -35,6 +36,7 @@ import edu.uw.harmony.UI.Contacts.ContactRecyclerViewAdapter;
 import edu.uw.harmony.UI.Weather.HourlyForecastRecyclerViewAdapter;
 import edu.uw.harmony.UI.Weather.WeatherViewModel;
 import edu.uw.harmony.UI.Weather.WeeklyForecastRecyclerViewAdapter;
+import edu.uw.harmony.UI.model.LocationViewModel;
 import edu.uw.harmony.UI.model.NewMessageCountViewModel;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
@@ -58,6 +60,10 @@ public class HomeFragment extends Fragment {
     private UserInfoViewModel model;
     /** This is the home view model*/
     private HomeViewModel hModel;
+    /** This is the weather view model*/
+    private WeatherViewModel mWeatherModel;
+    /** This is the location view model*/
+    private LocationViewModel mLocationModel;
 
     private boolean mUpdatedByWeatherFragment = false;
 
@@ -83,11 +89,23 @@ public class HomeFragment extends Fragment {
         model = new ViewModelProvider(getActivity()).get(UserInfoViewModel.class);
         hModel = new ViewModelProvider(getActivity()).get(HomeViewModel.class);
         nModel = new ViewModelProvider(getActivity()).get(NotificationViewModel.class);
+        mLocationModel = new ViewModelProvider(getActivity()).get(LocationViewModel.class);
         notificationManager = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
 
+        //Set up action listener for weather updates
+        mWeatherModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
+        mWeatherModel.setJWT(model.getJwt());
+        mWeatherModel.addCurrentWeatherObserver(getViewLifecycleOwner(), currentWeather -> {
+            binding.imageViewMainConditionsPlaceholder.setImageResource(currentWeather.image);
+            binding.textDegHome.setText(
+                    Math.round(
+                            Double.parseDouble(currentWeather.temp)) + "°");
+        });
+        mWeatherModel.setLocationModel(mLocationModel);
+        mLocationModel.addLocationObserver(getViewLifecycleOwner(), location -> {
+            mWeatherModel.updateLocationCoordinates(location);
+        });
 
-        WeatherViewModel weatherModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
-        weatherModel.setHomeFragment(this);
 
         /** I instantiate the recycler view here.*/
         View notificationView = binding.listRoot;
@@ -103,13 +121,6 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        if(!mUpdatedByWeatherFragment) {
-            hModel.connectGet();
-            hModel.setJWT(model.getJwt());
-            hModel.setHomeBinding(binding);
-        }
-
-        hModel.connectGet();
         hModel.setJWT(model.getJwt());
         hModel.setHomeBinding(binding);
 

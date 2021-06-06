@@ -574,10 +574,6 @@ public class  MainActivity extends AppCompatActivity {
                                             .get(LocationViewModel.class);
                                 }
                                 mLocationModel.setLocation(location);
-
-                                //When first getting a location, setup the weather view model so that
-                                //it can connect to the current location from here
-                                setupWeatherModel();
                             }
                         }
                     });
@@ -625,17 +621,6 @@ public class  MainActivity extends AppCompatActivity {
         mLocationRequest.setFastestInterval(FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS);
 
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-    }
-
-    /**
-     * Initializes the weather model with a connection to this activity (to also connect to the location
-     * view model) so that it has access to the user's current location before visiting the weather fragment
-     */
-    private void setupWeatherModel() {
-        WeatherViewModel weatherModel = new ViewModelProvider(this).get(WeatherViewModel.class);
-        weatherModel.setCurrentActivity(this);
-        weatherModel.setupLocationModel();
-        weatherModel.useCurrentLocation();
     }
 
     /**

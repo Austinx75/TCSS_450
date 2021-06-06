@@ -3,6 +3,7 @@ package edu.uw.harmony.UI.Weather;
 import android.app.Activity;
 import android.app.Application;
 import android.graphics.Color;
+import android.location.Location;
 import android.util.Log;
 import android.view.View;
 
@@ -56,36 +57,75 @@ public class WeatherViewModel extends AndroidViewModel {
 
     /** What type of location was selected to get weather information about (i.e. Map, Zip, etc.) */
     private WeatherLocationSource mWeatherLocationSource;
-    private String mZipCode;
+
+    /* These are locations that are actually saved in the view model because they successfully retrieved
+    weather info about their location */
     private double mLatitude;
     private double mLongitude;
+    private String mZipCode;
 
+    /* These are variables that store parameters used in the most recent connectGet() call */
+    private double mLatitudeRequest;
+    private double mLongitudeRequest;
+    private String mZipCodeRequest;
+    /** The type of location used in the most recent connectGet() call */
+    private WeatherLocationSource mLocationSourceUsedInRequest;
+
+    private MutableLiveData<CurrentWeatherContainer> mCurrentWeatherContainer;
     private MutableLiveData<List<HourlyForecastItem>> mHourlyList;
     private MutableLiveData<List<WeeklyForecastItem>> mWeeklyList;
+    /** A flag whether the most recent location selected was a valid location. */
+    private MutableLiveData<Boolean> mLocationIsValid;
+    /** A flag whether the server has responded after a request. */
+    private MutableLiveData<Boolean> mServerHasResponded;
+    /** A flag whether the the view model has been initialized with current location or not */
+    private boolean mGetStartingLocationHasBeenInitialized;
+
+    /** A flag to indicate whether there is a navigation from the weather location tab to the weather report tab */
+    private boolean mNavigatingFromWeatherLocation;
+
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
 
-    private FragmentHomeBinding mHomeBinding;
     private LocationViewModel mLocationModel;
-    private FragmentWeatherBinding mWeatherBinding;
-    private FragmentWeatherLocationBinding mWeatherLocationBinding;
-    private WeatherLocationFragment mWeatherLocationFragment;
-    private HomeFragment mHomeFragment;
-
-    /** A flag whether the most recent location selected was a valid location. */
-    private boolean mLocationIsValid;
 
 
     public WeatherViewModel(@NonNull Application application) {
         super(application);
 
-        mWeatherLocationSource = WeatherLocationSource.LAT_LONG;
+        mWeatherLocationSource = WeatherLocationSource.CURRENT;
 
+        mCurrentWeatherContainer = new MutableLiveData<>();
+        mCurrentWeatherContainer.setValue(new CurrentWeatherContainer(
+                "Seattle",
+                R.drawable.weather_clouds,
+                "0.0",
+                "0"));
+
+        if(mHourlyList == null)
         mHourlyList = new MutableLiveData<>();
         mHourlyList.setValue(new ArrayList<>());
 
         mWeeklyList = new MutableLiveData<>();
         mWeeklyList.setValue(new ArrayList<>());
+
+        mLocationIsValid = new MutableLiveData<>();
+        mLocationIsValid.setValue(false);
+
+        mServerHasResponded = new MutableLiveData<>();
+        mServerHasResponded.setValue(true);
+
+        mLocationSourceUsedInRequest = WeatherLocationSource.CURRENT;
+        mNavigatingFromWeatherLocation = false;
+        mGetStartingLocationHasBeenInitialized = false;
+    }
+
+    /**
+     * Add an observer to the CurrentWeather
+     */
+    public void addCurrentWeatherObserver(@NonNull LifecycleOwner owner,
+                                                  @NonNull Observer<? super CurrentWeatherContainer> observer) {
+        mCurrentWeatherContainer.observe(owner, observer);
     }
 
     /**
@@ -105,12 +145,28 @@ public class WeatherViewModel extends AndroidViewModel {
     }
 
     /**
+     * Add an observer listening to whether the last searched location to the weather endpoint was a valid
+     * location or not
+     */
+    public void addLocationIsValidObserver(@NonNull LifecycleOwner owner,
+                                                  @NonNull Observer<? super Boolean> observer) {
+        mLocationIsValid.observe(owner, observer);
+    }
+
+    /**
+     * Add an observer listening to whether the response for the request to the web service has
+     * been processed by this view model
+     */
+    public void addServerRespondedObserver(@NonNull LifecycleOwner owner,
+                                           @NonNull Observer<? super Boolean> observer) {
+        mServerHasResponded.observe(owner, observer);
+    }
+
+    /**
      * Handle an error from a request to the weather service endpoint. Mainly updates an error message
      * shown in a fragment if a location could not be found.
      */
     private void handleError(final VolleyError error) {
-        //you should add much better error handling in a production release.
-        // i.e. YOUR PROJECT
         String expectedBadLocationRequestError = "Location for given latitude/longitude or zip code not found";
 
         String data = new String(error.networkResponse.data, Charset.defaultCharset());
@@ -119,12 +175,8 @@ public class WeatherViewModel extends AndroidViewModel {
             dataJSON = new JSONObject(data);
             if(dataJSON.get("message").toString().equals(expectedBadLocationRequestError)) {
                 //Update that the location is unsuccessful
-                this.mLocationIsValid = false;
-                if(mWeatherLocationFragment != null
-                        && mWeatherLocationFragment.isVisible()
-                        && mWeatherLocationFragment.getUserVisibleHint()) {
-                    mWeatherLocationFragment.afterServerResponse();
-                }
+                this.mLocationIsValid.setValue(false);
+                serverRespond();
             } else {
                 Log.e("Connection to web service error: ", dataJSON.get("message").toString());
             }
@@ -138,9 +190,6 @@ public class WeatherViewModel extends AndroidViewModel {
      * Handle the response given by the request to the web service endpoint. Updates the weather report.
      */
     private void handleResult(final JSONObject result) {
-        mWeatherBinding.layoutComponents.setVisibility(View.GONE);
-        mWeatherBinding.layoutWait.setVisibility(View.VISIBLE);
-
         IntFunction<String> getString = getApplication().getResources()::getString;
         try {
             //Current conditions
@@ -211,28 +260,32 @@ public class WeatherViewModel extends AndroidViewModel {
             e.printStackTrace();
             Log.e("ERROR!", e.getMessage());
         }
-        mWeatherBinding.layoutComponents.setVisibility(View.VISIBLE);
-        mWeatherBinding.layoutWait.setVisibility(View.GONE);
-
-        mLocationIsValid = true;
-        if(mWeatherLocationFragment != null
-                && mWeatherLocationFragment.isVisible()
-                && mWeatherLocationFragment.getUserVisibleHint()) {
-            mWeatherLocationFragment.afterServerResponse();
-        }
+        mLocationIsValid.setValue(true);
+        serverRespond();
     }
 
     /**
      * Make a request to the web service endpoint for weather information about the selected location.
+     *
+     * @param useTemporaryRequestCoordinates Determines whether this call is trying to find information
+     *                                       about a new location (true) or is using the saved location (false)
      */
-    public void connectGet() {
+    public void connectGet(boolean useTemporaryRequestCoordinates) {
+        mServerHasResponded.setValue(false);
         String url = "https://team-9-tcss450-backend.herokuapp.com/weather?";
-
-        if(mWeatherLocationSource.equals(WeatherLocationSource.ZIP)) {
-            url += "zip=" + this.mZipCode;
+        if(useTemporaryRequestCoordinates) {
+            if(mLocationSourceUsedInRequest.equals(WeatherLocationSource.ZIP)) {
+                url += "zip=" + this.mZipCodeRequest;
+            } else {
+                url += "lat=" + this.mLatitudeRequest + "&long=" + this.mLongitudeRequest;
+            }
         } else {
-            url += "lat=" + this.mLatitude + "&long=" + this.mLongitude;
-        };
+            if(mWeatherLocationSource.equals(WeatherLocationSource.ZIP)) {
+                url += "zip=" + this.mZipCode;
+            } else {
+                url += "lat=" + this.mLatitude + "&long=" + this.mLongitude;
+            }
+        }
 
         Request request = new JsonObjectRequest(
                 Request.Method.GET,
@@ -256,7 +309,7 @@ public class WeatherViewModel extends AndroidViewModel {
     }
 
     /**
-     * Updates the weather information for the current weather on the weather report fragment.
+     * Updates the weather information for the current weather in this view model.
      * @param city Name of the location's city.
      * @param currentWeather A JSON from the webservice endpoint that contains current weather info.
      * @throws JSONException
@@ -273,77 +326,41 @@ public class WeatherViewModel extends AndroidViewModel {
                 Integer.parseInt(currentWeather.getString(
                         getString.apply(
                                 R.string.keys_hour_time))));
-        this.mWeatherBinding.imageViewMainConditionsPlaceholder.setImageResource(image);
-
-        //Update city name
-        this.mWeatherBinding.textViewCityPlaceholder.setText(city);
 
         //Update current temperature
-        String temperature = (int) Double.parseDouble(
-                currentWeather.getString(
-                        getString.apply(
-                                R.string.keys_temp))) + "°";
-        this.mWeatherBinding.textViewMainTemperaturePlaceholder.setText(temperature);
-
-
-        //Update home fragment with the above values
-        if(mHomeFragment != null && mHomeFragment.isVisible()) {
-            this.mHomeBinding.imageViewMainConditionsPlaceholder.setImageResource(image);
-            this.mHomeBinding.textDegHome.setText(temperature);
-            mHomeFragment.setUpdatedByWeatherFragment(true);
-        }
-
-
+        String temperature = currentWeather.getString(
+                getString.apply(
+                        R.string.keys_temp));
         //Update wind speed
-        this.mWeatherBinding.textViewWindSpeedPlaceholder.setText(
-                "Wind Speed: " +
-                Math.round((Double.parseDouble(
-                            currentWeather.getString(
-                                    getString.apply(
-                                            R.string.keys_wind_speed))) * 100.0) / 100.0) + " mph"
-        );
+        String windspeed =  currentWeather.getString(
+                getString.apply(
+                        R.string.keys_wind_speed));
+
+        mCurrentWeatherContainer.setValue(
+                new CurrentWeatherContainer(city, image, temperature, windspeed));
     }
 
     public void setJWT(String jwt) {
         this.mJwt = jwt;
     }
 
-    public void setHomeBinding(FragmentHomeBinding binding) {
-        this.mHomeBinding = binding;
-    }
-
-    public void setWeatherBinding(FragmentWeatherBinding binding) {
-        this.mWeatherBinding = binding;
-    }
-
-    public void setWeatherLocationBinding(FragmentWeatherLocationBinding binding) {
-        this.mWeatherLocationBinding = binding;
-    }
-
-    /**
-     * Connect this view model to an activity so that it can access components such as the user's
-     * current location
-     *
-     * @param activity
-     */
-    public void setCurrentActivity(Activity activity) {
-        mActivity = activity;
-    }
-
     /**
      * Connect the weather view model to the location model in the current activity
      */
-    public void setupLocationModel() {
-        mLocationModel = new ViewModelProvider((ViewModelStoreOwner) mActivity)
-                .get(LocationViewModel.class);
+    public void setLocationModel(LocationViewModel locationModel) {
+        mLocationModel = locationModel;
     }
 
-    public void setHomeFragment(HomeFragment homeFragment) {
-        mHomeFragment = homeFragment;
-    }
-
-    public void setWeatherLocationFragment(WeatherLocationFragment weatherLocationFragment) {
-        mWeatherLocationFragment = weatherLocationFragment;
+    public void updateLocationCoordinates(Location location) {
+        if(mWeatherLocationSource == WeatherLocationSource.CURRENT) {
+            if(!mGetStartingLocationHasBeenInitialized) {
+                useCurrentLocation();
+                mGetStartingLocationHasBeenInitialized = true;
+            } else {
+                mLatitude = location.getLatitude();
+                mLongitude = location.getLongitude();
+            }
+        }
     }
 
     /**
@@ -351,10 +368,10 @@ public class WeatherViewModel extends AndroidViewModel {
      * on the user's current location.
      */
     public void useCurrentLocation() {
-        mWeatherLocationSource = WeatherLocationSource.LAT_LONG;
-        mLatitude = mLocationModel.getCurrentLocation().getLatitude();
-        mLongitude = mLocationModel.getCurrentLocation().getLongitude();
-        connectGet();
+        mLocationSourceUsedInRequest = WeatherLocationSource.CURRENT;
+        mLatitudeRequest = mLocationModel.getCurrentLocation().getLatitude();
+        mLongitudeRequest = mLocationModel.getCurrentLocation().getLongitude();
+        connectGet(true);
     }
 
     /**
@@ -362,9 +379,9 @@ public class WeatherViewModel extends AndroidViewModel {
      * on the zip code provided.
      */
     public void useZipLocation(String zip) {
-        mWeatherLocationSource = WeatherLocationSource.ZIP;
-        mZipCode = zip;
-        connectGet();
+        mLocationSourceUsedInRequest = WeatherLocationSource.ZIP;
+        mZipCodeRequest = zip;
+        connectGet(true);
     }
 
     /**
@@ -372,33 +389,95 @@ public class WeatherViewModel extends AndroidViewModel {
      * on the location selected on the map.
      */
     public void useMapLocation(double latitude, double longitude) {
-        mWeatherLocationSource = WeatherLocationSource.LAT_LONG;
-        mLatitude = latitude;
-        mLongitude = longitude;
-        connectGet();
+        mLocationSourceUsedInRequest = WeatherLocationSource.MAP;
+        mLatitudeRequest = latitude;
+        mLongitudeRequest = longitude;
+        connectGet(true);
+    }
+
+    /**
+     * After receiving a response from the server using connectGet(), if the server indicated that the
+     * the location was valid, then save the location information in the view model.
+     *
+     */
+    public void serverRespond() {
+        if(mLocationIsValid.getValue()) {
+            mWeatherLocationSource = mLocationSourceUsedInRequest;
+            switch(mLocationSourceUsedInRequest) {
+                case CURRENT:
+                case MAP:
+                    mLatitude = mLatitudeRequest;
+                    mLongitude = mLongitudeRequest;
+                    break;
+                case ZIP:
+                    mZipCode = mZipCodeRequest;
+                    break;
+            }
+        }
+
+        mServerHasResponded.setValue(true);
+        //If the location is invalid, no need to do anything
     }
 
     /**
      * A method that serves as a temporary solution for errors with updating the location. The location is Seattle.
      */
     public void useDefaultLocation() {
-        mLatitude = 47.474190;
-        mLongitude = -122.206650;
-        mWeatherLocationSource = WeatherLocationSource.LAT_LONG;
-        connectGet();
-    }
-
-    public boolean getLocationIsValid() {
-        return mLocationIsValid;
+//        mLatitude = 47.474190;
+//        mLongitude = -122.206650;
+//        mWeatherLocationSource = WeatherLocationSource.LAT_LONG;
+//        connectGet();
     }
 
     public WeatherLocationSource getWeatherLocationSource() {
         return mWeatherLocationSource;
     }
 
+    public WeatherLocationSource getWeatherLocationSourceRequest() {
+        return mLocationSourceUsedInRequest;
+    }
+
+    public boolean getLocationIsValid() {
+        return mLocationIsValid.getValue();
+    }
+
+    public boolean getServerHasResponded() {
+        return mServerHasResponded.getValue();
+    }
+
+    public boolean getNavigatingFromWeatherLocation() {
+        return mNavigatingFromWeatherLocation;
+    }
+
+    public void setNavigatingFromWeatherLocation(boolean navigatingFromWeatherLocation) {
+        mNavigatingFromWeatherLocation = navigatingFromWeatherLocation;
+    }
+
+    public boolean getStartingLocationHasBeenInitialized() {
+        return mGetStartingLocationHasBeenInitialized;
+    }
+
     public enum WeatherLocationSource {
+        CURRENT,
         ZIP,
-        LAT_LONG,
         MAP
+    }
+
+    /**
+     * A class that wraps all current weather information into one object so that action listeners
+     * only need to listen to one thing.
+     */
+    public class CurrentWeatherContainer {
+        public String city;
+        public int image;
+        public String temp;
+        public String windSpeed;
+
+        public CurrentWeatherContainer(String city, int image, String temp, String windSpeed) {
+            this.city = city;
+            this.image = image;
+            this.temp = temp;
+            this.windSpeed = windSpeed;
+        }
     }
 }

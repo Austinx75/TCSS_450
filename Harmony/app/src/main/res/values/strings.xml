@@ -97,6 +97,7 @@
     <string name="weather_location_map_location_not_selected">*Please select a location on the map.</string>
     <string name="weather_location_map_location_not_found">*No weather information could be found for this map location.</string>
     <string name="weather_location_server_timeout">*No weather information could be found for this map location.</string>
+    <string name="weather_location_navigating_to_report">Loading weather report...</string>
 
     <string name="fragment_clear_home">Clear</string>
     <string name="fragment_blank_home"></string>

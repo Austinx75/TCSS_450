@@ -53,14 +53,22 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
 
     private Marker currentMarker;
 
+    private boolean mButtonPressed;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mWeatherModel = new ViewModelProvider(getActivity())
+                .get(WeatherViewModel.class);
+
+        mLocationModel = new ViewModelProvider(getActivity())
+                .get(LocationViewModel.class);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_weather_location, container, false);
     }
@@ -68,23 +76,15 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        mButtonPressed = false;
+
+        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
+
+        mWeatherModel.addServerRespondedObserver(getViewLifecycleOwner(), this::afterServerResponse);
 
         this.binding = FragmentWeatherLocationBinding.bind(getView());
         binding.textViewErrorMessage.setVisibility(View.INVISIBLE);
-        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
 
-        mWeatherModel = new ViewModelProvider(getActivity())
-                .get(WeatherViewModel.class);
-        mWeatherModel.setWeatherLocationBinding(this.binding);
-        mWeatherModel.setWeatherLocationFragment(this);
-
-        mLocationModel = new ViewModelProvider(getActivity())
-                .get(LocationViewModel.class);
-        mLocationModel.addLocationObserver(getViewLifecycleOwner(),
-                location -> {
-
-                });
-                        //binding.textLatLong.setText(location.toString()))
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment =
@@ -146,8 +146,6 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
 
     @Override
     public void onMapClick(LatLng latLng) {
-        Log.d("LAT/LONG", latLng.toString());
-
         if(currentMarker != null) {
             currentMarker.remove();
         }
@@ -164,7 +162,7 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
      * Update the weather information in the weather model based on the user's location.
      */
     public void onUseCurrentLocation(View v) {
-        //Get current location
+        mButtonPressed = true;
         mWeatherModel.useCurrentLocation();
     }
 
@@ -172,11 +170,13 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
      * Update the weather information in the weather model based on a zip code.
      */
     public void onUseZipCode(View v) {
+        mButtonPressed = true;
         //Get zip code from text field
         String zipCode = this.binding.editTextZipInput.getText().toString();
         if(!zipCode.matches("[0-9]+")) {
             binding.textViewErrorMessage.setText(getString(R.string.weather_location_zip_invalid));
             binding.textViewErrorMessage.setVisibility(View.VISIBLE);
+            mButtonPressed = false;
             return;
         }
         mWeatherModel.useZipLocation(zipCode);
@@ -186,6 +186,7 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
      * Update the weather information in the weather model based a location selected on the map.
      */
     public void onUseMapLocation(View v) {
+        mButtonPressed = true;
         //Get zip code from text field
         if(currentMarker != null) {
             mWeatherModel.useMapLocation(
@@ -193,6 +194,7 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
         } else {
             binding.textViewErrorMessage.setText(getString(R.string.weather_location_map_location_not_selected));
             binding.textViewErrorMessage.setVisibility(View.VISIBLE);
+            mButtonPressed = false;
         }
     }
 
@@ -200,24 +202,32 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
      * Post an error message if the location provided is not valid. Otherwise, navigate to the weather report
      * fragment.
      */
-    public void afterServerResponse() {
-        if(mWeatherModel.getLocationIsValid()) {
+    public void afterServerResponse(boolean serverHasResponded) {
+        if(mButtonPressed && serverHasResponded && mWeatherModel.getLocationIsValid()) {
+            mButtonPressed = false;
+            binding.textViewErrorMessage.setText(
+                    getString(R.string.weather_location_navigating_to_report));
+            mWeatherModel.setNavigatingFromWeatherLocation(true);
             Navigation.findNavController(getView())
                     .navigate(WeatherContainerFragmentDirections.actionNavigationWeatherContainerSelf());
         } else {
-            if(mWeatherModel.getWeatherLocationSource() == WeatherViewModel.WeatherLocationSource.LAT_LONG) {
-                binding.textViewErrorMessage.setText(
-                        getString(R.string.weather_location_current_location_not_found));
-            } else if(mWeatherModel.getWeatherLocationSource() == WeatherViewModel.WeatherLocationSource.ZIP) {
-                binding.textViewErrorMessage.setText(
-                        getString(R.string.weather_location_zip_location_not_found));
-            } else if(mWeatherModel.getWeatherLocationSource() == WeatherViewModel.WeatherLocationSource.MAP) {
-                binding.textViewErrorMessage.setText(
-                        getString(R.string.weather_location_map_location_not_found));
+            if(!mButtonPressed || !serverHasResponded) {
+                binding.textViewErrorMessage.setVisibility(View.INVISIBLE);
             } else {
-                binding.textViewErrorMessage.setText("An error occurred.");
+                if (mWeatherModel.getWeatherLocationSourceRequest() == WeatherViewModel.WeatherLocationSource.CURRENT) {
+                    binding.textViewErrorMessage.setText(
+                            getString(R.string.weather_location_current_location_not_found));
+                } else if (mWeatherModel.getWeatherLocationSourceRequest() == WeatherViewModel.WeatherLocationSource.ZIP) {
+                    binding.textViewErrorMessage.setText(
+                            getString(R.string.weather_location_zip_location_not_found));
+                } else if (mWeatherModel.getWeatherLocationSourceRequest() == WeatherViewModel.WeatherLocationSource.MAP) {
+                    binding.textViewErrorMessage.setText(
+                            getString(R.string.weather_location_map_location_not_found));
+                } else {
+                    binding.textViewErrorMessage.setText("An error occurred.");
+                }
+                binding.textViewErrorMessage.setVisibility(View.VISIBLE);
             }
-            binding.textViewErrorMessage.setVisibility(View.VISIBLE);
         }
     }
 }

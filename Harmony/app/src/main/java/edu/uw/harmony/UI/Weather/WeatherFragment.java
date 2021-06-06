@@ -68,8 +68,8 @@ public class WeatherFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        mWeatherModel.connectGet();
+        binding.layoutComponents.setVisibility(View.GONE);
+        binding.layoutWait.setVisibility(View.VISIBLE);
 
         //Note argument sent to the ViewModelProvider constructor. It is the Activity that
         //holds this fragment.
@@ -78,8 +78,17 @@ public class WeatherFragment extends Fragment {
         mWeatherModel.setJWT(model.getJwt());
 
         binding = FragmentWeatherBinding.bind(getView());
-        mWeatherModel.setWeatherBinding(binding);
 
+        //Putting these in onViewCreated may cause a bug. Try moving to oncreate
+        mWeatherModel.addCurrentWeatherObserver(getViewLifecycleOwner(), currentWeather -> {
+            binding.textViewCityPlaceholder.setText(currentWeather.city);
+            binding.imageViewMainConditionsPlaceholder.setImageResource(currentWeather.image);
+            binding.textViewMainTemperaturePlaceholder.setText(
+                    Math.round(
+                            Double.parseDouble(currentWeather.temp)) + "°");
+            binding.textViewWindSpeedPlaceholder.setText("Wind Speed: " +
+                    Math.round((Double.parseDouble(currentWeather.windSpeed) * 100.0) / 100.0) + " mph");
+        });
         mWeatherModel.addHourlyForecastItemListObserver(getViewLifecycleOwner(), hourlyList -> {
             if (binding.hourlyListRoot instanceof RecyclerView) {
                 (binding.hourlyListRoot).setAdapter(
@@ -92,6 +101,26 @@ public class WeatherFragment extends Fragment {
                         new WeeklyForecastRecyclerViewAdapter(weeklyList, settingsViewModel));
             }
         });
+
+        mWeatherModel.addServerRespondedObserver(getViewLifecycleOwner(), locationIsValid -> {
+            //This is just an indicator that the view model's connectGet() is finished, so set components to visible
+            binding.layoutComponents.setVisibility(View.VISIBLE);
+            binding.layoutWait.setVisibility(View.GONE);
+        });
+
+        if(mWeatherModel.getNavigatingFromWeatherLocation()) {
+            mWeatherModel.setNavigatingFromWeatherLocation(false);
+        } else {
+            if(mWeatherModel.getServerHasResponded()) {
+                if ((!mWeatherModel.getStartingLocationHasBeenInitialized())
+                        && mWeatherModel.getWeatherLocationSource() == WeatherViewModel.WeatherLocationSource.CURRENT) {
+                    mWeatherModel.useCurrentLocation();
+                } else {
+                    mWeatherModel.connectGet(false);
+                }
+            }
+        }
+
         /** Dependent on the theme, this will set all text / image fields to a certain color. */
         if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
             binding.textViewCityPlaceholder.setTextColor(Color.BLACK);
