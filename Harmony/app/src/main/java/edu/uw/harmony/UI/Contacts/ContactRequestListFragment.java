@@ -78,6 +78,9 @@ public class ContactRequestListFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        mModel.connectGet(mUserModel.getJwt());
+        if(mUserModel != null){
+            mModel.connectGet(mUserModel.getJwt());
+        }
+
     }
 }
