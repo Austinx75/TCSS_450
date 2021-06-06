@@ -123,13 +123,15 @@ public class  MainActivity extends AppCompatActivity {
     /** Accesses the settings**/
     private SettingsViewModel settingsViewModel;
 
+    private int mVerified;
+
 
     /**
      * Recieves messages from system service and adds them to notification view model.
      */
     public void onStart() {
         super.onStart();
-
+        this.mVerified = -1;
         nModel = new ViewModelProvider(this).get(NotificationViewModel.class);
         notificationManager = (NotificationManager) this.getSystemService(this.NOTIFICATION_SERVICE);
         notifications = new ArrayList<>(Arrays.asList(notificationManager.getActiveNotifications()));
@@ -225,11 +227,12 @@ public class  MainActivity extends AppCompatActivity {
 
 
         MainActivityArgs args = MainActivityArgs.fromBundle(getIntent().getExtras());
+        this.mVerified=args.getVerified();
         JWT jwt = new JWT(args.getJwt());
         String email = args.getEmail();
         new ViewModelProvider(
                 this,
-                new UserInfoViewModel.UserInfoViewModelFactory(email, jwt.toString()))
+                new UserInfoViewModel.UserInfoViewModelFactory(email, jwt.toString(), this.mVerified))
                 .get(UserInfoViewModel.class);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);

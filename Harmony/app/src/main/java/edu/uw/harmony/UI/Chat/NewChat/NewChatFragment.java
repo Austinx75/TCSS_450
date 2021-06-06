@@ -51,6 +51,8 @@ public class NewChatFragment extends Fragment {
     /** Emails for the new chat*/
     private List<String> emails = new ArrayList<>();
 
+    private List<String> selected = new ArrayList<>();
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +64,7 @@ public class NewChatFragment extends Fragment {
         NewChatFragmentArgs args = NewChatFragmentArgs.fromBundle(getArguments());
         if (!args.getEmail().equals("default")) {
             this.emails.add(args.getEmail());
+            this.selected.add(args.getEmail());
         }
     }
 
@@ -93,7 +96,6 @@ public class NewChatFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        List<String> selected = new ArrayList<String>();
         binding.button.setOnClickListener(butt -> {
             Log.e("Test", selected.toString());
             this.attemptNewChat(selected);
@@ -134,16 +136,16 @@ public class NewChatFragment extends Fragment {
 
     /**
      * Attempts to connect and post the new chat to the web server.
-     * @param selected The selected members for the chat
+     * @param members The selected members for the chat
      * @param chatName The name for the chat
      */
-    private void attemptConnect(List<String> selected, String chatName) {
-        StringBuilder members = new StringBuilder();
-        members.append(selected.get(0));
-        for (int i = 1; i < selected.size(); i ++ ){
-            members.append(" " + selected.get(i));
+    private void attemptConnect(List<String> members, String chatName) {
+        StringBuilder group = new StringBuilder();
+        group.append(members.get(0));
+        for (int i = 1; i < members.size(); i ++ ){
+            group.append(" " + members.get(i));
         }
-        mModel.connectPost(mUserModel.getJwt(),mUserModel.getEmail(),members.toString(), chatName);
+        mModel.connectPost(mUserModel.getJwt(),mUserModel.getEmail(),group.toString(), chatName);
     }
 
     @Override

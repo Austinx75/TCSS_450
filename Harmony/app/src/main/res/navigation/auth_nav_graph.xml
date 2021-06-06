@@ -53,6 +53,9 @@
         <argument
             android:name="jwt"
             app:argType="string" />
+        <argument
+            android:name="verified"
+            app:argType="integer" />
     </activity>
     <fragment
         android:id="@+id/validationFragment"

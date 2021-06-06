@@ -17,6 +17,12 @@
         <action
             android:id="@+id/action_navigation_home_to_navigation_contact_container"
             app:destination="@id/navigation_contact_container" />
+        <action
+            android:id="@+id/action_navigation_home_to_emailVerificationFragment"
+            app:destination="@id/emailVerificationFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_passwordChangeFragment"
+            app:destination="@id/passwordChangeFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_contact"
@@ -208,6 +214,15 @@
         android:name="edu.uw.harmony.UI.Contacts.ContactRequestCardFragment"
         android:label="fragment_contact_request_card"
         tools:layout="@layout/fragment_contact_request_card" />
+    <fragment
+        android:id="@+id/emailVerificationFragment"
+        android:name="edu.uw.harmony.UI.Auth.Validation.EmailVerificationFragment"
+        android:label="fragment_email_verification"
+        tools:layout="@layout/fragment_email_verification" >
+        <action
+            android:id="@+id/action_emailVerificationFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 
 
 </navigation>

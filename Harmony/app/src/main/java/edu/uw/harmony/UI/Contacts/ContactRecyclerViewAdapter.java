@@ -128,7 +128,6 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
                     mModel.contactDelete(uModel.getJwt(), Integer.parseInt(mContact.getId()));
                 });
                 binding.contactMessage.setOnClickListener(button -> {
-                    Log.d("ID", (mContact.getId()));
                     ContactContainerFragmentDirections.ActionNavigationContactContainerToNavigationNewChat2 directions
                             = ContactContainerFragmentDirections.actionNavigationContactContainerToNavigationNewChat2();
                     directions.setEmail(binding.contactUsername.getText().toString());
@@ -138,24 +137,13 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             } else{
                 binding.contactCard.setOnClickListener(button -> {
                     if (binding.contactNewChatAdded.getVisibility() == View.VISIBLE) {
-//                        binding.contactNewChatAdded.setVisibility(View.GONE);
                         this.selected.remove(binding.contactUsername.getText().toString());
                     }else{
-//                        binding.contactNewChatAdded.setVisibility(View.VISIBLE);
                         this.selected.add(binding.contactUsername.getText().toString());
                     }
                     handleSelected(button);
                     displaySelected();
                 });
-//                binding.contactNewChatAdded.setOnClickListener(button -> {
-//                    if (binding.contactNewChatAdded.getVisibility() == View.VISIBLE) {
-//                        binding.contactNewChatAdded.setVisibility(View.GONE);
-//                        this.selected.remove(binding.contactUsername.getText().toString());
-//                    }else{
-//                        binding.contactNewChatAdded.setVisibility(View.VISIBLE);
-//                        this.selected.add(binding.contactUsername.getText().toString());
-//                    }
-//                });
                 binding.contactDelete.setVisibility(View.GONE);
                 binding.contactMessage.setVisibility(View.GONE);
             }
