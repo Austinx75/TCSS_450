@@ -132,7 +132,7 @@ public class LogInFragment extends Fragment {
 
         binding.buttonLoginFragmentRegister.setOnClickListener(button ->
                 Navigation.findNavController(getView()).navigate(
-                        LogInFragmentDirections.actionLogInFragmentToRegisterFragment(2131230854)
+                        LogInFragmentDirections.actionLogInFragmentToRegisterFragment(R.drawable.contact_boy_512)
                 ));
 
         binding.buttonLoginFragmentLogin.setOnClickListener(this::attemptSignIn);

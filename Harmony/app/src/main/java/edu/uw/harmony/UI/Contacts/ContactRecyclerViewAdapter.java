@@ -101,12 +101,6 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
         List<String> selected;
         List<String> autofill;
 
-        public int[] images = {R.drawable.contact_boy_512, R.drawable.contact_hacker_512,R.drawable.contact_barista_512,
-                R.drawable.contact_kitty_512,R.drawable.contact_man_512,R.drawable.contact_man_1_512,
-                R.drawable.contact_man_2_512,R.drawable.contact_user_512,R.drawable.contact_woman_512,
-                R.drawable.contact_woman_1_512};
-        Random rand = new Random();
-
         /**
          * Constructor for the Contact view holder that initializes all needed fields
          */
@@ -207,6 +201,7 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
             binding.contactUsername.setText(contact.getUsername());
             binding.contactStatus.setText(contact.getStatus());
             binding.contactAvatar.setImageResource(contact.getAvatar());
+            Log.d("AvatarID:", String.valueOf(contact.getAvatar()));
 
             String name = contact.getName();
             String user = contact.getUsername();

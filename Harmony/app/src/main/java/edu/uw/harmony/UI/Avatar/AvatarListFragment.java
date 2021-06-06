@@ -66,18 +66,29 @@ public class AvatarListFragment extends Fragment {
         FragmentAvatarListBinding binding = FragmentAvatarListBinding.bind(getView());
 
         aModel.addAvatarListObserver(getViewLifecycleOwner(), avatarList -> {
-            binding.recyclerView.setAdapter(new AvatarAdapter(AvatarGenerator.getAvatarList(), aModel, view));
+            AvatarAdapter aa = new AvatarAdapter(AvatarGenerator.getAvatarList(), aModel, view);
+            binding.recyclerView.setAdapter(aa);
+
+            binding.currentAvatar.setOnClickListener(button -> {
+                Log.d("AvatarID", String.valueOf(aa.getCurrentAvatar()));
+            });
+
+            binding.setAvatar.setOnClickListener(button -> {
+
+                AvatarListFragmentDirections.ActionAvatarListFragmentToRegisterFragment directions =
+                        AvatarListFragmentDirections.actionAvatarListFragmentToRegisterFragment(aa.getCurrentAvatar());
+
+                directions.setAvatar(aa.getCurrentAvatar());
+                Navigation.findNavController(getView()).navigate(directions);
+            });
         });
 
 
-        binding.setAvatar.setOnClickListener(button -> {
-            FragmentAvatarListBinding mbinding = FragmentAvatarListBinding.bind(getView());
-            AvatarListFragmentDirections.ActionAvatarListFragmentToRegisterFragment directions =
-            AvatarListFragmentDirections.actionAvatarListFragmentToRegisterFragment(Integer.parseInt(mbinding.avatarID.getText().toString()));
+    }
 
-            directions.setAvatar(Integer.parseInt(mbinding.avatarID.getText().toString()));
-            Navigation.findNavController(getView()).navigate(directions);
-        });
+    @Override
+    public void onResume(){
+        super.onResume();
     }
 
 }

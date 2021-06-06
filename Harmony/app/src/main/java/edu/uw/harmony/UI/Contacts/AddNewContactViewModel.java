@@ -28,13 +28,13 @@ import java.util.function.IntFunction;
 import edu.uw.harmony.R;
 
 /**
- * This is a view model for the ContactListFragment.
+ * This is a view model for the AddNewContactFragment.
  *
  * @author Jack Lin
  * @version 1.1
  */
 
-public class ContactRequestViewModel extends AndroidViewModel {
+public class AddNewContactViewModel extends AndroidViewModel {
     //private final String URL = "https://localhost:5000/contacts";
     private final String URL = "https://team-9-tcss450-backend.herokuapp.com/contacts/";
 
@@ -44,7 +44,7 @@ public class ContactRequestViewModel extends AndroidViewModel {
     /** view model for the contact list class */
     private final MutableLiveData<JSONObject> mResponse;
 
-    public ContactRequestViewModel(@NonNull Application application){
+    public AddNewContactViewModel(@NonNull Application application){
         super(application);
         mContactList = new MutableLiveData<>();
         mContactList.setValue(new ArrayList<>());
@@ -57,7 +57,7 @@ public class ContactRequestViewModel extends AndroidViewModel {
      * @param owner Lifecycle owner
      * @param observer Observer List<ContactCard>
      */
-    public void addContactListObserver(@NonNull LifecycleOwner owner, @NonNull Observer<? super List<ContactCard>> observer){
+    public void addNewContactObserver(@NonNull LifecycleOwner owner, @NonNull Observer<? super List<ContactCard>> observer){
         mContactList.observe(owner, observer);
     }
 
@@ -75,6 +75,7 @@ public class ContactRequestViewModel extends AndroidViewModel {
      * @param result JSONObject
      */
     private void handleResult(final JSONObject result) {
+        Log.d("JSON Result", result.toString());
         List<ContactCard> list = new ArrayList<>();
         IntFunction<String> getString = getApplication().getResources()::getString;
         try {
@@ -84,13 +85,11 @@ public class ContactRequestViewModel extends AndroidViewModel {
                         R.string.keys_json_contacts_list));
                 for (int i = 0; i < contacts.length(); i++) {
                     JSONObject contactList = contacts.getJSONObject(i);
-                    if (Integer.parseInt(contactList.get("verified").toString()) == 0)  {
-                        ContactCard contact = new ContactCard.Builder(
-                                contactList.getString(getString.apply(R.string.keys_json_contacts_firstname)) + " " + contactList.getString(getString.apply(R.string.keys_json_contacts_lastname)),
-                                contactList.getString(getString.apply(R.string.keys_json_contacts_memberid))).addUsername(contactList.getString(getString.apply(R.string.keys_json_contacts_username))).addAvatar(Integer.parseInt(contactList.getString("avatar")))
-                                .build();
-                        list.add(contact);
-                    }
+                    ContactCard contact = new ContactCard.Builder(
+                            contactList.getString(getString.apply(R.string.keys_json_contacts_firstname)) + " " + contactList.getString(getString.apply(R.string.keys_json_contacts_lastname)),
+                            contactList.getString(getString.apply(R.string.keys_json_contacts_memberid))).addUsername(contactList.getString(getString.apply(R.string.keys_json_contacts_username))).addAvatar(Integer.parseInt(contactList.getString("avatar")))
+                            .build();
+                    list.add(contact);
                 }
                 mContactList.setValue(list);
             } else {
@@ -109,9 +108,10 @@ public class ContactRequestViewModel extends AndroidViewModel {
      * @param jwt String jwt
      */
     public void connectGet(final String jwt) {
+        String url = "https://team-9-tcss450-backend.herokuapp.com/searchContacts/";
         Request request = new JsonObjectRequest(
                 Request.Method.GET,
-                URL,
+                url,
                 null, //no body for this get request
                 this::handleResult,
                 this::handleError) {
@@ -133,40 +133,11 @@ public class ContactRequestViewModel extends AndroidViewModel {
     }
 
     /**
-     * Delete method to delete existing contacts from the user table
+     * Post method to add contacts to the user table
      * @param jwt String jwt
-     * @param id Int Member ID
+     * @param id int ID
      */
-    public void contactDelete (final String jwt, int id){
-        String url = URL + id;
-        Request request = new JsonObjectRequest(
-                Request.Method.DELETE,
-                url,
-                null,
-                this::handleResult,
-                this::handleError) {
-            @Override
-            public Map<String, String> getHeaders() {
-                Map<String, String> headers = new HashMap<>();
-                // add headers <key,value>
-                headers.put("Authorization", jwt);
-                return headers;
-            }
-        };
-        request.setRetryPolicy(new DefaultRetryPolicy(
-                10_000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        Volley.newRequestQueue(getApplication().getApplicationContext())
-                .add(request);
-    }
-
-    /**
-     * Update method to update pending status if accepted or decline contact invitation
-     * @param jwt String jwt
-     * @param id Int Member ID
-     */
-    public void contactUpdate(final String jwt, int id){
+    public void contactAdd (final String jwt, int id){
         JSONObject body = new JSONObject();
         try {
             body.put("MemberId", id);
@@ -174,7 +145,7 @@ public class ContactRequestViewModel extends AndroidViewModel {
             e.printStackTrace();
         }
         Request request = new JsonObjectRequest(
-                Request.Method.PUT,
+                Request.Method.POST,
                 URL,
                 body,
                 this::handleResult,
@@ -182,11 +153,11 @@ public class ContactRequestViewModel extends AndroidViewModel {
             @Override
             public Map<String, String> getHeaders() {
                 Map<String, String> headers = new HashMap<>();
-                // add headers <key,value>
                 headers.put("Authorization", jwt);
                 return headers;
             }
         };
+        Log.d("Contact Add Request", request.toString());
         request.setRetryPolicy(new DefaultRetryPolicy(
                 10_000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,

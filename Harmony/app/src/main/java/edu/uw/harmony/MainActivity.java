@@ -82,6 +82,9 @@ import edu.uw.harmony.services.PushReceiver;
 public class  MainActivity extends AppCompatActivity {
 
     private MainPushMessageReceiver mPushMessageReceiver;
+    private NewContactPushReceiver mContactPushReceiver;
+    private NewChatPushReceiver mNewChatPushReceiver;
+
     private NewMessageCountViewModel mNewMessageModel;
     private NewContactCountViewModel mNewContactModel;
     private NotificationViewModel nModel;
@@ -145,7 +148,6 @@ public class  MainActivity extends AppCompatActivity {
 
             } else {
                 if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_INFO_TEXT).equals("chat")){
-                    Log.d("Back", "Enters right if");
                     Timestamp ts = new Timestamp(System.currentTimeMillis());
                     Date date = new Date(ts.getTime());
                     SimpleDateFormat formatter1 = new SimpleDateFormat("hh:mm a");
@@ -165,8 +167,6 @@ public class  MainActivity extends AppCompatActivity {
                         mNewMessageModel.increment(Integer.parseInt(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_SUB_TEXT).toString()));
                     }
                 } else if(notifications.get(i).getNotification().extras.getCharSequence(Notification.EXTRA_INFO_TEXT).equals("contacts")) {
-
-                    Log.d("Back", "Enters right if");
                     Timestamp ts = new Timestamp(System.currentTimeMillis());
                     Date date = new Date(ts.getTime());
                     SimpleDateFormat formatter1 = new SimpleDateFormat("hh:mm a");
@@ -259,6 +259,10 @@ public class  MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController,mAppBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
+
+        mNewMessageModel = new ViewModelProvider(this).get(NewMessageCountViewModel.class);
+        mNewContactModel = new ViewModelProvider(this).get(NewContactCountViewModel.class);
+
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
             if (destination.getId() == R.id.navigation_contact_container) {
                 mNewContactModel.reset();
@@ -272,9 +276,6 @@ public class  MainActivity extends AppCompatActivity {
                 badge.setVisible(false);
             }
         });
-
-        mNewMessageModel = new ViewModelProvider(this).get(NewMessageCountViewModel.class);
-        mNewContactModel = new ViewModelProvider(this).get(NewContactCountViewModel.class);
 
         mNewContactModel.addContactCountObserver(this, count ->{
             Log.e("total ", "" +count);
@@ -373,24 +374,47 @@ public class  MainActivity extends AppCompatActivity {
                     || super.onSupportNavigateUp();
     }
 
+    /**
+     * When entering the onResume part of the lifecycle,
+     * if the receivers are null, they will be instantiated and registered
+     */
     @Override
     public void onResume() {
         super.onResume();
         if(mPushMessageReceiver == null) {
             mPushMessageReceiver = new MainPushMessageReceiver();
         }
+        if(mNewChatPushReceiver == null){
+            mNewChatPushReceiver = new NewChatPushReceiver();
+        }
+        if(mContactPushReceiver == null){
+            mContactPushReceiver = new NewContactPushReceiver();
+        }
         IntentFilter iFilter = new IntentFilter(PushReceiver.RECEIVED_NEW_MESSAGE);
+        IntentFilter nFilter = new IntentFilter(PushReceiver.RECEIVED_NEW_CHAT);
+        IntentFilter cFilter = new IntentFilter(PushReceiver.RECEIVED_NEW_CONTACT);
 
         registerReceiver(mPushMessageReceiver, iFilter);
+        registerReceiver(mContactPushReceiver, cFilter);
+        registerReceiver(mNewChatPushReceiver, nFilter);
 
         //startLocationUpdates();
     }
 
+    /**
+     * This unregisters the receivers if it enters this lifecycle
+     */
     @Override
     public void onPause() {
         super.onPause();
         if (mPushMessageReceiver != null) {
             unregisterReceiver(mPushMessageReceiver);
+        }
+        if(mContactPushReceiver != null){
+                unregisterReceiver(mContactPushReceiver);
+        }
+        if(mNewChatPushReceiver != null){
+            unregisterReceiver(mNewChatPushReceiver);
         }
 
         //stopLocationUpdates();
@@ -413,10 +437,9 @@ public class  MainActivity extends AppCompatActivity {
 
             NavController nc = Navigation.findNavController(
                     MainActivity.this, R.id.nav_host_fragment);
+            Log.d("ReceivePushy", "Notification Received");
 
             NavDestination nd = nc.getCurrentDestination();
-            Log.d("intent", intent.toString());
-            Log.d("intent", intent.getExtras().toString());
             if (intent.hasExtra("chatMessage")) {
 
                 ChatMessage cm = (ChatMessage) intent.getSerializableExtra("chatMessage");
@@ -438,7 +461,20 @@ public class  MainActivity extends AppCompatActivity {
                 mModel.addMessage(intent.getIntExtra("chatid", -1), cm);
             }
 
+        }
+    }
 
+    private class NewChatPushReceiver extends BroadcastReceiver {
+        private NotificationViewModel nModel = new ViewModelProvider(MainActivity.this).get(NotificationViewModel.class);
+
+        private UserInfoViewModel model = new ViewModelProvider(MainActivity.this).get(UserInfoViewModel.class);
+
+        NavController nc = Navigation.findNavController(
+                MainActivity.this, R.id.nav_host_fragment);
+        NavDestination nd = nc.getCurrentDestination();
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
             if(intent.hasExtra("newChat")){
                 Log.d("Messages", "made it to main activity");
                 Log.d("PUSHY", "Received in main in if statement");
@@ -451,8 +487,21 @@ public class  MainActivity extends AppCompatActivity {
                     mNewMessageModel.increment(intent.getIntExtra("chatid", -1));
                 }
             }
+        }
 
+    }
 
+    private class NewContactPushReceiver extends BroadcastReceiver {
+        private NotificationViewModel nModel = new ViewModelProvider(MainActivity.this).get(NotificationViewModel.class);
+
+        private UserInfoViewModel model = new ViewModelProvider(MainActivity.this).get(UserInfoViewModel.class);
+
+        NavController nc = Navigation.findNavController(
+                MainActivity.this, R.id.nav_host_fragment);
+        NavDestination nd = nc.getCurrentDestination();
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
             if(intent.hasExtra("contactId")){
                 Log.d("PUSHY", "Received in main in if statement");
                 Timestamp ts = new Timestamp(System.currentTimeMillis());
@@ -470,23 +519,6 @@ public class  MainActivity extends AppCompatActivity {
         }
     }
 
-    private class ChatPushReceiver extends BroadcastReceiver{
-        private NotificationViewModel nModel = new ViewModelProvider(MainActivity.this).get(NotificationViewModel.class);
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Log.d("ChatReceiver", intent.getExtras().toString());
-            NavController nc = Navigation.findNavController(
-                    MainActivity.this, R.id.nav_host_fragment);
-            if(intent.hasExtra("newChat")){
-                Timestamp ts = new Timestamp(System.currentTimeMillis());
-                Date date = new Date(ts.getTime());
-                SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
-                String dateString = formatter.format(date);
-                nModel.addNotification("New Chat", intent.getStringExtra("message"), dateString);
-
-            }
-        }
-    }
 
 
     public boolean onCreateOptionsMenu(Menu menu){
