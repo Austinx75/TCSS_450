@@ -79,7 +79,6 @@ public class WeatherFragment extends Fragment {
 
         binding = FragmentWeatherBinding.bind(getView());
 
-        //Putting these in onViewCreated may cause a bug. Try moving to oncreate
         mWeatherModel.addCurrentWeatherObserver(getViewLifecycleOwner(), currentWeather -> {
             binding.textViewCityPlaceholder.setText(currentWeather.city);
             binding.imageViewMainConditionsPlaceholder.setImageResource(currentWeather.image);
