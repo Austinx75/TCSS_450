@@ -270,11 +270,11 @@ public class  MainActivity extends AppCompatActivity {
                 badge.clearNumber();
                 badge.setVisible(false);
             }
-            if(destination.getId() == R.id.navigation_chat_list){
-                BadgeDrawable badge = binding.navView.getOrCreateBadge(R.id.navigation_chat_list);
-                badge.clearNumber();
-                badge.setVisible(false);
-            }
+//            if(destination.getId() == R.id.navigation_chat_list){
+//                BadgeDrawable badge = binding.navView.getOrCreateBadge(R.id.navigation_chat_list);
+//                badge.clearNumber();
+//                badge.setVisible(false);
+//            }
         });
 
         mNewContactModel.addContactCountObserver(this, count ->{
@@ -449,7 +449,7 @@ public class  MainActivity extends AppCompatActivity {
                     mNewMessageModel.reset();
                 }
                 else {
-                    mNewMessageModel.increment(cm.getChatId());
+//                    mNewMessageModel.increment(cm.getChatId());
                 }
                 Timestamp ts = new Timestamp(System.currentTimeMillis());
                 Date date = new Date(ts.getTime());
