@@ -100,6 +100,7 @@ public class HomeFragment extends Fragment {
         mWeatherModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
         notificationManager = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
 
+
         //Set up action listener for weather updates
         mWeatherModel.addCurrentWeatherObserver(getViewLifecycleOwner(), currentWeather -> {
             binding.imageViewMainConditionsPlaceholder.setImageResource(currentWeather.image);
