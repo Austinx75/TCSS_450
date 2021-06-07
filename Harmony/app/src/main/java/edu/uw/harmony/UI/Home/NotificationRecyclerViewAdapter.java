@@ -103,7 +103,7 @@ public class NotificationRecyclerViewAdapter extends
         void setNotifications(final NotificationItem notifications) {
             mNotifications = notifications;
              if(mNotifications.getMessage().toLowerCase().contains("contact")){
-                binding.imageMessageNotificationHome.setImageDrawable(binding.getRoot().getResources().getDrawable(R.drawable.contact_black_24dp));
+                binding.imageMessageNotificationHome.setImageDrawable(binding.getRoot().getResources().getDrawable(R.drawable.contact_black_24dp,null));
             }
             binding.textToPersonHome.setText(mNotifications.getSender());
             binding.textMessageHome.setText(mNotifications.getMessage());

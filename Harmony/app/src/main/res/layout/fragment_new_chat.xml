@@ -9,48 +9,51 @@
 
     <EditText
         android:id="@+id/editTextChatname"
-        android:layout_width="379dp"
-        android:layout_height="40dp"
+        android:layout_width="277dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="64dp"
         android:ems="10"
         android:hint="@string/text_new_chat_title"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
         android:text="@string/button_validation_validate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/list_root"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.09" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_root"
         android:name="edu.uw.harmony.UI.Contacts.ContactCardFragment"
         android:layout_width="385dp"
         android:layout_height="457dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="120dp"
         android:orientation="vertical"
         app:layoutManager="LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextChatname"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
         tools:context="edu.uw.harmony.UI.Contacts.ContactCardFragment"
         tools:listitem="@layout/fragment_contact_card">
 
     </androidx.recyclerview.widget.RecyclerView>
-    <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_wait"
         android:layout_width="413dp"
         android:layout_height="733dp"

@@ -34,6 +34,7 @@
             android:id="@+id/contact_username"
             android:layout_width="183dp"
             android:layout_height="36dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="100dp"
             android:paddingLeft="8dp"
@@ -43,20 +44,26 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/contact_Avatar"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/contact_status"
             android:layout_width="87dp"
             android:layout_height="30dp"
+            android:layout_marginStart="32dp"
             android:layout_marginEnd="196dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:paddingBottom="8dp"
             android:text="@string/contact_status"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/text_Preview"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contact_username" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/contact_Avatar"
+            app:layout_constraintTop_toBottomOf="@+id/contact_username"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageButton
             android:id="@+id/contact_message"
@@ -91,15 +98,18 @@
             android:id="@+id/text_Preview"
             android:layout_width="321dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="84dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="70dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:paddingBottom="8dp"
             android:textAppearance="?attr/textAppearanceListItem"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.802"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contact_Avatar"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageButton
             android:id="@+id/contact_new_chat_added"
