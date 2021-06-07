@@ -42,18 +42,16 @@ public class ValidationFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+            binding.textVerificationValidation.setTextColor(Color.BLACK);
+        } else {
+            binding.textVerificationValidation.setTextColor(Color.WHITE);
+        }
         binding.buttonValidationFragmentValidate.setOnClickListener(button ->{
             ValidationFragmentDirections.ActionValidationFragmentToLogInFragment directions =
                     ValidationFragmentDirections.actionValidationFragmentToLogInFragment();
 
             ValidationFragmentArgs args = ValidationFragmentArgs.fromBundle(getArguments());
-            if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
-                binding.textVerificationValidation.setTextColor(Color.BLACK);
-            } else {
-                binding.textVerificationValidation.setTextColor(Color.WHITE);
-            }
-
 
             directions.setEmail(args.getEmail());
             directions.setPassword(args.getPassword());
