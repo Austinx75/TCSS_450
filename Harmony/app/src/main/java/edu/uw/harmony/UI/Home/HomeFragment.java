@@ -2,7 +2,10 @@ package edu.uw.harmony.UI.Home;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -12,14 +15,19 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.service.notification.StatusBarNotification;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -35,6 +43,7 @@ import edu.uw.harmony.UI.Contacts.ContactRecyclerViewAdapter;
 import edu.uw.harmony.UI.Weather.HourlyForecastRecyclerViewAdapter;
 import edu.uw.harmony.UI.Weather.WeatherViewModel;
 import edu.uw.harmony.UI.Weather.WeeklyForecastRecyclerViewAdapter;
+import edu.uw.harmony.UI.model.LocationViewModel;
 import edu.uw.harmony.UI.model.NewMessageCountViewModel;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
@@ -58,6 +67,10 @@ public class HomeFragment extends Fragment {
     private UserInfoViewModel model;
     /** This is the home view model*/
     private HomeViewModel hModel;
+    /** This is the weather view model*/
+    private WeatherViewModel mWeatherModel;
+    /** This is the location view model*/
+    private LocationViewModel mLocationModel;
 
     private boolean mUpdatedByWeatherFragment = false;
 
@@ -83,11 +96,22 @@ public class HomeFragment extends Fragment {
         model = new ViewModelProvider(getActivity()).get(UserInfoViewModel.class);
         hModel = new ViewModelProvider(getActivity()).get(HomeViewModel.class);
         nModel = new ViewModelProvider(getActivity()).get(NotificationViewModel.class);
+        mLocationModel = new ViewModelProvider(getActivity()).get(LocationViewModel.class);
         notificationManager = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
 
-
-        WeatherViewModel weatherModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
-        weatherModel.setHomeFragment(this);
+        //Set up action listener for weather updates
+        mWeatherModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
+        mWeatherModel.setJWT(model.getJwt());
+        mWeatherModel.addCurrentWeatherObserver(getViewLifecycleOwner(), currentWeather -> {
+            binding.imageViewMainConditionsPlaceholder.setImageResource(currentWeather.image);
+            binding.textDegHome.setText(
+                    Math.round(
+                            Double.parseDouble(currentWeather.temp)) + "°");
+        });
+        mWeatherModel.setLocationModel(mLocationModel);
+        mLocationModel.addLocationObserver(getViewLifecycleOwner(), location -> {
+            mWeatherModel.updateLocationCoordinates(location);
+        });
 
         /** I instantiate the recycler view here.*/
         View notificationView = binding.listRoot;
@@ -102,14 +126,27 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        if(!mUpdatedByWeatherFragment) {
-            hModel.connectGet();
-            hModel.setJWT(model.getJwt());
-            hModel.setHomeBinding(binding);
+        SharedPreferences prefs =
+                getActivity().getSharedPreferences(
+                        getString(R.string.keys_shared_prefs),
+                        Context.MODE_PRIVATE);//Store the credentials in SharedPrefs
+        if (prefs.contains(getString(R.string.keys_prefs_verified)) ) {
+            String token = prefs.getString(getString(R.string.keys_prefs_verified), "");
+            if (token.equals("0"))
+            Navigation.findNavController(view).navigate(HomeFragmentDirections.actionNavigationHomeToEmailVerificationFragment());
         }
 
-        hModel.connectGet();
+        if (prefs.contains(getString(R.string.keys_prefs_recovering))) {
+            String token = prefs.getString(getString(R.string.keys_prefs_recovering), "");
+            Log.e("TOKEN for recovering", token);
+            if (token.equals("1")) {
+                Navigation.findNavController(view).navigate(HomeFragmentDirections.actionNavigationHomeToPasswordChangeFragment());
+            }
+        }
+
+        BottomNavigationView navBar = getActivity().findViewById(R.id.nav_view);
+        navBar.setVisibility(View.VISIBLE);
+
         hModel.setJWT(model.getJwt());
         hModel.setHomeBinding(binding);
 

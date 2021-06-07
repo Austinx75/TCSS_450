@@ -157,6 +157,4 @@ public class SettingsFragment extends Fragment{
         settingsViewModel.setSelectedTheme(themeId);
         getActivity().recreate();
     }
-
-
 }

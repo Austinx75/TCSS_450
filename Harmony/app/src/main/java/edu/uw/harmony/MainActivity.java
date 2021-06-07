@@ -126,13 +126,15 @@ public class  MainActivity extends AppCompatActivity {
     /** Accesses the settings**/
     private SettingsViewModel settingsViewModel;
 
+    private int mVerified;
+
 
     /**
      * Recieves messages from system service and adds them to notification view model.
      */
     public void onStart() {
         super.onStart();
-
+        this.mVerified = -1;
         nModel = new ViewModelProvider(this).get(NotificationViewModel.class);
         notificationManager = (NotificationManager) this.getSystemService(this.NOTIFICATION_SERVICE);
         notifications = new ArrayList<>(Arrays.asList(notificationManager.getActiveNotifications()));
@@ -225,11 +227,12 @@ public class  MainActivity extends AppCompatActivity {
 
 
         MainActivityArgs args = MainActivityArgs.fromBundle(getIntent().getExtras());
+        this.mVerified=args.getVerified();
         JWT jwt = new JWT(args.getJwt());
         String email = args.getEmail();
         new ViewModelProvider(
                 this,
-                new UserInfoViewModel.UserInfoViewModelFactory(email, jwt.toString()))
+                new UserInfoViewModel.UserInfoViewModelFactory(email, jwt.toString(), this.mVerified))
                 .get(UserInfoViewModel.class);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -585,10 +588,6 @@ public class  MainActivity extends AppCompatActivity {
                                             .get(LocationViewModel.class);
                                 }
                                 mLocationModel.setLocation(location);
-
-                                //When first getting a location, setup the weather view model so that
-                                //it can connect to the current location from here
-                                setupWeatherModel();
                             }
                         }
                     });
@@ -636,17 +635,6 @@ public class  MainActivity extends AppCompatActivity {
         mLocationRequest.setFastestInterval(FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS);
 
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-    }
-
-    /**
-     * Initializes the weather model with a connection to this activity (to also connect to the location
-     * view model) so that it has access to the user's current location before visiting the weather fragment
-     */
-    private void setupWeatherModel() {
-        WeatherViewModel weatherModel = new ViewModelProvider(this).get(WeatherViewModel.class);
-        weatherModel.setCurrentActivity(this);
-        weatherModel.setupLocationModel();
-        weatherModel.useCurrentLocation();
     }
 
     /**

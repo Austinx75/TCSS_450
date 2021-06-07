@@ -23,6 +23,8 @@ import edu.uw.harmony.UI.model.NewMessageCountViewModel;
 import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentChatCardBinding;
 
+import static android.view.View.VISIBLE;
+
 /**
  * Creates a Recycler View Adapter for the Chat rooms
  */
@@ -32,13 +34,16 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
 
     private SettingsViewModel sModel;
 
+    private NewMessageCountViewModel mCountModel;
+
     /**
      * Constructor for the Recycler View Adapter
      * @param items the items that will be created
      */
-    public ChatRecyclerViewAdapter(List<ChatPost> items, SettingsViewModel model) {
+    public ChatRecyclerViewAdapter(List<ChatPost> items, SettingsViewModel model, NewMessageCountViewModel countModel) {
         this.mChats = items;
         this.sModel = model;
+        this.mCountModel = countModel;
     }
 
     /**
@@ -49,10 +54,15 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
         public final View mView;
         public FragmentChatCardBinding binding;
         private ChatPost mChat;
-        public ChatViewHolder(View view) {
+        private NewMessageCountViewModel mModel;
+        private List<Integer> newMessages;
+
+        public ChatViewHolder(View view, NewMessageCountViewModel model) {
             super(view);
             mView = view;
             binding = FragmentChatCardBinding.bind(view);
+            mModel = model;
+            List<Integer> newMessages = mModel.getRoomsWithMessages();
         }
 
         /**
@@ -60,13 +70,16 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
          * @param chat the chat post
          */
         void setChat(final ChatPost chat) {
+            if(mModel.getRoomsWithMessages().contains(chat.getChatId())){
+                binding.contactNewChatAdded2.setVisibility(VISIBLE);
+            } else {
+                binding.contactNewChatAdded2.setVisibility(View.GONE);
+            }
             mChat = chat;
-            binding.imageFace.setImageResource((R.drawable.contact_boy_512));
-            binding.cardRoot.setOnClickListener(view -> {
-                Navigation.findNavController(mView).navigate(
-                        ChatListFragmentDirections.actionChatListFragmentToChatPostFragment(mChat.getChatId())
-                );
-            });
+            binding.imageFace.setImageResource((chat.getAvatar()));
+            binding.cardRoot.setOnClickListener(view ->  navToChat());
+            binding.textRecentMessage.setOnClickListener(view -> navToChat());
+            binding.contactNewChatAdded2.setOnClickListener(view -> navToChat());
             binding.textTitle.setText(chat.getTitle());
             binding.textRecentMessage.setText(chat.getRecentMessage());
 
@@ -86,6 +99,11 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
                 binding.textTitle.setTextColor(binding.getRoot().getResources().getColor(R.color.teal_200));
             }
         }
+        private void navToChat() {
+            Navigation.findNavController(mView).navigate(
+                    ChatListFragmentDirections.actionChatListFragmentToChatPostFragment(mChat.getChatId())
+            );
+        }
     }
 
     @Override
@@ -98,7 +116,7 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
     public ChatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ChatViewHolder(LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.fragment_chat_card, parent, false));
+                .inflate(R.layout.fragment_chat_card, parent, false), this.mCountModel);
     }
 
     @Override
