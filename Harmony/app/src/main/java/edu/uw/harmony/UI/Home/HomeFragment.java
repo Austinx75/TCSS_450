@@ -103,10 +103,13 @@ public class HomeFragment extends Fragment {
 
         //Set up action listener for weather updates
         mWeatherModel.addCurrentWeatherObserver(getViewLifecycleOwner(), currentWeather -> {
+            Log.d("Debug", "Home Fragment weather: " + currentWeather.temp);
             binding.imageViewMainConditionsPlaceholder.setImageResource(currentWeather.image);
-            binding.textDegHome.setText(
-                    Math.round(
-                            Double.parseDouble(currentWeather.temp)) + "°");
+            if(!currentWeather.temp.equals("Loading...")){
+                binding.textDegHome.setText(
+                        Math.round(
+                                Double.parseDouble(currentWeather.temp)) + "°");
+            }
         });
 
         /** I instantiate the recycler view here.*/

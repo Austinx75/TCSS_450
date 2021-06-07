@@ -410,7 +410,7 @@ public class  MainActivity extends AppCompatActivity {
         registerReceiver(mContactPushReceiver, cFilter);
         registerReceiver(mNewChatPushReceiver, nFilter);
 
-        //startLocationUpdates();
+        startLocationUpdates();
     }
 
     /**
@@ -429,7 +429,7 @@ public class  MainActivity extends AppCompatActivity {
             unregisterReceiver(mNewChatPushReceiver);
         }
 
-        //stopLocationUpdates();
+        stopLocationUpdates();
     }
 
     /**

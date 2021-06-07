@@ -97,9 +97,9 @@ public class WeatherViewModel extends AndroidViewModel {
 
         mCurrentWeatherContainer = new MutableLiveData<>();
         mCurrentWeatherContainer.setValue(new CurrentWeatherContainer(
-                "Seattle",
+                " ",
                 R.drawable.weather_clouds,
-                "0.0",
+                "Loading...",
                 "0"));
 
         if(mHourlyList == null)
@@ -318,6 +318,12 @@ public class WeatherViewModel extends AndroidViewModel {
             throws JSONException {
         IntFunction<String> getString = getApplication().getResources()::getString;
 
+        if(city == null || city.equals("")){
+            city = "Unknown";
+        }
+
+
+
         //Update weather image
         int image = determineImageFromDescription(
                 currentWeather.getString(
@@ -335,7 +341,7 @@ public class WeatherViewModel extends AndroidViewModel {
         String windspeed =  currentWeather.getString(
                 getString.apply(
                         R.string.keys_wind_speed));
-
+        Log.d("Debug","In handle responce: " + temperature);
         mCurrentWeatherContainer.setValue(
                 new CurrentWeatherContainer(city, image, temperature, windspeed));
     }
@@ -352,6 +358,7 @@ public class WeatherViewModel extends AndroidViewModel {
     }
 
     public void updateLocationCoordinates(Location location) {
+        Log.d("Debug", "In update location coordinates: Location: " + location.toString() + ", " + location.getLatitude());
         if(mWeatherLocationSource == WeatherLocationSource.CURRENT) {
             if(!mGetStartingLocationHasBeenInitialized) {
                 useCurrentLocationObserveLocationChange(location);
@@ -359,6 +366,9 @@ public class WeatherViewModel extends AndroidViewModel {
             } else {
                 mLatitude = location.getLatitude();
                 mLongitude = location.getLongitude();
+                if(!mNavigatingFromWeatherLocation){
+                    useCurrentLocationObserveLocationChange(location);
+                }
             }
         }
     }
@@ -368,6 +378,7 @@ public class WeatherViewModel extends AndroidViewModel {
      * on the user's current location.
      */
     public void useCurrentLocationObserveLocationChange(Location location) {
+        Log.d("Debug", "Location: " + location.toString() + ", " + location.getLatitude());
         mLocationSourceUsedInRequest = WeatherLocationSource.CURRENT;
         mLatitudeRequest = location.getLatitude();
         mLongitudeRequest = location.getLongitude();
