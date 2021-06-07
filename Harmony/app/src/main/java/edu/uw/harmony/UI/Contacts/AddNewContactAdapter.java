@@ -126,9 +126,9 @@ public class AddNewContactAdapter extends RecyclerView.Adapter<AddNewContactAdap
             binding.contactCard.setOnClickListener(this::handleMoreOrLess);
 
             binding.contactAdd.setOnClickListener(button -> {
-                mContacts.remove(mContact);
-                notifyItemRemoved(mContacts.indexOf(mContact));
                 mModel.contactAdd(uModel.getJwt(), Integer.parseInt(mContact.getId()));
+                notifyItemRemoved(mContacts.indexOf(mContact));
+                mContacts.remove(mContact);
             });
         }
 
