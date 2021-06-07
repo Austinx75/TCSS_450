@@ -82,9 +82,11 @@ public class WeatherFragment extends Fragment {
         mWeatherModel.addCurrentWeatherObserver(getViewLifecycleOwner(), currentWeather -> {
             binding.textViewCityPlaceholder.setText(currentWeather.city);
             binding.imageViewMainConditionsPlaceholder.setImageResource(currentWeather.image);
-            binding.textViewMainTemperaturePlaceholder.setText(
-                    Math.round(
-                            Double.parseDouble(currentWeather.temp)) + "°");
+            if(!currentWeather.temp.equals("Loading...")){
+                binding.textViewMainTemperaturePlaceholder.setText(
+                        Math.round(
+                                Double.parseDouble(currentWeather.temp)) + "°");
+            }
             binding.textViewWindSpeedPlaceholder.setText("Wind Speed: " +
                     Math.round((Double.parseDouble(currentWeather.windSpeed) * 100.0) / 100.0) + " mph");
         });
