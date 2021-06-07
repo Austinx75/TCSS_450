@@ -28,6 +28,7 @@ import edu.uw.harmony.UI.Auth.LogIn.LogInViewModel;
 import edu.uw.harmony.UI.Auth.Register.RegisterFragmentArgs;
 import edu.uw.harmony.UI.Auth.Register.RegisterFragmentDirections;
 import edu.uw.harmony.UI.model.UserInfoViewModel;
+import edu.uw.harmony.UI.settings.SettingsViewModel;
 import edu.uw.harmony.databinding.FragmentEmailVerificationBinding;
 import edu.uw.harmony.databinding.FragmentRegisterBinding;
 
@@ -38,6 +39,7 @@ public class EmailVerificationFragment extends Fragment {
     FragmentEmailVerificationBinding binding;
     EmailVerificationViewModel mModel;
     UserInfoViewModel mUserModel;
+    SettingsViewModel settingsViewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,6 +50,7 @@ public class EmailVerificationFragment extends Fragment {
         mModel = new ViewModelProvider(getActivity())
                 .get(EmailVerificationViewModel.class);
         mUserModel = new ViewModelProvider(getActivity()).get(UserInfoViewModel.class);
+        settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
         binding = FragmentEmailVerificationBinding.inflate(inflater);
         return binding.getRoot();
     }
@@ -55,6 +58,15 @@ public class EmailVerificationFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
+            binding.textView2.setTextColor(Color.BLACK);
+            binding.editTextEmail2.setTextColor(Color.BLACK);
+            binding.editTextEmail2.setHintTextColor(Color.BLACK);
+        } else {
+            binding.textView2.setTextColor(Color.WHITE);
+            binding.editTextEmail2.setTextColor(Color.WHITE);
+            binding.editTextEmail2.setHintTextColor(Color.WHITE);
+        }
         binding.button2.setOnClickListener(button -> attemptCodeSend());
         mModel.addResponseObserver(
                 getViewLifecycleOwner(),
