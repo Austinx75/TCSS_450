@@ -479,6 +479,14 @@ public class WeatherViewModel extends AndroidViewModel {
         return mGetStartingLocationHasBeenInitialized;
     }
 
+    public double getCurrentLatitude() {
+        return mLatitude;
+    }
+
+    public double getCurrentLongitude() {
+        return mLongitude;
+    }
+
     public enum WeatherLocationSource {
         CURRENT,
         ZIP,

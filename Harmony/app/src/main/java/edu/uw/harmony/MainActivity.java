@@ -346,7 +346,6 @@ public class  MainActivity extends AppCompatActivity {
                 for (Location location : locationResult.getLocations()) {
                     // Update UI with location data
                     // ...
-                    Log.d("LOCATION UPDATE!", location.toString());
                     if (mLocationModel == null) {
                         mLocationModel = new ViewModelProvider(MainActivity.this)
                                 .get(LocationViewModel.class);
@@ -594,7 +593,6 @@ public class  MainActivity extends AppCompatActivity {
                         @Override public void onSuccess(Location location) {
                             // Got last known location. In some rare situations this can be null.
                             if (location != null) {
-                                Log.d("LOCATION", location.toString());
                                 if (mLocationModel == null) {
                                     mLocationModel = new ViewModelProvider(MainActivity.this)
                                             .get(LocationViewModel.class);
