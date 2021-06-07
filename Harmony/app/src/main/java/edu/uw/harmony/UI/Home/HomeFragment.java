@@ -99,6 +99,7 @@ public class HomeFragment extends Fragment {
         mLocationModel = new ViewModelProvider(getActivity()).get(LocationViewModel.class);
         notificationManager = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
 
+
         //Set up action listener for weather updates
         mWeatherModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
         mWeatherModel.setJWT(model.getJwt());
@@ -111,6 +112,7 @@ public class HomeFragment extends Fragment {
         mWeatherModel.setLocationModel(mLocationModel);
         mLocationModel.addLocationObserver(getViewLifecycleOwner(), location -> {
             mWeatherModel.updateLocationCoordinates(location);
+            Log.d("debug", "Location updated");
         });
 
         /** I instantiate the recycler view here.*/
