@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -24,8 +25,15 @@ import edu.uw.harmony.R;
 import edu.uw.harmony.UI.Auth.LogIn.LogInFragmentArgs;
 import edu.uw.harmony.UI.Auth.LogIn.LogInFragmentDirections;
 import edu.uw.harmony.UI.Auth.LogIn.LogInViewModel;
+import edu.uw.harmony.UI.Avatar.AvatarAdapter;
+import edu.uw.harmony.UI.Avatar.AvatarGenerator;
+import edu.uw.harmony.UI.Avatar.AvatarViewModel;
+import edu.uw.harmony.UI.model.UserInfoViewModel;
 import edu.uw.harmony.databinding.FragmentLogInBinding;
 import edu.uw.harmony.databinding.FragmentSettingsBinding;
+
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
 
 /**
  * This is the fragment where you can change color theme, and reset password.
@@ -40,6 +48,12 @@ public class SettingsFragment extends Fragment{
 
     /** ViewModel for settings */
     private SettingsViewModel settingsViewModel;
+
+    /** ViewModel for avatars */
+    private AvatarViewModel avatarViewModel;
+
+    /** ViewModel for userViewModel */
+    private UserInfoViewModel userInfoViewModel;
 
     /** Key to access shared preferences */
     public static final String sharedPreferenceKey = "MY_SHARED_PREF";
@@ -59,6 +73,8 @@ public class SettingsFragment extends Fragment{
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
+        avatarViewModel = new ViewModelProvider(getActivity()).get(AvatarViewModel.class);
+        userInfoViewModel = new ViewModelProvider(getActivity()).get(UserInfoViewModel.class);
     }
 
 
@@ -77,6 +93,7 @@ public class SettingsFragment extends Fragment{
         binding = FragmentSettingsBinding.inflate(inflater, container, false);
         SwitchCompat switchButton = (SwitchCompat) binding.darkModeSwitch;
         switchButton.setChecked(settingsViewModel.getSwitchState());
+        binding.avatar.setVisibility(GONE);
         /** Dependent on the theme, this will set all text / image fields to a certain color. */
         if(settingsViewModel.getCurrentThemeID() == R.style.Theme_1_Harmony){
             binding.settingsDarkModeImage.setColorFilter(getResources().getColor(R.color.black));
@@ -116,6 +133,17 @@ public class SettingsFragment extends Fragment{
             }
         });
 
+        avatarViewModel.connectGet(userInfoViewModel.getJwt());
+        avatarViewModel.addAvatarObserver(getViewLifecycleOwner(), avatar -> {
+            binding.avatar.setImageResource(avatar);
+            binding.avatar.setVisibility(VISIBLE);
+            binding.layoutWait.setVisibility(GONE);
+        });
+
+        binding.buttonChangeAvatar.setOnClickListener(button -> {
+            Navigation.findNavController(getView()).navigate(SettingsFragmentDirections.actionSettingsFragmentToAvatarListFragment2());
+        });
+
     }
 
     /**
@@ -129,9 +157,4 @@ public class SettingsFragment extends Fragment{
         settingsViewModel.setSelectedTheme(themeId);
         getActivity().recreate();
     }
-
-
-
-
-
 }
