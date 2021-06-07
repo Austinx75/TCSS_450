@@ -65,8 +65,6 @@ public class HomeFragment extends Fragment {
     private SettingsViewModel settingsViewModel;
     /** This is the view model for the user. It allows us to access the email of user.*/
     private UserInfoViewModel model;
-    /** This is the home view model*/
-    private HomeViewModel hModel;
     /** This is the weather view model*/
     private WeatherViewModel mWeatherModel;
     /** This is the location view model*/
@@ -94,7 +92,6 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         settingsViewModel = new ViewModelProvider(getActivity()).get(SettingsViewModel.class);
         model = new ViewModelProvider(getActivity()).get(UserInfoViewModel.class);
-        hModel = new ViewModelProvider(getActivity()).get(HomeViewModel.class);
         nModel = new ViewModelProvider(getActivity()).get(NotificationViewModel.class);
         mLocationModel = new ViewModelProvider(getActivity()).get(LocationViewModel.class);
         mWeatherModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
@@ -145,9 +142,6 @@ public class HomeFragment extends Fragment {
 
         BottomNavigationView navBar = getActivity().findViewById(R.id.nav_view);
         navBar.setVisibility(View.VISIBLE);
-
-        hModel.setJWT(model.getJwt());
-        hModel.setHomeBinding(binding);
 
         /** Clears the notifications from home screen */
         binding.buttonClearHome.setOnClickListener(button -> {

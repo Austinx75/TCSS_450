@@ -29,7 +29,7 @@ import edu.uw.harmony.databinding.FragmentWeatherBinding;
  * for that city.
  *
  * @author  Gary Kono
- * @version 1.0
+ * @version 1.1
  */
 public class WeatherFragment extends Fragment {
     private WeatherViewModel mWeatherModel;
