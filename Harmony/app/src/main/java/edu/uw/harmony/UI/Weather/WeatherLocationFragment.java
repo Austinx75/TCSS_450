@@ -133,13 +133,12 @@ public class WeatherLocationFragment extends Fragment implements OnMapReadyCallb
                     return;
                 }
                 googleMap.setMyLocationEnabled(true);
-
-                final LatLng c = new LatLng(location.getLatitude(),
-                        location.getLongitude());
-                //Zoom levels are from 2.0f (zoomed out) to 21.f (zoomed in)
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(c, 15.0f));
             }
         });
+        final LatLng c = new LatLng(mWeatherModel.getCurrentLatitude(),
+                mWeatherModel.getCurrentLongitude());
+        //Zoom levels are from 2.0f (zoomed out) to 21.f (zoomed in)
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(c, 15.0f));
 
         mMap.setOnMapClickListener(this);
     }
