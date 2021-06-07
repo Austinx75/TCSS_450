@@ -112,10 +112,7 @@ public class WeatherFragment extends Fragment {
             mWeatherModel.setNavigatingFromWeatherLocation(false);
         } else {
             if(mWeatherModel.getServerHasResponded()) {
-                if ((!mWeatherModel.getStartingLocationHasBeenInitialized())
-                        && mWeatherModel.getWeatherLocationSource() == WeatherViewModel.WeatherLocationSource.CURRENT) {
-                    mWeatherModel.useCurrentLocation();
-                } else {
+                if (mWeatherModel.getStartingLocationHasBeenInitialized()) {
                     mWeatherModel.connectGet(false);
                 }
             }
