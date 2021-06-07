@@ -101,12 +101,14 @@ public class ChatListViewModel extends AndroidViewModel {
 
                 List<Integer> members = new ArrayList<>();
 
+                String username = room.getString("username");
+                String[] split = username.split("@");
                 ChatPost post = new ChatPost
                         .Builder(
                                 (int)room.get("chatid"),
                                 members,
                             "" + room.get("name"),
-                        ""+room.get("username") + ": " +room.get("message"),
+                        split[0] + ": " +room.get("message"),
                          room.getInt("avatar")).build();
                 boolean contains = false;
                 List <ChatPost> list = mChatList.getValue();
