@@ -90,7 +90,6 @@ public class  MainActivity extends AppCompatActivity {
     private NewContactCountViewModel mNewContactModel;
     private NotificationViewModel nModel;
     private WeatherViewModel mWeatherModel;
-    private UserInfoViewModel mUserInfoModel;
 
     private ActivityMainBinding binding;
 
