@@ -270,11 +270,11 @@ public class  MainActivity extends AppCompatActivity {
                 badge.clearNumber();
                 badge.setVisible(false);
             }
-            if(destination.getId() == R.id.navigation_chat_list){
-                BadgeDrawable badge = binding.navView.getOrCreateBadge(R.id.navigation_chat_list);
-                badge.clearNumber();
-                badge.setVisible(false);
-            }
+//            if(destination.getId() == R.id.navigation_chat_list){
+//                BadgeDrawable badge = binding.navView.getOrCreateBadge(R.id.navigation_chat_list);
+//                badge.clearNumber();
+//                badge.setVisible(false);
+//            }
         });
 
         mNewContactModel.addContactCountObserver(this, count ->{
@@ -483,9 +483,9 @@ public class  MainActivity extends AppCompatActivity {
                 SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
                 String dateString = formatter.format(date);
                 nModel.addNotification(intent.getStringExtra("member"), intent.getStringExtra("newChat"), dateString);
-                if(nd.getId() != R.id.navigation_chat_list){
-                    mNewMessageModel.increment(intent.getIntExtra("chatid", -1));
-                }
+//                if(nd.getId() != R.id.navigation_chat_list){
+//                    mNewMessageModel.increment(intent.getIntExtra("chatid", -1));
+//                }
             }
         }
 
