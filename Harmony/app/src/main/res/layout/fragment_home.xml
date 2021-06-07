@@ -12,6 +12,7 @@
         android:id="@+id/imageView_mainConditionsPlaceholder"
         android:layout_width="47dp"
         android:layout_height="42dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_email_home" />
@@ -60,6 +61,7 @@
         android:id="@+id/text_notifications_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:text="@string/text_notification_home"
         android:textAlignment="center"
@@ -76,7 +78,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_notifications_home"
+        app:layout_constraintTop_toBottomOf="@+id/button_clear_home"
         tools:context="edu.uw.harmony.UI.Home.HomeFragment"
         tools:listitem="@layout/fragment_notification_card" />
 
@@ -113,6 +115,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:text="@string/fragment_clear_home"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/text_notifications_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/text_notifications_home" />
