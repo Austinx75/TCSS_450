@@ -79,13 +79,14 @@ public class WeatherFragment extends Fragment {
 
         binding = FragmentWeatherBinding.bind(getView());
 
-        //Putting these in onViewCreated may cause a bug. Try moving to oncreate
         mWeatherModel.addCurrentWeatherObserver(getViewLifecycleOwner(), currentWeather -> {
             binding.textViewCityPlaceholder.setText(currentWeather.city);
             binding.imageViewMainConditionsPlaceholder.setImageResource(currentWeather.image);
-            binding.textViewMainTemperaturePlaceholder.setText(
-                    Math.round(
-                            Double.parseDouble(currentWeather.temp)) + "°");
+            if(!currentWeather.temp.equals("Loading...")){
+                binding.textViewMainTemperaturePlaceholder.setText(
+                        Math.round(
+                                Double.parseDouble(currentWeather.temp)) + "°");
+            }
             binding.textViewWindSpeedPlaceholder.setText("Wind Speed: " +
                     Math.round((Double.parseDouble(currentWeather.windSpeed) * 100.0) / 100.0) + " mph");
         });
@@ -112,10 +113,7 @@ public class WeatherFragment extends Fragment {
             mWeatherModel.setNavigatingFromWeatherLocation(false);
         } else {
             if(mWeatherModel.getServerHasResponded()) {
-                if ((!mWeatherModel.getStartingLocationHasBeenInitialized())
-                        && mWeatherModel.getWeatherLocationSource() == WeatherViewModel.WeatherLocationSource.CURRENT) {
-                    mWeatherModel.useCurrentLocation();
-                } else {
+                if (mWeatherModel.getStartingLocationHasBeenInitialized()) {
                     mWeatherModel.connectGet(false);
                 }
             }

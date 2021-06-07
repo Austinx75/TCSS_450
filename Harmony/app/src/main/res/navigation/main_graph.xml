@@ -49,7 +49,7 @@
         <action
             android:id="@+id/action_navigation_new_chat_to_navigation_chat_post"
             app:destination="@id/navigation_chat_post"
-            app:popUpTo="@id/navigation_chat_list" />
+            app:popUpTo="@id/navigation_contact_container" />
         <argument
             android:name="email"
             app:argType="string"
@@ -81,7 +81,8 @@
             app:destination="@id/navigation_chat_post" />
         <action
             android:id="@+id/action_navigation_chat_list_to_navigation_new_chat"
-            app:destination="@id/navigation_new_chat" />
+            app:destination="@id/navigation_new_chat"
+            app:popUpTo="@id/navigation_chat_list" />
         <argument
             android:name="chatid"
             app:argType="integer"
@@ -237,8 +238,8 @@
     <fragment
         android:id="@+id/emailVerificationFragment"
         android:name="edu.uw.harmony.UI.Auth.Validation.EmailVerificationFragment"
-        android:label="fragment_email_verification"
-        tools:layout="@layout/fragment_email_verification" >
+        android:label="Email Verificaiton"
+        tools:layout="@layout/fragment_email_verification">
         <action
             android:id="@+id/action_emailVerificationFragment_to_navigation_home"
             app:destination="@id/navigation_home" />

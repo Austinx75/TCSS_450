@@ -76,7 +76,8 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
                 binding.contactNewChatAdded2.setVisibility(View.GONE);
             }
             mChat = chat;
-            binding.imageFace.setImageResource((chat.getAvatar()));
+            Log.e("AVATAR", mChat.getAvatar()+"");
+            binding.imageFace.setImageResource((mChat.getAvatar()));
             binding.cardRoot.setOnClickListener(view ->  navToChat());
             binding.textRecentMessage.setOnClickListener(view -> navToChat());
             binding.contactNewChatAdded2.setOnClickListener(view -> navToChat());

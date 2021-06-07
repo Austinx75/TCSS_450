@@ -97,15 +97,18 @@ public class ChatListViewModel extends AndroidViewModel {
             JSONArray chats = root.getJSONArray("chats");
             for (int i = 0; i < chats.length(); i++) {
                 JSONObject room = chats.getJSONObject(i);
+                Log.e("ROOM INFO", room +"");
 
                 List<Integer> members = new ArrayList<>();
 
+                String username = room.getString("username");
+                String[] split = username.split("@");
                 ChatPost post = new ChatPost
                         .Builder(
                                 (int)room.get("chatid"),
                                 members,
                             "" + room.get("name"),
-                        ""+room.get("username") + ": " +room.get("message"),
+                        split[0] + ": " +room.get("message"),
                          room.getInt("avatar")).build();
                 boolean contains = false;
                 List <ChatPost> list = mChatList.getValue();

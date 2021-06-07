@@ -97,20 +97,19 @@ public class HomeFragment extends Fragment {
         hModel = new ViewModelProvider(getActivity()).get(HomeViewModel.class);
         nModel = new ViewModelProvider(getActivity()).get(NotificationViewModel.class);
         mLocationModel = new ViewModelProvider(getActivity()).get(LocationViewModel.class);
+        mWeatherModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
         notificationManager = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
 
+
         //Set up action listener for weather updates
-        mWeatherModel = new ViewModelProvider(getActivity()).get(WeatherViewModel.class);
-        mWeatherModel.setJWT(model.getJwt());
         mWeatherModel.addCurrentWeatherObserver(getViewLifecycleOwner(), currentWeather -> {
+            Log.d("Debug", "Home Fragment weather: " + currentWeather.temp);
             binding.imageViewMainConditionsPlaceholder.setImageResource(currentWeather.image);
-            binding.textDegHome.setText(
-                    Math.round(
-                            Double.parseDouble(currentWeather.temp)) + "°");
-        });
-        mWeatherModel.setLocationModel(mLocationModel);
-        mLocationModel.addLocationObserver(getViewLifecycleOwner(), location -> {
-            mWeatherModel.updateLocationCoordinates(location);
+            if(!currentWeather.temp.equals("Loading...")){
+                binding.textDegHome.setText(
+                        Math.round(
+                                Double.parseDouble(currentWeather.temp)) + "°");
+            }
         });
 
         /** I instantiate the recycler view here.*/

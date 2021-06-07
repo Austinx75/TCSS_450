@@ -46,6 +46,7 @@ import edu.uw.harmony.UI.model.UserInfoViewModel;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
 
 
 import com.auth0.android.jwt.JWT;
@@ -88,6 +89,8 @@ public class  MainActivity extends AppCompatActivity {
     private NewMessageCountViewModel mNewMessageModel;
     private NewContactCountViewModel mNewContactModel;
     private NotificationViewModel nModel;
+    private WeatherViewModel mWeatherModel;
+    private UserInfoViewModel mUserInfoModel;
 
     private ActivityMainBinding binding;
 
@@ -224,8 +227,6 @@ public class  MainActivity extends AppCompatActivity {
         fBinding = FragmentHomeBinding.inflate(getLayoutInflater());
         settingsViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
 
-
-
         MainActivityArgs args = MainActivityArgs.fromBundle(getIntent().getExtras());
         this.mVerified=args.getVerified();
         JWT jwt = new JWT(args.getJwt());
@@ -234,6 +235,16 @@ public class  MainActivity extends AppCompatActivity {
                 this,
                 new UserInfoViewModel.UserInfoViewModelFactory(email, jwt.toString(), this.mVerified))
                 .get(UserInfoViewModel.class);
+
+        //Initialize some weather state and listeners
+        mWeatherModel = new ViewModelProvider(this).get(WeatherViewModel.class);
+        mWeatherModel.setJWT(jwt.toString());
+
+        mLocationModel = new ViewModelProvider(this).get(LocationViewModel.class);
+        mWeatherModel.setLocationModel(mLocationModel);
+        mLocationModel.addLocationObserver(MainActivity.this, loc -> {
+            mWeatherModel.updateLocationCoordinates(loc);
+        });
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
@@ -270,11 +281,11 @@ public class  MainActivity extends AppCompatActivity {
                 badge.clearNumber();
                 badge.setVisible(false);
             }
-            if(destination.getId() == R.id.navigation_chat_list){
-                BadgeDrawable badge = binding.navView.getOrCreateBadge(R.id.navigation_chat_list);
-                badge.clearNumber();
-                badge.setVisible(false);
-            }
+//            if(destination.getId() == R.id.navigation_chat_list){
+//                BadgeDrawable badge = binding.navView.getOrCreateBadge(R.id.navigation_chat_list);
+//                badge.clearNumber();
+//                badge.setVisible(false);
+//            }
         });
 
         mNewContactModel.addContactCountObserver(this, count ->{
@@ -335,10 +346,10 @@ public class  MainActivity extends AppCompatActivity {
                 for (Location location : locationResult.getLocations()) {
                     // Update UI with location data
                     // ...
-                    Log.d("LOCATION UPDATE!", location.toString());
                     if (mLocationModel == null) {
                         mLocationModel = new ViewModelProvider(MainActivity.this)
                                 .get(LocationViewModel.class);
+
                     }
                     mLocationModel.setLocation(location);
                 }
@@ -398,7 +409,7 @@ public class  MainActivity extends AppCompatActivity {
         registerReceiver(mContactPushReceiver, cFilter);
         registerReceiver(mNewChatPushReceiver, nFilter);
 
-        //startLocationUpdates();
+        startLocationUpdates();
     }
 
     /**
@@ -417,7 +428,7 @@ public class  MainActivity extends AppCompatActivity {
             unregisterReceiver(mNewChatPushReceiver);
         }
 
-        //stopLocationUpdates();
+        stopLocationUpdates();
     }
 
     /**
@@ -483,9 +494,9 @@ public class  MainActivity extends AppCompatActivity {
                 SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
                 String dateString = formatter.format(date);
                 nModel.addNotification(intent.getStringExtra("member"), intent.getStringExtra("newChat"), dateString);
-                if(nd.getId() != R.id.navigation_chat_list){
-                    mNewMessageModel.increment(intent.getIntExtra("chatid", -1));
-                }
+//                if(nd.getId() != R.id.navigation_chat_list){
+//                    mNewMessageModel.increment(intent.getIntExtra("chatid", -1));
+//                }
             }
         }
 
@@ -582,7 +593,6 @@ public class  MainActivity extends AppCompatActivity {
                         @Override public void onSuccess(Location location) {
                             // Got last known location. In some rare situations this can be null.
                             if (location != null) {
-                                Log.d("LOCATION", location.toString());
                                 if (mLocationModel == null) {
                                     mLocationModel = new ViewModelProvider(MainActivity.this)
                                             .get(LocationViewModel.class);

@@ -95,6 +95,7 @@ public class PasswordChangeFragment extends Fragment {
             binding.passwordChangeConfirmNew.setTextColor(Color.BLACK);
             binding.passwordChangeConfirmNew.setHintTextColor(Color.BLACK);
         } else {
+            binding.textView3.setTextColor(Color.WHITE);
             binding.passwordChangeCurrent.setTextColor(Color.WHITE);
             binding.passwordChangeCurrent.setHintTextColor(Color.WHITE);
             binding.passwordChangeNew.setTextColor(Color.WHITE);

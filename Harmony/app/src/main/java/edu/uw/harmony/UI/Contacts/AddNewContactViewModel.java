@@ -66,8 +66,7 @@ public class AddNewContactViewModel extends AndroidViewModel {
      * @param error VolleyError
      */
     private void handleError(final VolleyError error){
-        Log.e("CONNECTION ERROR", error.getLocalizedMessage());
-        throw new IllegalStateException((error.getMessage()));
+        Log.e("CONNECTION ERROR", error+ "");
     }
 
     /**
